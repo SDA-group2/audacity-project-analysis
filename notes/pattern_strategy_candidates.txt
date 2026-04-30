@@ -1,0 +1,1569 @@
+src/preferences/qml/Audacity/Preferences/updatepreferencesmodel.cpp:55:QString UpdatePreferencesModel::privacyPolicyUrl() const
+src/preferences/qml/Audacity/Preferences/updatepreferencesmodel.cpp:57:    return QString::fromStdString(updateConfiguration()->privacyPolicyUrl());
+src/preferences/qml/Audacity/Preferences/CMakeLists.txt:81:        internal/SpectrogramAlgorithmSection.qml
+src/preferences/qml/Audacity/Preferences/updatepreferencesmodel.h:48:    Q_INVOKABLE QString privacyPolicyUrl() const;
+src/preferences/qml/Audacity/Preferences/PreferencesPage.qml:95:            policy: flickable.isScrollable ? ScrollBar.AlwaysOn : ScrollBar.AlwaysOff
+src/preferences/qml/Audacity/Preferences/GeneralPreferencesPage.qml:106:            privacyPolicyUrl: updateModel.privacyPolicyUrl()
+src/preferences/qml/Audacity/Preferences/GeneralPreferencesPage.qml:126:            privacyPolicyUrl: updateModel.privacyPolicyUrl()
+src/preferences/qml/Audacity/Preferences/internal/SpectrogramAlgorithmSection.qml:15:    title: qsTrc("preferences/spectrogram", "Algorithm")
+src/preferences/qml/Audacity/Preferences/internal/SpectrogramAlgorithmSection.qml:22:        model: AlgorithmSectionParameterListModel {
+src/preferences/qml/Audacity/Preferences/internal/SpectrogramAlgorithmSection.qml:35:            navigation.name: "AlgorithmComboBox_" + index
+src/preferences/qml/Audacity/Preferences/internal/UsageInfoSection.qml:17:    property string privacyPolicyUrl
+src/preferences/qml/Audacity/Preferences/internal/UsageInfoSection.qml:39:        text: qsTrc("appshell/preferences", "To help us understand how often people use Audacity, we generate a random ID (UUID) for each installation. This ID does not contain any personally identifiable information. Want to know more? Check out our <a href=\"%1\">privacy policy</a>.")
+src/preferences/qml/Audacity/Preferences/internal/UsageInfoSection.qml:40:              .arg(root.privacyPolicyUrl)
+src/preferences/qml/Audacity/Preferences/internal/AutomaticUpdateSection.qml:36:    property string privacyPolicyUrl
+src/preferences/qml/Audacity/Preferences/internal/AutomaticUpdateSection.qml:60:        text: qsTrc("appshell/preferences", "Update checking requires network access. In order to protect your privacy, Audacity does not store any personal information. See our <a href=\"%1\">privacy policy</a> for more info.")
+src/preferences/qml/Audacity/Preferences/internal/AutomaticUpdateSection.qml:61:              .arg(root.privacyPolicyUrl)
+src/preferences/qml/Audacity/Preferences/SpectrogramPreferencesPage.qml:65:        SpectrogramAlgorithmSection {
+src/preferences/qml/Audacity/Preferences/UpdatePreferencesPage.qml:45:            privacyPolicyUrl: updateModel.privacyPolicyUrl()
+src/au3audio/CMakeLists.txt:20:    ${CMAKE_CURRENT_LIST_DIR}/internal/defaultplaybackpolicy.cpp
+src/au3audio/CMakeLists.txt:21:    ${CMAKE_CURRENT_LIST_DIR}/internal/defaultplaybackpolicy.h
+src/au3audio/internal/au3audioengine.cpp:13:#include "defaultplaybackpolicy.h"
+src/au3audio/internal/au3audioengine.cpp:32:            options.policyFactory = [&project, trackEndTime, loopEndTime](
+src/au3audio/internal/au3audioengine.cpp:33:                const AudioIOStartStreamOptions& options) -> std::unique_ptr<PlaybackPolicy>
+src/au3audio/internal/au3audioengine.cpp:35:                return std::make_unique<DefaultPlaybackPolicy>(project,
+src/au3audio/internal/au3audioengine.cpp:70:                                AudacityProject& project, const bool isDefaultPlayTrackPolicy, const double audioStreamSampleRate,
+src/au3audio/internal/au3audioengine.cpp:74:    AudioIOStartStreamOptions options = ProjectAudioIO::GetDefaultOptions(project, isDefaultPlayTrackPolicy);
+src/au3audio/internal/au3audioengine.h:25:                    bool isDefaultPlayTrackPolicy, double audioStreamSampleRate, double leadInTime = 0.0,
+src/au3audio/internal/defaultplaybackpolicy.cpp:4:#include "defaultplaybackpolicy.h"
+src/au3audio/internal/defaultplaybackpolicy.cpp:13:DefaultPlaybackPolicy::DefaultPlaybackPolicy(AudacityProject& project,
+src/au3audio/internal/defaultplaybackpolicy.cpp:24:void DefaultPlaybackPolicy::Initialize(
+src/au3audio/internal/defaultplaybackpolicy.cpp:27:    PlaybackPolicy::Initialize(schedule, rate);
+src/au3audio/internal/defaultplaybackpolicy.cpp:41:Mixer::WarpOptions DefaultPlaybackPolicy::MixerWarpOptions(
+src/au3audio/internal/defaultplaybackpolicy.cpp:48:        return PlaybackPolicy::MixerWarpOptions(schedule);
+src/au3audio/internal/defaultplaybackpolicy.cpp:52:PlaybackPolicy::BufferTimes
+src/au3audio/internal/defaultplaybackpolicy.cpp:53:DefaultPlaybackPolicy::SuggestedBufferTimes(PlaybackSchedule&)
+src/au3audio/internal/defaultplaybackpolicy.cpp:55:    // Shorter times than in the default policy so that responses to changes of
+src/au3audio/internal/defaultplaybackpolicy.cpp:61:bool DefaultPlaybackPolicy::RevertToOldDefault(const PlaybackSchedule& schedule) const
+src/au3audio/internal/defaultplaybackpolicy.cpp:68:bool DefaultPlaybackPolicy::Done(
+src/au3audio/internal/defaultplaybackpolicy.cpp:82:double DefaultPlaybackPolicy::OffsetSequenceTime(
+src/au3audio/internal/defaultplaybackpolicy.cpp:87:    // Assuming that mpStartTime always has a value when this policy is used
+src/au3audio/internal/defaultplaybackpolicy.cpp:105:DefaultPlaybackPolicy::GetPlaybackSlice(
+src/au3audio/internal/defaultplaybackpolicy.cpp:145:std::pair<double, double> DefaultPlaybackPolicy::AdvancedTrackTime(
+src/au3audio/internal/defaultplaybackpolicy.cpp:150:        return PlaybackPolicy::AdvancedTrackTime(schedule, trackTime, nSamples);
+src/au3audio/internal/defaultplaybackpolicy.cpp:179:bool DefaultPlaybackPolicy::RepositionPlayback(
+src/au3audio/internal/defaultplaybackpolicy.cpp:250:            return PlaybackPolicy::RepositionPlayback(schedule, playbackMixers,
+src/au3audio/internal/defaultplaybackpolicy.cpp:276:bool DefaultPlaybackPolicy::Looping(const PlaybackSchedule&) const
+src/au3audio/internal/defaultplaybackpolicy.cpp:281:void DefaultPlaybackPolicy::WriteMessage()
+src/au3audio/internal/defaultplaybackpolicy.cpp:289:double DefaultPlaybackPolicy::GetPlaySpeed()
+src/au3audio/internal/au3audiodevicesprovider.cpp:7:#include <algorithm>
+src/au3audio/internal/defaultplaybackpolicy.h:9://! The PlaybackPolicy used by Audacity for most playback.
+src/au3audio/internal/defaultplaybackpolicy.h:14:class DefaultPlaybackPolicy final : public PlaybackPolicy, public NonInterferingBase
+src/au3audio/internal/defaultplaybackpolicy.h:17:    DefaultPlaybackPolicy(AudacityProject& project, double trackEndTime, double loopEndTime, std::optional<double> pStartTime,
+src/au3audio/internal/defaultplaybackpolicy.h:19:    ~DefaultPlaybackPolicy() override = default;
+src/projectscene/qml/Audacity/ProjectScene/historypanel/HistoryPanel.qml:35:        scrollBarPolicy: ScrollBar.AlwaysOn
+src/projectscene/qml/Audacity/ProjectScene/toolbars/internal/CustomiseView.qml:16:    scrollBarPolicy: ScrollBar.AlwaysOn
+src/projectscene/qml/Audacity/ProjectScene/toolbars/GetEffectsDialog.qml:163:                    policy: ScrollBar.AlwaysOn
+src/projectscene/qml/Audacity/ProjectScene/trackspanel/TrackEffectList.qml:107:                policy: ScrollBar.AlwaysOn
+src/projectscene/view/tracksitemsview/tracklabelslayoutmanager.cpp:6:#include <algorithm>
+src/au3cloud/iau3audiocomservice.h:21:enum class CachePolicy {
+src/au3cloud/iau3audiocomservice.h:27:    CachePolicy cachePolicy = CachePolicy::CacheFirst;
+src/au3cloud/internal/au3audiocomservice.cpp:6:#include <algorithm>
+src/au3cloud/internal/au3audiocomservice.cpp:117:    if (options.cachePolicy == CachePolicy::CacheFirst) {
+src/au3cloud/internal/au3audiocomservice.cpp:197:    if (options.cachePolicy == CachePolicy::CacheFirst) {
+src/record/internal/au3/au3record.cpp:599:        // With isDefaultPlayTrackPolicy=false, the stream time starts from
+src/app/configs/update.cfg:3:    "privacy_policy_url": "https://www.audacityteam.org/legal/privacy-notice/",
+src/app/main.cpp:19:#include <algorithm>
+src/app/main.cpp:108:    // NOTE: There are some problems with rendering the application window on some integrated graphics processors
+src/importexport/export/qml/Export/internal/FormatAndCodecSection.qml:60:                    scrollBarPolicy: ScrollBar.AlwaysOn
+src/importexport/export/qml/Export/internal/FormatAndCodecSection.qml:120:                    scrollBarPolicy: ScrollBar.AlwaysOn
+src/importexport/export/internal/au3/au3exporter.cpp:40:class ProgressDelegate : public ExportProcessorDelegate, public muse::async::Asyncable
+src/importexport/export/internal/au3/au3exporter.cpp:57:class DialogExportProgressDelegate : public ExportProcessorDelegate
+src/importexport/export/internal/au3/au3exporter.cpp:275:        auto processor = m_plugin->CreateProcessor(m_format);
+src/importexport/export/internal/au3/au3exporter.cpp:276:        if (!processor->Initialize(*project,
+src/importexport/export/internal/au3/au3exporter.cpp:288:                                      processor = std::shared_ptr<ExportProcessor>(processor.release())]
+src/importexport/export/internal/au3/au3exporter.cpp:289:                                     (ExportProcessorDelegate& delegate)
+src/importexport/export/internal/au3/au3exporter.cpp:305:            result = processor->Process(delegate);
+src/importexport/export/internal/au3/au3exporter.cpp:420:        ExportProcessor::Parameters au3Params;
+src/importexport/export/internal/au3/au3exporter.h:63:    ExportProcessor::Parameters m_parameters;
+src/importexport/import/internal/au3/lteaudioreaderbridge.h:32:    // to handle back-and-forth access patterns used by the FFT algorithm)
+src/importexport/import/internal/au3/lteaudioreaderbridge.cpp:10:#include <algorithm>
+src/appshell/qml/Audacity/AppShell/FirstLaunchSetup/AppUpdatesAndUsageInfoPage.qml:43:        readonly property string privacyPolicyUrl: "https://www.audacityteam.org/legal/privacy-notice/"
+src/appshell/qml/Audacity/AppShell/FirstLaunchSetup/AppUpdatesAndUsageInfoPage.qml:44:        readonly property string privacyPolicyLink: "<a href=\"%1\">%2</a>".arg(prv.privacyPolicyUrl).arg(qsTrc("appshell/gettingstarted", "privacy policy"))
+src/appshell/qml/Audacity/AppShell/FirstLaunchSetup/AppUpdatesAndUsageInfoPage.qml:46:                                                        "To help us understand how often people use Audacity, we generate a random ID (UUID) for each installation. This ID does not contain any personally identifiable information. Want to know more? Check out our %1.").arg(prv.privacyPolicyLink)
+src/appshell/qml/Audacity/AppShell/aboutmodel.h:38:    Q_INVOKABLE QVariantMap privacyPolicyUrl() const;
+src/appshell/qml/Audacity/AppShell/appmenumodel.cpp:811:                                                                                                      effects::EffectFilter::ProcessorsOnly);
+src/appshell/qml/Audacity/AppShell/AboutDialogPrivacyTab.qml:53:                let privacyUrl = root.model.privacyPolicyUrl()
+src/appshell/qml/Audacity/AppShell/AboutDialogPrivacyTab.qml:54:                return prv.privacySubtitle.arg("<a href=\"%1\">%2</a>".arg(privacyUrl.url).arg(qsTrc("appshell/about", "privacy policy")))
+src/appshell/qml/Audacity/AppShell/aboutmodel.cpp:299:QVariantMap AboutModel::privacyPolicyUrl() const
+src/appshell/qml/Audacity/AppShell/aboutmodel.cpp:301:    QUrl url(QString::fromStdString(updateConfiguration()->privacyPolicyUrl()));
+src/appshell/qml/Audacity/AppShell/AlphaWelcomePopup.qml:58:                        policy: ScrollBar.AlwaysOn
+src/appshell/internal/applicationactioncontroller.cpp:24:#include <algorithm>
+src/project/qml/Audacity/Project/internal/Properties/ProjectPropertiesView.qml:47:    scrollBarPolicy: ScrollBar.AlwaysOn
+src/audio/iaudioengine.h:35:                            AudacityProject& project, bool isDefaultPlayTrackPolicy, double audioStreamSampleRate, double leadInTime = 0.0,
+src/audio/internal/audiometer.cpp:5:#include <algorithm>
+src/playback/internal/meters/dblogmeter.cpp:10:#include <algorithm>
+src/playback/internal/meters/linearmeter.cpp:12:#include <algorithm>
+src/playback/internal/meters/dblinearmeter.cpp:12:#include <algorithm>
+src/playback/internal/au3/au3player.cpp:22:#include <algorithm>
+src/playback/internal/au3/au3player.cpp:229:    int token = audioEngine()->startStream(seqs, startTime, endTime, mixerEndTime, project, options.isDefaultPolicy, projectRate);
+src/playback/internal/playbackconfiguration.cpp:22:static const muse::Settings::Key DITHERING("au3wrap", "Quality/DitherAlgorithmChoice");
+src/playback/playbacktypes.h:53:    bool isDefaultPolicy = true;
+src/playback/view/common/volumepressuremeteritembase.cpp:8:#include <algorithm>
+src/spectrogram/CMakeLists.txt:82:    ${CMAKE_CURRENT_LIST_DIR}/view/algorithmsectionparameterlistmodel.cpp
+src/spectrogram/CMakeLists.txt:83:    ${CMAKE_CURRENT_LIST_DIR}/view/algorithmsectionparameterlistmodel.h
+src/spectrogram/qml/Audacity/Spectrogram/qmldir:8:TrackSpectrogramAlgorithmSection 1.0 TrackSpectrogramAlgorithmSection.qml
+src/spectrogram/qml/Audacity/Spectrogram/TrackSpectrogramAlgorithmSection.qml:14:    title: qsTrc("appshell/preferences/spectrogram", "Algorithm")
+src/spectrogram/qml/Audacity/Spectrogram/TrackSpectrogramAlgorithmSection.qml:21:        model: AlgorithmSectionParameterListModel {
+src/spectrogram/qml/Audacity/Spectrogram/TrackSpectrogramAlgorithmSection.qml:50:                navigation.name: "AlgorithmComboBox_" + index
+src/spectrogram/qml/Audacity/Spectrogram/TrackSpectrogramSettingsDialog.qml:77:        TrackSpectrogramAlgorithmSection {
+src/spectrogram/internal/globalspectrogramconfiguration.h:50:    SpectrogramAlgorithm algorithm() override;
+src/spectrogram/internal/globalspectrogramconfiguration.h:51:    void setAlgorithm(SpectrogramAlgorithm value) override;
+src/spectrogram/internal/globalspectrogramconfiguration.h:52:    muse::async::Channel<SpectrogramAlgorithm> algorithmChanged() const override;
+src/spectrogram/internal/globalspectrogramconfiguration.h:77:    muse::async::Channel<SpectrogramAlgorithm> m_algorithmChanged;
+src/spectrogram/internal/spectrogramutils.cpp:90:    return (1 << config.winSizeLog2()) * ((config.algorithm() != SpectrogramAlgorithm::Pitch) ? config.zeroPaddingFactor() : 1);
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:20:static const muse::Settings::Key ALGORITHM(moduleName, "spectrogram/algorithm");
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:76:    muse::settings()->setDefaultValue(ALGORITHM, muse::Val(SpectrogramAlgorithm::Frequencies));
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:77:    muse::settings()->valueChanged(ALGORITHM).onReceive(this, [this](const muse::Val& val) {
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:78:        m_algorithmChanged.send(val.toEnum<SpectrogramAlgorithm>());
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:245:SpectrogramAlgorithm GlobalSpectrogramConfiguration::algorithm()
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:247:    return muse::settings()->value(ALGORITHM).toEnum<SpectrogramAlgorithm>();
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:250:void GlobalSpectrogramConfiguration::setAlgorithm(SpectrogramAlgorithm value)
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:252:    if (algorithm() == value) {
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:255:    muse::settings()->setSharedValue(ALGORITHM, muse::Val(value));
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:258:muse::async::Channel<SpectrogramAlgorithm> GlobalSpectrogramConfiguration::algorithmChanged() const
+src/spectrogram/internal/globalspectrogramconfiguration.cpp:260:    return m_algorithmChanged;
+src/spectrogram/internal/spectrogramservice.cpp:47:    destination.setAlgorithm(source.algorithm());
+src/spectrogram/internal/snapshotspectrogramconfiguration.h:22:        m_algorithm{config.algorithm()},
+src/spectrogram/internal/snapshotspectrogramconfiguration.h:53:    SpectrogramAlgorithm algorithm() override { return m_algorithm; }
+src/spectrogram/internal/snapshotspectrogramconfiguration.h:54:    void setAlgorithm(SpectrogramAlgorithm) override { assert(false); }
+src/spectrogram/internal/snapshotspectrogramconfiguration.h:76:    const SpectrogramAlgorithm m_algorithm;
+src/spectrogram/internal/au3/SpectrumCache.cpp:95:        && algorithm == settings.algorithm;
+src/spectrogram/internal/au3/SpectrumCache.cpp:103:    const bool reassignment = settings.algorithm == SpectrogramAlgorithm::Reassignment;
+src/spectrogram/internal/au3/SpectrumCache.cpp:133:    const bool autocorrelation = settings.algorithm == SpectrogramAlgorithm::Pitch;
+src/spectrogram/internal/au3/SpectrumCache.cpp:343:    algorithm = settings.algorithm;
+src/spectrogram/internal/au3/SpectrumCache.cpp:365:    const bool autocorrelation = settings.algorithm == SpectrogramAlgorithm::Pitch;
+src/spectrogram/internal/au3/SpectrumCache.cpp:366:    const bool reassignment = settings.algorithm == SpectrogramAlgorithm::Reassignment;
+src/spectrogram/internal/au3/SpectrumCache.cpp:662:    if (settings.algorithm == SpectrogramAlgorithm::Reassignment) {
+src/spectrogram/internal/au3/SpectrumCache.cpp:711:    if (settings.algorithm == SpectrogramAlgorithm::Reassignment) {
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:19:#include <algorithm>
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:45:        settings->algorithm = globalConfig->algorithm();
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:76:    , algorithm(other.algorithm)
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:103:        algorithm = other.algorithm;
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:135:    writer.WriteAttr("algorithm", static_cast<int>(algorithm));
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:175:    } else if (attr == "algorithm" && valueView.TryGet(nValue)) {
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:176:        algorithm = static_cast<SpectrogramAlgorithm>(nValue);
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:262:               || (algorithm == SpectrogramAlgorithm::Reassignment && (tWindow == nullptr || dWindow == nullptr))) {
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:270:        if (algorithm == SpectrogramAlgorithm::Reassignment) {
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:306:    return m_windowSize * ((algorithm != SpectrogramAlgorithm::Pitch) ? m_zeroPaddingFactor : 1);
+src/spectrogram/internal/au3/au3spectrogramsettings.cpp:330:    return algorithm == SpectrogramAlgorithm::Pitch ? 1 : m_zeroPaddingFactor;
+src/spectrogram/internal/au3/au3spectrogramclipchannelpainter.cpp:141:    const bool autocorrelation = settings.algorithm == SpectrogramAlgorithm::Pitch;
+src/spectrogram/internal/au3/SpectrumCache.h:59:    std::optional<SpectrogramAlgorithm> algorithm;
+src/spectrogram/internal/au3/au3spectrogramsettings.h:51:    SpectrogramAlgorithm algorithm = static_cast<SpectrogramAlgorithm>(0);
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.cpp:178:SpectrogramAlgorithm Au3TrackSpectrogramConfiguration::algorithm()
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.cpp:181:        return static_cast<SpectrogramAlgorithm>(0);
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.cpp:183:    return m_settings->algorithm;
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.cpp:186:void Au3TrackSpectrogramConfiguration::setAlgorithm(SpectrogramAlgorithm value)
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.cpp:191:    if (m_settings->algorithm == value) {
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.cpp:194:    m_settings->algorithm = value;
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.h:49:    SpectrogramAlgorithm algorithm() override;
+src/spectrogram/internal/au3/au3trackspectrogramconfiguration.h:50:    void setAlgorithm(SpectrogramAlgorithm value) override;
+src/spectrogram/internal/numberscale.h:8:#include <algorithm>
+src/spectrogram/spectrogramtypes.h:31:enum class SpectrogramAlgorithm {
+src/spectrogram/ispectrogramconfiguration.h:38:    virtual SpectrogramAlgorithm algorithm() = 0;
+src/spectrogram/ispectrogramconfiguration.h:39:    virtual void setAlgorithm(SpectrogramAlgorithm value) = 0;
+src/spectrogram/spectrogram.qrc:10:        <file>qml/Audacity/Spectrogram/TrackSpectrogramAlgorithmSection.qml</file>
+src/spectrogram/view/abstractspectrogramsettingsmodel.h:34:    Q_PROPERTY(int algorithm READ algorithm WRITE setAlgorithm NOTIFY algorithmChanged)
+src/spectrogram/view/abstractspectrogramsettingsmodel.h:69:    virtual int algorithm() const = 0;
+src/spectrogram/view/abstractspectrogramsettingsmodel.h:70:    virtual void setAlgorithm(int value) = 0;
+src/spectrogram/view/abstractspectrogramsettingsmodel.h:89:    void algorithmChanged();
+src/spectrogram/view/algorithmsectionparameterlistmodel.h:10:class AlgorithmSectionParameterListModel : public AbstractSectionParametersListModel
+src/spectrogram/view/algorithmsectionparameterlistmodel.h:13:    explicit AlgorithmSectionParameterListModel(QObject* parent = nullptr);
+src/spectrogram/view/algorithmsectionparameterlistmodel.h:14:    ~AlgorithmSectionParameterListModel() override = default;
+src/spectrogram/view/algorithmsectionparameterlistmodel.h:18:        Algorithm = 0,
+src/spectrogram/view/abstractspectrogramsettingsmodel.cpp:10:#include <algorithm>
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:4:#include "algorithmsectionparameterlistmodel.h"
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:17:const Table<SpectrogramAlgorithm> algorithmTable {
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:18:    { 0, SpectrogramAlgorithm::Frequencies, muse::qtrc("spectrogram/preferences", "Frequencies") },
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:19:    { 1, SpectrogramAlgorithm::Reassignment, muse::qtrc("spectrogram/preferences", "Reassignment") },
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:20:    { 2, SpectrogramAlgorithm::Pitch, muse::qtrc("spectrogram/preferences", "Pitch") },
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:61:AlgorithmSectionParameterListModel::AlgorithmSectionParameterListModel(QObject* parent)
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:64:void AlgorithmSectionParameterListModel::onSettingsModelSet(AbstractSpectrogramSettingsModel&)
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:67:    CONNECT_SETTING_CHANGED(algorithmChanged, Control::Algorithm, roles);
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:73:QVariant AlgorithmSectionParameterListModel::data(const QModelIndex& index, int role) const
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:92:QHash<int, QByteArray> AlgorithmSectionParameterListModel::roleNames() const
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:103:QString AlgorithmSectionParameterListModel::controlLabel(Control control) const
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:106:    case Algorithm:
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:107:        return muse::qtrc("spectrogram/preferences", "Algorithm");
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:120:int AlgorithmSectionParameterListModel::controlWidth(Control control) const
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:123:    case Algorithm: return controlWidthL();
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:146:QVariantList AlgorithmSectionParameterListModel::controlPossibleValues(Control control) const
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:149:    case Algorithm: return toQVariantList(propertyNames(algorithmTable));
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:159:int AlgorithmSectionParameterListModel::controlCurrentValue(Control control) const
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:162:    case Algorithm: {
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:163:        return m_settingsModel->algorithm();
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:180:int AlgorithmSectionParameterListModel::controlCurrentIndex(Control control) const
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:183:    case Algorithm:
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:184:        return propertyIndex(algorithmTable, static_cast<SpectrogramAlgorithm>(m_settingsModel->algorithm()));
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:197:bool AlgorithmSectionParameterListModel::setData(const QModelIndex& index, const QVariant& value, int role)
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:211:    case Algorithm:
+src/spectrogram/view/algorithmsectionparameterlistmodel.cpp:212:        m_settingsModel->setAlgorithm(static_cast<int>(propertyValue(algorithmTable, currentIndex)));
+src/spectrogram/view/trackspectrogramsettingsmodel.h:63:    int algorithm() const override;
+src/spectrogram/view/trackspectrogramsettingsmodel.h:64:    void setAlgorithm(int value) override;
+src/spectrogram/view/globalspectrogramsettingsmodel.cpp:37:    configuration()->algorithmChanged().onReceive(this, [this](auto){
+src/spectrogram/view/globalspectrogramsettingsmodel.cpp:38:        emit algorithmChanged();
+src/spectrogram/view/globalspectrogramsettingsmodel.cpp:131:int GlobalSpectrogramSettingsModel::algorithm() const
+src/spectrogram/view/globalspectrogramsettingsmodel.cpp:133:    return static_cast<int>(configuration()->algorithm());
+src/spectrogram/view/globalspectrogramsettingsmodel.cpp:136:void GlobalSpectrogramSettingsModel::setAlgorithm(int value)
+src/spectrogram/view/globalspectrogramsettingsmodel.cpp:138:    configuration()->setAlgorithm(static_cast<spectrogram::SpectrogramAlgorithm>(value));
+src/spectrogram/view/globalspectrogramsettingsmodel.h:52:    int algorithm() const override;
+src/spectrogram/view/globalspectrogramsettingsmodel.h:53:    void setAlgorithm(int value) override;
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:70:    emit algorithmChanged();
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:120:        emit algorithmChanged();
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:236:int TrackSpectrogramSettingsModel::algorithm() const
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:238:    return m_trackConfig ? static_cast<int>(m_trackConfig->algorithm()) : 0;
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:241:void TrackSpectrogramSettingsModel::setAlgorithm(int value)
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:243:    const auto algorithm = static_cast<SpectrogramAlgorithm>(value);
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:244:    if (m_trackConfig->algorithm() == algorithm) {
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:247:    m_trackConfig->setAlgorithm(algorithm);
+src/spectrogram/view/trackspectrogramsettingsmodel.cpp:248:    emit algorithmChanged();
+src/spectrogram/spectrogrammodule.cpp:14:#include "view/algorithmsectionparameterlistmodel.h"
+src/spectrogram/spectrogrammodule.cpp:68:    qmlRegisterType<AlgorithmSectionParameterListModel>("Audacity.Spectrogram", 1, 0, "AlgorithmSectionParameterListModel");
+src/spectrogram/iglobalspectrogramconfiguration.h:31:    virtual muse::async::Channel<SpectrogramAlgorithm> algorithmChanged() const = 0;
+src/trackedit/internal/au3/au3clipsinteraction.cpp:7:#include <algorithm>
+src/trackedit/internal/au3/au3tracksinteraction.cpp:6:#include <algorithm>
+src/trackedit/internal/au3/au3labelsinteraction.cpp:8:#include <algorithm>
+src/trackedit/api/projectapi.cpp:6:#include <algorithm>
+src/automation/internal/au3/au3clipgaininteraction.cpp:17:#include <algorithm>
+src/effects/builtin_collection/paulstretch/paulstretcheffect.cpp:22:#include <algorithm>
+src/effects/builtin_collection/clickremoval/clickremovaleffect.cpp:122:        mLastError = XO("Algorithm not effective on this audio. Nothing changed.").Translation().ToStdString();
+src/effects/builtin_collection/dynamics/limiter/limitereffect.h:6:#include "au3-dynamic-range-processor/DynamicRangeProcessorTypes.h"
+src/effects/builtin_collection/dynamics/limiter/limitereffect.cpp:8:#include "au3-dynamic-range-processor/DynamicRangeProcessorDummyOutputs.h"
+src/effects/builtin_collection/dynamics/limiter/limitereffect.cpp:9:#include "au3-dynamic-range-processor/DynamicRangeProcessorUtils.h"
+src/effects/builtin_collection/dynamics/limiter/limitereffect.cpp:28:    return std::make_unique<DynamicRangeProcessorDummyOutputs>();
+src/effects/builtin_collection/dynamics/limiter/limitereffect.cpp:70:    const auto presets = DynamicRangeProcessorUtils::GetLimiterPresets();
+src/effects/builtin_collection/dynamics/limiter/limitereffect.cpp:82:    const auto presets = DynamicRangeProcessorUtils::GetLimiterPresets();
+src/effects/builtin_collection/dynamics/compressor/compressoreffect.cpp:8:#include "au3-dynamic-range-processor/DynamicRangeProcessorDummyOutputs.h"
+src/effects/builtin_collection/dynamics/compressor/compressoreffect.cpp:9:#include "au3-dynamic-range-processor/DynamicRangeProcessorUtils.h"
+src/effects/builtin_collection/dynamics/compressor/compressoreffect.cpp:31:    return std::make_unique<DynamicRangeProcessorDummyOutputs>();
+src/effects/builtin_collection/dynamics/compressor/compressoreffect.cpp:78:    const auto presets = DynamicRangeProcessorUtils::GetCompressorPresets();
+src/effects/builtin_collection/dynamics/compressor/compressoreffect.cpp:90:    const auto presets = DynamicRangeProcessorUtils::GetCompressorPresets();
+src/effects/builtin_collection/dynamics/compressor/compressorviewmodel.cpp:6:#include "au3-dynamic-range-processor/CompressorProcessor.h"
+src/effects/builtin_collection/dynamics/compressor/compressorviewmodel.cpp:23:        points.append({ { "x", db }, { "y", CompressorProcessor::EvaluateTransferFunction(s, db) } });
+src/effects/builtin_collection/dynamics/compressor/compressoreffect.h:6:#include "au3-dynamic-range-processor/DynamicRangeProcessorTypes.h"
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.cpp:7:#include "au3-dynamic-range-processor/DynamicRangeProcessorHistory.h"
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.cpp:71:    ::DynamicRangeProcessorOutputPacket packet;
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.cpp:77:    const DynamicRangeProcessorHistory::PacketView view = m_history->GetViewOnNewPackets();
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.cpp:85:        const DynamicRangeProcessorHistory::Packet& p = view.at(i);
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.cpp:107:    const size_t maxQueueSize = DynamicRangeProcessorHistory::maxTimeSeconds * sampleRate / leastPacketSize;
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.cpp:115:    m_outputQueue = std::make_unique<DynamicRangeProcessorOutputPacketQueue>(maxQueueSize);
+src/effects/builtin_collection/dynamics/timeline/dynamicstimeline.cpp:15:#include <algorithm>
+src/effects/builtin_collection/dynamics/timeline/meters/abstractdbmetermodel.cpp:8:#include "au3-dynamic-range-processor/DynamicRangeProcessorTypes.h"
+src/effects/builtin_collection/dynamics/timeline/meters/abstractdbmetermodel.cpp:9:#include "au3-dynamic-range-processor/MeterValueProvider.h"
+src/effects/builtin_collection/dynamics/timeline/meters/abstractdbmetermodel.h:9:#include "au3-dynamic-range-processor/MeterValueProvider.h"
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.h:10:#include "au3-dynamic-range-processor/DynamicRangeProcessorTypes.h"
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.h:11:#include "au3-dynamic-range-processor/DynamicRangeProcessorHistory.h"
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.h:39:    std::shared_ptr<::DynamicRangeProcessorOutputPacketQueue> m_outputQueue;
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.h:40:    std::optional<::DynamicRangeProcessorHistory> m_history;
+src/effects/builtin_collection/dynamics/timeline/timelinesourcemodel.h:41:    std::vector<::DynamicRangeProcessorOutputPacket> m_packetBuffer;
+src/effects/builtin_collection/tests/CMakeLists.txt:9:    ${CMAKE_CURRENT_LIST_DIR}/DynamicRangeProcessorHistory_tests.cpp
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:4:#include "au3-dynamic-range-processor/DynamicRangeProcessorHistory.h"
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:14:TEST(DynamicRangeProcessorHistoryTests, initial_state)
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:16:    //! [GIVEN] A DynamicRangeProcessorHistory object is freshly created
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:17:    DynamicRangeProcessorHistory history(sampleRate);
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:26:TEST(DynamicRangeProcessorHistoryTests, simple_push) {
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:28:    DynamicRangeProcessorHistory history(sampleRate);
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:39:TEST(DynamicRangeProcessorHistoryTests, GetViewOnNewPackets_modifies_state_correctly) {
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:41:    DynamicRangeProcessorHistory history(sampleRate);
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:53:TEST(DynamicRangeProcessorHistoryTests, GetViewOnNewPackets_returns_expected_info_in_complex_scenario) {
+src/effects/builtin_collection/tests/DynamicRangeProcessorHistory_tests.cpp:55:    DynamicRangeProcessorHistory history(sampleRate);
+src/effects/builtin_collection/internal/builtincollectionloader.cpp:70:#include <algorithm>
+src/effects/builtin_collection/reverse/reverseeffect.cpp:6:#include <algorithm>
+src/effects/builtin_collection/reverb/reverbeffect.h:87:        bool RealtimeAddProcessor(
+src/effects/builtin_collection/reverb/reverbeffect.cpp:203:bool ReverbEffect::Instance::RealtimeAddProcessor(
+src/effects/builtin_collection/reverb/reverbeffect.cpp:207:    ReverbEffect::Instance slave(mProcessor);
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:18:    emit useRmsAlgorithmChanged();
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:30:QStringList NormalizeLoudnessViewModel::algorithmOptions() const
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:38:bool NormalizeLoudnessViewModel::useRmsAlgorithm() const
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:44:void NormalizeLoudnessViewModel::setUseRmsAlgorithm(bool useRmsAlgorithm)
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:47:    modifySettings([&e, useRmsAlgorithm](EffectSettings&) {
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:48:        e.mNormalizeTo = useRmsAlgorithm ? NormalizeLoudnessEffect::kRMS : NormalizeLoudnessEffect::kLoudness;
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:50:    emit useRmsAlgorithmChanged();
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.cpp:60:    return useRmsAlgorithm() ? "dB" : "LUFS";
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.h:15:    Q_PROPERTY(QStringList algorithmOptions READ algorithmOptions CONSTANT FINAL)
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.h:16:    Q_PROPERTY(bool useRmsAlgorithm READ useRmsAlgorithm WRITE setUseRmsAlgorithm NOTIFY useRmsAlgorithmChanged FINAL)
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.h:18:    Q_PROPERTY(QString currentMeasureUnitsSymbol READ currentMeasureUnitsSymbol NOTIFY useRmsAlgorithmChanged FINAL)
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.h:38:    QStringList algorithmOptions() const;
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.h:39:    bool useRmsAlgorithm() const;
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.h:40:    void setUseRmsAlgorithm(bool useRmsAlgorithm);
+src/effects/builtin_collection/loudness/normalizeloudnessviewmodel.h:66:    void useRmsAlgorithmChanged();
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:41:                id: algorithmDropdown
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:49:                model: normalizeLoudness.algorithmOptions
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:50:                currentIndex: normalizeLoudness.useRmsAlgorithm ? 0 : 1
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:52:                    normalizeLoudness.useRmsAlgorithm = index === 0
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:68:                navigation.order: algorithmDropdown.navigation.order + 1
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:75:                currentValue: normalizeLoudness.useRmsAlgorithm ? normalizeLoudness.rmsTarget : normalizeLoudness.perceivedLoudnessTarget
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:77:                    if (normalizeLoudness.useRmsAlgorithm) {
+src/effects/builtin_collection/loudness/NormalizeLoudnessView.qml:116:                enabled: !normalizeLoudness.useRmsAlgorithm
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:118:            std::optional<EBUR128> loudnessProcessor;
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:122:                loudnessProcessor.emplace(mCurRate, nChannels);
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:124:                        track, nChannels, curT0, curT1, 0, &*loudnessProcessor)) {
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:148:                extent = loudnessProcessor->IntegrativeLoudness();
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:264:    const float mult, EBUR128* pLoudnessProcessor)
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:295:        if (pLoudnessProcessor) {
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:296:            if (!AnalyseBufferBlock(*pLoudnessProcessor)) {
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:338:bool NormalizeLoudnessEffect::AnalyseBufferBlock(EBUR128& loudnessProcessor)
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:341:        loudnessProcessor.ProcessSampleFromChannel(mTrackBuffer[0][i], 0);
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:343:            loudnessProcessor.ProcessSampleFromChannel(mTrackBuffer[1][i], 1);
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.cpp:345:        loudnessProcessor.NextSample();
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.h:70:        WaveChannel& track, size_t nChannels, double curT0, double curT1, float mult, EBUR128* pLoudnessProcessor);
+src/effects/builtin_collection/loudness/normalizeloudnesseffect.h:73:    bool AnalyseBufferBlock(EBUR128& loudnessProcessor);
+src/effects/builtin_collection/noisegen/noisegenerator.cpp:130:        // based on Paul Kellet's "instrumentation grade" algorithm.
+src/effects/builtin_collection/noisereduction/noisereductioneffect.cpp:48:#include <algorithm>
+src/effects/builtin_collection/noisereduction/noisereductioneffect.cpp:158:    static bool Processor(SpectrumTransformer& transformer);
+src/effects/builtin_collection/noisereduction/noisereductioneffect.cpp:422:                        Processor, *pChannel, mHistoryLen, start, len)) {
+src/effects/builtin_collection/noisereduction/noisereductioneffect.cpp:561:bool NoiseReductionEffect::Worker::Processor(SpectrumTransformer& trans)
+src/effects/audio_unit/view/audiounitviewmodel.cpp:112:    if (m_instance->StoreSettings(m_instance->mProcessor, AudioUnitInstance::GetSettings(m_settingsAccess->Get()))) {
+src/effects/audio_unit/view/audiounitviewmodel.cpp:146:            m_instance->StoreSettings(m_instance->mProcessor, mySettings);
+src/effects/effects_base/qml/Audacity/Effects/GeneratedEffectViewer.qml:140:                policy: ScrollBar.AlwaysOn
+src/effects/effects_base/internal/effectsactionscontroller.cpp:29:    effectExecutionScenario()->lastProcessorIsNowAvailable().onNotify(this, [this] {
+src/effects/effects_base/internal/effectsactionscontroller.cpp:120:    effectExecutionScenario()->repeatLastProcessor();
+src/effects/effects_base/internal/effectsactionscontroller.cpp:201:        return effectExecutionScenario()->lastProcessorIsAvailable();
+src/effects/effects_base/internal/effectsutils.cpp:126:    case EffectType::Processor: return u"Processor";
+src/effects/effects_base/internal/effectsutils.cpp:140:    } else if (type == "Processor") {
+src/effects/effects_base/internal/effectsutils.cpp:141:        return EffectType::Processor;
+src/effects/effects_base/internal/effectexecutionscenario.cpp:81:muse::Ret EffectExecutionScenario::repeatLastProcessor()
+src/effects/effects_base/internal/effectexecutionscenario.cpp:83:    IF_ASSERT_FAILED(m_lastProcessorId) {
+src/effects/effects_base/internal/effectexecutionscenario.cpp:87:    return performEffectWithShowError(project, *m_lastProcessorId, EffectManager::kConfigured);
+src/effects/effects_base/internal/effectexecutionscenario.cpp:391:            if (m_lastProcessorId != effectId) {
+src/effects/effects_base/internal/effectexecutionscenario.cpp:392:                const auto firstTime = !m_lastProcessorId.has_value();
+src/effects/effects_base/internal/effectexecutionscenario.cpp:393:                m_lastProcessorId = effectId;
+src/effects/effects_base/internal/effectexecutionscenario.cpp:394:                m_lastProcessorIdChanged.send(effectId);
+src/effects/effects_base/internal/effectexecutionscenario.cpp:396:                    m_lastProcessorIsAvailableChanged.notify();
+src/effects/effects_base/internal/effectexecutionscenario.cpp:523:bool EffectExecutionScenario::lastProcessorIsAvailable() const
+src/effects/effects_base/internal/effectexecutionscenario.cpp:525:    return m_lastProcessorId.has_value();
+src/effects/effects_base/internal/effectexecutionscenario.cpp:528:muse::async::Notification EffectExecutionScenario::lastProcessorIsNowAvailable() const
+src/effects/effects_base/internal/effectexecutionscenario.cpp:530:    return m_lastProcessorIsAvailableChanged;
+src/effects/effects_base/internal/effectexecutionscenario.cpp:533:muse::async::Channel<EffectId> EffectExecutionScenario::lastProcessorIdChanged() const
+src/effects/effects_base/internal/effectexecutionscenario.cpp:535:    return m_lastProcessorIdChanged;
+src/effects/effects_base/internal/effectexecutionscenario.cpp:861:        opt.isDefaultPolicy = false;
+src/effects/effects_base/internal/effectsuiactions.cpp:77:    effectExecutionScenario()->lastProcessorIdChanged().onReceive(this, [this](const EffectId& effectId) {
+src/effects/effects_base/internal/au3/au3effectsutils.h:58:    case ::EffectTypeProcess: return EffectType::Processor;
+src/effects/effects_base/internal/au3/au3effectsutils.h:71:    case EffectType::Processor: return ::EffectTypeProcess;
+src/effects/effects_base/internal/effectsmenuprovider.cpp:26:    case EffectFilter::RealtimeProcessorsOnly:
+src/effects/effects_base/internal/effectsmenuprovider.cpp:27:        LOGE() << "Unexpected filter type RealtimeProcessorsOnly for destructiveEffectMenu";
+src/effects/effects_base/internal/effectsmenuprovider.cpp:28:    case EffectFilter::ProcessorsOnly:
+src/effects/effects_base/internal/effectsmenuprovider.cpp:29:        filter = [](const EffectMeta& meta) { return meta.type != EffectType::Processor; };
+src/effects/effects_base/internal/effectsmenuprovider.cpp:52:    auto filter = [](const EffectMeta& meta) { return !(meta.type == EffectType::Processor && meta.isRealtimeCapable); };
+src/effects/effects_base/internal/effectexecutionscenario.h:60:    bool lastProcessorIsAvailable() const override;
+src/effects/effects_base/internal/effectexecutionscenario.h:61:    muse::async::Notification lastProcessorIsNowAvailable() const override;
+src/effects/effects_base/internal/effectexecutionscenario.h:62:    muse::async::Channel<EffectId> lastProcessorIdChanged() const override;
+src/effects/effects_base/internal/effectexecutionscenario.h:63:    muse::Ret repeatLastProcessor() override;
+src/effects/effects_base/internal/effectexecutionscenario.h:107:    muse::async::Notification m_lastProcessorIsAvailableChanged;
+src/effects/effects_base/internal/effectexecutionscenario.h:108:    muse::async::Channel<EffectId> m_lastProcessorIdChanged;
+src/effects/effects_base/internal/effectexecutionscenario.h:109:    std::optional<EffectId> m_lastProcessorId;
+src/effects/effects_base/ieffectexecutionscenario.h:25:    virtual bool lastProcessorIsAvailable() const = 0;
+src/effects/effects_base/ieffectexecutionscenario.h:26:    virtual muse::async::Notification lastProcessorIsNowAvailable() const = 0;
+src/effects/effects_base/ieffectexecutionscenario.h:27:    virtual muse::async::Channel<EffectId> lastProcessorIdChanged() const = 0;
+src/effects/effects_base/ieffectexecutionscenario.h:28:    virtual muse::Ret repeatLastProcessor() = 0;
+src/effects/effects_base/effectstypes.h:186:    Processor,
+src/effects/effects_base/ieffectsmenuprovider.h:15:    ProcessorsOnly,
+src/effects/effects_base/ieffectsmenuprovider.h:16:    RealtimeProcessorsOnly,
+au3/src/TrackPanel.cpp:94:#include <algorithm>
+au3/src/prefs/TracksBehaviorsPrefs.h:40:extern AUDACITY_DLL_API ChoiceSetting TracksBehaviorsAudioTrackPastePolicy;
+au3/src/prefs/ApplicationPrefs.cpp:87:            /* i18n-hint: %s will be replaced with "our Privacy Policy" */
+au3/src/prefs/ApplicationPrefs.cpp:88:            AccessibleLinksFormatter privacyPolicy(XO("See %s for more info."));
+au3/src/prefs/ApplicationPrefs.cpp:90:            privacyPolicy.FormatLink(
+au3/src/prefs/ApplicationPrefs.cpp:91:                /* i18n-hint: Title of hyperlink to the privacy policy. This is an object of "See". */
+au3/src/prefs/ApplicationPrefs.cpp:92:                wxT("%s"), XO("our Privacy Policy"),
+au3/src/prefs/ApplicationPrefs.cpp:95:            privacyPolicy.Populate(S);
+au3/src/prefs/TracksBehaviorsPrefs.cpp:75:ChoiceSetting TracksBehaviorsAudioTrackPastePolicy {
+au3/src/prefs/TracksBehaviorsPrefs.cpp:76:    wxT("/GUI/AudioTrackPastePolicy"),
+au3/src/prefs/TracksBehaviorsPrefs.cpp:132:        S.StartRadioButtonGroup(TracksBehaviorsAudioTrackPastePolicy);
+au3/src/prefs/TracksBehaviorsPrefs.cpp:134:             i < TracksBehaviorsAudioTrackPastePolicy.GetSymbols().size();
+au3/src/prefs/SpectrumPrefs.h:63:    void OnAlgorithm(wxCommandEvent&);
+au3/src/prefs/SpectrumPrefs.h:88:    wxChoice* mAlgorithmChoice;
+au3/src/prefs/SpectrumPrefs.cpp:32:#include <algorithm>
+au3/src/prefs/SpectrumPrefs.cpp:95:    ID_ALGORITHM,
+au3/src/prefs/SpectrumPrefs.cpp:233:        S.StartStatic(XO("Algorithm"));
+au3/src/prefs/SpectrumPrefs.cpp:237:                mAlgorithmChoice
+au3/src/prefs/SpectrumPrefs.cpp:238:                    =S.Id(ID_ALGORITHM).TieChoice(XXO("A&lgorithm:"),
+au3/src/prefs/SpectrumPrefs.cpp:239:                                                  mTempSettings.algorithm,
+au3/src/prefs/SpectrumPrefs.cpp:240:                                                  SpectrogramSettings::GetAlgorithmNames());
+au3/src/prefs/SpectrumPrefs.cpp:489:void SpectrumPrefs::OnAlgorithm(wxCommandEvent& evt)
+au3/src/prefs/SpectrumPrefs.cpp:499:        =(mAlgorithmChoice->GetSelection() != SpectrogramSettings::SpectrogramAlgorithm::Pitch);
+au3/src/prefs/SpectrumPrefs.cpp:509:EVT_CHOICE(ID_ALGORITHM, SpectrumPrefs::OnAlgorithm)
+au3/src/prefs/RecordingPrefs.cpp:26:#include <algorithm>
+au3/src/prefs/TracksPrefs.cpp:23://#include <algorithm>
+au3/src/ProjectAudioManager.h:94:    // Whether potentially looping play (using new default PlaybackPolicy)
+au3/src/ScrubState.h:30:    PlaybackPolicy::Duration delay {};
+au3/src/ScrubState.h:39:    PlaybackPolicy::Duration minStutterTime {};
+au3/src/ScrubState.h:47:class ScrubbingPlaybackPolicy final : public PlaybackPolicy
+au3/src/ScrubState.h:50:    explicit ScrubbingPlaybackPolicy(const ScrubbingOptions&);
+au3/src/ScrubState.h:51:    ~ScrubbingPlaybackPolicy() override;
+au3/src/CMakeLists.txt:97:      DefaultPlaybackPolicy.cpp
+au3/src/CMakeLists.txt:98:      DefaultPlaybackPolicy.h
+au3/src/CMakeLists.txt:332:      effects/DynamicRangeProcessorDummyOutputs.h
+au3/src/CMakeLists.txt:333:      effects/DynamicRangeProcessorEditor.cpp
+au3/src/CMakeLists.txt:334:      effects/DynamicRangeProcessorEditor.h
+au3/src/CMakeLists.txt:335:      effects/DynamicRangeProcessorEffectUtils.cpp
+au3/src/CMakeLists.txt:336:      effects/DynamicRangeProcessorEffectUtils.h
+au3/src/CMakeLists.txt:337:      effects/DynamicRangeProcessorHistoryPanel.cpp
+au3/src/CMakeLists.txt:338:      effects/DynamicRangeProcessorHistoryPanel.h
+au3/src/CMakeLists.txt:339:      effects/DynamicRangeProcessorPanelCommon.cpp
+au3/src/CMakeLists.txt:340:      effects/DynamicRangeProcessorPanelCommon.h
+au3/src/CMakeLists.txt:341:      effects/DynamicRangeProcessorTransferFunctionPanel.cpp
+au3/src/CMakeLists.txt:342:      effects/DynamicRangeProcessorTransferFunctionPanel.h
+au3/src/update/UpdateNoticeDialog.cpp:77:                /* i18n-hint: %s will be replaced with "our Privacy Policy" */
+au3/src/update/UpdateNoticeDialog.cpp:78:                AccessibleLinksFormatter privacyPolicy(XO("See %s for more info."));
+au3/src/update/UpdateNoticeDialog.cpp:80:                privacyPolicy.FormatLink(
+au3/src/update/UpdateNoticeDialog.cpp:81:                    /* i18n-hint: Title of hyperlink to the privacy policy. This is an object of "See". */
+au3/src/update/UpdateNoticeDialog.cpp:82:                    wxT("%s"), XO("our Privacy Policy"),
+au3/src/update/UpdateNoticeDialog.cpp:85:                privacyPolicy.Populate(S);
+au3/src/FreqWindow.cpp:36:#include <algorithm>
+au3/src/FreqWindow.cpp:441:        // ROW 6: Algorithm, Size, Export, Replot
+au3/src/FreqWindow.cpp:448:                     .AddChoice(XXO("&Algorithm:"), algChoices, mAlg);
+au3/src/FreqWindow.cpp:781:    mAlg = SpectrumAnalyst::Algorithm(mAlgChoice->GetSelection());
+au3/src/FreqWindow.cpp:950:    SpectrumAnalyst::Algorithm alg
+au3/src/FreqWindow.cpp:951:        =SpectrumAnalyst::Algorithm(mAlgChoice->GetSelection());
+au3/src/FreqWindow.cpp:1099:    mAlg = static_cast<SpectrumAnalyst::Algorithm>(algChoice);
+au3/src/AboutDialog.cpp:70:#define HAS_PRIVACY_POLICY
+au3/src/AboutDialog.cpp:787:#if defined(HAS_PRIVACY_POLICY)
+au3/src/AboutDialog.cpp:793:#if defined(HAS_PRIVACY_POLICY)
+au3/src/AboutDialog.cpp:797:        /* i18n-hint: For "About Audacity...": Title for Privacy Policy section */
+au3/src/AboutDialog.cpp:798:        S.AddVariableText(XC("PRIVACY POLICY", "about dialog"), true);
+au3/src/AboutDialog.cpp:804:        /* i18n-hint: %s will be replaced with "our Privacy Policy" */
+au3/src/AboutDialog.cpp:805:        AccessibleLinksFormatter privacyPolicy(XO("See %s for more info."));
+au3/src/AboutDialog.cpp:807:        privacyPolicy.FormatLink(
+au3/src/AboutDialog.cpp:808:            /* i18n-hint: Title of hyperlink to the privacy policy. This is an object of "See". */
+au3/src/AboutDialog.cpp:809:            wxT("%s"), XO("our Privacy Policy"),
+au3/src/AboutDialog.cpp:812:        privacyPolicy.Populate(S);
+au3/src/AudioPasteDialog.cpp:35://Setting is different from TracksBehaviorsAudioTrackPastePolicy
+au3/src/AudioPasteDialog.cpp:136:        TracksBehaviorsAudioTrackPastePolicy.Write(pasteMode);
+au3/src/SpectralDataManager.cpp:186:    return TrackSpectrumTransformer::Process(Processor, channel, 1,
+au3/src/SpectralDataManager.cpp:200:    if (!TrackSpectrumTransformer::Process(SnappingProcessor, channel,
+au3/src/SpectralDataManager.cpp:219:        OvertonesProcessor, channel, 1, startSC, winSize);
+au3/src/SpectralDataManager.cpp:223:bool SpectralDataManager::Worker::SnappingProcessor(SpectrumTransformer& transformer)
+au3/src/SpectralDataManager.cpp:263:bool SpectralDataManager::Worker::OvertonesProcessor(SpectrumTransformer& transformer)
+au3/src/SpectralDataManager.cpp:311:bool SpectralDataManager::Worker::Processor(SpectrumTransformer& transformer)
+au3/src/SpectralDataManager.h:72:    static bool Processor(SpectrumTransformer& transformer);
+au3/src/SpectralDataManager.h:73:    static bool OvertonesProcessor(SpectrumTransformer& transformer);
+au3/src/SpectralDataManager.h:74:    static bool SnappingProcessor(SpectrumTransformer& transformer);
+au3/src/Benchmark.cpp:202:               pseudorandom number generating algorithm */
+au3/src/tracks/ui/TimeShiftHandle.h:230://! Declare an open method to get time shifting policy for the track
+au3/src/tracks/ui/PlayIndicatorOverlay.cpp:31:#include <algorithm>
+au3/src/tracks/ui/Scrubbing.cpp:33:#include <algorithm>
+au3/src/tracks/ui/Scrubbing.cpp:55:static constexpr PlaybackPolicy::Duration MinStutter{ 0.2 };
+au3/src/tracks/ui/Scrubbing.cpp:345:static AudioIOStartStreamOptions::PolicyFactory
+au3/src/tracks/ui/Scrubbing.cpp:346:ScrubbingPlaybackPolicyFactory(const ScrubbingOptions& options)
+au3/src/tracks/ui/Scrubbing.cpp:348:    return [options](auto&) -> std::unique_ptr<PlaybackPolicy>
+au3/src/tracks/ui/Scrubbing.cpp:350:        return std::make_unique<ScrubbingPlaybackPolicy>(options);
+au3/src/tracks/ui/Scrubbing.cpp:453:                    mDragging ? PlaybackPolicy::Duration{} :
+au3/src/tracks/ui/Scrubbing.cpp:455:                    std::max(PlaybackPolicy::Duration {}, MinStutter);
+au3/src/tracks/ui/Scrubbing.cpp:474:                options.policyFactory = ScrubbingPlaybackPolicyFactory(mOptions);
+au3/src/tracks/ui/Scrubbing.cpp:560:    options.policyFactory = ScrubbingPlaybackPolicyFactory(mOptions);
+au3/src/tracks/ui/ZoomHandle.cpp:13:#include <algorithm>
+au3/src/tracks/labeltrack/ui/LabelTrackView.cpp:2379:using GetLabelTrackSyncLockPolicy
+au3/src/tracks/labeltrack/ui/LabelTrackView.cpp:2380:    =GetSyncLockPolicy::Override< const LabelTrack >;
+au3/src/tracks/labeltrack/ui/LabelTrackView.cpp:2381:DEFINE_ATTACHED_VIRTUAL_OVERRIDE(GetLabelTrackSyncLockPolicy) {
+au3/src/tracks/labeltrack/ui/LabelTrackView.cpp:2382:    return [](auto&) { return SyncLockPolicy::EndSeparator; };
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:56:class WaveClipAdjustBorderHandle::AdjustPolicy
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:59:    virtual ~AdjustPolicy();
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:73:WaveClipAdjustBorderHandle::AdjustPolicy::~AdjustPolicy() = default;
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:125:class AdjustClipBorder final : public WaveClipAdjustBorderHandle::AdjustPolicy
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:339:    std::unique_ptr<AdjustPolicy>& adjustPolicy,
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:343:    : mAdjustPolicy{std::move(adjustPolicy)}
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:361:void WaveClipAdjustBorderHandle::AdjustPolicy::Draw(TrackPanelDrawingContext&, const wxRect&, unsigned) { }
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:363:wxRect WaveClipAdjustBorderHandle::AdjustPolicy::DrawingArea(TrackPanelDrawingContext&, const wxRect& rect, const wxRect&, unsigned)
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:434:        std::unique_ptr<AdjustPolicy> policy
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:441:            std::make_shared<WaveClipAdjustBorderHandle>(policy, waveTrack,
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:486:        if (mAdjustPolicy->Init(event)) {
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:496:    return mAdjustPolicy->Drag(event, *project);
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:503:    mAdjustPolicy->Finish(*project);
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:509:    mAdjustPolicy->Cancel();
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:515:    mAdjustPolicy->Draw(context, rect, iPass);
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp:521:    return mAdjustPolicy->DrawingArea(context, rect, panelRect, iPass);
+au3/src/tracks/playabletrack/wavetrack/ui/SampleHandle.cpp:13:#include <algorithm>
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.h:22:    class AdjustPolicy;
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.h:30:    std::unique_ptr<AdjustPolicy> mAdjustPolicy{};
+au3/src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.h:36:    WaveClipAdjustBorderHandle(std::unique_ptr<AdjustPolicy>& adjustPolicy, std::shared_ptr<const WaveTrack> pTrack, bool stretchMode,
+au3/src/tracks/playabletrack/wavetrack/ui/WaveChannelView.cpp:1683:using GetWaveTrackSyncLockPolicy
+au3/src/tracks/playabletrack/wavetrack/ui/WaveChannelView.cpp:1684:    =GetSyncLockPolicy::Override< const WaveTrack >;
+au3/src/tracks/playabletrack/wavetrack/ui/WaveChannelView.cpp:1685:DEFINE_ATTACHED_VIRTUAL_OVERRIDE(GetWaveTrackSyncLockPolicy) {
+au3/src/tracks/playabletrack/wavetrack/ui/WaveChannelView.cpp:1686:    return [](auto&) { return SyncLockPolicy::Grouped; };
+au3/src/tracks/playabletrack/wavetrack/ui/SpectrumView.cpp:371:    const bool autocorrelation = (settings.algorithm == SpectrogramSettings::SpectrogramAlgorithm::Pitch);
+au3/src/tracks/playabletrack/notetrack/ui/NoteTrackView.cpp:784:using GetNoteTrackSyncLockPolicy
+au3/src/tracks/playabletrack/notetrack/ui/NoteTrackView.cpp:785:    =GetSyncLockPolicy::Override< const NoteTrack >;
+au3/src/tracks/playabletrack/notetrack/ui/NoteTrackView.cpp:786:DEFINE_ATTACHED_VIRTUAL_OVERRIDE(GetNoteTrackSyncLockPolicy) {
+au3/src/tracks/playabletrack/notetrack/ui/NoteTrackView.cpp:787:    return [](auto&) { return SyncLockPolicy::Grouped; };
+au3/src/tracks/playabletrack/notetrack/ui/StretchHandle.cpp:29:#include <algorithm>
+au3/src/tracks/playabletrack/notetrack/ui/StretchHandle.cpp:80:    // later, we may want a different policy, but for now, stretch is
+au3/src/DropoutDetector.cpp:59:Other applications are competing with Audacity for processor time\n\
+au3/src/TimerRecordExportDialog.h:20:    void Bind(wxFileName& filename, wxString& format, int& sampleRate, int& channels, ExportProcessor::Parameters& paramters);
+au3/src/TimerRecordExportDialog.h:38:    ExportProcessor::Parameters* mParameters{};
+au3/src/TimerRecordDialog.h:148:    ExportProcessor::Parameters m_AutoExportParameters;
+au3/src/TimerRecordExportDialog.cpp:31:                                   ExportProcessor::Parameters& parameters)
+au3/src/MixerBoard.cpp:613:    // of the meter display, but instead consult PlaybackPolicy
+au3/src/ScrubState.cpp:289:ScrubbingPlaybackPolicy::ScrubbingPlaybackPolicy(
+au3/src/ScrubState.cpp:294:ScrubbingPlaybackPolicy::~ScrubbingPlaybackPolicy() = default;
+au3/src/ScrubState.cpp:296:void ScrubbingPlaybackPolicy::Initialize(PlaybackSchedule& schedule,
+au3/src/ScrubState.cpp:299:    PlaybackPolicy::Initialize(schedule, rate);
+au3/src/ScrubState.cpp:308:void ScrubbingPlaybackPolicy::Finalize(PlaybackSchedule&)
+au3/src/ScrubState.cpp:313:Mixer::WarpOptions ScrubbingPlaybackPolicy::MixerWarpOptions(PlaybackSchedule&)
+au3/src/ScrubState.cpp:320:PlaybackPolicy::BufferTimes
+au3/src/ScrubState.cpp:321:ScrubbingPlaybackPolicy::SuggestedBufferTimes(PlaybackSchedule&)
+au3/src/ScrubState.cpp:337:        // Same as for default policy
+au3/src/ScrubState.cpp:342:bool ScrubbingPlaybackPolicy::AllowSeek(PlaybackSchedule&)
+au3/src/ScrubState.cpp:348:bool ScrubbingPlaybackPolicy::Done(
+au3/src/ScrubState.cpp:355:ScrubbingPlaybackPolicy::SleepInterval(PlaybackSchedule&)
+au3/src/ScrubState.cpp:360:PlaybackSlice ScrubbingPlaybackPolicy::GetPlaybackSlice(
+au3/src/ScrubState.cpp:401:std::pair<double, double> ScrubbingPlaybackPolicy::AdvancedTrackTime(
+au3/src/ScrubState.cpp:416:bool ScrubbingPlaybackPolicy::RepositionPlayback(
+au3/src/menus/EditMenus.cpp:457:        const auto waveClipCopyPolicy = TracksBehaviorsAudioTrackPastePolicy.Read();
+au3/src/menus/EditMenus.cpp:458:        if (waveClipCopyPolicy == wxT("Ask")
+au3/src/menus/EditMenus.cpp:470:        } else if (waveClipCopyPolicy == wxT("Discard")) {
+au3/src/commands/AudacityCommand.cpp:27:#include <algorithm>
+au3/src/toolbars/SelectionBar.cpp:25:#include <algorithm>
+au3/src/toolbars/ToolDock.cpp:40:#include <algorithm>
+au3/src/toolbars/ToolDock.cpp:490:// A policy object for the skeleton routine below
+au3/src/toolbars/TimeSignatureToolBar.cpp:14:#include <algorithm>
+au3/src/toolbars/SnappingToolBar.cpp:14:#include <algorithm>
+au3/src/toolbars/ControlToolBar.cpp:34:#include <algorithm>
+au3/src/toolbars/SpectralSelectionBar.cpp:26:#include <algorithm>
+au3/src/export/ExportFilePanel.cpp:225:                           const ExportProcessor::Parameters& parameters,
+au3/src/export/ExportFilePanel.cpp:333:std::optional<ExportProcessor::Parameters> ExportFilePanel::GetParameters() const
+au3/src/export/ExportAudioDialog.h:71:    void OnSplitNamePolicyChange(wxCommandEvent& event);
+au3/src/export/ExportAudioDialog.h:91:    ExportResult DoExportSplitByLabels(const ExportPlugin& plugin, int formatIndex, const ExportProcessor::Parameters& parameters,
+au3/src/export/ExportAudioDialog.h:94:    ExportResult DoExportSplitByTracks(const ExportPlugin& plugin, int formatIndex, const ExportProcessor::Parameters& parameters,
+au3/src/export/ExportAudioDialog.h:97:    ExportResult DoExport(const ExportPlugin& plugin, int formatIndex, const ExportProcessor::Parameters& parameters,
+au3/src/export/ExportFilePanel.h:48:              const ExportProcessor::Parameters& parameters = {}, const MixerOptions::Downmix* mixerSpec = nullptr);
+au3/src/export/ExportFilePanel.h:61:    std::optional<ExportProcessor::Parameters> GetParameters() const;
+au3/src/export/ExportAudioDialog.cpp:88:ChoiceSetting ExportAudioSplitNamePolicy { L"/ExportAudioDialog/SplitNamePolicy",
+au3/src/export/ExportAudioDialog.cpp:121:    ExportSplitNamePolicyTrackNameID,
+au3/src/export/ExportAudioDialog.cpp:122:    ExportSplitNamePolicyNumberingBeforeNameID,
+au3/src/export/ExportAudioDialog.cpp:123:    ExportSplitNamePolicyNumberingAfterPrefixID,
+au3/src/export/ExportAudioDialog.cpp:143:EVT_RADIOBUTTON(ExportSplitNamePolicyTrackNameID, ExportAudioDialog::OnSplitNamePolicyChange)
+au3/src/export/ExportAudioDialog.cpp:144:EVT_RADIOBUTTON(ExportSplitNamePolicyNumberingBeforeNameID, ExportAudioDialog::OnSplitNamePolicyChange)
+au3/src/export/ExportAudioDialog.cpp:145:EVT_RADIOBUTTON(ExportSplitNamePolicyNumberingAfterPrefixID, ExportAudioDialog::OnSplitNamePolicyChange)
+au3/src/export/ExportAudioDialog.cpp:252:    if (ExportAudioSplitNamePolicy.Read() != "num_and_prefix") {
+au3/src/export/ExportAudioDialog.cpp:373:                        S.StartRadioButtonGroup(ExportAudioSplitNamePolicy);
+au3/src/export/ExportAudioDialog.cpp:375:                            mSplitUseName = S.Id(ExportSplitNamePolicyTrackNameID).TieRadioButton();
+au3/src/export/ExportAudioDialog.cpp:376:                            mSplitUseNumAndName = S.Id(ExportSplitNamePolicyNumberingBeforeNameID).TieRadioButton();
+au3/src/export/ExportAudioDialog.cpp:377:                            mSplitUseNumAndPrefix = S.Id(ExportSplitNamePolicyNumberingAfterPrefixID).TieRadioButton();
+au3/src/export/ExportAudioDialog.cpp:437:void ExportAudioDialog::OnSplitNamePolicyChange(wxCommandEvent& event)
+au3/src/export/ExportAudioDialog.cpp:439:    mSplitFileNamePrefix->Enable(event.GetId() == ExportSplitNamePolicyNumberingAfterPrefixID);
+au3/src/export/ExportAudioDialog.cpp:875:                                                      const ExportProcessor::Parameters& parameters,
+au3/src/export/ExportAudioDialog.cpp:912:                                                      const ExportProcessor::Parameters& parameters,
+au3/src/export/ExportAudioDialog.cpp:973:                                         const ExportProcessor::Parameters& parameters,
+au3/src/export/ExportOptionsHandler.cpp:63:ExportProcessor::Parameters ExportOptionsHandler::GetParameters() const
+au3/src/export/ExportOptionsHandler.cpp:71:void ExportOptionsHandler::SetParameters(const ExportProcessor::Parameters& parameters)
+au3/src/export/ExportOptionsHandler.h:47:    ExportProcessor::Parameters GetParameters() const;
+au3/src/export/ExportOptionsHandler.h:48:    void SetParameters(const ExportProcessor::Parameters& parameters);
+au3/src/RealtimeEffectPanel.cpp:1486:                //so that text is fully visible, but there is no height-for-width layout algorithm
+au3/src/effects/DynamicRangeProcessorPanelCommon.cpp:6:  DynamicRangeProcessorPanelCommon.cpp
+au3/src/effects/DynamicRangeProcessorPanelCommon.cpp:11:#include "DynamicRangeProcessorPanelCommon.h"
+au3/src/effects/DynamicRangeProcessorPanelCommon.cpp:16:namespace DynamicRangeProcessorPanel {
+au3/src/effects/DynamicRangeProcessorPanelCommon.cpp:66:} // namespace DynamicRangeProcessorPanel
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:6:  DynamicRangeProcessorHistoryPanel.cpp
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:11:#include "DynamicRangeProcessorHistoryPanel.h"
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:16:#include "DynamicRangeProcessorHistory.h"
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:17:#include "DynamicRangeProcessorPanelCommon.h"
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:45:    using namespace DynamicRangeProcessorPanel;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:50:BEGIN_EVENT_TABLE(DynamicRangeProcessorHistoryPanel, wxPanelWrapper)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:51:EVT_PAINT(DynamicRangeProcessorHistoryPanel::OnPaint)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:52:EVT_SIZE(DynamicRangeProcessorHistoryPanel::OnSize)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:53:EVT_TIMER(timerId, DynamicRangeProcessorHistoryPanel::OnTimer)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:56:DynamicRangeProcessorHistoryPanel::DynamicRangeProcessorHistoryPanel(
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:111:    SetSize({ minWidth, DynamicRangeProcessorPanel::graphMinHeight });
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:118:        =1. * DynamicRangeProcessorHistory::maxTimeSeconds / panelWidth;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:204:    using namespace DynamicRangeProcessorPanel;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:299:void DynamicRangeProcessorHistoryPanel::ShowInput(bool show)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:305:void DynamicRangeProcessorHistoryPanel::ShowOutput(bool show)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:311:void DynamicRangeProcessorHistoryPanel::ShowActual(bool show)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:317:void DynamicRangeProcessorHistoryPanel::ShowTarget(bool show)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:323:void DynamicRangeProcessorHistoryPanel::OnPaint(wxPaintEvent& evt)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:327:    using namespace DynamicRangeProcessorPanel;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:330:    const auto rect = DynamicRangeProcessorPanel::GetPanelRect(*this);
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:375:    const auto rangeDb = DynamicRangeProcessorPanel::GetGraphDbRange(height);
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:485:void DynamicRangeProcessorHistoryPanel::OnSize(wxSizeEvent& evt)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:489:        DynamicRangeProcessorPanel::GetGraphDbRange(GetSize().GetHeight()));
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:492:void DynamicRangeProcessorHistoryPanel::OnTimer(wxTimerEvent& evt)
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:495:    DynamicRangeProcessorOutputPacket packet;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:526:void DynamicRangeProcessorHistoryPanel::InitializeForPlayback(
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:535:    const size_t maxQueueSize = DynamicRangeProcessorHistory::maxTimeSeconds
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:544:        =std::make_unique<DynamicRangeProcessorOutputPacketQueue>(maxQueueSize);
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:552:bool DynamicRangeProcessorHistoryPanel::AcceptsFocus() const
+au3/src/effects/DynamicRangeProcessorHistoryPanel.cpp:557:bool DynamicRangeProcessorHistoryPanel::AcceptsFocusFromKeyboard() const
+au3/src/effects/DynamicRangeProcessorPanelCommon.h:6:  DynamicRangeProcessorPanelCommon.h
+au3/src/effects/DynamicRangeProcessorPanelCommon.h:21:namespace DynamicRangeProcessorPanel {
+au3/src/effects/DynamicRangeProcessorPanelCommon.h:45:} // namespace DynamicRangeProcessorPanel
+au3/src/effects/CompressionMeterPanel.h:13:#include "DynamicRangeProcessorPanelCommon.h"
+au3/src/effects/CompressionMeterPanel.h:14:#include "DynamicRangeProcessorTypes.h"
+au3/src/effects/CompressionMeterPanel.h:49:    const std::shared_ptr<DynamicRangeProcessorMeterValuesQueue>
+au3/src/effects/Distortion.cpp:16:#include <algorithm>
+au3/src/effects/CompressorEditor.h:13:#include "DynamicRangeProcessorEditor.h"
+au3/src/effects/CompressorEditor.h:20:class CompressorEditor final : public DynamicRangeProcessorEditor
+au3/src/effects/VST/VSTEditor.cpp:36:// preprocessor macro name space that interferes with other headers.
+au3/src/effects/DynamicRangeProcessorEditor.h:3:#include "DynamicRangeProcessorHistory.h"
+au3/src/effects/DynamicRangeProcessorEditor.h:9:class DynamicRangeProcessorHistoryPanel;
+au3/src/effects/DynamicRangeProcessorEditor.h:19:struct DynamicRangeProcessorParameterAttributes
+au3/src/effects/DynamicRangeProcessorEditor.h:25:static const DynamicRangeProcessorParameterAttributes
+au3/src/effects/DynamicRangeProcessorEditor.h:28:static const DynamicRangeProcessorParameterAttributes
+au3/src/effects/DynamicRangeProcessorEditor.h:31:static const DynamicRangeProcessorParameterAttributes
+au3/src/effects/DynamicRangeProcessorEditor.h:34:static const DynamicRangeProcessorParameterAttributes
+au3/src/effects/DynamicRangeProcessorEditor.h:37:static const DynamicRangeProcessorParameterAttributes kneeWidthDbAttributes {
+au3/src/effects/DynamicRangeProcessorEditor.h:41:static const DynamicRangeProcessorParameterAttributes
+au3/src/effects/DynamicRangeProcessorEditor.h:44:static const DynamicRangeProcessorParameterAttributes lookaheadMsAttributes {
+au3/src/effects/DynamicRangeProcessorEditor.h:48:static const DynamicRangeProcessorParameterAttributes attackMsAttributes {
+au3/src/effects/DynamicRangeProcessorEditor.h:52:static const DynamicRangeProcessorParameterAttributes releaseMsAttributes {
+au3/src/effects/DynamicRangeProcessorEditor.h:57://! LimiterParameter) of the derived dynamic-range processor classes, giving
+au3/src/effects/DynamicRangeProcessorEditor.h:59:class DynamicRangeProcessorParameter
+au3/src/effects/DynamicRangeProcessorEditor.h:62:    virtual ~DynamicRangeProcessorParameter() = default;
+au3/src/effects/DynamicRangeProcessorEditor.h:79:    const DynamicRangeProcessorParameterAttributes& attributes;
+au3/src/effects/DynamicRangeProcessorEditor.h:80:    const std::shared_ptr<DynamicRangeProcessorParameter> param;
+au3/src/effects/DynamicRangeProcessorEditor.h:86:class DynamicRangeProcessorEditor : public EffectEditor
+au3/src/effects/DynamicRangeProcessorEditor.h:89:    DynamicRangeProcessorEditor(
+au3/src/effects/DynamicRangeProcessorEditor.h:107:        ShuttleGui& S, const DynamicRangeProcessorSettings& settings);
+au3/src/effects/DynamicRangeProcessorEditor.h:123:            const_cast<const DynamicRangeProcessorEditor&>(*this)
+au3/src/effects/DynamicRangeProcessorEditor.h:130:            const_cast<const DynamicRangeProcessorEditor&>(*this)
+au3/src/effects/DynamicRangeProcessorEditor.h:140:        void (DynamicRangeProcessorHistoryPanel::*)(bool));
+au3/src/effects/DynamicRangeProcessorEditor.h:144:        DynamicRangeProcessorHistoryPanel* historyPanel;
+au3/src/effects/BassTreble.cpp:21:#include <algorithm>
+au3/src/effects/Limiter.cpp:14:#include "DynamicRangeProcessorDummyOutputs.h"
+au3/src/effects/Limiter.cpp:15:#include "DynamicRangeProcessorEffectUtils.h"
+au3/src/effects/Limiter.cpp:16:#include "DynamicRangeProcessorUtils.h"
+au3/src/effects/Limiter.cpp:84:    const auto presets = DynamicRangeProcessorUtils::GetLimiterPresets();
+au3/src/effects/Limiter.cpp:96:    const auto presets = DynamicRangeProcessorUtils::GetLimiterPresets();
+au3/src/effects/Limiter.cpp:108:    return DynamicRangeProcessorEffectUtils::MakeLimiterEditor(
+au3/src/effects/Limiter.cpp:114:    return std::make_unique<DynamicRangeProcessorDummyOutputs>();
+au3/src/effects/CompressionMeterPanel.cpp:14:#include "DynamicRangeProcessorPanelCommon.h"
+au3/src/effects/CompressionMeterPanel.cpp:15:#include <algorithm>
+au3/src/effects/CompressionMeterPanel.cpp:21:using namespace DynamicRangeProcessorPanel;
+au3/src/effects/CompressionMeterPanel.cpp:41:                            DynamicRangeProcessorMeterValuesQueue>(audioFramesPerTick)}
+au3/src/effects/CompressionMeterPanel.cpp:106:    using namespace DynamicRangeProcessorPanel;
+au3/src/effects/CompressionMeterPanel.cpp:110:    const auto rect = DynamicRangeProcessorPanel::GetPanelRect(*this);
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:6:  DynamicRangeProcessorTransferFunctionPanel.cpp
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:11:#include "DynamicRangeProcessorTransferFunctionPanel.h"
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:14:#include "CompressorProcessor.h"
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:15:#include "DynamicRangeProcessorPanelCommon.h"
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:24:BEGIN_EVENT_TABLE(DynamicRangeProcessorTransferFunctionPanel, wxPanelWrapper)
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:25:EVT_PAINT(DynamicRangeProcessorTransferFunctionPanel::OnPaint)
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:26:EVT_SIZE(DynamicRangeProcessorTransferFunctionPanel::OnSize)
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:29:DynamicRangeProcessorTransferFunctionPanel::
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:30:DynamicRangeProcessorTransferFunctionPanel(
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:59:    using namespace DynamicRangeProcessorPanel;
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:76:        =1.f * X / DynamicRangeProcessorTransferFunctionPanel::rangeDb;
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:78:        =1.f * Y / DynamicRangeProcessorTransferFunctionPanel::rangeDb;
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:85:            CompressorProcessor::EvaluateTransferFunction(settings, db),
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:90:    using namespace DynamicRangeProcessorPanel;
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:127:void DynamicRangeProcessorTransferFunctionPanel::OnPaint(wxPaintEvent& evt)
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:130:    const auto rect = DynamicRangeProcessorPanel::GetPanelRect(*this);
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:132:    dc.SetPen(DynamicRangeProcessorPanel::lineColor);
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:137:void DynamicRangeProcessorTransferFunctionPanel::OnSize(wxSizeEvent& evt)
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:142:bool DynamicRangeProcessorTransferFunctionPanel::AcceptsFocus() const
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.cpp:147:bool DynamicRangeProcessorTransferFunctionPanel::AcceptsFocusFromKeyboard()
+au3/src/effects/CompressorEditor.cpp:20:class ParameterWrapper : public DynamicRangeProcessorParameter
+au3/src/effects/CompressorEditor.cpp:61:    : DynamicRangeProcessorEditor{parent, instance, isRealtime, services,
+au3/src/effects/How to make an effect stateless.txt:204:                                 RealtimeInitialize, RealtimeAddProcessor, RealtimeFinalize,  RealtimeProcess
+au3/src/effects/How to make an effect stateless.txt:231:           bool RealtimeAddProcessor(EffectSettings& settings,
+au3/src/effects/How to make an effect stateless.txt:266:        auto& echoSettings = static_cast<const EffectEcho&>(mProcessor).mSettings;
+au3/src/effects/How to make an effect stateless.txt:301:         auto& ms = static_cast<const EffectWahwah&>(mProcessor).mSettings;
+au3/src/effects/ClipIndicatorPanel.cpp:13:#include "DynamicRangeProcessorPanelCommon.h"
+au3/src/effects/ClipIndicatorPanel.cpp:44:    using namespace DynamicRangeProcessorPanel;
+au3/src/effects/DynamicRangeProcessorEffectUtils.cpp:6:  DynamicRangeProcessorEffectUtils.cpp
+au3/src/effects/DynamicRangeProcessorEffectUtils.cpp:11:#include "DynamicRangeProcessorEffectUtils.h"
+au3/src/effects/DynamicRangeProcessorEffectUtils.cpp:14:#include "DynamicRangeProcessorHistoryPanel.h"
+au3/src/effects/DynamicRangeProcessorEffectUtils.cpp:36:DynamicRangeProcessorEffectUtils::MakeCompressorEditor(
+au3/src/effects/DynamicRangeProcessorEffectUtils.cpp:46:DynamicRangeProcessorEffectUtils::MakeLimiterEditor(
+au3/src/effects/LimiterEditor.h:13:#include "DynamicRangeProcessorEditor.h"
+au3/src/effects/LimiterEditor.h:21:class LimiterEditor final : public DynamicRangeProcessorEditor
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:6:  DynamicRangeProcessorHistoryPanel.h
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:13:#include "DynamicRangeProcessorClock.h"
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:14:#include "DynamicRangeProcessorHistory.h"
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:27:class DynamicRangeProcessorHistoryPanel final : public wxPanelWrapper
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:32:    DynamicRangeProcessorHistoryPanel(
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:61:    std::shared_ptr<DynamicRangeProcessorOutputPacketQueue> mOutputQueue;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:62:    std::vector<DynamicRangeProcessorOutputPacket> mPacketBuffer;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:63:    std::optional<DynamicRangeProcessorHistory> mHistory;
+au3/src/effects/DynamicRangeProcessorHistoryPanel.h:64:    DynamicRangeProcessorClock mClock;
+au3/src/effects/DynamicRangeProcessorEffectUtils.h:6:  DynamicRangeProcessorEffectUtils.h
+au3/src/effects/DynamicRangeProcessorEffectUtils.h:13:#include "DynamicRangeProcessorTypes.h"
+au3/src/effects/DynamicRangeProcessorEffectUtils.h:23:namespace DynamicRangeProcessorEffectUtils {
+au3/src/effects/DynamicRangeProcessorEffectUtils.h:31:} // namespace DynamicRangeProcessorEffectUtils
+au3/src/effects/LimiterEditor.cpp:15:struct ParameterWrapper : public DynamicRangeProcessorParameter
+au3/src/effects/LimiterEditor.cpp:55:    : DynamicRangeProcessorEditor{parent, instance, isRealtime, services,
+au3/src/effects/audiounits/AudioUnitEditor.cpp:144:    return mInstance.StoreSettings(mInstance.mProcessor,
+au3/src/effects/Limiter.h:13:#include "CompressorProcessor.h"
+au3/src/effects/DynamicRangeProcessorEditor.cpp:1:#include "DynamicRangeProcessorEditor.h"
+au3/src/effects/DynamicRangeProcessorEditor.cpp:6:#include "CompressorProcessor.h"
+au3/src/effects/DynamicRangeProcessorEditor.cpp:7:#include "DynamicRangeProcessorHistoryPanel.h"
+au3/src/effects/DynamicRangeProcessorEditor.cpp:8:#include "DynamicRangeProcessorPanelCommon.h"
+au3/src/effects/DynamicRangeProcessorEditor.cpp:9:#include "DynamicRangeProcessorTransferFunctionPanel.h"
+au3/src/effects/DynamicRangeProcessorEditor.cpp:27:using TFPanel = DynamicRangeProcessorTransferFunctionPanel;
+au3/src/effects/DynamicRangeProcessorEditor.cpp:28:using HistPanel = DynamicRangeProcessorHistoryPanel;
+au3/src/effects/DynamicRangeProcessorEditor.cpp:47:DynamicRangeProcessorSettings GetSettings(EffectSettingsAccess& access)
+au3/src/effects/DynamicRangeProcessorEditor.cpp:54:           ? DynamicRangeProcessorSettings { *compressorSettings }
+au3/src/effects/DynamicRangeProcessorEditor.cpp:55:           : DynamicRangeProcessorSettings { *limiterSettings };
+au3/src/effects/DynamicRangeProcessorEditor.cpp:130:DynamicRangeProcessorEditor::DynamicRangeProcessorEditor(
+au3/src/effects/DynamicRangeProcessorEditor.cpp:141:void DynamicRangeProcessorEditor::Initialize(
+au3/src/effects/DynamicRangeProcessorEditor.cpp:150:void DynamicRangeProcessorEditor::PopulateOrExchange(ShuttleGui& S)
+au3/src/effects/DynamicRangeProcessorEditor.cpp:177:        GetDbRange(CompressorProcessor::GetMaxCompressionDb(settings)),
+au3/src/effects/DynamicRangeProcessorEditor.cpp:219:        using namespace DynamicRangeProcessorPanel;
+au3/src/effects/DynamicRangeProcessorEditor.cpp:267:void DynamicRangeProcessorEditor::AddCheckboxPanel(
+au3/src/effects/DynamicRangeProcessorEditor.cpp:268:    ShuttleGui& S, const DynamicRangeProcessorSettings& settings)
+au3/src/effects/DynamicRangeProcessorEditor.cpp:329:void DynamicRangeProcessorEditor::AddClipIndicator(ShuttleGui& S)
+au3/src/effects/DynamicRangeProcessorEditor.cpp:351:void DynamicRangeProcessorEditor::AddCompressionCurvePanel(
+au3/src/effects/DynamicRangeProcessorEditor.cpp:378:void DynamicRangeProcessorEditor::AddSliderPanel(ShuttleGui& S)
+au3/src/effects/DynamicRangeProcessorEditor.cpp:412:void DynamicRangeProcessorEditor::AddTextboxAndSlider(
+au3/src/effects/DynamicRangeProcessorEditor.cpp:470:bool DynamicRangeProcessorEditor::ValidateUI()
+au3/src/effects/DynamicRangeProcessorEditor.cpp:484:bool DynamicRangeProcessorEditor::UpdateUI()
+au3/src/effects/DynamicRangeProcessorEditor.cpp:505:void DynamicRangeProcessorEditor::OnCheckbox(
+au3/src/effects/DynamicRangeProcessorEditor.cpp:507:    void (DynamicRangeProcessorHistoryPanel::*setter)(bool))
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.h:6:  DynamicRangeProcessorTransferFunctionPanel.h
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.h:13:#include "DynamicRangeProcessorHistory.h"
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.h:19:class DynamicRangeProcessorTransferFunctionPanel final : public wxPanelWrapper
+au3/src/effects/DynamicRangeProcessorTransferFunctionPanel.h:25:    DynamicRangeProcessorTransferFunctionPanel(
+au3/src/widgets/MeterPanel.cpp:43:#include <algorithm>
+au3/src/widgets/NumericTextCtrl.cpp:23:#include <algorithm>
+au3/src/widgets/Overlay.h:25:is my attempt to understand the complicated graphics strategy.
+au3/src/widgets/OverlayPanel.cpp:12:#include <algorithm>
+au3/src/widgets/FileHistory.h:15:#include <algorithm>
+au3/src/ProjectAudioManager.cpp:16:#include <algorithm>
+au3/src/ProjectAudioManager.cpp:23:#include "DefaultPlaybackPolicy.h"
+au3/src/ProjectAudioManager.cpp:105:class CutPreviewPlaybackPolicy final : public PlaybackPolicy
+au3/src/ProjectAudioManager.cpp:108:    CutPreviewPlaybackPolicy(
+au3/src/ProjectAudioManager.cpp:112:    ~CutPreviewPlaybackPolicy() override;
+au3/src/ProjectAudioManager.cpp:150:CutPreviewPlaybackPolicy::CutPreviewPlaybackPolicy(
+au3/src/ProjectAudioManager.cpp:157:CutPreviewPlaybackPolicy::~CutPreviewPlaybackPolicy() = default;
+au3/src/ProjectAudioManager.cpp:159:void CutPreviewPlaybackPolicy::Initialize(
+au3/src/ProjectAudioManager.cpp:162:    PlaybackPolicy::Initialize(schedule, rate);
+au3/src/ProjectAudioManager.cpp:189:bool CutPreviewPlaybackPolicy::Done(PlaybackSchedule& schedule, unsigned long)
+au3/src/ProjectAudioManager.cpp:199:double CutPreviewPlaybackPolicy::OffsetSequenceTime(
+au3/src/ProjectAudioManager.cpp:237:PlaybackSlice CutPreviewPlaybackPolicy::GetPlaybackSlice(
+au3/src/ProjectAudioManager.cpp:258:std::pair<double, double> CutPreviewPlaybackPolicy::AdvancedTrackTime(
+au3/src/ProjectAudioManager.cpp:284:bool CutPreviewPlaybackPolicy::RepositionPlayback(PlaybackSchedule&,
+au3/src/ProjectAudioManager.cpp:424:            myOptions.policyFactory
+au3/src/ProjectAudioManager.cpp:425:                =[tless, diff](auto&) -> std::unique_ptr<PlaybackPolicy> {
+au3/src/ProjectAudioManager.cpp:426:                return std::make_unique<CutPreviewPlaybackPolicy>(tless, diff);
+au3/src/ProjectAudioManager.cpp:1223:            options.policyFactory = [&project, trackEndTime, loopEndTime](
+au3/src/ProjectAudioManager.cpp:1225:                                    -> std::unique_ptr<PlaybackPolicy>
+au3/src/ProjectAudioManager.cpp:1227:                return std::make_unique<DefaultPlaybackPolicy>(project,
+au3/src/SseMathFuncs.h:31:corresponding algorithms of the cephes math library
+au3/src/SseMathFuncs.h:63:   corresponding algorithms of the cephes math library
+au3/libraries/au3-audio-io/AudioIO.cpp:75:#include <algorithm>
+au3/libraries/au3-audio-io/AudioIO.cpp:164:            // The following adds a new effect processor for each logical sequence.
+au3/libraries/au3-audio-io/AudioIO.cpp:1081:    mPlaybackSchedule.GetPolicy().Initialize(mPlaybackSchedule, mRate);
+au3/libraries/au3-audio-io/AudioIO.cpp:1122:        mPlaybackSchedule.GetPolicy().OffsetSequenceTime(mPlaybackSchedule, 0);
+au3/libraries/au3-audio-io/AudioIO.cpp:1277:    auto& policy = mPlaybackSchedule.GetPolicy();
+au3/libraries/au3-audio-io/AudioIO.cpp:1278:    auto times = policy.SuggestedBufferTimes(mPlaybackSchedule);
+au3/libraries/au3-audio-io/AudioIO.cpp:1327:                mPlaybackRingBufferSecs = PlaybackPolicy::Duration { playbackBufferSize / mRate };
+au3/libraries/au3-audio-io/AudioIO.cpp:1374:                    =policy.MixerWarpOptions(mPlaybackSchedule);
+au3/libraries/au3-audio-io/AudioIO.cpp:1525:    mPlaybackSchedule.GetPolicy().Finalize(mPlaybackSchedule);
+au3/libraries/au3-audio-io/AudioIO.cpp:1787:    mPlaybackSchedule.GetPolicy().Finalize(mPlaybackSchedule);
+au3/libraries/au3-audio-io/AudioIO.cpp:1889:        const auto interval = schedule.GetPolicy().SleepInterval(schedule);
+au3/libraries/au3-audio-io/AudioIO.cpp:2077:    auto& policy = mPlaybackSchedule.GetPolicy();
+au3/libraries/au3-audio-io/AudioIO.cpp:2097:            =policy.GetPlaybackSlice(mPlaybackSchedule, available);
+au3/libraries/au3-audio-io/AudioIO.cpp:2160:        done = policy.RepositionPlayback(mPlaybackSchedule, mPlaybackMixers,
+au3/libraries/au3-audio-io/AudioIO.cpp:2774:    if (mSeek && !mPlaybackSchedule.GetPolicy().AllowSeek(mPlaybackSchedule)) {
+au3/libraries/au3-audio-io/AudioIO.cpp:2948:    if (mPlaybackSchedule.GetPolicy().Done(mPlaybackSchedule, 0)) {
+au3/libraries/au3-audio-io/AudioIO.cpp:3429:        =mPlaybackSchedule.GetPolicy().OffsetSequenceTime(mPlaybackSchedule, mSeek);
+au3/libraries/au3-audio-io/AudioIO.cpp:3472:        =mPlaybackSchedule.GetPolicy().Done(mPlaybackSchedule, len);
+au3/libraries/au3-audio-io/PlaybackSchedule.h:68: A non-default policy object may be created each time playback begins, and if so it is destroyed when
+au3/libraries/au3-audio-io/PlaybackSchedule.h:73:class AUDIO_IO_API PlaybackPolicy
+au3/libraries/au3-audio-io/PlaybackSchedule.h:80:    virtual ~PlaybackPolicy() = 0;
+au3/libraries/au3-audio-io/PlaybackSchedule.h:220:        //! Enqueue track time value advanced by the slice according to `schedule`'s PlaybackPolicy
+au3/libraries/au3-audio-io/PlaybackSchedule.h:281:    PlaybackPolicy& GetPolicy();
+au3/libraries/au3-audio-io/PlaybackSchedule.h:282:    const PlaybackPolicy& GetPolicy() const;
+au3/libraries/au3-audio-io/PlaybackSchedule.h:327:        mPolicyValid.store(false, std::memory_order_release);
+au3/libraries/au3-audio-io/PlaybackSchedule.h:351:    std::unique_ptr<PlaybackPolicy> mpPlaybackPolicy;
+au3/libraries/au3-audio-io/PlaybackSchedule.h:352:    std::atomic<bool> mPolicyValid{ false };
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:19:PlaybackPolicy::~PlaybackPolicy() = default;
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:21:void PlaybackPolicy::Initialize(PlaybackSchedule&, double rate)
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:26:void PlaybackPolicy::Finalize(PlaybackSchedule&) {}
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:28:Mixer::WarpOptions PlaybackPolicy::MixerWarpOptions(PlaybackSchedule& schedule)
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:33:PlaybackPolicy::BufferTimes
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:34:PlaybackPolicy::SuggestedBufferTimes(PlaybackSchedule&)
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:38:    // Shorter times than in the default policy so that responses, to changes of
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:56:bool PlaybackPolicy::AllowSeek(PlaybackSchedule&)
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:61:bool PlaybackPolicy::Done(PlaybackSchedule& schedule,
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:74:double PlaybackPolicy::OffsetSequenceTime(
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:83:std::chrono::milliseconds PlaybackPolicy::SleepInterval(PlaybackSchedule&)
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:90:PlaybackPolicy::GetPlaybackSlice(PlaybackSchedule& schedule, size_t available)
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:115:PlaybackPolicy::AdvancedTrackTime(PlaybackSchedule& schedule,
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:136:bool PlaybackPolicy::RepositionPlayback(
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:142:bool PlaybackPolicy::Looping(const PlaybackSchedule&) const
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:148://! The old default playback policy plays once and consumes no messages
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:149:struct OldDefaultPlaybackPolicy final : PlaybackPolicy {
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:150:    ~OldDefaultPlaybackPolicy() override = default;
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:154:PlaybackPolicy& PlaybackSchedule::GetPolicy()
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:156:    if (mPolicyValid.load(std::memory_order_acquire) && mpPlaybackPolicy) {
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:157:        return *mpPlaybackPolicy;
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:160:    static OldDefaultPlaybackPolicy defaultPolicy;
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:161:    return defaultPolicy;
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:164:const PlaybackPolicy& PlaybackSchedule::GetPolicy() const
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:166:    return const_cast<PlaybackSchedule&>(*this).GetPolicy();
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:174:    mpPlaybackPolicy.reset();
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:202:    if (options.policyFactory) {
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:203:        mpPlaybackPolicy = options.policyFactory(options);
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:209:    mPolicyValid.store(true, std::memory_order_release);
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:297:    auto& policy = schedule.GetPolicy();
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:363:        const auto times = policy.AdvancedTrackTime(schedule, time, space);
+au3/libraries/au3-audio-io/PlaybackSchedule.cpp:375:        const auto times = policy.AdvancedTrackTime(schedule, time, frames);
+au3/libraries/au3-audio-io/AudioIO.h:273:    PlaybackPolicy::Duration mPlaybackRingBufferSecs;
+au3/libraries/au3-audio-io/ProjectAudioIO.h:45:        AudacityProject& project, bool newDefaults = false /*!< if true, policy is meant to respond to
+au3/libraries/au3-graphics/graphics/Color.h:13:#include <algorithm>
+au3/libraries/au3-graphics/graphics/Rect.h:16:#include <algorithm>
+au3/libraries/au3-graphics/FrameStatistics.cpp:14:#include <algorithm>
+au3/libraries/au3-uuid/Uuid.cpp:20:#include <algorithm>
+au3/libraries/au3-snapping/Snap.cpp:13:#include <algorithm>
+au3/libraries/au3-snapping/SnapUtils.cpp:14:#include <algorithm>
+au3/libraries/au3-wave-track-settings/WaveformSettings.cpp:22:#include <algorithm>
+au3/libraries/CMakeLists.txt:87:   au3-dynamic-range-processor
+au3/libraries/au3-project-file-io/ProjectSerializer.cpp:18:#include <algorithm>
+au3/libraries/au3-ladspa/LadspaInstance.cpp:129:LadspaInstance::LadspaInstance(const PerTrackEffect& processor,
+au3/libraries/au3-ladspa/LadspaInstance.cpp:134:    : PerTrackEffect::Instance{processor}
+au3/libraries/au3-ladspa/LadspaInstance.cpp:138:    , mUseLatency{LoadUseLatency(processor)}
+au3/libraries/au3-ladspa/LadspaInstance.cpp:202:bool LadspaInstance::RealtimeAddProcessor(
+au3/libraries/au3-ladspa/LadspaInstance.cpp:206:    // Connect to outputs only if this is the first processor for the track.
+au3/libraries/au3-ladspa/ladspa.h:40:   ability to write simple `plugin' audio processors in C/C++ and link
+au3/libraries/au3-ladspa/LadspaInstance.h:63:    LadspaInstance(const PerTrackEffect& processor, const LADSPA_Descriptor* pData, const ArrayOf<unsigned long>& inputPorts,
+au3/libraries/au3-ladspa/LadspaInstance.h:75:    bool RealtimeAddProcessor(EffectSettings& settings, EffectOutputs* pOutputs, unsigned numChannels, float sampleRate)
+au3/libraries/au3-stretching-sequence/AudioSegmentFactory.cpp:18:#include <algorithm>
+au3/libraries/au3-stretching-sequence/StretchingSequence.cpp:65:                                               // time-stretching algorithm with
+au3/libraries/au3-stretching-sequence/SilenceSegment.cpp:13:#include <algorithm>
+au3/libraries/au3-stretching-sequence/AudioSegmentSampleView.cpp:15:#include <algorithm>
+au3/libraries/au3-track/TimeWarper.cpp:20:#include <algorithm>
+au3/libraries/au3-track/Track.h:14:#include <algorithm>
+au3/libraries/au3-track/Track.cpp:19:#include <algorithm>
+au3/libraries/au3-components/EffectInterface.h:517:    virtual bool RealtimeAddProcessor(
+au3/libraries/au3-components/EffectInterface.cpp:154:bool EffectInstance::RealtimeAddProcessor(
+au3/libraries/au3-components/EffectAutomationParameters.h:50:#include <algorithm>
+au3/libraries/au3-wx-wrappers/SpinControl.cpp:13:#include <algorithm>
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:88:typedef BOOL (WINAPI* GetProcessUserModeExceptionPolicy_t)(LPDWORD);
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:89:typedef BOOL (WINAPI* SetProcessUserModeExceptionPolicy_t)(DWORD);
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:91:GetProcessUserModeExceptionPolicy_t gs_pfnGetProcessUserModeExceptionPolicy
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:92:    = (GetProcessUserModeExceptionPolicy_t)-1;
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:94:SetProcessUserModeExceptionPolicy_t gs_pfnSetProcessUserModeExceptionPolicy
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:95:    = (SetProcessUserModeExceptionPolicy_t)-1;
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:97:DWORD gs_oldExceptionPolicyFlags = 0;
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:99:bool gs_changedPolicy = false;
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:108:by using SetProcessUserModeExceptionPolicy.
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:110:void ChangeExceptionPolicy()
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:113:    gs_changedPolicy = false;
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:117:    if (gs_pfnGetProcessUserModeExceptionPolicy
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:118:        == (GetProcessUserModeExceptionPolicy_t)-1) {
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:119:        wxDL_INIT_FUNC(gs_pfn, GetProcessUserModeExceptionPolicy, dllKernel32);
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:120:        wxDL_INIT_FUNC(gs_pfn, SetProcessUserModeExceptionPolicy, dllKernel32);
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:123:    if (!gs_pfnGetProcessUserModeExceptionPolicy
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:124:        || !gs_pfnSetProcessUserModeExceptionPolicy
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:125:        || !gs_pfnGetProcessUserModeExceptionPolicy(&gs_oldExceptionPolicyFlags)) {
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:129:    if (gs_pfnSetProcessUserModeExceptionPolicy(gs_oldExceptionPolicyFlags
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:131:        gs_changedPolicy = true;
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:137:void RestoreExceptionPolicy()
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:140:    if (gs_changedPolicy) {
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:141:        gs_changedPolicy = false;
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:142:        (void)gs_pfnSetProcessUserModeExceptionPolicy(gs_oldExceptionPolicyFlags);
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:875:        ChangeExceptionPolicy();
+au3/libraries/au3-wx-wrappers/FileDialog/win/FileDialogPrivate.cpp:882:    wxON_BLOCK_EXIT0(RestoreExceptionPolicy);
+au3/libraries/au3-note-track/MIDIPlay.cpp:57:  the speed control. In a separate algorithm, the audio callback updates
+au3/libraries/au3-note-track/MIDIPlay.cpp:844:        bool looping = mPlaybackSchedule.GetPolicy().Looping(mPlaybackSchedule);
+au3/libraries/au3-note-track/MIDIPlay.cpp:1037:            if (mPlaybackSchedule.GetPolicy().Looping(mPlaybackSchedule)) {
+au3/libraries/au3-vst/VSTInstance.h:42:    bool RealtimeAddProcessor(EffectSettings& settings, EffectOutputs* pOutputs, unsigned numChannels, float sampleRate) override;
+au3/libraries/au3-vst/VSTInstance.cpp:156:bool VSTInstance::RealtimeAddProcessor(EffectSettings& settings,
+au3/libraries/au3-vst/VSTInstance.cpp:160:        // Assign self to the first processor
+au3/libraries/au3-vst/VSTInstance.cpp:165:    auto& effect = static_cast<const PerTrackEffect&>(mProcessor);
+au3/libraries/au3-vst/aeffectx.h:347:    kPlugSurroundFx,        // 7=Dedicated surround processor
+au3/libraries/au3-strings/Base64.cpp:19:// http://en.wikibooks.org/wiki/Algorithm_implementation/Miscellaneous/Base64
+au3/libraries/au3-label-track/LabelTrack.cpp:33:#include <algorithm>
+au3/libraries/au3-import-export/ExportProgressUI.cpp:20:class DialogExportProgressDelegate : public ExportProcessorDelegate
+au3/libraries/au3-import-export/ExportPlugin.cpp:64:ExportProcessorDelegate::~ExportProcessorDelegate() = default;
+au3/libraries/au3-import-export/ExportPlugin.cpp:66:ExportProcessor::~ExportProcessor() = default;
+au3/libraries/au3-import-export/ExportPlugin.cpp:76:bool ExportPlugin::ParseConfig(int, const std::string&, ExportProcessor::Parameters&) const
+au3/libraries/au3-import-export/Export.h:25:class ExportProcessorDelegate;
+au3/libraries/au3-import-export/Export.h:43:    ExportTaskBuilder& SetParameters(ExportProcessor::Parameters parameters) noexcept;
+au3/libraries/au3-import-export/Export.h:59:    ExportProcessor::Parameters mParameters;
+au3/libraries/au3-import-export/ExportPlugin.h:78:class IMPORT_EXPORT_API ExportProcessorDelegate
+au3/libraries/au3-import-export/ExportPlugin.h:81:    virtual ~ExportProcessorDelegate();
+au3/libraries/au3-import-export/ExportPlugin.h:89:class IMPORT_EXPORT_API ExportProcessor
+au3/libraries/au3-import-export/ExportPlugin.h:94:    ExportProcessor(const ExportProcessor&) = delete;
+au3/libraries/au3-import-export/ExportPlugin.h:95:    ExportProcessor& operator=(const ExportProcessor&) = delete;
+au3/libraries/au3-import-export/ExportPlugin.h:97:    ExportProcessor() = default;
+au3/libraries/au3-import-export/ExportPlugin.h:98:    virtual ~ExportProcessor();
+au3/libraries/au3-import-export/ExportPlugin.h:103:     * @param project Processor may access project data, take care to exclude any data race
+au3/libraries/au3-import-export/ExportPlugin.h:117:    virtual ExportResult Process(ExportProcessorDelegate& delegate) = 0;
+au3/libraries/au3-import-export/ExportPlugin.h:162:    virtual bool ParseConfig(int formatIndex, const std::string& config, ExportProcessor::Parameters& parameters) const;
+au3/libraries/au3-import-export/ExportPlugin.h:175:    virtual std::unique_ptr<ExportProcessor> CreateProcessor(int format) const = 0;
+au3/libraries/au3-import-export/ExportProgressUI.h:21:class ExportProcessorDelegate;
+au3/libraries/au3-import-export/ExportPluginHelpers.cpp:60:ExportResult ExportPluginHelpers::UpdateProgress(ExportProcessorDelegate& delegate, Mixer& mixer, double t0, double t1)
+au3/libraries/au3-import-export/Export.cpp:47:ExportTaskBuilder& ExportTaskBuilder::SetParameters(ExportProcessor::Parameters parameters) noexcept
+au3/libraries/au3-import-export/Export.cpp:98:    auto processor = mPlugin->CreateProcessor(mFormat);
+au3/libraries/au3-import-export/Export.cpp:99:    if (!processor->Initialize(project,
+au3/libraries/au3-import-export/Export.cpp:106:        return ExportTask([](ExportProcessorDelegate&){ return ExportResult::Cancelled; });
+au3/libraries/au3-import-export/Export.cpp:111:                       processor = std::shared_ptr<ExportProcessor>(processor.release())]
+au3/libraries/au3-import-export/Export.cpp:112:                      (ExportProcessorDelegate& delegate)
+au3/libraries/au3-import-export/Export.cpp:127:        result = processor->Process(delegate);
+au3/libraries/au3-import-export/ExportPluginHelpers.h:39:    static ExportResult UpdateProgress(ExportProcessorDelegate& delegate, Mixer& mixer, double t0, double t1);
+au3/libraries/au3-import-export/ExportPluginHelpers.h:42:    static T GetParameterValue(const ExportProcessor::Parameters& parameters, int id, T defaultValue = T())
+au3/libraries/au3-import-export/GetAcidizerTags.cpp:14:#include <algorithm>
+au3/libraries/au3-import-export/ExportUtils.h:52:    static ExportProcessor::Parameters ParametersFromEditor(const ExportOptionsEditor& editor);
+au3/libraries/au3-import-export/ExportTypes.h:19:class ExportProcessorDelegate;
+au3/libraries/au3-import-export/ExportTypes.h:31:using ExportTask = std::packaged_task<ExportResult (ExportProcessorDelegate&)>;
+au3/libraries/au3-import-export/ExportUtils.cpp:15:#include <algorithm>
+au3/libraries/au3-import-export/ExportUtils.cpp:39:ExportProcessor::Parameters ExportUtils::ParametersFromEditor(const ExportOptionsEditor& editor)
+au3/libraries/au3-import-export/ExportUtils.cpp:41:    ExportProcessor::Parameters parameters;
+au3/libraries/au3-import-export/Import.cpp:39:#include <algorithm>
+au3/libraries/au3-numeric-formats/formatters/BeatsNumericConverterFormatter.cpp:13:#include <algorithm>
+au3/libraries/au3-math/Reverb_libSoX.h:23:#include <algorithm>
+au3/libraries/au3-math/SampleCount.cpp:12:#include <algorithm>
+au3/libraries/au3-math/SampleFormat.h:228: @param ditherType choice of dithering algorithm to use if narrowing the format
+au3/libraries/au3-math/float_cast.h:14:**	On Intel Pentium processors (especially PIII and probably P4), converting
+au3/libraries/au3-math/InterpolateAudio.h:15: least-squares autoregression (LSAR) algorithm, as described in:
+au3/libraries/au3-math/InterpolateAudio.h:30:// See top of file for a description of the algorithm.  Interpolates
+au3/libraries/au3-math/Dither.cpp:24:  These dither algorithms are currently implemented:
+au3/libraries/au3-math/Dither.cpp:122:// Dither single float 'sample' and store it in pointer 'dst', using 'dither' as algorithm
+au3/libraries/au3-math/Dither.cpp:131:// Dither single float 'sample' and store it in pointer 'dst', using 'dither' as algorithm
+au3/libraries/au3-math/Dither.cpp:314:            wxASSERT(false); // unknown dither algorithm
+au3/libraries/au3-math/Dither.cpp:382:    wxT("Quality/DitherAlgorithmChoice"),
+au3/libraries/au3-math/Dither.cpp:388:    wxT("Quality/DitherAlgorithm")
+au3/libraries/au3-math/Dither.cpp:392:    wxT("Quality/HQDitherAlgorithmChoice"),
+au3/libraries/au3-math/Dither.cpp:398:    wxT("Quality/HQDitherAlgorithm")
+au3/libraries/au3-math/SampleFormat.cpp:49:static Dither gDitherAlgorithm;
+au3/libraries/au3-math/SampleFormat.cpp:117:    gDitherAlgorithm.Apply(
+au3/libraries/au3-math/InterpolateAudio.cpp:94:        // The algorithm below has a weird asymmetry in that it
+au3/libraries/au3-registries/ClientDataHelpers.h:24:enum LockingPolicy {
+au3/libraries/au3-registries/ClientDataHelpers.h:33:enum CopyingPolicy {
+au3/libraries/au3-registries/ClientDataHelpers.h:59: @tparam LockingPolicy one of ClientData::LockingPolicy
+au3/libraries/au3-registries/ClientDataHelpers.h:61:template< typename Object, LockingPolicy > struct Lockable {};
+au3/libraries/au3-registries/ClientDataHelpers.h:62://! Specialization for trivial, non-locking policy
+au3/libraries/au3-registries/ClientDataHelpers.h:91:template< typename Container, CopyingPolicy > struct Copyable {};
+au3/libraries/au3-registries/ClientData.h:204: @tparam CopyingPolicy @ref CopyingPolicy value Chooses deep, shallow, or (default) no-op copying of attachments
+au3/libraries/au3-registries/ClientData.h:210: @tparam ObjectLockingPolicy @ref LockingPolicy value chooses thread safety policy for array of attachments in each @b Host, default is unsafe
+au3/libraries/au3-registries/ClientData.h:212: @tparam RegistryLockingPolicy @ref LockingPolicy value chooses thread safety policy for the static table of attachment factory functions, default is unsafe
+au3/libraries/au3-registries/ClientData.h:220:    CopyingPolicy ObjectCopyingPolicy = SkipCopying,
+au3/libraries/au3-registries/ClientData.h:224:    LockingPolicy ObjectLockingPolicy = NoLocking,
+au3/libraries/au3-registries/ClientData.h:225:    LockingPolicy RegistryLockingPolicy = NoLocking
+au3/libraries/au3-registries/ClientData.h:363:    If @b ObjectLockingPolicy isn't default, then reassignments are serialized.
+au3/libraries/au3-registries/ClientData.h:579:        =Lockable< std::vector< DataFactory >, RegistryLockingPolicy >;
+au3/libraries/au3-registries/ClientData.h:582:              Copyable< std::vector< DataPointer >, ObjectCopyingPolicy >,
+au3/libraries/au3-registries/ClientData.h:583:              ObjectLockingPolicy
+au3/libraries/au3-string-utils/ToChars.cpp:119:Implements the Grisu2 algorithm for binary to decimal floating-point
+au3/libraries/au3-string-utils/ToChars.cpp:137:Loitsch. For a detailed description of the algorithm see: [1] Loitsch, "Printing
+au3/libraries/au3-string-utils/ToChars.cpp:353:    // algorithm breaks ties.
+au3/libraries/au3-string-utils/ToChars.cpp:870:    // By construction this algorithm generates the shortest possible decimal
+au3/libraries/au3-string-utils/ToChars.cpp:878:    // This implies that the algorithm does not produce more than N decimal
+au3/libraries/au3-string-utils/ToChars.cpp:931:    // regardless of how the input rounding algorithm breaks ties.
+au3/libraries/au3-string-utils/StringUtils.h:9:#include <algorithm>
+au3/libraries/au3-string-utils/3party/fast_float.h:1652:#include <algorithm>
+au3/libraries/au3-string-utils/3party/fast_float.h:2012:// grade-school multiplication algorithm
+au3/libraries/au3-string-utils/3party/fast_float.h:2041:// grade-school multiplication algorithm
+au3/libraries/au3-string-utils/3party/fast_float.h:2054:// arithmetic, using simple algorithms since asymptotically
+au3/libraries/au3-string-utils/3party/fast_float.h:2055:// faster algorithms are slower for a small number of limbs.
+au3/libraries/au3-string-utils/3party/fast_float.h:2540:#include <algorithm>
+au3/libraries/au3-string-utils/3party/fast_float.h:2554:// this algorithm is not even close to optimized, but it has no practical
+au3/libraries/au3-string-utils/3party/fast_float.h:2555:// effect on performance: in order to have a faster algorithm, we'd need
+au3/libraries/au3-string-utils/3party/fast_float.h:2556:// to slow down performance for faster algorithms, and this is still fast.
+au3/libraries/au3-string-utils/3party/fast_float.h:2940:// algorithm is always correct, and uses one of two approaches. when
+au3/libraries/au3-string-utils/FromChars.cpp:16:#include <algorithm>
+au3/libraries/au3-effects/StatefulEffectBase.h:40:        bool RealtimeAddProcessor(EffectSettings& settings, EffectOutputs* pOutputs, unsigned numChannels, float sampleRate) override;
+au3/libraries/au3-effects/StatefulEffectBase.h:83:      @copydoc StatefulEffectBase::Instance::RealtimeAddProcessor()
+au3/libraries/au3-effects/StatefulEffectBase.h:86:    virtual bool RealtimeAddProcessor(EffectSettings& settings, EffectOutputs* pOutputs, unsigned numChannels, float sampleRate);
+au3/libraries/au3-effects/PerTrackEffect.cpp:36:    return mProcessor.Process(*this, settings);
+au3/libraries/au3-effects/PerTrackEffect.cpp:82:    bool isProcessor = GetType() == EffectTypeProcess;
+au3/libraries/au3-effects/PerTrackEffect.cpp:272:        WaveTrackSink sink{ chan, pRight, pGenerated.get(), start, isProcessor,
+au3/libraries/au3-effects/StatefulEffectBase.cpp:36:RealtimeAddProcessor(EffectSettings& settings,
+au3/libraries/au3-effects/StatefulEffectBase.cpp:40:           .RealtimeAddProcessor(settings, pOutputs, numChannels, sampleRate);
+au3/libraries/au3-effects/StatefulEffectBase.cpp:140:bool StatefulEffectBase::RealtimeAddProcessor(EffectSettings& settings,
+au3/libraries/au3-effects/Effect.cpp:20:#include <algorithm>
+au3/libraries/au3-effects/StatefulPerTrackEffect.h:46:                const_cast<PerTrackEffect&>(mProcessor));
+au3/libraries/au3-effects/EffectManager.cpp:25:#include <algorithm>
+au3/libraries/au3-effects/PerTrackEffect.h:45:        explicit Instance(const PerTrackEffect& processor)
+au3/libraries/au3-effects/PerTrackEffect.h:46:            : mProcessor{processor}
+au3/libraries/au3-effects/PerTrackEffect.h:57:        const PerTrackEffect& mProcessor;
+au3/libraries/au3-effects/EffectBase.h:94:    // should not be used for non-linear effects such as dynamic processors
+au3/libraries/au3-network-manager/HeadersList.cpp:27:#include <algorithm>
+au3/libraries/au3-network-manager/Request.cpp:21:#include <algorithm>
+au3/libraries/au3-network-manager/qt/Response.cpp:7:#include <algorithm>
+au3/libraries/au3-network-manager/qt/Response.cpp:207:            QNetworkRequest::RedirectPolicyAttribute,
+au3/libraries/au3-network-manager/qt/Response.cpp:208:            QNetworkRequest::NoLessSafeRedirectPolicy);
+au3/libraries/au3-network-manager/qt/Response.cpp:213:            QNetworkRequest::RedirectPolicyAttribute,
+au3/libraries/au3-network-manager/qt/Response.cpp:214:            QNetworkRequest::ManualRedirectPolicy);
+au3/libraries/au3-network-manager/curl/CurlHandleManager.cpp:13:#include <algorithm>
+au3/libraries/au3-network-manager/curl/CurlResponse.cpp:15:#include <algorithm>
+au3/libraries/au3-network-manager/CookiesList.cpp:29:#include <algorithm>
+au3/libraries/au3-network-manager/MultipartData.cpp:12:#include <algorithm>
+au3/libraries/au3-time-track/TimeTrack.h:16:#include <algorithm>
+au3/libraries/au3-wave-track-paint/PixelSampleMapper.cpp:17:#include <algorithm>
+au3/libraries/au3-wave-track-paint/GraphicsDataCache.cpp:13:#include <algorithm>
+au3/libraries/au3-wave-track-paint/GraphicsDataCache.h:43:    //! Index filled by GraphicsDataCacheBase to implement LRU eviction policy
+au3/libraries/au3-wave-track-paint/GraphicsDataCache.h:49:    //! This flag is used to simplify the eviction algorithm
+au3/libraries/au3-wave-track-paint/GraphicsDataCache.h:53://! A base class for the GraphicsDataCache. Implements LRU policy
+au3/libraries/au3-wave-track-paint/GraphicsDataCache.h:129:    // This is a helper vector to implement the heap structure for the LRU policy
+au3/libraries/au3-wave-track-paint/waveform/WaveDataCache.cpp:14:#include <algorithm>
+au3/libraries/au3-wave-track/WaveTrackSink.cpp:22:                             sampleCount start, bool isProcessor,
+au3/libraries/au3-wave-track/WaveTrackSink.cpp:29:    , mIsProcessor{isProcessor}
+au3/libraries/au3-wave-track/WaveTrackSink.cpp:68:        if (mIsProcessor) {
+au3/libraries/au3-wave-track/TimeStretching.cpp:19:#include <algorithm>
+au3/libraries/au3-wave-track/WaveTrackUtilities.cpp:15:#include <algorithm>
+au3/libraries/au3-wave-track/WaveTrackSink.h:29:    WaveTrackSink(WaveChannel& left, WaveChannel* pRight, WaveTrack* pGenerated, sampleCount start, bool isProcessor,
+au3/libraries/au3-wave-track/WaveTrackSink.h:30:                  //! This argument affects processors only, not generators
+au3/libraries/au3-wave-track/WaveTrackSink.h:60:    const bool mIsProcessor;
+au3/libraries/au3-wave-track/Sequence.cpp:32:#include <algorithm>
+au3/libraries/au3-wave-track/WaveChannelUtilities.h:22:#include <algorithm>
+au3/libraries/au3-wave-track/WaveTrack.cpp:36:#include <algorithm>
+au3/libraries/au3-wave-track/WaveTrack.cpp:99:    // to give the algorithm a chance to be in a steady state when reaching the
+au3/libraries/au3-concurrency/concurrency/CancellationContext.cpp:9:#include <algorithm>
+au3/libraries/au3-audio-devices/AudioIOBase.h:41:class PlaybackPolicy;
+au3/libraries/au3-audio-devices/AudioIOBase.h:74:    using PolicyFactory = std::function<
+au3/libraries/au3-audio-devices/AudioIOBase.h:75:        std::unique_ptr<PlaybackPolicy>(const AudioIOStartStreamOptions&) >;
+au3/libraries/au3-audio-devices/AudioIOBase.h:76:    PolicyFactory policyFactory;
+au3/libraries/au3-utility/Composite.h:15:#include <algorithm>
+au3/libraries/au3-utility/IteratorX.h:15:#include <algorithm>
+au3/libraries/au3-utility/IteratorX.h:22:  they cooperate correctly with stl algorithms and std::reverse_iterator
+au3/libraries/au3-utility/Observer.h:28:struct UTILITY_API ExceptionPolicy {
+au3/libraries/au3-utility/Observer.h:29:    virtual ~ExceptionPolicy() noexcept;
+au3/libraries/au3-utility/Observer.h:56:    explicit RecordList(ExceptionPolicy* pPolicy, Visitor visitor);
+au3/libraries/au3-utility/Observer.h:62:    ExceptionPolicy* const m_pPolicy;
+au3/libraries/au3-utility/Observer.h:120:     @param pPolicy if null, exceptions from callbacks are caught and ignored;
+au3/libraries/au3-utility/Observer.h:121:     else, *pPolicy must have a lifetime encompassing the Publisher's
+au3/libraries/au3-utility/Observer.h:124:    explicit Publisher(ExceptionPolicy* pPolicy = nullptr, Alloc a = {});
+au3/libraries/au3-utility/Observer.h:163:      return true, to stop the notification; see also class ExceptionPolicy
+au3/libraries/au3-utility/Observer.h:166:     (either because a callback returned true, or the exception policy consumed
+au3/libraries/au3-utility/Observer.h:179:Publisher<Message, NotifyAll>::Publisher(ExceptionPolicy* pPolicy, Alloc a)
+au3/libraries/au3-utility/Observer.h:180:    : m_list{std::allocate_shared<detail::RecordList>(a, pPolicy,
+au3/libraries/au3-utility/Observer.h:187:        // Calling foreign code!  Which is why we have an exception policy.
+au3/libraries/au3-utility/Observer.cpp:25:RecordList::RecordList(ExceptionPolicy* pPolicy, Visitor visitor)
+au3/libraries/au3-utility/Observer.cpp:26:    : m_pPolicy{pPolicy}
+au3/libraries/au3-utility/Observer.cpp:56:    if (m_pPolicy) {
+au3/libraries/au3-utility/Observer.cpp:57:        m_pPolicy->OnBeginPublish();
+au3/libraries/au3-utility/Observer.cpp:71:            if (m_pPolicy && m_pPolicy->OnEachFailedCallback()) {
+au3/libraries/au3-utility/Observer.cpp:78:    if (m_pPolicy) {
+au3/libraries/au3-utility/Observer.cpp:79:        m_pPolicy->OnEndPublish();
+au3/libraries/au3-utility/Observer.cpp:85:ExceptionPolicy::~ExceptionPolicy() noexcept = default;
+au3/libraries/au3-utility/tests/CompositeTest.cpp:14:#include <algorithm>
+au3/libraries/au3-utility/MemoryStream.cpp:13:#include <algorithm>
+au3/libraries/au3-utility/MemoryX.h:213:#include <algorithm>
+au3/libraries/au3-utility/BufferedStreamReader.cpp:13:#include <algorithm>
+au3/libraries/au3-utility/Variant.h:15:#include <algorithm>
+au3/libraries/au3-time-and-pitch/FormantShifterLogger.cpp:13:#include <algorithm>
+au3/libraries/au3-time-and-pitch/FormantShifterLogger.h:9:  to override algorithm parameters.
+au3/libraries/au3-time-and-pitch/StaffPad/SimdTypes_scalar.h:6:#include <algorithm>
+au3/libraries/au3-time-and-pitch/StaffPad/TimeAndPitch.cpp:3:#include <algorithm>
+au3/libraries/au3-time-and-pitch/StaffPad/readme.md:1:VfdnReverbProcessor
+au3/libraries/au3-time-and-pitch/StaffPad/readme.md:8:TimeAndPitch algorithm with arbitrary variable pitch and time-scaling factors.
+au3/libraries/au3-time-and-pitch/StaffPad/SimdTypes_sse2.h:22:// to get to the same level and to be able to write algorithms "naturally",
+au3/libraries/au3-time-and-pitch/FormantShifter.cpp:15:#include <algorithm>
+au3/libraries/au3-time-and-pitch/StaffPadTimeAndPitch.cpp:6:#include <algorithm>
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:6:  DynamicRangeProcessorHistory.h
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:13:#include "DynamicRangeProcessorTypes.h"
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:18:class DYNAMIC_RANGE_PROCESSOR_API DynamicRangeProcessorHistory final
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:21:    DynamicRangeProcessorHistory(double sampleRate);
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:44:        friend class DynamicRangeProcessorHistory;
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:45:        PacketView(const DynamicRangeProcessorHistory& history, int numViewedPackets);
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:48:        const DynamicRangeProcessorHistory& m_history;
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:51:    void Push(const std::vector<DynamicRangeProcessorOutputPacket>& packets);
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:58:    float GetPacketTime(const DynamicRangeProcessorOutputPacket& packet) const;
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.h:69:class DynamicRangeProcessorHistory;
+au3/libraries/au3-dynamic-range-processor/SimpleCompressor/LookAheadGainReduction.h:36:    /** Prepares the processor so it can resize the buffers depending on samplerate and the expected buffersize.
+au3/libraries/au3-dynamic-range-processor/SimpleCompressor/LookAheadGainReduction.cpp:21:#include <algorithm>
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:2:Dynamic-range processor and utilities
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:5:set( TARGET au3-dynamic-range-processor )
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:8:   CompressorProcessor.cpp
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:9:   CompressorProcessor.h
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:12:   DynamicRangeProcessorClock.cpp
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:13:   DynamicRangeProcessorClock.h
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:14:   DynamicRangeProcessorDummyOutputs.h
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:15:   DynamicRangeProcessorHistory.cpp
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:16:   DynamicRangeProcessorHistory.h
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:17:   DynamicRangeProcessorTypes.h
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:18:   DynamicRangeProcessorUtils.cpp
+au3/libraries/au3-dynamic-range-processor/CMakeLists.txt:19:   DynamicRangeProcessorUtils.h
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:6:  CompressorProcessor.h
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:13:#include "DynamicRangeProcessorTypes.h"
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:24:class DYNAMIC_RANGE_PROCESSOR_API CompressorProcessor
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:34:    GetMaxCompressionDb(const DynamicRangeProcessorSettings& settings);
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:35:    static float GetMakeupGainDb(const DynamicRangeProcessorSettings& settings);
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:37:        const DynamicRangeProcessorSettings& settings, float inputDb);
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:39:    CompressorProcessor(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:40:        const DynamicRangeProcessorSettings& settings = {
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:45:    CompressorProcessor(const CompressorProcessor& other) = delete;
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:46:    ~CompressorProcessor();
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:48:    void ApplySettingsIfNeeded(const DynamicRangeProcessorSettings& settings);
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:51:    const DynamicRangeProcessorSettings& GetSettings() const;
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.h:71:    DynamicRangeProcessorSettings mSettings;
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.h:6:  DynamicRangeProcessorUtils.h
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.h:13:#include "DynamicRangeProcessorTypes.h"
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.h:17:namespace DynamicRangeProcessorUtils {
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.h:27:DYNAMIC_RANGE_PROCESSOR_API
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.h:29:DYNAMIC_RANGE_PROCESSOR_API
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.h:154:} // namespace DynamicRangeProcessorUtils
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorUtilsTests.cpp:6:  DynamicRangeProcessorUtilsTests.cpp
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorUtilsTests.cpp:11:#include "DynamicRangeProcessorUtils.h"
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorUtilsTests.cpp:14:namespace DynamicRangeProcessorUtils {
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorUtilsTests.cpp:15:TEST_CASE("DynamicRangeProcessorUtils")
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorUtilsTests.cpp:29:} // namespace DynamicRangeProcessorUtils
+au3/libraries/au3-dynamic-range-processor/tests/CMakeLists.txt:3:      au3-dynamic-range-processor
+au3/libraries/au3-dynamic-range-processor/tests/CMakeLists.txt:5:      CompressorProcessorTests.cpp
+au3/libraries/au3-dynamic-range-processor/tests/CMakeLists.txt:6:      DynamicRangeProcessorHistoryTests.cpp
+au3/libraries/au3-dynamic-range-processor/tests/CMakeLists.txt:7:      DynamicRangeProcessorUtilsTests.cpp
+au3/libraries/au3-dynamic-range-processor/tests/CMakeLists.txt:9:      au3-dynamic-range-processor
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorHistoryTests.cpp:6:  DynamicRangeProcessorHistoryTests.cpp
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorHistoryTests.cpp:11:#include "DynamicRangeProcessorHistory.h"
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorHistoryTests.cpp:12:#include "DynamicRangeProcessorTypes.h"
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorHistoryTests.cpp:15:TEST_CASE("DynamicRangeProcessorHistory")
+au3/libraries/au3-dynamic-range-processor/tests/DynamicRangeProcessorHistoryTests.cpp:17:    using SUT = DynamicRangeProcessorHistory;
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:6:  CompressorProcessorTests.cpp
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:13:#include "CompressorProcessor.h"
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:18:    DynamicRangeProcessorSettings settings { LimiterSettings {} };
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:26:    REQUIRE(CompressorProcessor::GetMaxCompressionDb(settings) == Approx(20));
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:30:    REQUIRE(CompressorProcessor::GetMaxCompressionDb(settings) == Approx(10));
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:35:    REQUIRE(CompressorProcessor::GetMaxCompressionDb(settings) == Approx(10));
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:39:    REQUIRE(CompressorProcessor::GetMaxCompressionDb(settings) > 10);
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:42:TEST_CASE("CompressorProcessor", "smoke test")
+au3/libraries/au3-dynamic-range-processor/tests/CompressorProcessorTests.cpp:46:    CompressorProcessor sut { settings };
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:6:  DynamicRangeProcessorTypes.h
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:19:struct DynamicRangeProcessorOutputPacket
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:29:using DynamicRangeProcessorOutputPacketQueue
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:30:    =LockFreeQueue<DynamicRangeProcessorOutputPacket>;
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:101:struct DynamicRangeProcessorSettings
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:103:    DynamicRangeProcessorSettings(const CompressorSettings& compressorSettings)
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:119:    DynamicRangeProcessorSettings(const LimiterSettings& limiterSettings)
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:148:    const DynamicRangeProcessorSettings& lhs,
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:149:    const DynamicRangeProcessorSettings& rhs)
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:162:    const DynamicRangeProcessorSettings& lhs,
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorTypes.h:163:    const DynamicRangeProcessorSettings& rhs)
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:6:  DynamicRangeProcessorUtils.cpp
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:11:#include "DynamicRangeProcessorUtils.h"
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:17:namespace DynamicRangeProcessorUtils {
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:111:} // namespace DynamicRangeProcessorUtils
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:113:std::vector<DynamicRangeProcessorUtils::CompressorPreset>
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:114:DynamicRangeProcessorUtils::GetCompressorPresets()
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:120:std::vector<DynamicRangeProcessorUtils::LimiterPreset>
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorUtils.cpp:121:DynamicRangeProcessorUtils::GetLimiterPresets()
+au3/libraries/au3-dynamic-range-processor/DownwardMeterValueProvider.cpp:12:#include <algorithm>
+au3/libraries/au3-dynamic-range-processor/UpwardMeterValueProvider.h:15:class DYNAMIC_RANGE_PROCESSOR_API UpwardMeterValueProvider final : public MeterValueProvider
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorClock.h:6:  DynamicRangeProcessorClock.h
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorClock.h:19:class DYNAMIC_RANGE_PROCESSOR_API DynamicRangeProcessorClock final
+au3/libraries/au3-dynamic-range-processor/DownwardMeterValueProvider.h:13:#include "DynamicRangeProcessorTypes.h"
+au3/libraries/au3-dynamic-range-processor/DownwardMeterValueProvider.h:19:class DYNAMIC_RANGE_PROCESSOR_API DownwardMeterValueProvider : public MeterValueProvider
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorDummyOutputs.h:6:  DynamicRangeProcessorDummyOutputs.h
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorDummyOutputs.h:17:class DynamicRangeProcessorDummyOutputs final : public EffectOutputs
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorDummyOutputs.h:22:        return std::make_unique<DynamicRangeProcessorDummyOutputs>();
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:6:  CompressorProcessor.cpp
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:12:#include "CompressorProcessor.h"
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:16:#include <algorithm>
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:23:float CompressorProcessor::GetMakeupGainDb(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:24:    const DynamicRangeProcessorSettings& settings)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:29:float CompressorProcessor::GetMaxCompressionDb(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:30:    const DynamicRangeProcessorSettings& settings)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:38:float CompressorProcessor::EvaluateTransferFunction(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:39:    const DynamicRangeProcessorSettings& settings, float inputDb)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:46:CompressorProcessor::CompressorProcessor(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:47:    const DynamicRangeProcessorSettings& settings)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:56:CompressorProcessor::~CompressorProcessor() = default;
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:58:void CompressorProcessor::ApplySettingsIfNeeded(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:59:    const DynamicRangeProcessorSettings& settings)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:82:void CompressorProcessor::Init(int sampleRate, int numChannels, int blockSize)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:90:const DynamicRangeProcessorSettings& CompressorProcessor::GetSettings() const
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:95:void CompressorProcessor::Process(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:134:CompressorProcessor::GetDelayedInput() const
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:139:const CompressorProcessor::FrameStats&
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:140:CompressorProcessor::GetLastFrameStats() const
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:145:float CompressorProcessor::EvaluateTransferFunction(float inputDb) const
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:150:void CompressorProcessor::UpdateEnvelope(const float* const* in, int blockLen)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:177:void CompressorProcessor::CopyWithDelay(const float* const* in, int blockLen)
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:185:void CompressorProcessor::ApplyEnvelope(
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:210:void CompressorProcessor::Reinit()
+au3/libraries/au3-dynamic-range-processor/CompressorProcessor.cpp:234:bool CompressorProcessor::Initialized() const
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:6:  DynamicRangeProcessorHistory.cpp
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:11:#include "DynamicRangeProcessorHistory.h"
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:12:#include "DynamicRangeProcessorTypes.h"
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:13:#include <algorithm>
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:18:DynamicRangeProcessorHistory::DynamicRangeProcessorHistory(double sampleRate)
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:23:void DynamicRangeProcessorHistory::Push(
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:24:    const std::vector<DynamicRangeProcessorOutputPacket>& packets)
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:70:    // Algorithmically it's not completely correct to only do this for the oldest
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:91:void DynamicRangeProcessorHistory::BeginNewSegment()
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:96:const std::vector<DynamicRangeProcessorHistory::Segment>&
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:97:DynamicRangeProcessorHistory::GetSegments() const
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:102:bool DynamicRangeProcessorHistory::IsEmpty() const
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:109:float DynamicRangeProcessorHistory::GetPacketTime(
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:110:    const DynamicRangeProcessorOutputPacket& packet) const
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:118:DynamicRangeProcessorHistory::PacketView DynamicRangeProcessorHistory::GetViewOnNewPackets()
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:125:int DynamicRangeProcessorHistory::TotalNumPackets() const
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:132:DynamicRangeProcessorHistory::PacketView::PacketView(const DynamicRangeProcessorHistory& history, int numViewedPackets)
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:137:int DynamicRangeProcessorHistory::PacketView::numPackets() const
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:143:const DynamicRangeProcessorHistory::Packet&
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorHistory.cpp:144:DynamicRangeProcessorHistory::PacketView::at(int i) const
+au3/libraries/au3-dynamic-range-processor/MeterValueProvider.h:15:class DYNAMIC_RANGE_PROCESSOR_API MeterValueProvider
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorClock.cpp:6:  DynamicRangeProcessorClock.cpp
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorClock.cpp:11:#include "DynamicRangeProcessorClock.h"
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorClock.cpp:13:std::chrono::steady_clock::time_point DynamicRangeProcessorClock::GetNow() const
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorClock.cpp:20:void DynamicRangeProcessorClock::Pause()
+au3/libraries/au3-dynamic-range-processor/DynamicRangeProcessorClock.cpp:25:void DynamicRangeProcessorClock::Resume()
+au3/libraries/au3-time-frequency-selection/ViewInfo.cpp:13:#include <algorithm>
+au3/libraries/au3-fft/FFT.h:20:  The basic algorithm for his code was based on Numerical Recipes
+au3/libraries/au3-fft/SpectrumAnalyst.h:21:    enum Algorithm {
+au3/libraries/au3-fft/SpectrumAnalyst.h:28:        NumAlgorithms
+au3/libraries/au3-fft/SpectrumAnalyst.h:37:    bool Calculate(Algorithm alg, int windowFunc, // see FFT.h for values
+au3/libraries/au3-fft/SpectrumAnalyst.h:52:    Algorithm mAlg;
+au3/libraries/au3-fft/FFT.cpp:24:  The basic algorithm for his code was based on Numerican Recipes
+au3/libraries/au3-fft/SpectrumTransformer.h:43:    using WindowProcessor = std::function< bool (SpectrumTransformer&) >;
+au3/libraries/au3-fft/SpectrumTransformer.h:75:    bool ProcessSamples(const WindowProcessor& processor, const float* buffer, size_t len);
+au3/libraries/au3-fft/SpectrumTransformer.h:80:    bool Finish(const WindowProcessor& processor);
+au3/libraries/au3-fft/RealFFTf.cpp:100:    // To do:  smarter policy about when to retain in the pool and when to
+au3/libraries/au3-fft/SpectrumAnalyst.cpp:40:bool SpectrumAnalyst::Calculate(Algorithm alg, int windowFunc,
+au3/libraries/au3-fft/SpectrumAnalyst.cpp:56:          && alg < SpectrumAnalyst::NumAlgorithms
+au3/libraries/au3-fft/SpectrumTransformer.cpp:13:#include <algorithm>
+au3/libraries/au3-fft/SpectrumTransformer.cpp:147:bool SpectrumTransformer::ProcessSamples(const WindowProcessor& processor,
+au3/libraries/au3-fft/SpectrumTransformer.cpp:172:            if ((success = processor(*this)), success) {
+au3/libraries/au3-fft/SpectrumTransformer.cpp:243:bool SpectrumTransformer::Finish(const WindowProcessor& processor)
+au3/libraries/au3-fft/SpectrumTransformer.cpp:255:            bLoopSuccess = ProcessSamples(processor, nullptr, mStepSize);
+au3/libraries/au3-wave-track-fft/TrackSpectrumTransformer.h:43:        const WindowProcessor& processor, const WaveChannel& channel, size_t queueLength, sampleCount start, sampleCount len);
+au3/libraries/au3-wave-track-fft/TrackSpectrumTransformer.cpp:21:    const WindowProcessor& processor, const WaveChannel& channel,
+au3/libraries/au3-wave-track-fft/TrackSpectrumTransformer.cpp:43:        bLoopSuccess = ProcessSamples(processor, buffer.data(), blockSize);
+au3/libraries/au3-wave-track-fft/TrackSpectrumTransformer.cpp:46:    if (!Finish(processor)) {
+au3/libraries/au3-mixer/EffectStage.cpp:72:    , mIsProcessor{!genLength.has_value()}
+au3/libraries/au3-mixer/EffectStage.cpp:150:        if (mIsProcessor && !mLatencyDone) {
+au3/libraries/au3-mixer/EffectStage.cpp:212:    if (mIsProcessor && curBlockSize < bound) {
+au3/libraries/au3-mixer/EffectStage.cpp:242:    doZeroes = doZeroes || !mIsProcessor;
+au3/libraries/au3-mixer/EffectStage.cpp:248:            // to the processor
+au3/libraries/au3-mixer/EffectStage.cpp:258:            mIsProcessor ? bound : limitSampleBufferSize(bound, mDelayRemaining) };
+au3/libraries/au3-mixer/EffectStage.cpp:259:        if (!mIsProcessor) {
+au3/libraries/au3-mixer/EffectStage.cpp:291:            if (!mIsProcessor) {
+au3/libraries/au3-mixer/EffectStage.cpp:372:    // processor at the end, compensating for the discarding.
+au3/libraries/au3-mixer/EffectStage.cpp:374:           + (mIsProcessor ? mUpstream.Remaining() : 0)
+au3/libraries/au3-mixer/EffectStage.h:92:    const bool mIsProcessor;
+au3/libraries/au3-mixer/Envelope.h:15:#include <algorithm>
+au3/libraries/au3-sentry-reporting/SentryReport.cpp:17:#include <algorithm>
+au3/libraries/au3-module-manager/PluginManager.cpp:23:#include <algorithm>
+au3/libraries/au3-module-manager/PluginInterface.cpp:9:#include <algorithm>
+au3/libraries/au3-builtin-effects/CompressorInstance.h:13:#include "au3-dynamic-range-processor/CompressorProcessor.h"
+au3/libraries/au3-builtin-effects/CompressorInstance.h:14:#include "au3-dynamic-range-processor/DynamicRangeProcessorTypes.h"
+au3/libraries/au3-builtin-effects/CompressorInstance.h:36:    void SetOutputQueue(std::weak_ptr<DynamicRangeProcessorOutputPacketQueue>);
+au3/libraries/au3-builtin-effects/CompressorInstance.h:54:    bool RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/CompressorInstance.h:69:        EffectSettings& settings, CompressorProcessor& instance, const float* const* inBlock, float* const* outBlock, size_t blockLen);
+au3/libraries/au3-builtin-effects/CompressorInstance.h:77:    std::unique_ptr<CompressorProcessor> mCompressor;
+au3/libraries/au3-builtin-effects/CompressorInstance.h:82:    std::weak_ptr<DynamicRangeProcessorOutputPacketQueue> mOutputQueue;
+au3/libraries/au3-builtin-effects/PlotSpectrumBase.h:32:    SpectrumAnalyst::Algorithm mAlg;
+au3/libraries/au3-builtin-effects/BassTrebleBase.cpp:92:bool BassTrebleBase::Instance::RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/BassTrebleBase.cpp:96:    BassTrebleBase::Instance slave(mProcessor);
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:12:#include "au3-dynamic-range-processor/CompressorProcessor.h"
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:18:    , mCompressor{std::make_unique<CompressorProcessor>()}
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:53:    std::weak_ptr<DynamicRangeProcessorOutputPacketQueue> outputQueue)
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:92:DynamicRangeProcessorSettings
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:93:GetDynamicRangeProcessorSettings(const EffectSettings& settings)
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:146:bool CompressorInstance::RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:150:    mSlaves.emplace_back(mProcessor);
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:165:    const CompressorProcessor::FrameStats& stats,
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:166:    const DynamicRangeProcessorSettings& settings)
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:169:           + CompressorProcessor::GetMakeupGainDb(settings);
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:192:        DynamicRangeProcessorOutputPacket newPacket;
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:234:        GetDynamicRangeProcessorSettings(settings));
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:239:    EffectSettings& settings, CompressorProcessor& instance,
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:242:    instance.ApplySettingsIfNeeded(GetDynamicRangeProcessorSettings(settings));
+au3/libraries/au3-builtin-effects/CompressorInstance.cpp:250:    return GetDynamicRangeProcessorSettings(settings).lookaheadMs * sampleRate
+au3/libraries/au3-builtin-effects/CMakeLists.txt:90:   au3-dynamic-range-processor-interface
+au3/libraries/au3-builtin-effects/PlotSpectrumBase.cpp:30:    mAlg = static_cast<SpectrumAnalyst::Algorithm>(alg);
+au3/libraries/au3-builtin-effects/TruncSilenceBase.cpp:23:#include <algorithm>
+au3/libraries/au3-builtin-effects/LegacyCompressorBase.cpp:231:    "Follow"ing algorithm by Roger B. Dannenberg, taken from
+au3/libraries/au3-builtin-effects/LegacyCompressorBase.cpp:240:     algorithm is as follows: keep a current output value
+au3/libraries/au3-builtin-effects/WahWahBase.h:96:        bool RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/DistortionBase.h:106:        bool RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/PhaserBase.cpp:123:bool PhaserBase::Instance::RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/PhaserBase.cpp:126:    PhaserBase::Instance slave(mProcessor);
+au3/libraries/au3-builtin-effects/PhaserBase.h:106:        bool RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/BassTrebleBase.h:88:        bool RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/WahWahBase.cpp:102:bool WahWahBase::Instance::RealtimeAddProcessor(
+au3/libraries/au3-builtin-effects/WahWahBase.cpp:105:    WahWahBase::Instance slave(mProcessor);
+au3/libraries/au3-builtin-effects/DistortionBase.cpp:162:bool DistortionBase::Instance::RealtimeAddProcessor(
+au3/libraries/au3-channel/Channel.cpp:14:#include <algorithm>
+au3/libraries/au3-project/ProjectStatus.cpp:13:#include <algorithm>
+au3/libraries/au3-vst3/module_win32.cpp:44:#include <algorithm>
+au3/libraries/au3-vst3/VST3Wrapper.h:4:#include <pluginterfaces/vst/ivstaudioprocessor.h>
+au3/libraries/au3-vst3/VST3Wrapper.h:64:    Steinberg::IPtr<Steinberg::Vst::IAudioProcessor> mAudioProcessor;
+au3/libraries/au3-vst3/VST3Wrapper.h:110:    //Used to send EffectSettings changes to the IAudioProcessor, while effect is inactive(!)
+au3/libraries/au3-vst3/VST3Utils.h:15:#include <pluginterfaces/vst/ivstaudioprocessor.h>
+au3/libraries/au3-vst3/AudacityVst3HostApplication.cpp:3:#include <pluginterfaces/vst/ivstaudioprocessor.h>
+au3/libraries/au3-vst3/AudacityVst3HostApplication.cpp:9:#include <algorithm>
+au3/libraries/au3-vst3/AudacityVst3HostApplication.cpp:351:        Steinberg::Vst::IAudioProcessor::iid,
+au3/libraries/au3-vst3/VST3ParameterExtraction.cpp:25:#include <algorithm>
+au3/libraries/au3-vst3/VST3ParameterExtraction.cpp:180:                // FetchSettings applies the stored processor/controller state to the edit controller
+au3/libraries/au3-vst3/module_linux.cpp:40:#include <algorithm>
+au3/libraries/au3-vst3/VST3Wrapper.cpp:25:constexpr auto processorStateKey  = wxT("ProcessorState");
+au3/libraries/au3-vst3/VST3Wrapper.cpp:72:    ///Holds the last known processor/component state, rarely updates (usually only on UI or preset change)
+au3/libraries/au3-vst3/VST3Wrapper.cpp:73:    std::optional<wxString> processorState;
+au3/libraries/au3-vst3/VST3Wrapper.cpp:137:    const auto processor = FUnknownPtr<Vst::IAudioProcessor>(&component);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:146:        processor->getBusArrangement(Vst::kInput, i, defaultArragement);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:163:        processor->getBusArrangement(Vst::kOutput, i, defaultArragement);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:180:    auto result = processor->setBusArrangements(
+au3/libraries/au3-vst3/VST3Wrapper.cpp:193:    auto processor = FUnknownPtr<Vst::IAudioProcessor>(&component);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:195:    if (processor->setupProcessing(setup) == kResultOk) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:434:    auto audioProcessor = FUnknownPtr<Vst::IAudioProcessor>(effectComponent);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:435:    if (!audioProcessor) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:437:        throw std::runtime_error("VST3 plugin does not provide audio processor interface");
+au3/libraries/au3-vst3/VST3Wrapper.cpp:440:    if (audioProcessor->canProcessSampleSize(Vst::kSample32) != kResultTrue) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:445:    mAudioProcessor = audioProcessor;
+au3/libraries/au3-vst3/VST3Wrapper.cpp:625:        if (!vst3settings->processorState.has_value() && resetState) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:629:        if (vst3settings->processorState.has_value()) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:630:            auto processorState = PresetsBufferStream::fromString(*vst3settings->processorState);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:631:            processorState->seek(0, Steinberg::IBStream::kIBSeekSet);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:632:            if (mEffectComponent->setState(processorState) == Steinberg::kResultOk) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:633:                processorState->seek(0, Steinberg::IBStream::kIBSeekSet);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:634:                if (mEditController->setComponentState(processorState) == Steinberg::kResultOk) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:658:        PresetsBufferStream processorState;
+au3/libraries/au3-vst3/VST3Wrapper.cpp:659:        if (mEffectComponent->getState(&processorState) == kResultOk) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:660:            vst3settings.processorState = processorState.toString();
+au3/libraries/au3-vst3/VST3Wrapper.cpp:785:        if (mAudioProcessor->setProcessing(true) != kResultFalse) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:791:            //make zero-flush, to make sure parameters are delivered to the processor...
+au3/libraries/au3-vst3/VST3Wrapper.cpp:802:    //Could be FlushParameters but processor is already configured
+au3/libraries/au3-vst3/VST3Wrapper.cpp:809:    mAudioProcessor->setProcessing(false);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:843://As a side effect subsequent call to IAudioProcessor::process may flush
+au3/libraries/au3-vst3/VST3Wrapper.cpp:865:            if (mAudioProcessor->setProcessing(true) != Steinberg::kResultFalse) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:869:                mAudioProcessor->setProcessing(false);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:949:    const auto processResult = mAudioProcessor->process(data);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:957:    mAudioProcessor->setProcessing(false);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:962:    mAudioProcessor->setProcessing(true);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1031:    return mAudioProcessor->getLatencySamples();
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1043:    if (parms.HasEntry(processorStateKey)) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1044:        vst3settings.processorState = parms.Read(processorStateKey);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1060:    if (vst3settings.processorState.has_value()) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1061:        parms.Write(processorStateKey, *vst3settings.processorState);
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1076:    wxString processorStateStr;
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1077:    if (GetConfig(effect, PluginSettings::Private, name, processorStateKey, processorStateStr, wxEmptyString)) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1078:        vst3settings.processorState = processorStateStr;
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1098:    if (vst3settings.processorState.has_value()) {
+au3/libraries/au3-vst3/VST3Wrapper.cpp:1099:        SetConfig(effect, PluginSettings::Private, name, processorStateKey, *vst3settings.processorState);
+au3/libraries/au3-vst3/VST3Instance.cpp:48:bool VST3Instance::RealtimeAddProcessor(EffectSettings& settings,
+au3/libraries/au3-vst3/VST3Instance.cpp:52:        // Assign self to the first processor
+au3/libraries/au3-vst3/VST3Instance.cpp:56:    // Assign another instance with independent state to other processors
+au3/libraries/au3-vst3/VST3Instance.cpp:57:    auto& effect = static_cast<const PerTrackEffect&>(mProcessor);
+au3/libraries/au3-vst3/VST3Instance.cpp:58:    auto uProcessor
+au3/libraries/au3-vst3/VST3Instance.cpp:61:    if (!uProcessor->RealtimeInitialize(settings, sampleRate, m_audioThreadBufferSize)) {
+au3/libraries/au3-vst3/VST3Instance.cpp:64:    mProcessors.push_back(move(uProcessor));
+au3/libraries/au3-vst3/VST3Instance.cpp:73:        for (auto& pProcessor : mProcessors) {
+au3/libraries/au3-vst3/VST3Instance.cpp:74:            pProcessor->mWrapper->Finalize(nullptr);
+au3/libraries/au3-vst3/VST3Instance.cpp:76:        mProcessors.clear();
+au3/libraries/au3-vst3/VST3Instance.cpp:100:    } else if (--group < mProcessors.size()) {
+au3/libraries/au3-vst3/VST3Instance.cpp:101:        return mProcessors[group]->mWrapper->Process(inBuf, outBuf, numSamples);
+au3/libraries/au3-vst3/VST3Instance.cpp:115:    for (auto& pProcessor : mProcessors) {
+au3/libraries/au3-vst3/VST3Instance.cpp:116:        pProcessor->mWrapper->ProcessBlockStart(settings);
+au3/libraries/au3-vst3/VST3Instance.cpp:124:    for (auto& pProcessor : mProcessors) {
+au3/libraries/au3-vst3/VST3Instance.cpp:125:        pProcessor->mWrapper->ResumeProcessing();
+au3/libraries/au3-vst3/VST3Instance.cpp:133:    for (auto& pProcessor : mProcessors) {
+au3/libraries/au3-vst3/VST3Instance.cpp:134:        pProcessor->mWrapper->SuspendProcessing();
+au3/libraries/au3-vst3/VST3Instance.cpp:215:    GetConfig(mProcessor, PluginSettings::Shared, wxT("Options"),
+au3/libraries/au3-vst3/VST3Instance.cpp:218:    GetConfig(mProcessor, PluginSettings::Shared, wxT("Options"),
+au3/libraries/au3-vst3/VST3Instance.h:39:    std::vector<std::unique_ptr<VST3Instance> > mProcessors;
+au3/libraries/au3-vst3/VST3Instance.h:49:    bool RealtimeAddProcessor(EffectSettings& settings, EffectOutputs* pOutputs, unsigned numChannels, float sampleRate) override;
+au3/libraries/au3-wx-init/AccessibleLinksFormatter.cpp:16:#include <algorithm>
+au3/libraries/au3-wx-init/ProgressDialog.cpp:31:#include <algorithm>
+au3/libraries/au3-wx-init/Journal.cpp:20:#include <algorithm>
+au3/libraries/au3-wx-init/ErrorReportDialog.cpp:157:                    /* i18n-hint: %s will be replaced with "our Privacy Policy" */
+au3/libraries/au3-wx-init/ErrorReportDialog.cpp:158:                    AccessibleLinksFormatter privacyPolicy(
+au3/libraries/au3-wx-init/ErrorReportDialog.cpp:161:                    privacyPolicy.FormatLink(
+au3/libraries/au3-wx-init/ErrorReportDialog.cpp:162:                        /* i18n-hint: Title of hyperlink to the privacy policy. This is an object of "See". */
+au3/libraries/au3-wx-init/ErrorReportDialog.cpp:164:                        XO("our Privacy Policy"),
+au3/libraries/au3-wx-init/ErrorReportDialog.cpp:167:                    privacyPolicy.Populate(S);
+au3/libraries/au3-exceptions/InconsistencyException.h:32:        const char* fn, //!< file name supplied by preprocessor
+au3/libraries/au3-exceptions/InconsistencyException.h:33:        const char* f, //!< function name supplied by preprocessor
+au3/libraries/au3-exceptions/InconsistencyException.h:34:        unsigned l //!< line number supplied by preprocessor
+au3/libraries/au3-exceptions/InconsistencyException.h:68:@brief Construct InconsistencyException, using C++ preprocessor to identify the source code location
+au3/libraries/au3-exceptions/InconsistencyException.h:77:@brief Throw InconsistencyException, using C++ preprocessor to identify the source code location
+au3/libraries/au3-sqlite-helpers/sqlite/Blob.cpp:9:#include <algorithm>
+au3/libraries/au3-sqlite-helpers/sqlite/Function.cpp:9:#include <algorithm>
+au3/libraries/au3-sqlite-helpers/sqlite/Connection.cpp:9:#include <algorithm>
+au3/libraries/au3-realtime-effects/RealtimeEffectState.h:201:    size_t mCurrentProcessor{ 0 };
+au3/libraries/au3-realtime-effects/RealtimeEffectManager.cpp:58:    // (Re)Set processor parameters
+au3/libraries/au3-realtime-effects/RealtimeEffectManager.cpp:100:    // Reset processor parameters
+au3/libraries/au3-realtime-effects/RealtimeEffectManager.cpp:148:    // Tracks how many processors were called
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:483:    mCurrentProcessor = 0;
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:496:// the effect's requirements.  Allocate some inputs repeatedly to a processor
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:497:// that needs more, or allocate multiple processors if they accept too few.
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:500:void AllocateChannelsToProcessors(
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:516://! Set up processors to be visited repeatedly in Process.
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:529:    auto first = mCurrentProcessor;
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:532:    AllocateChannelsToProcessors(chans, numAudioIn, numAudioOut,
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:534:        // Add a NEW processor
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:535:        if (pInstance->RealtimeAddProcessor(
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:538:            mCurrentProcessor++;
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:544:    if (mCurrentProcessor > first) {
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:599://! Visit the effect processors that were added in AddGroup
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:617:        // If there are too few input channels for what the processor requires,
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:633:            auto processor = pair.first;
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:636:            AllocateChannelsToProcessors(
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:645:                        processor, mWorkerSettings.settings, clientIn, cnt);
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:652:                ++processor;
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:662:    auto processor = pair.first;
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:663:    // Outer loop over processors
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:664:    AllocateChannelsToProcessors(
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:682:                processor, mWorkerSettings.settings, clientIn, clientOut, cnt);
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:700:                // For the first processor only
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:707:        ++processor;
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:712:    // processors
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:726:        // Some dialogs require communication back from the processor so that
+au3/libraries/au3-realtime-effects/RealtimeEffectState.cpp:763:    mCurrentProcessor = 0;
+au3/libraries/au3-lv2/LV2Instance.cpp:170:bool LV2Instance::RealtimeAddProcessor(EffectSettings& settings,
+au3/libraries/au3-lv2/LV2Instance.cpp:173:    // Connect to outputs only if this is the first processor for the track.
+au3/libraries/au3-lv2/LV2Instance.h:57:    bool RealtimeAddProcessor(EffectSettings& settings, EffectOutputs* pOutputs, unsigned numChannels, float sampleRate) override;
+au3/libraries/au3-cloud-audiocom/TaskExecutionService.cpp:13:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/NetworkUtils.cpp:14:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/CloudSyncService.cpp:13:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/UploadService.cpp:325:                HandleUploadPolicy(response->readAll<std::string>());
+au3/libraries/au3-cloud-audiocom/UploadService.cpp:342:    void HandleUploadPolicy(std::string uploadPolicyJSON)
+au3/libraries/au3-cloud-audiocom/UploadService.cpp:347:        document.Parse(uploadPolicyJSON.data(), uploadPolicyJSON.length());
+au3/libraries/au3-cloud-audiocom/UploadService.cpp:354:                uploadPolicyJSON);
+au3/libraries/au3-cloud-audiocom/sync/MixdownUploader.cpp:74:class MixdownUploader::DataExporter final : public ExportProcessorDelegate
+au3/libraries/au3-cloud-audiocom/sync/MixdownUploader.cpp:343:        ExportProcessor::Parameters parameters;
+au3/libraries/au3-cloud-audiocom/sync/RemoteProjectSnapshot.cpp:13:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/sync/CloudSyncHousekeeper.cpp:12:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/sync/CloudSyncDTO.cpp:22:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/sync/ResumedSnaphotUploadOperation.cpp:14:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/sync/LocalProjectSnapshot.cpp:13:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/sync/BlockHasher.cpp:13:#include <algorithm>
+au3/libraries/au3-cloud-audiocom/sync/ProjectCloudExtension.cpp:14:#include <algorithm>
+au3/libraries/au3-audio-unit/AudioUnitInstance.h:22:    using Instance::mProcessor;
+au3/libraries/au3-audio-unit/AudioUnitInstance.h:54:    bool RealtimeAddProcessor(EffectSettings& settings, EffectOutputs* pOutputs, unsigned numChannels, float sampleRate) override;
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:135:    if (!StoreSettings(mProcessor, GetSettings(settings))) {
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:237:bool AudioUnitInstance::RealtimeAddProcessor(
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:241:        // Assign self to the first processor
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:246:    // Assign another instance with independent state to other processors
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:247:    auto& effect = static_cast<const PerTrackEffect&>(mProcessor);
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:248:    auto uProcessor = std::make_unique<AudioUnitInstance>(effect,
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:251:    uProcessor->SetBlockSize(mBlockSize);
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:252:    if (!uProcessor->ProcessInitialize(settings, sampleRate, nullptr)) {
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:255:    mSlaves.push_back(move(uProcessor));
+au3/libraries/au3-audio-unit/AudioUnitInstance.cpp:359:    // Interpret the group number consistently with RealtimeAddProcessor
+au3/libraries/au3-audio-unit/AudioUnitUtils.h:14:#include <algorithm>
+au3/modules/sharing/mod-cloud-audiocom/ui/ShareAudioToolbar.cpp:16:#include <algorithm>
+au3/modules/sharing/mod-cloud-audiocom/ui/CloudSyncStatusField.cpp:14:#include <algorithm>
+au3/modules/sharing/mod-cloud-audiocom/ui/dialogs/ShareAudioDialog.cpp:104:class ShareAudioDialog::ExportProgressUpdater final : public ExportProcessorDelegate
+au3/modules/sharing/mod-cloud-audiocom/ui/dialogs/ShareAudioDialog.cpp:327:        ExportProcessor::Parameters parameters;
+au3/modules/sharing/mod-cloud-audiocom/ui/dialogs/ShareAudioDialog.cpp:619:                    AccessibleLinksFormatter privacyPolicy(XO(
+au3/modules/sharing/mod-cloud-audiocom/ui/dialogs/ShareAudioDialog.cpp:623:                    privacyPolicy.FormatLink(
+au3/modules/sharing/mod-cloud-audiocom/ui/dialogs/ShareAudioDialog.cpp:626:                    privacyPolicy.FormatLink(
+au3/modules/sharing/mod-cloud-audiocom/ui/dialogs/ShareAudioDialog.cpp:630:                    privacyPolicy.Populate(s);
+au3/modules/import-export/mod-ogg/ExportOGG.cpp:132:OGGExportProcessor::~OGGExportProcessor()
+au3/modules/import-export/mod-ogg/ExportOGG.cpp:147:bool OGGExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-ogg/ExportOGG.cpp:242:ExportResult OGGExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-ogg/ExportOGG.cpp:329:std::unique_ptr<ExportProcessor> ExportOGG::CreateProcessor(int format) const
+au3/modules/import-export/mod-ogg/ExportOGG.cpp:331:    return std::make_unique<OGGExportProcessor>();
+au3/modules/import-export/mod-ogg/ExportOGG.cpp:334:void OGGExportProcessor::FillComment(AudacityProject* project, vorbis_comment* comment, const Tags* metadata)
+au3/modules/import-export/mod-ogg/ExportOGG.h:43:class OGGExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-ogg/ExportOGG.h:68:    ~OGGExportProcessor() override;
+au3/modules/import-export/mod-ogg/ExportOGG.h:73:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-ogg/ExportOGG.h:91:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-flac/ExportFLAC.h:36:class FLACExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-flac/ExportFLAC.h:56:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-flac/ExportFLAC.h:72:    bool ParseConfig(int, const std::string& config, ExportProcessor::Parameters& parameters) const override;
+au3/modules/import-export/mod-flac/ExportFLAC.h:81:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-flac/ExportFLAC.cpp:163:bool ExportFLAC::ParseConfig(int, const std::string& configStr, ExportProcessor::Parameters& parameters) const
+au3/modules/import-export/mod-flac/ExportFLAC.cpp:189:    ExportProcessor::Parameters result {
+au3/modules/import-export/mod-flac/ExportFLAC.cpp:208:std::unique_ptr<ExportProcessor> ExportFLAC::CreateProcessor(int) const
+au3/modules/import-export/mod-flac/ExportFLAC.cpp:210:    return std::make_unique<FLACExportProcessor>();
+au3/modules/import-export/mod-flac/ExportFLAC.cpp:213:bool FLACExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-flac/ExportFLAC.cpp:331:ExportResult FLACExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-flac/ExportFLAC.cpp:398:FLAC__StreamMetadataHandle FLACExportProcessor::MakeMetadata(AudacityProject* project, const Tags* tags) const
+au3/modules/import-export/mod-cl/ExportCL.cpp:408:class CLExportProcessor : public ExportProcessor
+au3/modules/import-export/mod-cl/ExportCL.cpp:427:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-cl/ExportCL.cpp:448:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-cl/ExportCL.cpp:469:std::unique_ptr<ExportProcessor> ExportCL::CreateProcessor(int format) const
+au3/modules/import-export/mod-cl/ExportCL.cpp:471:    return std::make_unique<CLExportProcessor>();
+au3/modules/import-export/mod-cl/ExportCL.cpp:474:bool CLExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-cl/ExportCL.cpp:625:ExportResult CLExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-cl/ExportCL.cpp:733:std::vector<char> CLExportProcessor::GetMetaChunk(const Tags* tags)
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:172:bool ExportWavPack::ParseConfig(int formatIndex, const std::string& configStr, ExportProcessor::Parameters& parameters) const
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:206:    ExportProcessor::Parameters result {
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:223:std::unique_ptr<ExportProcessor> ExportWavPack::CreateProcessor(int) const
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:225:    return std::make_unique<WavPackExportProcessor>();
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:228:WavPackExportProcessor::~WavPackExportProcessor()
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:235:bool WavPackExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:350:ExportResult WavPackExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-wavpack/ExportWavPack.cpp:437:int WavPackExportProcessor::WriteBlock(void* id, void* data, int32_t length)
+au3/modules/import-export/mod-wavpack/ExportWavPack.h:112:class WavPackExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-wavpack/ExportWavPack.h:132:    ~WavPackExportProcessor();
+au3/modules/import-export/mod-wavpack/ExportWavPack.h:137:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-wavpack/ExportWavPack.h:154:    bool ParseConfig(int formatIndex, const std::string& config, ExportProcessor::Parameters& parameters) const override;
+au3/modules/import-export/mod-wavpack/ExportWavPack.h:159:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-pcm/ExportPCM.h:33:class PCMExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-pcm/ExportPCM.h:56:    PCMExportProcessor(int subformat);
+au3/modules/import-export/mod-pcm/ExportPCM.h:58:    ~PCMExportProcessor() override;
+au3/modules/import-export/mod-pcm/ExportPCM.h:63:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-pcm/ExportPCM.h:84:    bool ParseConfig(int formatIndex, const std::string&, ExportProcessor::Parameters& parameters) const override;
+au3/modules/import-export/mod-pcm/ExportPCM.h:94:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:359:PCMExportProcessor::PCMExportProcessor(int subformat)
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:365:PCMExportProcessor::~PCMExportProcessor()
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:426:bool ExportPCM::ParseConfig(int formatIndex, const std::string&, ExportProcessor::Parameters& parameters) const
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:446:std::unique_ptr<ExportProcessor> ExportPCM::CreateProcessor(int format) const
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:448:    return std::make_unique<PCMExportProcessor>(format);
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:451:bool PCMExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:600:ExportResult PCMExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:705:ArrayOf<char> PCMExportProcessor::AdjustString(const wxString& wxStr, int sf_format)
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:797:void PCMExportProcessor::AddStrings(SNDFILE* sf, const Tags* tags, int sf_format)
+au3/modules/import-export/mod-pcm/ExportPCM.cpp:875:bool PCMExportProcessor::AddID3Chunk(
+au3/modules/import-export/mod-pcm/ImportPCM.cpp:41:#include <algorithm>
+au3/modules/import-export/mod-pcm/ImportPCM.cpp:187:        /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-opus/ExportOpus.h:65:class OpusExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-opus/ExportOpus.h:268:    ~OpusExportProcessor();
+au3/modules/import-export/mod-opus/ExportOpus.h:273:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-opus/ExportOpus.h:290:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-opus/ExportOpus.cpp:166:int32_t OpusExportProcessor::GetBestFrameSize(int32_t samplesCount) const noexcept
+au3/modules/import-export/mod-opus/ExportOpus.cpp:213:std::unique_ptr<ExportProcessor> ExportOpus::CreateProcessor(int) const
+au3/modules/import-export/mod-opus/ExportOpus.cpp:215:    return std::make_unique<OpusExportProcessor>();
+au3/modules/import-export/mod-opus/ExportOpus.cpp:218:void OpusExportProcessor::WriteOpusHeader()
+au3/modules/import-export/mod-opus/ExportOpus.cpp:274:void OpusExportProcessor::WriteTags()
+au3/modules/import-export/mod-opus/ExportOpus.cpp:303:OpusExportProcessor::~OpusExportProcessor()
+au3/modules/import-export/mod-opus/ExportOpus.cpp:307:bool OpusExportProcessor::Initialize(
+au3/modules/import-export/mod-opus/ExportOpus.cpp:463:ExportResult OpusExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-mp2/ExportMP2.h:108:class MP2ExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-mp2/ExportMP2.h:129:    ~MP2ExportProcessor() override;
+au3/modules/import-export/mod-mp2/ExportMP2.h:134:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-mp2/ExportMP2.h:157:    std::unique_ptr<ExportProcessor> CreateProcessor(int) const override;
+au3/modules/import-export/mod-mp2/ExportMP2.cpp:171:std::unique_ptr<ExportProcessor> ExportMP2::CreateProcessor(int) const
+au3/modules/import-export/mod-mp2/ExportMP2.cpp:173:    return std::make_unique<MP2ExportProcessor>();
+au3/modules/import-export/mod-mp2/ExportMP2.cpp:176:MP2ExportProcessor::~MP2ExportProcessor()
+au3/modules/import-export/mod-mp2/ExportMP2.cpp:183:bool MP2ExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-mp2/ExportMP2.cpp:257:ExportResult MP2ExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-mp2/ExportMP2.cpp:338:int MP2ExportProcessor::AddTags(ArrayOf< char >& buffer,
+au3/modules/import-export/mod-mp2/ExportMP2.cpp:395:void MP2ExportProcessor::AddFrame(struct id3_tag* tp, const wxString& n, const wxString& v, const char* name)
+au3/modules/import-export/mod-mp3/ExportMP3.h:59:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-mp3/ExportMP3.h:64:        int formatIndex, const std::string& config, ExportProcessor::Parameters& parameters) const override;
+au3/modules/import-export/mod-mp3/ExportMP3.h:291:class MP3ExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-mp3/ExportMP3.h:313:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1244:std::unique_ptr<ExportProcessor> ExportMP3::CreateProcessor(int format) const
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1246:    return std::make_unique<MP3ExportProcessor>();
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1256:    ExportProcessor::Parameters& parameters) const
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1348:bool MP3ExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1520:ExportResult MP3ExportProcessor::Process(ExportProcessorDelegate& delegate)
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1612:int MP3ExportProcessor::AskResample(int bitrate, int rate, int lowrate, int highrate)
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1631:unsigned long MP3ExportProcessor::AddTags(ArrayOf<char>& buffer, bool* endOfFile, const Tags* tags)
+au3/modules/import-export/mod-mp3/ExportMP3.cpp:1687:void MP3ExportProcessor::AddFrame(struct id3_tag* tp, const wxString& n, const wxString& v, const char* name)
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.h:24:    std::unique_ptr<ExportProcessor> CreateProcessor(int format) const override;
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.h:69:              const ExportProcessor::Parameters& parameters);
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.h:95:    bool InitCodecs(int sampleRate, const ExportProcessor::Parameters& parameters);
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.h:123:class FFmpegExportProcessor final : public ExportProcessor
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.h:138:    FFmpegExportProcessor(std::shared_ptr<FFmpegFunctions> ffmpeg, int format);
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.h:143:    ExportResult Process(ExportProcessorDelegate& delegate) override;
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-2.3.6-single-header.h:2927:    int rc_strategy;
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-2.3.6-single-header.h:2928:#define FF_RC_STRATEGY_XVID 1
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-2.3.6-single-header.h:2930:    int b_frame_strategy;
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-3.4.8-single-header.h:1800:#define FF_API_RC_STRATEGY       (LIBAVCODEC_VERSION_MAJOR < 59)
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-3.4.8-single-header.h:2757:    attribute_deprecated int rc_strategy;
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-3.4.8-single-header.h:2758:#define FF_RC_STRATEGY_XVID 1
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-3.4.8-single-header.h:2761:    int b_frame_strategy;
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/ffmpeg-4.2.4-single-header.h:2807:    int b_frame_strategy;
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/avcodec/61/AVCodecIDLookup.cpp:7:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/avcodec/59/AVCodecIDLookup.cpp:7:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/avcodec/57/AVCodecIDLookup.cpp:7:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/avcodec/58/AVCodecIDLookup.cpp:7:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/avcodec/60/AVCodecIDLookup.cpp:7:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/avcodec/62/AVCodecIDLookup.cpp:7:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/impl/avcodec/55/AVCodecIDLookup.cpp:17:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/lib-ffmpeg-support/FifoBuffer.cpp:13:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/ExportFFmpegOptions.cpp:610://             /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpegOptions.cpp:662://             /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpegOptions.cpp:972:        /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpegOptions.cpp:1204://         /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpegOptions.cpp:1207://         /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpegOptions.cpp:1313://         /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ImportFFmpeg.cpp:401:/* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/FFmpegPresets.cpp:153:            /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:21:#include <algorithm>
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:533:std::unique_ptr<ExportProcessor> ExportFFmpeg::CreateProcessor(int format) const
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:535:    return std::make_unique<FFmpegExportProcessor>(mFFmpeg, format);
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:681:                          const ExportProcessor::Parameters& parameters)
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:791:                                const ExportProcessor::Parameters& parameters)
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:982:        /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:1068:        /* i18n-hint: "codec" is short for a "coder-decoder" algorithm */
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:1368:FFmpegExportProcessor::FFmpegExportProcessor(std::shared_ptr<FFmpegFunctions> ffmpeg, int subformat)
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:1374:bool FFmpegExportProcessor::Initialize(AudacityProject& project,
+au3/modules/import-export/mod-ffmpeg/ExportFFmpeg.cpp:1431:ExportResult FFmpegExportProcessor::Process(ExportProcessorDelegate& delegate)
