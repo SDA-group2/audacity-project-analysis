@@ -1,4 +1,4 @@
-# Journal – [Your Name]
+# Journal – Davide Giordano
 
 ## Week 1
 
@@ -35,3 +35,23 @@
 - Produced knowledge dependency data (co-change relationships)
 - Contributed to identifying and validating design patterns
 - Prepared material used in the Design report
+
+## Week 3
+
+**Hours spent**: ~14 hours
+
+**Activities**:
+
+- Designed the C4 architecture diagrams (Context, Container, Component)
+- Modeled system boundaries, external actors, and dependencies
+- Identified and structured main containers (UI Layer, Core Layer, Audio Engine, Project Management, etc.)
+- Refined relationships between internal modules and external systems (file system, plugins, hardware, cloud services)
+- Started writing the Software Architecture report
+- Documented architectural decisions and clarified abstraction levels in diagrams
+
+**Outcome**:
+
+- Completed Context and Container diagrams
+- Defined the high-level structure of the Component diagrams
+- Produced the initial version of the Software Architecture report
+- Improved understanding of how different subsystems interact within Audacity
