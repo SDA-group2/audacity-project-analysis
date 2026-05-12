@@ -7,3 +7,7 @@ Initially I was trying to separately analyze each directory in-depth, but I soon
 ## May 5th, 2026
 
 Actually the issue here is that I'm working without a clear plan, so I'm going to take the next few days to improve my understanding of the C4 Model and come up with an outline that I can use as a baseline for the report. Ideally things should become easier once I know what to look for.
+
+## May 11-12th, 2026
+
+Started working on the system context diagram + report.
