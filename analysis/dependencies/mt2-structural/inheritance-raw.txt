@@ -1,0 +1,718 @@
+=== ALL PUBLIC INHERITANCE RELATIONSHIPS ===
+libraries/lib-audio-devices/DeviceChange.h:40: class DeviceChangeHandler : public wxEvtHandler // for wxTimerEvent , public DeviceChangeMessagePublisher {
+libraries/lib-audio-io/AudioIO.h:413: class AUDIO_IO_API AudioIO final : public AudioIoCallback , public Observer::Publisher<AudioIOEvent> {
+libraries/lib-audio-io/AudioIOExt.h:28: class AUDIO_IO_API AudioIOExt : public AudioIOExtBase {
+libraries/lib-audio-io/ProjectAudioIO.h:29: class AUDIO_IO_API ProjectAudioIO final : public ClientData::Base , public Observer::Publisher<SpeedChangeMessage> {
+libraries/lib-audio-io/RingBuffer.h:17: class RingBuffer final : public NonInterferingBase {
+libraries/lib-audio-unit/AudioUnitEffectBase.h:28: class AudioUnitEffectBase : public PerTrackEffect , public AudioUnitWrapper {
+libraries/lib-audio-unit/AudioUnitEffectsModule.h:30: class AudioUnitEffectsModule final : public PluginProvider {
+libraries/lib-audio-unit/AudioUnitInstance.h:19: class AudioUnitInstance : public PerTrackEffect::Instance , public AudioUnitWrapper {
+libraries/lib-audio-unit/AudioUnitWrapper.h:206: class AudioUnitWrapper::ParameterInfo final {
+libraries/lib-builtin-effects/AmplifyBase.h:6: class BUILTIN_EFFECTS_API AmplifyBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/AutoDuckBase.h:18: class BUILTIN_EFFECTS_API AutoDuckBase : public StatefulEffect {
+libraries/lib-builtin-effects/BassTrebleBase.h:50: class BUILTIN_EFFECTS_API BassTrebleBase : public EffectWithSettings<BassTrebleSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/ChangePitchBase.h:25: class BUILTIN_EFFECTS_API ChangePitchBase : public SoundTouchBase {
+libraries/lib-builtin-effects/ChangeSpeedBase.h:20: class BUILTIN_EFFECTS_API ChangeSpeedBase : public StatefulEffect {
+libraries/lib-builtin-effects/ChangeTempoBase.h:6: class BUILTIN_EFFECTS_API ChangeTempoBase : public SoundTouchBase {
+libraries/lib-builtin-effects/ClickRemovalBase.h:18: class BUILTIN_EFFECTS_API ClickRemovalBase : public StatefulEffect {
+libraries/lib-builtin-effects/CompressorInstance.h:26: class BUILTIN_EFFECTS_API CompressorInstance final : public PerTrackEffect::Instance, public EffectInstanceWithBlockSize, public InitializeProcessingSettingsPublisher, public RealtimeResumePublisher {
+libraries/lib-builtin-effects/DistortionBase.h:64: class BUILTIN_EFFECTS_API DistortionBase : public EffectWithSettings<EffectDistortionSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/DtmfBase.h:28: class BUILTIN_EFFECTS_API DtmfBase : public EffectWithSettings<DtmfSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/EchoBase.h:29: class BUILTIN_EFFECTS_API EchoBase : public EffectWithSettings<EchoSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/EqualizationBase.h:11: class BUILTIN_EFFECTS_API EqualizationBase : public StatefulEffect {
+libraries/lib-builtin-effects/EqualizationCurves.h:66: class BUILTIN_EFFECTS_API EQCurveReader : public XMLTagHandler {
+libraries/lib-builtin-effects/Fade.h:14: class BUILTIN_EFFECTS_API Fade : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/Fade.h:41: class BUILTIN_EFFECTS_API FadeIn final : public Fade {
+libraries/lib-builtin-effects/Fade.h:53: class BUILTIN_EFFECTS_API FadeOut final : public Fade {
+libraries/lib-builtin-effects/FindClippingBase.h:19: class BUILTIN_EFFECTS_API FindClippingBase : public StatefulEffect {
+libraries/lib-builtin-effects/Invert.h:16: class BUILTIN_EFFECTS_API Invert : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/LegacyCompressorBase.h:19: class BUILTIN_EFFECTS_API LegacyCompressorBase : public EffectTwoPassSimpleMono {
+libraries/lib-builtin-effects/LoudnessBase.h:20: class BUILTIN_EFFECTS_API LoudnessBase : public StatefulEffect {
+libraries/lib-builtin-effects/NoiseBase.h:15: class BUILTIN_EFFECTS_API NoiseBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/NoiseReductionBase.h:35: class BUILTIN_EFFECTS_API NoiseReductionBase : public StatefulEffect {
+libraries/lib-builtin-effects/NormalizeBase.h:18: class BUILTIN_EFFECTS_API NormalizeBase : public StatefulEffect {
+libraries/lib-builtin-effects/PaulstretchBase.h:17: class BUILTIN_EFFECTS_API PaulstretchBase : public StatefulEffect {
+libraries/lib-builtin-effects/PhaserBase.h:69: class BUILTIN_EFFECTS_API PhaserBase : public EffectWithSettings<EffectPhaserSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/Repair.h:16: class BUILTIN_EFFECTS_API Repair : public StatefulEffect {
+libraries/lib-builtin-effects/RepeatBase.h:6: class BUILTIN_EFFECTS_API RepeatBase : public StatefulEffect {
+libraries/lib-builtin-effects/ReverbBase.h:62: class BUILTIN_EFFECTS_API ReverbBase : public EffectWithSettings<ReverbSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/Reverse.h:16: class BUILTIN_EFFECTS_API Reverse : public StatefulEffect {
+libraries/lib-builtin-effects/ScienFilterBase.h:19: class BUILTIN_EFFECTS_API ScienFilterBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/SilenceBase.h:14: class BUILTIN_EFFECTS_API SilenceBase : public Generator {
+libraries/lib-builtin-effects/StereoToMono.h:14: class BUILTIN_EFFECTS_API StereoToMono : public StatefulEffect {
+libraries/lib-builtin-effects/TimeScaleBase.h:17: class BUILTIN_EFFECTS_API TimeScaleBase : public SBSMSBase {
+libraries/lib-builtin-effects/ToneGenBase.h:21: class BUILTIN_EFFECTS_API ToneGenBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/TruncSilenceBase.h:24: class BUILTIN_EFFECTS_API TruncSilenceBase : public StatefulEffect {
+libraries/lib-builtin-effects/WahWahBase.h:58: class BUILTIN_EFFECTS_API WahWahBase : public EffectWithSettings<EffectWahwahSettings, PerTrackEffect> {
+libraries/lib-channel/Channel.h:56: class CHANNEL_API WideChannelGroupInterval : public ChannelGroupInterval {
+libraries/lib-channel/Channel.h:95: class ChannelIterator : public ValueIterator< std::shared_ptr<IntervalType>, std::bidirectional_iterator_tag > {
+libraries/lib-channel/Channel.h:208: class IntervalIterator : public ValueIterator< std::shared_ptr<IntervalType>, std::bidirectional_iterator_tag > {
+libraries/lib-channel/Channel.h:283: class CHANNEL_API ChannelGroup : public ChannelGroupAttachments {
+libraries/lib-channel/Channel.h:344: class ChannelIterator : public ValueIterator< std::shared_ptr<ChannelType>, std::bidirectional_iterator_tag > {
+libraries/lib-channel/Channel.h:455: class IntervalIterator : public ValueIterator< std::shared_ptr<IntervalType>, std::bidirectional_iterator_tag > {
+libraries/lib-cloud-audiocom/OAuthService.h:41: class CLOUD_AUDIOCOM_API OAuthService final : public Observer::Publisher<AuthStateChangedMessage> {
+libraries/lib-cloud-audiocom/TaskExecutionService.h:32: class CLOUD_AUDIOCOM_API TaskExecutionService final : public Observer::Publisher<AppTaskReceivedMessage> {
+libraries/lib-cloud-audiocom/UserService.h:26: class CLOUD_AUDIOCOM_API UserService final : public Observer::Publisher <UserDataChanged> {
+libraries/lib-command-parameters/ShuttleAutomation.h:60: class CapturedParameters : public EffectParameterMethods {
+libraries/lib-command-parameters/ShuttleAutomation.h:244: class COMMAND_PARAMETERS_API ShuttleGetAutomation final : public ConstSettingsVisitor {
+libraries/lib-command-parameters/ShuttleAutomation.h:270: class COMMAND_PARAMETERS_API ShuttleSetAutomation final : public SettingsVisitor {
+libraries/lib-command-parameters/ShuttleAutomation.h:311: class COMMAND_PARAMETERS_API ShuttleDefaults final : public SettingsVisitor {
+libraries/lib-components/EffectAutomationParameters.h:66: class COMPONENTS_API CommandParameters final : public wxFileConfig {
+libraries/lib-components/EffectInterface.h:152: class COMPONENTS_API EffectSettingsAccess : public std::enable_shared_from_this<EffectSettingsAccess> {
+libraries/lib-components/EffectInterface.h:219: class COMPONENTS_API SimpleEffectSettingsAccess final : public EffectSettingsAccess {
+libraries/lib-components/EffectInterface.h:449: class COMPONENTS_API EffectInstance : public std::enable_shared_from_this<EffectInstance> {
+libraries/lib-components/EffectInterface.h:596: class COMPONENTS_API EffectInstanceWithBlockSize : public virtual EffectInstance {
+libraries/lib-components/EffectInterface.h:610: class COMPONENTS_API EffectInstanceFactory : public EffectSettingsManager {
+libraries/lib-dynamic-range-processor/DownwardMeterValueProvider.h:19: class DYNAMIC_RANGE_PROCESSOR_API DownwardMeterValueProvider : public MeterValueProvider {
+libraries/lib-dynamic-range-processor/UpwardMeterValueProvider.h:15: class DYNAMIC_RANGE_PROCESSOR_API UpwardMeterValueProvider final : public MeterValueProvider {
+libraries/lib-effects/Effect.h:154: class EffectWithSettings : public Base {
+libraries/lib-effects/EffectPlugin.h:34: class EFFECTS_API EffectPlugin : public EffectInstanceFactory {
+libraries/lib-effects/EffectPlugin.h:96: class EFFECTS_API EffectInstanceEx : public virtual EffectInstance {
+libraries/lib-effects/LoadEffects.h:29: class EFFECTS_API BuiltinEffectsModule final : public PluginProvider {
+libraries/lib-effects/PerTrackEffect.h:37: class EFFECTS_API PerTrackEffect : public Effect {
+libraries/lib-effects/PerTrackEffect.h:43: class EFFECTS_API Instance : public virtual EffectInstanceEx {
+libraries/lib-effects/StatefulEffect.h:22: class EFFECTS_API StatefulEffect : public StatefulEffectBase, public Effect {
+libraries/lib-effects/StatefulEffect.h:25: class EFFECTS_API Instance : public StatefulEffectBase::Instance {
+libraries/lib-effects/StatefulEffectBase.h:26: class EFFECTS_API Instance : public virtual EffectInstanceEx {
+libraries/lib-effects/StatefulPerTrackEffect.h:22: class EFFECTS_API StatefulPerTrackEffect : public StatefulEffectBase, public PerTrackEffect {
+libraries/lib-effects/StatefulPerTrackEffect.h:30: class EFFECTS_API Instance : public StatefulEffectBase::Instance, public PerTrackEffect::Instance {
+libraries/lib-exceptions/InconsistencyException.h:23: class EXCEPTIONS_API InconsistencyException final : public MessageBoxException {
+libraries/lib-exceptions/UserException.h:16: class EXCEPTIONS_API UserException final : public AudacityException {
+libraries/lib-files/AudacityLogger.h:20: class FILES_API AudacityLogger final : public wxEvtHandler, public wxLog {
+libraries/lib-files/wxFileNameWrapper.h:20: class wxFileNameWrapper : public wxFileName {
+libraries/lib-import-export/ImportExport.h:18: class IMPORT_EXPORT_API ImportExport final : public ClientData::Base {
+libraries/lib-import-export/ImportPlugin.h:158: class IMPORT_EXPORT_API ImportFileHandleEx : public ImportFileHandle {
+libraries/lib-import-export/PlainExportOptionsEditor.h:19: class IMPORT_EXPORT_API PlainExportOptionsEditor final : public ExportOptionsEditor {
+libraries/lib-label-track/LabelTrack.h:95: class LABEL_TRACK_API LabelTrack final : public UniqueChannelTrack<> , public Observer::Publisher<struct LabelTrackEvent> {
+libraries/lib-ladspa/LadspaEffectBase.h:24: class LADSPA_API LadspaEffectBase : public EffectWithSettings<LadspaEffectSettings, PerTrackEffect> {
+libraries/lib-ladspa/LadspaEffectsModule.h:20: class LadspaEffectsModule final : public PluginProvider {
+libraries/lib-lv2/LoadLV2.h:30: class LV2_API LV2EffectsModule final : public PluginProvider {
+libraries/lib-lv2/LV2EffectBase.h:29: class LV2_API LV2EffectBase : public PerTrackEffect {
+libraries/lib-lv2/LV2FeaturesList.h:67: class LV2_API ExtendedLV2FeaturesList : public LV2FeaturesListBase {
+libraries/lib-lv2/LV2FeaturesList.h:79: class LV2_API LV2FeaturesList : public LV2FeaturesListBase {
+libraries/lib-lv2/LV2Instance.h:27: class LV2_API LV2Instance final : public PerTrackEffect::Instance {
+libraries/lib-lv2/LV2Ports.h:52: class LV2AudioPort final : public LV2Port {
+libraries/lib-lv2/LV2Ports.h:60: class LV2AtomPort final : public LV2Port {
+libraries/lib-lv2/LV2Ports.h:129: class LV2CVPort final : public LV2Port {
+libraries/lib-lv2/LV2Ports.h:160: class LV2_API LV2ControlPort final : public LV2Port {
+libraries/lib-math/SampleFormat.h:172: class GrowableSampleBuffer : private SampleBuffer {
+libraries/lib-menus/CommandFlag.h:87: class MENUS_API ReservedCommandFlag : public CommandFlag {
+libraries/lib-menus/CommandTargets.h:90: class MENUS_API CommandMessageTargetDecorator : public CommandMessageTarget {
+libraries/lib-menus/CommandTargets.h:116: class MENUS_API LispyCommandMessageTarget : public CommandMessageTargetDecorator /* not final */ {
+libraries/lib-menus/CommandTargets.h:137: class MENUS_API BriefCommandMessageTarget : public CommandMessageTargetDecorator /* not final */ {
+libraries/lib-menus/CommandTargets.h:159: class MENUS_API NullProgressTarget final : public CommandProgressTarget {
+libraries/lib-menus/CommandTargets.h:167: class MENUS_API ProgressToMessageTarget final : public CommandProgressTarget {
+libraries/lib-menus/CommandTargets.h:183: class MENUS_API NullMessageTarget final : public CommandMessageTarget {
+libraries/lib-menus/CommandTargets.h:191: class MENUS_API MessageBoxTarget final : public CommandMessageTarget {
+libraries/lib-menus/CommandTargets.h:199: class MENUS_API ResponseTarget final : public CommandMessageTarget {
+libraries/lib-menus/CommandTargets.h:229: class MENUS_API CombinedMessageTarget final : public CommandMessageTarget {
+libraries/lib-menus/CommandTargets.h:359: class MENUS_API LispifiedCommandOutputTargets : public CommandOutputTargets {
+libraries/lib-menus/CommandTargets.h:369: class MENUS_API BriefCommandOutputTargets : public CommandOutputTargets {
+libraries/lib-menus/MenuRegistry.h:265: class MENUS_API FinderScope : ValueRestorer< CommandHandlerFinder > {
+libraries/lib-mixer/DownmixSource.h:45: class SequenceDownmixSource final : public DownmixSource {
+libraries/lib-mixer/DownmixSource.h:68: class SimpleDonwmixSource final : public DownmixSource {
+libraries/lib-mixer/DownmixStage.h:20: class DownmixStage final : public AudioGraph::Source {
+libraries/lib-mixer/EffectStage.h:26: class MIXER_API EffectStage final : public AudioGraph::Source {
+libraries/lib-mixer/Envelope.h:29: class EnvPoint final : public XMLTagHandler {
+libraries/lib-mixer/Envelope.h:278: class BoundedEnvelope final : public Envelope {
+libraries/lib-mixer/MixerSource.h:33: class MixerSource final : public AudioGraph::Source {
+libraries/lib-mixer/WideSampleSequence.h:22: class MIXER_API WideSampleSequence : public AudioGraph::Channel {
+libraries/lib-mixer/WideSampleSource.h:24: class MIXER_API WideSampleSource final : public AudioGraph::Source {
+libraries/lib-module-manager/PluginDescriptor.h:42: class MODULE_MANAGER_API PluginDescriptor final : public XMLTagHandler {
+libraries/lib-module-manager/PluginHost.h:35: class MODULE_MANAGER_API PluginHost final : public IPCChannelStatusCallback {
+libraries/lib-module-manager/PluginIPCUtils.h:59: class PluginValidationResult final : public XMLTagHandler {
+libraries/lib-module-manager/PluginManager.h:48: class MODULE_MANAGER_API PluginManager final : public PluginManagerInterface , public Observer::Publisher<PluginsChangedMessage> {
+libraries/lib-music-information-retrieval/DecimatingMirAudioReader.h:29: class DecimatingMirAudioReader : public MirAudioReader {
+libraries/lib-network-manager/IResponse.h:112: class NETWORK_MANAGER_API IResponse : public concurrency::ICancellable {
+libraries/lib-note-track/NoteTrack.h:74: class NOTE_TRACK_API NoteTrack final : public UniqueChannelTrack<PlayableTrack> , public OtherPlayableSequence , public NoteTrackAttachments {
+libraries/lib-numeric-formats/ProjectNumericFormats.h:31: class NUMERIC_FORMATS_API ProjectNumericFormats final : public ClientData::Base , public Observer::Publisher<ProjectNumericFormatsEvent> {
+libraries/lib-numeric-formats/ProjectTimeSignature.h:25: class NUMERIC_FORMATS_API ProjectTimeSignature final : public ClientData::Base, public Observer::Publisher<TimeSignatureChangedMessage> {
+libraries/lib-nyquist-effects/LoadNyquist.h:21: class NyquistEffectsModule final : public PluginProvider {
+libraries/lib-nyquist-effects/NyquistBase.h:75: class NYQUIST_EFFECTS_API NyquistBase : public EffectWithSettings<NyquistSettings, StatefulEffect> {
+libraries/lib-preference-pages/LibraryPrefs.h:27: class LibraryPrefs final : public PrefsPanel {
+libraries/lib-preferences/Prefs.h:98: class TransactionalSettingBase : public SettingBase {
+libraries/lib-preferences/Prefs.h:148: class PREFERENCES_API SettingTransaction final : public SettingScope {
+libraries/lib-preferences/Prefs.h:161: class CachingSettingBase : public TransactionalSettingBase {
+libraries/lib-preferences/Prefs.h:177: class Setting : public CachingSettingBase< T > {
+libraries/lib-preferences/Prefs.h:345: class PREFERENCES_API BoolSetting final : public Setting< bool > {
+libraries/lib-preferences/Prefs.h:355: class IntSetting final : public Setting< int > {
+libraries/lib-preferences/Prefs.h:362: class DoubleSetting final : public Setting< double > {
+libraries/lib-preferences/Prefs.h:369: class StringSetting final : public Setting< wxString > {
+libraries/lib-preferences/Prefs.h:380: class PREFERENCES_API EnumValueSymbols : public std::vector< EnumValueSymbol > {
+libraries/lib-preferences/Prefs.h:473: class PREFERENCES_API EnumSettingBase : public ChoiceSetting {
+libraries/lib-preferences/Prefs.h:513: class EnumSetting : public EnumSettingBase {
+libraries/lib-preferences/Prefs.h:591: class ResetHandler final : public PreferencesResetHandler {
+libraries/lib-project/Project.h:86: class PROJECT_API AudacityProject final : public wxEvtHandler , public AttachedProjectObjects , public std::enable_shared_from_this<AudacityProject> {
+libraries/lib-project/ProjectStatus.h:106: class PROJECT_API ProjectStatus final : public ClientData::Base , public PrefsListener , public Observer::Publisher<StatusBarField> {
+libraries/lib-project-file-io/DBConnection.h:139: class ConnectionPtr final : public ClientData::Base , public std::enable_shared_from_this< ConnectionPtr > {
+libraries/lib-project-file-io/ProjectFileIO.h:60: class PROJECT_FILE_IO_API ProjectFileIO final : public ClientData::Base , public XMLTagHandler , private PrefsListener , public std::enable_shared_from_this<ProjectFileIO> , public Observer::Publisher<ProjectFileIOMessage> {
+libraries/lib-project-file-io/ProjectSerializer.h:36: class PROJECT_FILE_IO_API ProjectSerializer final : public XMLWriter {
+libraries/lib-project-history/ProjectHistory.h:21: class PROJECT_HISTORY_API ProjectHistory final : public ClientData::Base {
+libraries/lib-project-history/UndoManager.h:151: class PROJECT_HISTORY_API UndoManager final : public ClientData::Base , public Observer::Publisher<UndoRedoMessage> , public std::enable_shared_from_this<UndoManager> {
+libraries/lib-project-rate/ProjectRate.h:21: class PROJECT_RATE_API ProjectRate final : public ClientData::Base , public Observer::Publisher<double> {
+libraries/lib-realtime-effects/RealtimeEffectManager.h:48: class REALTIME_EFFECTS_API RealtimeEffectManager final : public ClientData::Base, public Observer::Publisher<RealtimeEffectManagerMessage> {
+libraries/lib-realtime-effects/RealtimeEffectState.h:32: class REALTIME_EFFECTS_API RealtimeEffectState : public XMLTagHandler , public std::enable_shared_from_this<RealtimeEffectState> , public SharedNonInterfering<RealtimeEffectState> , public ClientData::Site<RealtimeEffectState> , public Observer::Publisher<RealtimeEffectStateChange> {
+libraries/lib-registries/AttachedVirtualFunction.h:108: class SpecialHost : public AbstractHost {
+libraries/lib-registries/AttachedVirtualFunction.h:113: class ExtraSpecialHost : public SpecialHost {
+libraries/lib-registries/ClientData.h:93: class Host : public ClientData::Site< Host, AbstractClientData > // That inheritance is a case of CRTP // (the "curiously recurring template pattern") // in which the base class takes the derived class as a template argument {
+libraries/lib-registries/ClientData.h:122: class MyClientData : public AbstractClientData {
+libraries/lib-shuttlegui/ReadOnlyText.h:20: class ReadOnlyTextAx final : public WindowAccessible {
+libraries/lib-shuttlegui/ReadOnlyText.h:58: class ReadOnlyText final : public wxControl {
+libraries/lib-shuttlegui/ShuttleGui.h:84: class wxStaticBoxWrapper : public wxStaticBox // inherit to get access to m_container {
+libraries/lib-shuttlegui/ShuttleGui.h:98: class wxSliderWrapper : public wxSlider {
+libraries/lib-shuttlegui/wxTextCtrlWrapper.h:20: class wxTextCtrlWrapper final : public wxTextCtrl {
+libraries/lib-snapping/ProjectSnap.h:26: class SNAPPING_API ProjectSnap final : public ClientData::Base, public Observer::Publisher<SnapChangedMessage> {
+libraries/lib-stretching-sequence/AudioSegmentFactory.h:23: class STRETCHING_SEQUENCE_API AudioSegmentFactory final : public AudioSegmentFactoryInterface {
+libraries/lib-stretching-sequence/ClipInterface.h:45: class STRETCHING_SEQUENCE_API ClipInterface : public ClipTimes {
+libraries/lib-stretching-sequence/ClipSegment.h:30: class STRETCHING_SEQUENCE_API ClipSegment final : public AudioSegment {
+libraries/lib-stretching-sequence/ClipTimeAndPitchSource.h:23: class STRETCHING_SEQUENCE_API ClipTimeAndPitchSource final : public TimeAndPitchSource {
+libraries/lib-stretching-sequence/SilenceSegment.h:17: class STRETCHING_SEQUENCE_API SilenceSegment final : public AudioSegment {
+libraries/lib-stretching-sequence/StretchingSequence.h:27: class STRETCHING_SEQUENCE_API StretchingSequence final : public PlayableSequence {
+libraries/lib-strings/Identifier.h:112: class TaggedIdentifier : public Identifier {
+libraries/lib-strings/wxArrayStringEx.h:17: class wxArrayStringEx : public wxArrayString {
+libraries/lib-tags/Tags.h:68: class TAGS_API Tags final : public XMLTagHandler , public std::enable_shared_from_this< Tags > , public ClientData::Base , public UndoStateExtension {
+libraries/lib-theme/Theme.h:208: class THEME_API Theme final : public ThemeBase {
+libraries/lib-time-and-pitch/DummyFormantShifterLogger.h:17: class DummyFormantShifterLogger : public FormantShifterLoggerInterface {
+libraries/lib-time-and-pitch/FormantShifterLogger.h:20: class FormantShifterLogger : public FormantShifterLoggerInterface {
+libraries/lib-time-and-pitch/StaffPadTimeAndPitch.h:7: class TIME_AND_PITCH_API StaffPadTimeAndPitch final : public TimeAndPitchInterface {
+libraries/lib-time-frequency-selection/ProjectSelectionManager.h:28: class TIME_FREQUENCY_SELECTION_API ProjectSelectionManager final : public ClientData::Base {
+libraries/lib-time-frequency-selection/ViewInfo.h:29: class TIME_FREQUENCY_SELECTION_API NotifyingSelectedRegion : public Observer::Publisher<NotifyingSelectedRegionMessage> , public wxTrackable {
+libraries/lib-time-frequency-selection/ViewInfo.h:107: class TIME_FREQUENCY_SELECTION_API PlayRegion : public Observer::Publisher<PlayRegionMessage> {
+libraries/lib-time-frequency-selection/ViewInfo.h:189: class TIME_FREQUENCY_SELECTION_API ViewInfo final : public ZoomInfo , public PrefsListener , public ClientData::Base {
+libraries/lib-time-track/TimeTrack.h:22: class TIME_TRACK_API TimeTrack final : public UniqueChannelTrack<> {
+libraries/lib-track/ChannelAttachments.h:51: class TRACK_API ChannelAttachmentsBase : public TrackAttachment {
+libraries/lib-track/ChannelAttachments.h:129: class ChannelAttachments : public ChannelAttachmentsBase {
+libraries/lib-track/PendingTracks.h:23: class TRACK_API PendingTracks final : public ClientData::Base , public Observer::Publisher<TrackListEvent> {
+libraries/lib-track/TimeWarper.h:68: class TRACK_API IdentityTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:74: class TRACK_API ShiftTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:86: class TRACK_API LinearTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:100: class TRACK_API LinearInputRateTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:113: class TRACK_API LinearOutputRateTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:128: class TRACK_API LinearInputStretchTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:141: class TRACK_API LinearOutputStretchTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:154: class TRACK_API GeometricInputTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:167: class TRACK_API GeometricOutputTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:180: class TRACK_API PasteTimeWarper final : public TimeWarper {
+libraries/lib-track/TimeWarper.h:191: class TRACK_API RegionTimeWarper final : public TimeWarper {
+libraries/lib-track/Track.h:447: class UniqueChannelTrack : public Base , public Channel {
+libraries/lib-track/Track.h:845: class TRACK_API TrackList final : public Observer::Publisher<TrackListEvent> , private ListOfTracks , public std::enable_shared_from_this<TrackList> , public ClientData::Base {
+libraries/lib-track-selection/SelectionState.h:21: class TRACK_SELECTION_API SelectionState final : public ClientData::Base {
+libraries/lib-track-selection/SyncLock.h:22: class TRACK_SELECTION_API SyncLockState final : public ClientData::Base , public Observer::Publisher<SyncLockChangeMessage> {
+libraries/lib-track-selection/TrackFocus.h:38: class TRACK_SELECTION_API TrackFocus final : public ClientData::Base , public Observer::Publisher<TrackFocusChangeMessage> , public std::enable_shared_from_this<TrackFocus> {
+libraries/lib-url-schemes/URLSchemesRegistry.h:27: class URL_SCHEMES_API URLSchemesRegistry final : public Observer::Publisher<URLschemeHandlerMessage> {
+libraries/lib-utility/Composite.h:38: class Base : public Component {
+libraries/lib-utility/GlobalVariable.h:155: class GlobalHook : public GlobalVariable<Tag, const std::function<Signature>, Default, Options... > {
+libraries/lib-utility/GlobalVariable.h:205: class DefaultedGlobalHook : public GlobalHook< Tag, std::remove_pointer_t<decltype(DefaultFunction)>, DefaultFunction, Options... > {
+libraries/lib-utility/IteratorX.h:252: class NumberIterator : public ValueIterator<Integral> {
+libraries/lib-utility/LockFreeQueue.h:20: class LockFreeQueue : public SharedNonInterfering<LockFreeQueue<T>> {
+libraries/lib-utility/MemoryX.h:28: class ArrayOf : public std::unique_ptr<X[]> {
+libraries/lib-utility/MemoryX.h:82: class ArraysOf : public ArrayOf<ArrayOf<X>> {
+libraries/lib-utility/MemoryX.h:213: class ValueRestorer : public std::unique_ptr< T, RestoreValue<T> > {
+libraries/lib-viewport/Viewport.h:61: class VIEWPORT_API Viewport final : public Observer::Publisher<ViewportMessage> , public ClientData::Base , public std::enable_shared_from_this<Viewport> {
+libraries/lib-vst/VSTEffectBase.h:26: class VST_API VSTEffectBase : public VSTWrapper , public PerTrackEffect {
+libraries/lib-vst/VSTEffectsModule.h:21: class VST_API VSTEffectsModule final : public PluginProvider {
+libraries/lib-vst/VSTInstance.h:25: class VST_API VSTInstance final : public PerTrackEffect::Instance, public VSTWrapper {
+libraries/lib-vst3/AudacityVst3HostApplication.h:6: class AudacityVst3HostApplication final : public Steinberg::Vst::IHostApplication, public Steinberg::Vst::IPlugInterfaceSupport {
+libraries/lib-vst3/memorystream.h:47: class MemoryStream : public IBStream {
+libraries/lib-vst3/VST3EffectBase.h:22: class VST3_API VST3EffectBase : public PerTrackEffect {
+libraries/lib-vst3/VST3EffectsModule.h:34: class VST3EffectsModule final : public PluginProvider {
+libraries/lib-vst3/VST3Instance.h:28: class VST3_API VST3Instance : public PerTrackEffect::Instance {
+libraries/lib-vst3/VST3Utils.h:67: class PresetsBufferStream : public Steinberg::Vst::BufferStream {
+libraries/lib-vst3/VST3Wrapper.h:30: class SingleInputParameterValue final : public Steinberg::Vst::IParamValueQueue {
+libraries/lib-wave-track/SampleBlock.h:113: class WAVE_TRACK_API SampleBlockFactory : public Observer::Publisher<SampleBlockCreateMessage> {
+libraries/lib-wave-track/Sequence.h:50: class BlockArray : public std::deque<SeqBlock> {};
+libraries/lib-wave-track/Sequence.h:53: class WAVE_TRACK_API Sequence final : public XMLTagHandler{
+libraries/lib-wave-track/WaveClip.h:85: class WAVE_TRACK_API WaveClipChannel : public ChannelInterval , public ClipTimes {
+libraries/lib-wave-track/WaveClip.h:228: class WAVE_TRACK_API WaveClip final : public ClipInterface, public WideChannelGroupInterval, public XMLTagHandler, public ClientData::Site< WaveClip, WaveClipListener, ClientData::DeepCopying>, public Observer::Publisher<CentShiftChange>, public Observer::Publisher<PitchAndSpeedPresetChange>, public Observer::Publisher<StretchRatioChange>, public Observer::Publisher<WaveClipDtorCalled> {
+libraries/lib-wave-track/WaveTrack.h:81: class WAVE_TRACK_API WaveChannel final : public Channel , public WideSampleSequence {
+libraries/lib-wave-track/WaveTrack.h:200: class WAVE_TRACK_API WaveTrack final : public WritableSampleTrack , public Observer::Publisher<WaveTrackMessage> {
+libraries/lib-wave-track/WaveTrack.h:874: class WAVE_TRACK_API WaveTrackFactory final : public ClientData::Base {
+libraries/lib-wave-track/WaveTrackSink.h:27: class WAVE_TRACK_API WaveTrackSink final : public AudioGraph::Sink {
+libraries/lib-wave-track/WaveTrackUtilities.h:51: class WAVE_TRACK_API AllClipsIterator : public ValueIterator<IntervalHolder> {
+libraries/lib-wave-track/WaveTrackUtilities.h:86: class WAVE_TRACK_API AllClipsConstIterator : public ValueIterator<IntervalConstHolder> {
+libraries/lib-wave-track-settings/SpectrogramSettings.h:29: class WAVE_TRACK_SETTINGS_API SpectrogramSettings : public PrefsListener , public ClientData::Cloneable<> {
+libraries/lib-wave-track-settings/SpectrogramSettings.h:163: class ColorSchemeEnumSetting : public EnumSetting< ColorScheme > {
+libraries/lib-wave-track-settings/SpectrogramSettings.h:213: class WAVE_TRACK_SETTINGS_API SpectrogramBounds : public ClientData::Cloneable<> {
+libraries/lib-wave-track-settings/WaveformSettings.h:22: class WAVE_TRACK_SETTINGS_API WaveformSettings : public PrefsListener , public ClientData::Cloneable<> {
+libraries/lib-wx-init/ErrorReportDialog.h:35: class ErrorReportDialog final : public wxDialogWrapper {
+libraries/lib-wx-init/HelpSystem.h:128: class WX_INIT_API LinkingHtmlWindow final : public HtmlWindow {
+libraries/lib-wx-init/Journal.h:99: class WX_INIT_API SyncException : public AudacityException {
+libraries/lib-wx-init/ProgressDialog.h:165: class WX_INIT_API TimerProgressDialog final : public ProgressDialog {
+libraries/lib-wx-init/SettingsWX.h:11: class WX_INIT_API SettingsWX final : public audacity::BasicSettings {
+libraries/lib-wx-init/wxWidgetsBasicUI.h:20: class WX_INIT_API wxWidgetsBasicUI final : public BasicUI::Services {
+libraries/lib-wx-wrappers/ArrowButton.h:15: class WX_WRAPPERS_API ArrowButton : public wxButton {
+libraries/lib-wx-wrappers/AudacityDontAskAgainMessageDialog.h:15: class WX_WRAPPERS_API AudacityDontAskAgainMessageDialog : public wxDialogWrapper {
+libraries/lib-wx-wrappers/AudacityTextEntryDialog.h:21: class WX_WRAPPERS_API AudacityTextEntryDialog : public wxTabTraversalWrapper< wxTextEntryDialog > {
+libraries/lib-wx-wrappers/GradientButton.h:14: class WX_WRAPPERS_API GradientButton : public wxButton {
+libraries/lib-wx-wrappers/HyperLink.h:13: class WX_WRAPPERS_API HyperLink : public wxHyperlinkCtrl {
+libraries/lib-wx-wrappers/ImageCarousel.h:56: class WX_WRAPPERS_API ImageCarousel : public wxPanel {
+libraries/lib-wx-wrappers/RoundedStaticBitmap.h:18: class WX_WRAPPERS_API RoundedStaticBitmap final : public wxStaticBitmap {
+libraries/lib-wx-wrappers/SpinControl.h:29: class WX_WRAPPERS_API SpinControl final : public wxControl , private PrefsListener {
+libraries/lib-wx-wrappers/WindowAccessible.h:21: class WX_WRAPPERS_API WindowAccessible: public wxAccessible {
+libraries/lib-wx-wrappers/WindowAccessible.h:31: class WX_WRAPPERS_API SliderAx final : public WindowAccessible {
+libraries/lib-wx-wrappers/wxPanelWrapper.h:22: class WX_WRAPPERS_API wxTabTraversalWrapper : public Base {
+libraries/lib-wx-wrappers/wxPanelWrapper.h:39: class WX_WRAPPERS_API wxPanelWrapper : public wxTabTraversalWrapper<wxPanel> {
+libraries/lib-wx-wrappers/wxPanelWrapper.h:79: class WX_WRAPPERS_API wxDialogWrapper : public wxTabTraversalWrapper<wxDialog> {
+libraries/lib-wx-wrappers/wxPanelWrapper.h:123: class WX_WRAPPERS_API wxDirDialogWrapper : public wxTabTraversalWrapper<wxDirDialog> {
+libraries/lib-wx-wrappers/wxPanelWrapper.h:164: class WX_WRAPPERS_API FileDialogWrapper : public wxTabTraversalWrapper<FileDialog> {
+libraries/lib-wx-wrappers/wxPanelWrapper.h:215: class WX_WRAPPERS_API AudacityMessageDialog : public wxTabTraversalWrapper< wxMessageDialog > {
+libraries/lib-xml/XMLMethodRegistry.h:87: class XMLMethodRegistry : public XMLMethodRegistryBase {
+libraries/lib-xml/XMLWriter.h:84: class XML_API XMLFileWriter final : private wxFFile, public XMLWriter {
+libraries/lib-xml/XMLWriter.h:139: class XML_API XMLStringWriter final : public wxString, public XMLWriter {
+libraries/lib-cloud-audiocom/sync/LocalProjectSnapshot.h:48: class CLOUD_AUDIOCOM_API LocalProjectSnapshot final : public ProjectUploadOperation, public std::enable_shared_from_this<LocalProjectSnapshot> {
+libraries/lib-cloud-audiocom/sync/MissingBlocksUploader.h:63: class MissingBlocksUploader final : public concurrency::ICancellable, public std::enable_shared_from_this<MissingBlocksUploader> {
+libraries/lib-cloud-audiocom/sync/MixdownUploader.h:59: class CLOUD_AUDIOCOM_API MixdownUploader final : public std::enable_shared_from_this<MixdownUploader>, public concurrency::ICancellable {
+libraries/lib-cloud-audiocom/sync/ProjectCloudExtension.h:58: class CLOUD_AUDIOCOM_API ProjectCloudExtension final : public ClientData::Base {
+libraries/lib-cloud-audiocom/sync/RemoteProjectSnapshot.h:51: class RemoteProjectSnapshot final : public std::enable_shared_from_this<RemoteProjectSnapshot> {
+libraries/lib-ipc/internal/BufferedIPCChannel.h:30: class BufferedIPCChannel final : public IPCChannel {
+libraries/lib-music-information-retrieval/tests/MirFakes.h:19: class EmptyMirAudioReader : public MirAudioReader {
+libraries/lib-music-information-retrieval/tests/MirFakes.h:35: class SquareWaveMirAudioReader : public MirAudioReader {
+libraries/lib-music-information-retrieval/tests/MirFakes.h:55: class FakeProjectInterface final : public ProjectInterface {
+libraries/lib-music-information-retrieval/tests/MirFakes.h:100: class FakeAnalyzedAudioClip final : public AnalyzedAudioClip {
+libraries/lib-music-information-retrieval/tests/WavMirAudioReader.h:21: class WavMirAudioReader : public MirAudioReader {
+libraries/lib-network-manager/curl/CurlResponse.h:35: class CurlResponse final : public IResponse {
+libraries/lib-network-manager/curl/CurlResponseFactory.h:26: class CurlResponseFactory final : public IResponseFactory {
+libraries/lib-sqlite-helpers/sqlite/SafeConnection.h:21: class SQLITE_HELPERS_API SafeConnection final : public std::enable_shared_from_this<SafeConnection> {
+libraries/lib-stretching-sequence/tests/FloatVectorClip.h:15: class FloatVectorClip : public ClipInterface {
+libraries/lib-stretching-sequence/tests/MockAudioSegmentFactory.h:16: class NiceAudioSegment final : public AudioSegment {
+libraries/lib-stretching-sequence/tests/MockAudioSegmentFactory.h:35: class MockAudioSegmentFactory : public AudioSegmentFactoryInterface {
+libraries/lib-stretching-sequence/tests/MockPlayableSequence.h:15: class MockPlayableSequence final : public PlayableSequence {
+libraries/lib-stretching-sequence/tests/MockSampleBlock.h:15: class MockSampleBlock final : public SampleBlock {
+libraries/lib-stretching-sequence/tests/MockSampleBlockFactory.h:16: class MockSampleBlockFactory final : public SampleBlockFactory {
+libraries/lib-time-and-pitch/tests/TimeAndPitchRealSource.h:17: class TimeAndPitchRealSource final : public TimeAndPitchSource {
+libraries/lib-vst3/internal/ConnectionProxy.h:24: class ConnectionProxy final : public Steinberg::Vst::IConnectionPoint {
+libraries/lib-wave-track-paint/waveform/WaveBitmapCache.h:26: class WAVE_TRACK_PAINT_API WaveBitmapCacheElement : public GraphicsDataCacheElementBase {
+libraries/lib-wave-track-paint/waveform/WaveBitmapCache.h:41: class WAVE_TRACK_PAINT_API WaveBitmapCache final : public GraphicsDataCache<WaveBitmapCacheElement> {
+libraries/lib-wave-track-paint/waveform/WaveDataCache.h:92: class WAVE_TRACK_PAINT_API WaveDataCache final : public GraphicsDataCache<WaveCacheElement> {
+libraries/lib-wx-wrappers/FileDialog/FileDialog.h:22: class WX_WRAPPERS_API FileDialogBase : public wxFileDialogBase {
+libraries/lib-wx-wrappers/FileDialog/mac/FileDialogPrivate.h:25: class FileDialog: public FileDialogBase {
+libraries/lib-wx-wrappers/FileDialog/win/FileDialogPrivate.h:25: class WX_WRAPPERS_API FileDialog : public FileDialogBase {
+libraries/lib-wx-wrappers/FileDialog/win/FileDialogPrivate.h:102: class Disabler : public wxModalDialogHook {
+src/AboutDialog.h:32: class AUDACITY_DLL_API AboutDialog final : public wxDialogWrapper {
+src/AdornedRulerPanel.h:29: class AUDACITY_DLL_API AdornedRulerPanel final : public CellularPanel , private PrefsListener {
+src/AnalyzedWaveClip.h:18: class AnalyzedWaveClip : public MIR::AnalyzedAudioClip {
+src/AudacityApp.h:39: class AudacityApp final : public wxApp , private AppEvents::ProviderBase {
+src/AudacityFileConfig.h:19: class AUDACITY_DLL_API AudacityFileConfig final : public wxFileConfig {
+src/AudacityMirProject.h:17: class AudacityMirProject final : public MIR::ProjectInterface {
+src/AudioPasteDialog.h:18: class AudioPasteDialog final : public wxDialogWrapper {
+src/BatchCommandDialog.h:28: class MacroCommandDialog final : public wxDialogWrapper {
+src/BatchProcessDialog.h:30: class ApplyMacroDialog : public wxDialogWrapper {
+src/BatchProcessDialog.h:73: class MacrosWindow final : public ApplyMacroDialog, public PrefsListener {
+src/CellularPanel.h:34: class AUDACITY_DLL_API CellularPanel : public OverlayPanel {
+src/Clipboard.h:26: class AUDACITY_DLL_API Clipboard final : public Observer::Publisher<ClipboardChangeMessage> {
+src/ClipMirAudioReader.h:23: class ClipMirAudioReader : public MIR::MirAudioReader {
+src/DefaultPlaybackPolicy.h:20: class DefaultPlaybackPolicy final : public PlaybackPolicy , public NonInterferingBase {
+src/FreqWindow.h:35: class FreqPlot final : public wxWindow {
+src/FreqWindow.h:54: class FrequencyPlotDialog final : public PlotSpectrumBase, public wxDialogWrapper, public PrefsListener {
+src/HistoryWindow.h:28: class HistoryDialog final : public wxDialogWrapper, public PrefsListener {
+src/IncompatiblePluginsDialog.h:28: class IncompatiblePluginsDialog final : public wxDialogWrapper {
+src/LabelDialog.h:35: class LabelDialog final : public wxDialogWrapper {
+src/ListNavigationEnabled.h:24: class ListNavigationEnabled : public wxNavigationEnabled<WindowBase> {
+src/ListNavigationPanel.h:24: class ListNavigationPanel : public ListNavigationEnabled<wxWindow> {
+src/MenuCreator.h:18: class AUDACITY_DLL_API MenuCreator final : public CommandManager {
+src/MixerBoard.h:43: class MixerTrackSlider final : public ASlider {
+src/MixerBoard.h:81: class MixerTrackCluster final : public wxPanelWrapper {
+src/MixerBoard.h:166: class MixerBoardScrolledWindow final : public wxScrolledWindow {
+src/MixerBoard.h:191: class MixerBoard final : public wxWindow, private PrefsListener {
+src/MixerBoard.h:267: class MixerBoardFrame final : public wxFrame , public TopLevelKeystrokeHandlingWindow {
+src/MovableControl.h:20: class MovableControlEvent final : public wxCommandEvent {
+src/MovableControl.h:43: class MovableControl : public wxWindow {
+src/PluginDataModel.h:19: class PluginDataModel final : public wxDataViewModel {
+src/PluginDataViewCtrl.h:5: class PluginDataViewCtrl final : public wxDataViewCtrl {
+src/PluginRegistrationDialog.h:20: class PluginRegistrationDialog final : public wxDialogWrapper {
+src/PluginStartupRegistration.h:25: class PluginStartupRegistration final : public AsyncPluginValidator::Delegate {
+src/ProjectAudioManager.h:60: class AUDACITY_DLL_API ProjectAudioManager final : public ClientData::Base , public AudioIOListener , public std::enable_shared_from_this< ProjectAudioManager > , public Observer::Publisher<RecordingDropoutEvent> {
+src/ProjectFileManager.h:32: class AUDACITY_DLL_API ProjectFileManager final : public ClientData::Base {
+src/ProjectManager.h:33: class AUDACITY_DLL_API ProjectManager final : public wxEvtHandler , public ClientData::Base {
+src/ProjectSettings.h:52: class AUDACITY_DLL_API ProjectSettings final : public ClientData::Base , public Observer::Publisher<ProjectSettingsEvent> , private PrefsListener {
+src/ProjectTimeRuler.h:22: class ProjectTimeRuler final : public ClientData::Base {
+src/ProjectWindow.h:33: class AUDACITY_DLL_API ProjectWindow final : public ProjectWindowBase , public PrefsListener , public Observer::Publisher<ProjectWindowDestroyedMessage> {
+src/ProjectWindow.h:80: class PlaybackScroller final : public Observer::Publisher<PlaybackScrollerMessage> {
+src/ProjectWindows.h:48: class AttachedWindows : public ClientData::Site< AttachedWindows, wxWindow, ClientData::SkipCopying, ClientData::BarePtr > {
+src/RealtimeEffectPanel.h:35: class RealtimeEffectPanel : public wxSplitterWindow {
+src/ScrubState.h:48: class ScrubbingPlaybackPolicy final : public PlaybackPolicy {
+src/ShuttleGetDefinition.h:20: class AUDACITY_DLL_API ShuttleGetDefinition final : public ConstSettingsVisitor, public CommandMessageTargetDecorator {
+src/SoundActivatedRecord.h:23: class SoundActivatedRecordDialog final : public wxDialogWrapper {
+src/SpectralDataManager.h:40: class SpectralDataManager::Worker : public TrackSpectrumTransformer{
+src/TagsEditor.h:21: class TagsEditorDialog final : public wxDialogWrapper {
+src/ThemedWrappers.h:31: class ThemedWindowWrapper final : public WindowBase, public std::conditional_t<std::is_base_of_v<PrefsListener, WindowBase>, PrefsListenerDummy, PrefsListener> {
+src/ThemedWrappers.h:92: class ThemedButtonWrapper final : public ButtonBase, public PrefsListener {
+src/ThemedWrappers.h:191: class ThemedAButtonWrapper final : public AButtonBase , public PrefsListener {
+src/TimeDialog.h:24: class AUDACITY_DLL_API TimeDialog final : public wxDialogWrapper {
+src/TimeDisplayMode.h:24: class TimeDisplayModeSetting : public EnumSetting<TimeDisplayMode>, private Observer::Publisher<TimeDisplayMode> {
+src/TimerRecordDialog.h:57: class TimerRecordDialog final : public wxDialogWrapper {
+src/TimerRecordExportDialog.h:10: class TimerRecordExportDialog final : public wxDialogWrapper {
+src/TrackArtist.h:40: class AUDACITY_DLL_API TrackArtist final : private PrefsListener {
+src/TrackPanel.h:59: class AUDACITY_DLL_API TrackPanel final : public CellularPanel , public NonKeystrokeInterceptingWindow , private PrefsListener {
+src/TrackPanel.h:197: class AUDACITY_DLL_API AudacityTimer final : public wxTimer {
+src/TrackPanelAx.h:28: class TrackPanelAx final : public TrackFocusCallbacks #if wxUSE_ACCESSIBILITY , public WindowAccessible #endif , public wxTrackable {
+src/TrackPanelResizeHandle.h:20: class TrackPanelResizeHandle final : public UIHandle {
+src/TrackPanelResizerCell.h:20: class TrackPanelResizerCell : public CommonChannelCell , public std::enable_shared_from_this< TrackPanelResizerCell > {
+src/WhatsNewDialog.h:21: class WhatsNewDialog final : public wxDialogWrapper {
+src/commands/AppCommandEvent.h:29: class AppCommandEvent final : public wxCommandEvent {
+src/commands/BatchEvalCommand.h:31: class BatchEvalCommandType final : public OldStyleCommandType {
+src/commands/BatchEvalCommand.h:40: class BatchEvalCommand final : public CommandImplementation {
+src/commands/Command.h:65: class ApplyAndSendResponse : public DecoratedCommand {
+src/commands/CommandType.h:44: class AUDACITY_DLL_API OldStyleCommandType : public AudacityCommand {
+src/commands/CompareAudioCommand.h:26: class CompareAudioCommand final : public AudacityCommand {
+src/commands/Demo.h:19: class DemoCommand final : public AudacityCommand {
+src/commands/DragCommand.h:22: class DragCommand : public AudacityCommand {
+src/commands/GetInfoCommand.h:29: class GetInfoCommand : public AudacityCommand {
+src/commands/GetTrackInfoCommand.h:22: class GetTrackInfoCommand final : public AudacityCommand {
+src/commands/HelpCommand.h:26: class HelpCommand : public AudacityCommand {
+src/commands/HelpCommand.h:48: class CommentCommand : public AudacityCommand {
+src/commands/ImportExportCommands.h:26: class ImportCommand : public AudacityCommand {
+src/commands/ImportExportCommands.h:46: class ExportCommand : public AudacityCommand {
+src/commands/LoadCommands.h:30: class AUDACITY_DLL_API BuiltinCommandsModule final : public PluginProvider {
+src/commands/MessageCommand.h:27: class MessageCommand : public AudacityCommand {
+src/commands/OpenSaveCommands.h:30: class OpenProjectCommand : public AudacityCommand {
+src/commands/OpenSaveCommands.h:52: class SaveProjectCommand : public AudacityCommand {
+src/commands/OpenSaveCommands.h:74: class SaveCopyCommand : public AudacityCommand {
+src/commands/OpenSaveCommands.h:94: class SaveLogCommand : public AudacityCommand {
+src/commands/OpenSaveCommands.h:114: class ClearLogCommand : public AudacityCommand {
+src/commands/PreferenceCommands.h:29: class GetPreferenceCommand final : public AudacityCommand {
+src/commands/PreferenceCommands.h:51: class SetPreferenceCommand final : public AudacityCommand {
+src/commands/SelectCommand.h:27: class SelectTimeCommand : public AudacityCommand {
+src/commands/SelectCommand.h:55: class SelectFrequenciesCommand : public AudacityCommand {
+src/commands/SelectCommand.h:80: class SelectTracksCommand : public AudacityCommand {
+src/commands/SelectCommand.h:106: class SelectCommand : public AudacityCommand {
+src/commands/SetClipCommand.h:21: class SetClipCommand : public AudacityCommand {
+src/commands/SetEnvelopeCommand.h:21: class SetEnvelopeCommand : public SetTrackBase {
+src/commands/SetLabelCommand.h:22: class SetLabelCommand : public AudacityCommand {
+src/commands/SetProjectCommand.h:23: class SetProjectCommand : public AudacityCommand {
+src/commands/SetTrackInfoCommand.h:25: class SetTrackBase : public AudacityCommand {
+src/commands/SetTrackInfoCommand.h:32: class SetTrackStatusCommand : public SetTrackBase {
+src/commands/SetTrackInfoCommand.h:61: class SetTrackAudioCommand : public SetTrackBase {
+src/commands/SetTrackInfoCommand.h:92: class SetTrackVisualsCommand : public SetTrackBase {
+src/commands/SetTrackInfoCommand.h:137: class SetTrackCommand : public SetTrackBase {
+src/commands/Validators.h:89: class DefaultValidator final : public Validator {
+src/commands/Validators.h:98: class OptionValidator final : public Validator {
+src/commands/Validators.h:138: class BoolValidator final : public Validator {
+src/commands/Validators.h:158: class BoolArrayValidator final : public Validator {
+src/commands/Validators.h:182: class DoubleValidator final : public Validator {
+src/commands/Validators.h:202: class RangeValidator final : public Validator {
+src/commands/Validators.h:227: class IntValidator final : public Validator {
+src/commands/Validators.h:249: class AndValidator final : public Validator {
+src/commands/wxCommandTargets.h:44: class GUIProgressTarget final : public CommandProgressTarget {
+src/commands/wxCommandTargets.h:61: class AUDACITY_DLL_API StatusBarTarget final : public CommandMessageTarget {
+src/effects/Amplify.h:27: class EffectAmplify : public AmplifyBase, public StatefulEffectUIServices {
+src/effects/AutoDuck.h:26: class EffectAutoDuck final : public AutoDuckBase, public StatefulEffectUIServices {
+src/effects/AutoDuck.h:57: class EffectAutoDuck::Panel final : public wxPanelWrapper {
+src/effects/BasicEffectUIServices.h:21: class AUDACITY_DLL_API BasicEffectUIServices : public EffectUIServices {
+src/effects/BassTreble.h:20: class EffectBassTreble final : public BassTrebleBase, public StatelessEffectUIServices {
+src/effects/ChangePitch.h:29: class EffectChangePitch : public ChangePitchBase, public StatefulEffectUIServices {
+src/effects/ChangeSpeed.h:27: class EffectChangeSpeed : public ChangeSpeedBase, public StatefulEffectUIServices {
+src/effects/ChangeTempo.h:29: class EffectChangeTempo : public ChangeTempoBase, public StatefulEffectUIServices {
+src/effects/ClickRemoval.h:22: class EffectClickRemoval final : public ClickRemovalBase, public StatefulEffectUIServices {
+src/effects/ClipIndicatorPanel.h:19: class ClipIndicatorPanel final : public wxPanelWrapper {
+src/effects/CompressionMeterPanel.h:25: class CompressionMeterPanel final : public wxPanelWrapper {
+src/effects/Compressor.h:18: class EffectCompressor final : public EffectWithSettings<CompressorSettings, StatelessPerTrackEffect> {
+src/effects/CompressorEditor.h:20: class CompressorEditor final : public DynamicRangeProcessorEditor {
+src/effects/Contrast.h:26: class ContrastDialog final : public ContrastBase, public wxDialogWrapper {
+src/effects/Distortion.h:20: class EffectDistortion final : public DistortionBase, public StatelessEffectUIServices {
+src/effects/DtmfGen.h:26: class EffectDtmf final : public DtmfBase, public StatelessEffectUIServices {
+src/effects/DynamicRangeProcessorDummyOutputs.h:17: class DynamicRangeProcessorDummyOutputs final : public EffectOutputs {
+src/effects/DynamicRangeProcessorEditor.h:86: class DynamicRangeProcessorEditor : public EffectEditor {
+src/effects/DynamicRangeProcessorHistoryPanel.h:27: class DynamicRangeProcessorHistoryPanel final : public wxPanelWrapper {
+src/effects/DynamicRangeProcessorTransferFunctionPanel.h:19: class DynamicRangeProcessorTransferFunctionPanel final : public wxPanelWrapper {
+src/effects/Echo.h:22: class EffectEcho final : public EchoBase, public StatelessEffectUIServices {
+src/effects/EffectPresetDialog.h:9: class EffectPresetsDialog final : public wxDialogWrapper {
+src/effects/EffectUI.h:43: class EffectUIHost final : public wxDialogWrapper , public TopLevelKeystrokeHandlingWindow {
+src/effects/Equalization.h:21: class EffectEqualization : public EqualizationBase, public StatefulEffectUIServices {
+src/effects/Equalization.h:41: class EffectEqualizationCurve final : public EffectEqualization {
+src/effects/Equalization.h:49: class EffectEqualizationGraphic final : public EffectEqualization {
+src/effects/Equalization48x.h:88: class EQWorker : public wxThread {
+src/effects/EqualizationCurvesDialog.h:24: class EqualizationCurvesDialog final : public wxDialogWrapper {
+src/effects/EqualizationPanel.h:26: class EqualizationPanel final : public wxPanelWrapper {
+src/effects/EqualizationUI.h:33: class EqualizationUI : public wxEvtHandler {
+src/effects/FindClipping.h:21: class EffectFindClipping : public FindClippingBase, public StatefulEffectUIServices {
+src/effects/LegacyCompressor.h:24: class EffectLegacyCompressor final : public LegacyCompressorBase, public StatefulEffectUIServices {
+src/effects/LegacyCompressor.h:69: class EffectLegacyCompressorPanel final : public wxPanelWrapper {
+src/effects/Limiter.h:18: class EffectLimiter final : public EffectWithSettings<LimiterSettings, StatelessPerTrackEffect> {
+src/effects/LimiterEditor.h:21: class LimiterEditor final : public DynamicRangeProcessorEditor {
+src/effects/Loudness.h:27: class EffectLoudness final : public LoudnessBase, public StatefulEffectUIServices {
+src/effects/Noise.h:23: class EffectNoise : public NoiseBase, public StatefulEffectUIServices {
+src/effects/NoiseReduction.h:19: class EffectNoiseReduction final : public NoiseReductionBase, public StatefulEffectUIServices {
+src/effects/Normalize.h:25: class EffectNormalize final : public NormalizeBase, public StatefulEffectUIServices {
+src/effects/Paulstretch.h:19: class EffectPaulstretch final : public PaulstretchBase, public StatefulEffectUIServices {
+src/effects/Phaser.h:24: class EffectPhaser : public PhaserBase, public StatelessEffectUIServices {
+src/effects/RealtimeEffectStateUI.h:28: class RealtimeEffectStateUI final : public wxEvtHandler // Must be the first base class! , public ClientData::Base {
+src/effects/Repeat.h:24: class EffectRepeat final : public RepeatBase, public StatefulEffectUIServices {
+src/effects/Reverb.h:18: class EffectReverb : public ReverbBase, public StatelessEffectUIServices {
+src/effects/ScienFilter.h:32: class EffectScienFilter final : public ScienFilterBase, public StatefulEffectUIServices {
+src/effects/ScienFilter.h:87: class EffectScienFilterPanel final : public wxPanelWrapper {
+src/effects/ScoreAlignDialog.h:66: class ScoreAlignDialog final : public wxDialogWrapper {
+src/effects/Silence.h:21: class EffectSilence final : public SilenceBase, public StatefulEffectUIServices {
+src/effects/StatefulEffectUIServices.h:19: class AUDACITY_DLL_API StatefulEffectUIServices : public wxEvtHandler , public BasicEffectUIServices {
+src/effects/StatelessPerTrackEffect.h:16: class StatelessEffectUIServices : public BasicEffectUIServices {
+src/effects/StatelessPerTrackEffect.h:35: class StatelessPerTrackEffect : public PerTrackEffect , public StatelessEffectUIServices {
+src/effects/TimeScale.h:24: class EffectTimeScale : public TimeScaleBase, public StatefulEffectUIServices {
+src/effects/ToneGen.h:26: class EffectToneGen : public ToneGenBase, public StatefulEffectUIServices {
+src/effects/ToneGen.h:60: class EffectChirp final : public EffectToneGen {
+src/effects/ToneGen.h:70: class EffectTone final : public EffectToneGen {
+src/effects/TruncSilence.h:29: class EffectTruncSilence final : public TruncSilenceBase, public StatefulEffectUIServices {
+src/effects/Wahwah.h:20: class EffectWahwah : public WahWahBase, public StatelessEffectUIServices {
+src/export/ExportAudioDialog.h:42: class ExportAudioDialog final : public wxDialogWrapper {
+src/export/ExportFilePanel.h:27: class ExportFilePanel final : public wxPanelWrapper {
+src/export/ExportMixerDialog.h:29: class ExportMixerDialog final : public wxDialogWrapper {
+src/export/ExportMixerPanel.h:25: class ExportMixerPanel final : public wxPanelWrapper {
+src/export/ExportOptionsHandler.h:38: class ExportOptionsHandler final : public ExportOptionsEditor::Listener , public Observer::Publisher<ExportOptionsHandlerEvent> {
+src/import/ImportStreamDialog.h:20: class ImportStreamDialog final : public wxDialogWrapper {
+src/menus/CloudLoginHelper.h:9: class AUDACITY_DLL_API CloudLoginHelper final : public Observer::Publisher<Observer::Message, false> {
+src/menus/GetEffectsHelper.h:15: class AUDACITY_DLL_API GetEffectsHelper final : public Observer::Publisher<Observer::Message, false> {
+src/prefs/ApplicationPrefs.h:21: class ApplicationPrefs final : public PrefsPanel {
+src/prefs/BatchPrefs.h:23: class BatchPrefs final : public PrefsPanel {
+src/prefs/DevicePrefs.h:25: class DevicePrefs final : public PrefsPanel {
+src/prefs/DirectoriesPrefs.h:24: class DirectoriesPrefs final : public PrefsPanel {
+src/prefs/EffectsPrefs.h:27: class EffectsPrefs final : public PrefsPanel {
+src/prefs/ExtImportPrefs.h:33: class ExtImportPrefsDropTarget final : public wxDropTarget {
+src/prefs/ExtImportPrefs.h:49: class ExtImportPrefs final : public PrefsPanel {
+src/prefs/GUIPrefs.h:26: class AUDACITY_DLL_API GUIPrefs final : public PrefsPanel {
+src/prefs/ImportExportPrefs.h:26: class AUDACITY_DLL_API ImportExportPrefs final : public PrefsPanel {
+src/prefs/KeyConfigPrefs.h:32: class KeyConfigPrefs final : public PrefsPanel {
+src/prefs/MidiIOPrefs.h:25: class MidiIOPrefs final : public PrefsPanel {
+src/prefs/ModulePrefs.h:26: class ModulePrefs final : public PrefsPanel {
+src/prefs/PlaybackPrefs.h:23: class PlaybackPrefs final : public PrefsPanel {
+src/prefs/PrefsDialog.h:77: class AUDACITY_DLL_API GlobalPrefsDialog final : public PrefsDialog {
+src/prefs/QualityPrefs.h:26: class AUDACITY_DLL_API QualityPrefs final : public PrefsPanel {
+src/prefs/RecordingPrefs.h:43: class RecordingPrefs final : public PrefsPanel {
+src/prefs/SpectrumPrefs.h:41: class SpectrumPrefs final : public PrefsPanel {
+src/prefs/ThemePrefs.h:25: class ThemePrefs final : public PrefsPanel {
+src/prefs/TracksBehaviorsPrefs.h:24: class AUDACITY_DLL_API TracksBehaviorsPrefs final : public PrefsPanel {
+src/prefs/TracksPrefs.h:27: class AUDACITY_DLL_API TracksPrefs final : public PrefsPanel {
+src/prefs/WaveformPrefs.h:25: class WaveformPrefs final : public PrefsPanel {
+src/prefs/WaveformScale.h:22: class AUDACITY_DLL_API WaveformScale : public ClientData::Cloneable<> {
+src/toolbars/AudioSetupToolBar.h:26: class AudioSetupToolBar final : public ToolBar {
+src/toolbars/ControlToolBar.h:32: class AUDACITY_DLL_API ControlToolBar final : public ToolBar {
+src/toolbars/CutCopyPasteToolBar.h:26: class CutCopyPasteToolBar final : public ToolBar {
+src/toolbars/DeviceToolBar.h:27: class DeviceToolBar final : public ToolBar {
+src/toolbars/EditToolBar.h:30: class EditToolBar final : public ToolBar {
+src/toolbars/MeterToolBar.h:38: class MeterToolBar final : public ToolBar {
+src/toolbars/SelectionBar.h:37: class AUDACITY_DLL_API SelectionBar final : public ToolBar {
+src/toolbars/SnappingToolBar.h:30: class SnappingToolBar final : public ToolBar {
+src/toolbars/SpectralSelectionBar.h:29: class SpectralSelectionBar final : public ToolBar {
+src/toolbars/TimeSignatureToolBar.h:32: class TimeSignatureToolBar final : public ToolBar {
+src/toolbars/TimeToolBar.h:23: class TimeToolBar final : public ToolBar {
+src/toolbars/ToolDock.h:116: class Iterator : public ValueIterator<Place> {
+src/toolbars/ToolDock.h:291: class ToolDock final : public wxPanelWrapper {
+src/toolbars/ToolManager.h:51: class AUDACITY_DLL_API ToolManager final : public wxEvtHandler , public wxEventFilter , public ClientData::Base {
+src/toolbars/ToolManager.h:188: class ToolFrame final : public wxFrame {
+src/toolbars/ToolsToolBar.h:37: class ToolsToolBar final : public ToolBar {
+src/toolbars/TranscriptionToolBar.h:61: class TranscriptionToolBar final : public ToolBar {
+src/update/Audacity40PromoDialog.h:26: class Audacity40PromoDialog final : public wxDialogWrapper {
+src/update/NoUpdatesAvailableDialog.h:18: class NoUpdatesAvailableDialog final : public wxDialogWrapper {
+src/update/UpdateDataParser.h:19: class UpdateDataParser final : public XMLTagHandler {
+src/update/UpdateManager.h:33: class UpdateManager final : public wxEvtHandler, public PrefsListener {
+src/update/UpdateNoticeDialog.h:20: class UpdateNoticeDialog final : public wxDialogWrapper {
+src/update/UpdateNotificationDialog.h:18: class UpdateNotificationDialog final : public wxDialogWrapper {
+src/update/UpdatePopupDialog.h:21: class UpdatePopupDialog final : public wxDialogWrapper {
+src/widgets/AButton.h:29: class AButtonAx : public WindowAccessible {
+src/widgets/AButton.h:104: class AUDACITY_DLL_API AButton : public wxWindow {
+src/widgets/ASlider.h:367: class SliderDialog final : public wxDialogWrapper {
+src/widgets/AttachableScrollBar.h:24: class AUDACITY_DLL_API AttachableScrollBar final : public wxScrollBar {
+src/widgets/auStaticText.h:19: class AUDACITY_DLL_API auStaticText : public wxWindow {
+src/widgets/BeatsFormat.h:18: class BeatsFormat final : public RulerFormat {
+src/widgets/CustomUpdater.h:17: class CustomUpdater : public RulerUpdater {
+src/widgets/CustomUpdaterPosition.h:17: class CustomUpdaterPosition final : public CustomUpdater {
+src/widgets/CustomUpdaterValue.h:17: class CustomUpdaterValue final : public CustomUpdater {
+src/widgets/ExpandingToolBar.h:45: class ExpandingToolBar final : public wxPanelWrapper {
+src/widgets/ExpandingToolBar.h:124: class ToolBarGrabber final : public wxPanelWrapper {
+src/widgets/ExpandingToolBar.h:147: class ToolBarDialog final : public wxDialogWrapper {
+src/widgets/ExpandingToolBar.h:169: class ToolBarFrame final : public wxMiniFrame {
+src/widgets/ExpandingToolBar.h:196: class ToolBarArea final : public wxPanelWrapper {
+src/widgets/FreqGauge.h:16: class AUDACITY_DLL_API FreqGauge final : public wxStatusBar {
+src/widgets/GeneratedUpdater.h:17: class GeneratedUpdater : public RulerUpdater {
+src/widgets/Grabber.h:47: class GrabberEvent final : public wxCommandEvent {
+src/widgets/Grabber.h:106: class AUDACITY_DLL_API Grabber final : public wxWindow {
+src/widgets/Grabber.h:155: class AUDACITY_DLL_API AStaticBitmap : public wxStaticBitmap {
+src/widgets/Grid.h:87: class NumericRenderer final : public wxGridCellRenderer {
+src/widgets/Grid.h:125: class AUDACITY_DLL_API ChoiceEditor final : public wxGridCellEditor, wxEvtHandler {
+src/widgets/Grid.h:160: class FocusHandler:wxEvtHandler {
+src/widgets/Grid.h:189: class AUDACITY_DLL_API Grid final : public wxGrid {
+src/widgets/IntFormat.h:17: class IntFormat final : public RulerFormat {
+src/widgets/KeyView.h:72: class KeyView final : public wxVListBox {
+src/widgets/LinearDBFormat.h:17: class LinearDBFormat final : public RulerFormat {
+src/widgets/LinearUpdater.h:19: class LinearUpdater final : public GeneratedUpdater {
+src/widgets/LogarithmicUpdater.h:17: class LogarithmicUpdater final : public GeneratedUpdater {
+src/widgets/MeterPanel.h:88: class AUDACITY_DLL_API MeterPanel final : public MeterPanelBase, private PrefsListener , public NonInterferingBase {
+src/widgets/MissingPluginsErrorDialog.h:14: class MissingPluginsErrorDialog final : public wxDialogWrapper {
+src/widgets/NumericTextCtrl.h:34: class AUDACITY_DLL_API NumericTextCtrl final : public wxControl, public NumericConverter {
+src/widgets/OverlayPanel.h:71: class AUDACITY_DLL_API ADCChanger : public std::unique_ptr<wxDC, ::DCUnchanger> {
+src/widgets/PopupMenuTable.h:96: class PopupMenuHandler : public wxEvtHandler {
+src/widgets/PopupMenuTable.h:121: class AUDACITY_DLL_API PopupMenuTable : public PopupMenuHandler {
+src/widgets/RealFormat.h:18: class RealFormat final : public RulerFormat {
+src/widgets/Ruler.h:32: class AUDACITY_DLL_API Ruler : public Observer::Publisher<RulerInvalidatedMessage> {
+src/widgets/RulerPanel.h:19: class AUDACITY_DLL_API RulerPanel final : public wxPanelWrapper {
+src/widgets/TimeFormat.h:17: class TimeFormat final : public RulerFormat {
+src/widgets/UnwritableLocationErrorDialog.h:17: class UnwritableLocationErrorDialog final : public wxDialogWrapper {
+src/widgets/valnum.h:340: class IntegerValidator final : public Private::NumValidator<IntegerValidatorBase, T> {
+src/widgets/valnum.h:446: class FloatingPointValidator final : public Private::NumValidator<FloatingPointValidatorBase, T> {
+src/effects/audiounits/AUControl.h:24: class AUControl final : public wxControl {
+src/effects/audiounits/AudioUnitEditor.h:29: class AudioUnitEditor : public wxEvtHandler, public EffectEditor {
+src/effects/audiounits/AudioUnitEffect.h:35: class AudioUnitEffect final : public StatelessEffectUIServices , public AudioUnitEffectBase {
+src/effects/audiounits/AudioUnitEffectOptionsDialog.h:30: class AudioUnitEffectOptionsDialog final : public wxDialogWrapper {
+src/effects/ladspa/LadspaEffect.h:25: class LadspaEffect final : public LadspaEffectBase , public StatelessEffectUIServices {
+src/effects/ladspa/LadspaEffectOptionsDialog.h:18: class LadspaEffectOptionsDialog final : public wxDialogWrapper {
+src/effects/lv2/LV2Editor.h:53: class LV2Editor final : public EffectEditor , public wxEvtHandler , LV2UIFeaturesList::UIHandler {
+src/effects/lv2/LV2Effect.h:35: class LV2Effect final : public StatelessEffectUIServices , public LV2EffectBase {
+src/effects/lv2/LV2EffectMeter.h:22: class LV2EffectMeter final : public wxWindow {
+src/effects/lv2/LV2PreferencesDialog.h:34: class LV2PreferencesDialog final : public wxDialogWrapper {
+src/effects/lv2/NativeWindow.h:26: class NativeWindow : public wxWindow {
+src/effects/nyquist/Nyquist.h:25: class NyquistEffect final : public NyquistBase, public StatefulEffectUIServices {
+src/effects/nyquist/Nyquist.h:68: class NyquistOutputDialog final : public wxDialogWrapper {
+src/effects/vamp/LoadVamp.h:29: class VampEffectsModule final : public PluginProvider {
+src/effects/vamp/VampEffect.h:39: class VampEffect final : public StatefulEffect, public StatefulEffectUIServices {
+src/effects/VST/VSTControlGTK.h:17: class VSTControl final : public VSTControlBase {
+src/effects/VST/VSTControlMSW.h:18: class VSTControl final : public VSTControlBase {
+src/effects/VST/VSTControlOSX.h:23: class VSTControlImpl final : public wxWidgetCocoaImpl {
+src/effects/VST/VSTControlOSX.h:30: class VSTControl : public VSTControlBase {
+src/effects/VST/VSTEditor.h:31: class VSTEditor final : public wxEvtHandler , public EffectEditor , public VSTUIWrapper {
+src/effects/VST/VSTEffect.h:52: class VSTEffect final : public StatelessEffectUIServices , public VSTEffectBase {
+src/effects/VST/VSTEffectOptionsDialog.h:22: class VSTEffectOptionsDialog final : public wxDialogWrapper {
+src/effects/VST3/VST3Editor.h:20: class VST3Editor : public wxEvtHandler , public EffectEditor {
+src/effects/VST3/VST3Effect.h:37: class VST3Effect final : public StatelessEffectUIServices , public VST3EffectBase {
+src/effects/VST3/VST3OptionsDialog.h:18: class VST3OptionsDialog final : public wxDialogWrapper {
+src/effects/VST3/VST3ParametersWindow.h:35: class VST3ParametersWindow : public wxScrolledWindow {
+src/effects/VST3/internal/PlugFrame.h:22: class PlugFrame final : public Steinberg::IPlugFrame {
+src/effects/VST3/internal/x11/PlugFrame.h:24: class PlugFrame final : public Steinberg::IPlugFrame {
+src/effects/VST3/internal/x11/RunLoop.h:29: class RunLoop : public Steinberg::Linux::IRunLoop {
+src/effects/VST3/internal/x11/SocketWindow.h:33: class SocketWindow : public wxNativeWindow {
+src/tracks/ui/AffordanceHandle.h:15: class AUDACITY_DLL_API AffordanceHandle : public TimeShiftHandle {
+src/tracks/ui/BackgroundCell.h:25: class BackgroundCell final : public CommonTrackPanelCell , public ClientData::Base {
+src/tracks/ui/BrushHandle.h:30: class AUDACITY_DLL_API BrushHandle : public UIHandle {
+src/tracks/ui/EditCursorOverlay.h:20: class EditCursorOverlay final : public Overlay , public ClientData::Base {
+src/tracks/ui/EnvelopeHandle.h:28: class AUDACITY_DLL_API EnvelopeHandle final : public UIHandle {
+src/tracks/ui/PlayIndicatorOverlay.h:23: class PlayIndicatorOverlayBase : public Overlay , public ClientData::Base {
+src/tracks/ui/PlayIndicatorOverlay.h:49: class PlayIndicatorOverlay final : public PlayIndicatorOverlayBase {
+src/tracks/ui/Scrubbing.h:39: class AUDACITY_DLL_API Scrubber final : public wxEvtHandler , public ClientData::Base , private PrefsListener , public std::enable_shared_from_this< Scrubber > {
+src/tracks/ui/SelectHandle.h:32: class AUDACITY_DLL_API SelectHandle : public UIHandle {
+src/tracks/ui/TimeShiftHandle.h:213: class CoarseTrackShifter final : public TrackShifter {
+src/tracks/ui/TimeShiftHandle.h:292: class AUDACITY_DLL_API TimeShiftHandle : public UIHandle {
+src/tracks/ui/TrackButtonHandles.h:18: class MinimizeButtonHandle final : public ButtonHandle {
+src/tracks/ui/TrackButtonHandles.h:45: class CloseButtonHandle final : public ButtonHandle {
+src/tracks/ui/TrackButtonHandles.h:74: class MenuButtonHandle final : public ButtonHandle {
+src/tracks/ui/TrackSelectHandle.h:19: class TrackSelectHandle final : public UIHandle {
+src/tracks/ui/ZoomHandle.h:19: class ZoomHandle final : public UIHandle {
+src/tracks/labeltrack/ui/LabelGlyphHandle.h:51: class LabelGlyphHandle final : public LabelDefaultClickHandle {
+src/tracks/labeltrack/ui/LabelTextHandle.h:22: class LabelTextHandle final : public LabelDefaultClickHandle {
+src/tracks/labeltrack/ui/LabelTrackControls.h:16: class LabelTrackControls final : public CommonTrackControls {
+src/tracks/labeltrack/ui/LabelTrackView.h:40: class AUDACITY_DLL_API LabelTrackView final : public CommonChannelView {
+src/tracks/labeltrack/ui/LabelTrackVRulerControls.h:18: class LabelTrackVRulerControls final : public ChannelVRulerControls {
+src/tracks/playabletrack/ui/PlayableTrackButtonHandles.h:17: class AUDACITY_DLL_API MuteButtonHandle final : public ButtonHandle {
+src/tracks/playabletrack/ui/PlayableTrackButtonHandles.h:48: class AUDACITY_DLL_API SoloButtonHandle final : public ButtonHandle {
+src/tracks/playabletrack/ui/PlayableTrackButtonHandles.h:79: class EffectsButtonHandle final : public ButtonHandle {
+src/tracks/playabletrack/notetrack/ui/NoteTrackAffordanceControls.h:19: class AUDACITY_DLL_API NoteTrackAffordanceControls : public CommonTrackCell {
+src/tracks/playabletrack/notetrack/ui/NoteTrackButtonHandle.h:21: class NoteTrackButtonHandle : public UIHandle {
+src/tracks/playabletrack/notetrack/ui/NoteTrackControls.h:28: class NoteTrackControls : public PlayableTrackControls {
+src/tracks/playabletrack/notetrack/ui/NoteTrackDisplayData.h:22: class AUDACITY_DLL_API NoteTrackRange final : public NoteTrackAttachment {
+src/tracks/playabletrack/notetrack/ui/NoteTrackSliderHandles.h:19: class VelocitySliderHandle final : public SliderHandle {
+src/tracks/playabletrack/notetrack/ui/NoteTrackView.h:16: class NoteTrackView final : public CommonChannelView {
+src/tracks/playabletrack/notetrack/ui/NoteTrackVRulerControls.h:19: class NoteTrackVRulerControls final : public ChannelVRulerControls {
+src/tracks/playabletrack/notetrack/ui/NoteTrackVZoomHandle.h:19: class NoteTrackVZoomHandle : public UIHandle {
+src/tracks/playabletrack/notetrack/ui/StretchHandle.h:22: class StretchHandle : public UIHandle {
+src/tracks/playabletrack/wavetrack/ui/ClipOverflowButtonHandle.h:16: class ClipOverflowButtonHandle final : public HighlitClipButtonHandle {
+src/tracks/playabletrack/wavetrack/ui/ClipPitchAndSpeedButtonHandle.h:15: class ClipPitchAndSpeedButtonHandle final : public HighlitClipButtonHandle {
+src/tracks/playabletrack/wavetrack/ui/CutlineHandle.h:21: class CutlineHandle final : public UIHandle {
+src/tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.h:30: class PitchAndSpeedDialog final : public wxDialogWrapper, public ClientData::Base {
+src/tracks/playabletrack/wavetrack/ui/SampleHandle.h:25: class SampleHandle final : public UIHandle {
+src/tracks/playabletrack/wavetrack/ui/ShuttleGuiScopedSizer.h:29: class ScopedHorizontalLay : public ScopedSizer<void, int, int> {
+src/tracks/playabletrack/wavetrack/ui/ShuttleGuiScopedSizer.h:41: class ScopedInvisiblePanel : public ScopedSizer<wxPanel*, int> {
+src/tracks/playabletrack/wavetrack/ui/ShuttleGuiScopedSizer.h:52: class ScopedVerticalLay : public ScopedSizer<void, int> {
+src/tracks/playabletrack/wavetrack/ui/ShuttleGuiScopedSizer.h:63: class ScopedStatic : public ScopedSizer<wxStaticBox*, const TranslatableString&, int> {
+src/tracks/playabletrack/wavetrack/ui/SpectrumView.h:123: class SpectrumView final : public WaveChannelSubView {
+src/tracks/playabletrack/wavetrack/ui/SpectrumVRulerControls.h:19: class SpectrumVRulerControls final : public ChannelVRulerControls {
+src/tracks/playabletrack/wavetrack/ui/SpectrumVZoomHandle.h:20: class SpectrumVZoomHandle final : public UIHandle {
+src/tracks/playabletrack/wavetrack/ui/SpectrumVZoomHandle.h:80: class SpectrumVRulerMenuTable : public WaveChannelVRulerMenuTable {
+src/tracks/playabletrack/wavetrack/ui/WaveChannelView.h:39: class AUDACITY_DLL_API WaveChannelSubView : public CommonChannelView {
+src/tracks/playabletrack/wavetrack/ui/WaveChannelView.h:97: class AUDACITY_DLL_API WaveChannelView final : public CommonChannelView , public WaveChannelSubViews {
+src/tracks/playabletrack/wavetrack/ui/WaveChannelVZoomHandle.h:63: class AUDACITY_DLL_API WaveChannelVRulerMenuTable : public PopupMenuTable , private PrefsListener {
+src/tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.h:19: class WaveClipAdjustBorderHandle final : public UIHandle {
+src/tracks/playabletrack/wavetrack/ui/WaveformAppearance.h:18: class WaveformAppearance : public TrackAttachment {
+src/tracks/playabletrack/wavetrack/ui/WaveformView.h:20: class WaveformView final : public WaveChannelSubView {
+src/tracks/playabletrack/wavetrack/ui/WaveformVRulerControls.h:19: class WaveformVRulerControls final : public ChannelVRulerControls {
+src/tracks/playabletrack/wavetrack/ui/WaveformVZoomHandle.h:20: class WaveformVZoomHandle final : public UIHandle {
+src/tracks/playabletrack/wavetrack/ui/WaveformVZoomHandle.h:79: class WaveformVRulerMenuTable : public WaveChannelVRulerMenuTable {
+src/tracks/playabletrack/wavetrack/ui/WaveTrackAffordanceControls.h:38: class AUDACITY_DLL_API WaveTrackAffordanceControls : public CommonTrackCell, public TextEditDelegate, public std::enable_shared_from_this<WaveTrackAffordanceControls> {
+src/tracks/playabletrack/wavetrack/ui/WaveTrackAffordanceHandle.h:18: class WaveTrackAffordanceHandle final : public AffordanceHandle {
+src/tracks/playabletrack/wavetrack/ui/WaveTrackControls.h:28: class AUDACITY_DLL_API WaveTrackControls final : public PlayableTrackControls {
+src/tracks/playabletrack/wavetrack/ui/WaveTrackSliderHandles.h:19: class VolumeSliderHandle final : public SliderHandle {
+src/tracks/playabletrack/wavetrack/ui/WaveTrackSliderHandles.h:55: class PanSliderHandle final : public SliderHandle {
+src/tracks/timetrack/ui/TimeTrackControls.h:16: class TimeTrackControls final : public CommonTrackControls {
+src/tracks/timetrack/ui/TimeTrackControls.h:39: class TimeTrackMenuTable : public PopupMenuTable {
+src/tracks/timetrack/ui/TimeTrackView.h:18: class TimeTrackView final : public CommonChannelView {
+src/tracks/timetrack/ui/TimeTrackVRulerControls.h:21: class TimeTrackVRulerControls final : public ChannelVRulerControls {
+src/tracks/timetrack/ui/TimeTrackVZoomHandle.h:18: class TimeTrackVZoomHandle final : public UIHandle {
+
+=== TARGET TRACK-RELATED INHERITANCE RELATIONSHIPS ===
+libraries/lib-audio-unit/AudioUnitEffectBase.h:28: class AudioUnitEffectBase : public PerTrackEffect , public AudioUnitWrapper {
+libraries/lib-audio-unit/AudioUnitInstance.h:19: class AudioUnitInstance : public PerTrackEffect::Instance , public AudioUnitWrapper {
+libraries/lib-builtin-effects/AmplifyBase.h:6: class BUILTIN_EFFECTS_API AmplifyBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/BassTrebleBase.h:50: class BUILTIN_EFFECTS_API BassTrebleBase : public EffectWithSettings<BassTrebleSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/CompressorInstance.h:26: class BUILTIN_EFFECTS_API CompressorInstance final : public PerTrackEffect::Instance, public EffectInstanceWithBlockSize, public InitializeProcessingSettingsPublisher, public RealtimeResumePublisher {
+libraries/lib-builtin-effects/DistortionBase.h:64: class BUILTIN_EFFECTS_API DistortionBase : public EffectWithSettings<EffectDistortionSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/DtmfBase.h:28: class BUILTIN_EFFECTS_API DtmfBase : public EffectWithSettings<DtmfSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/EchoBase.h:29: class BUILTIN_EFFECTS_API EchoBase : public EffectWithSettings<EchoSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/Fade.h:14: class BUILTIN_EFFECTS_API Fade : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/Invert.h:16: class BUILTIN_EFFECTS_API Invert : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/NoiseBase.h:15: class BUILTIN_EFFECTS_API NoiseBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/PhaserBase.h:69: class BUILTIN_EFFECTS_API PhaserBase : public EffectWithSettings<EffectPhaserSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/ReverbBase.h:62: class BUILTIN_EFFECTS_API ReverbBase : public EffectWithSettings<ReverbSettings, PerTrackEffect> {
+libraries/lib-builtin-effects/ScienFilterBase.h:19: class BUILTIN_EFFECTS_API ScienFilterBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/ToneGenBase.h:21: class BUILTIN_EFFECTS_API ToneGenBase : public StatefulPerTrackEffect {
+libraries/lib-builtin-effects/WahWahBase.h:58: class BUILTIN_EFFECTS_API WahWahBase : public EffectWithSettings<EffectWahwahSettings, PerTrackEffect> {
+libraries/lib-effects/StatefulPerTrackEffect.h:22: class EFFECTS_API StatefulPerTrackEffect : public StatefulEffectBase, public PerTrackEffect {
+libraries/lib-effects/StatefulPerTrackEffect.h:30: class EFFECTS_API Instance : public StatefulEffectBase::Instance, public PerTrackEffect::Instance {
+libraries/lib-label-track/LabelTrack.h:95: class LABEL_TRACK_API LabelTrack final : public UniqueChannelTrack<> , public Observer::Publisher<struct LabelTrackEvent> {
+libraries/lib-ladspa/LadspaEffectBase.h:24: class LADSPA_API LadspaEffectBase : public EffectWithSettings<LadspaEffectSettings, PerTrackEffect> {
+libraries/lib-lv2/LV2EffectBase.h:29: class LV2_API LV2EffectBase : public PerTrackEffect {
+libraries/lib-lv2/LV2Instance.h:27: class LV2_API LV2Instance final : public PerTrackEffect::Instance {
+libraries/lib-note-track/NoteTrack.h:74: class NOTE_TRACK_API NoteTrack final : public UniqueChannelTrack<PlayableTrack> , public OtherPlayableSequence , public NoteTrackAttachments {
+libraries/lib-time-frequency-selection/ViewInfo.h:29: class TIME_FREQUENCY_SELECTION_API NotifyingSelectedRegion : public Observer::Publisher<NotifyingSelectedRegionMessage> , public wxTrackable {
+libraries/lib-time-track/TimeTrack.h:22: class TIME_TRACK_API TimeTrack final : public UniqueChannelTrack<> {
+libraries/lib-track/ChannelAttachments.h:51: class TRACK_API ChannelAttachmentsBase : public TrackAttachment {
+libraries/lib-track/PendingTracks.h:23: class TRACK_API PendingTracks final : public ClientData::Base , public Observer::Publisher<TrackListEvent> {
+libraries/lib-track/Track.h:845: class TRACK_API TrackList final : public Observer::Publisher<TrackListEvent> , private ListOfTracks , public std::enable_shared_from_this<TrackList> , public ClientData::Base {
+libraries/lib-track-selection/TrackFocus.h:38: class TRACK_SELECTION_API TrackFocus final : public ClientData::Base , public Observer::Publisher<TrackFocusChangeMessage> , public std::enable_shared_from_this<TrackFocus> {
+libraries/lib-vst/VSTEffectBase.h:26: class VST_API VSTEffectBase : public VSTWrapper , public PerTrackEffect {
+libraries/lib-vst/VSTInstance.h:25: class VST_API VSTInstance final : public PerTrackEffect::Instance, public VSTWrapper {
+libraries/lib-vst3/VST3EffectBase.h:22: class VST3_API VST3EffectBase : public PerTrackEffect {
+libraries/lib-vst3/VST3Instance.h:28: class VST3_API VST3Instance : public PerTrackEffect::Instance {
+libraries/lib-wave-track/WaveTrack.h:200: class WAVE_TRACK_API WaveTrack final : public WritableSampleTrack , public Observer::Publisher<WaveTrackMessage> {
+src/SpectralDataManager.h:40: class SpectralDataManager::Worker : public TrackSpectrumTransformer{
+src/TrackPanelAx.h:28: class TrackPanelAx final : public TrackFocusCallbacks #if wxUSE_ACCESSIBILITY , public WindowAccessible #endif , public wxTrackable {
+src/TrackPanelResizerCell.h:20: class TrackPanelResizerCell : public CommonChannelCell , public std::enable_shared_from_this< TrackPanelResizerCell > {
+src/commands/SetEnvelopeCommand.h:21: class SetEnvelopeCommand : public SetTrackBase {
+src/commands/SetTrackInfoCommand.h:32: class SetTrackStatusCommand : public SetTrackBase {
+src/commands/SetTrackInfoCommand.h:61: class SetTrackAudioCommand : public SetTrackBase {
+src/commands/SetTrackInfoCommand.h:92: class SetTrackVisualsCommand : public SetTrackBase {
+src/commands/SetTrackInfoCommand.h:137: class SetTrackCommand : public SetTrackBase {
+src/effects/Compressor.h:18: class EffectCompressor final : public EffectWithSettings<CompressorSettings, StatelessPerTrackEffect> {
+src/effects/Limiter.h:18: class EffectLimiter final : public EffectWithSettings<LimiterSettings, StatelessPerTrackEffect> {
+src/effects/StatelessPerTrackEffect.h:35: class StatelessPerTrackEffect : public PerTrackEffect , public StatelessEffectUIServices {
+src/tracks/ui/BackgroundCell.h:25: class BackgroundCell final : public CommonTrackPanelCell , public ClientData::Base {
+src/tracks/ui/TimeShiftHandle.h:213: class CoarseTrackShifter final : public TrackShifter {
+src/tracks/labeltrack/ui/LabelTrackControls.h:16: class LabelTrackControls final : public CommonTrackControls {
+src/tracks/playabletrack/notetrack/ui/NoteTrackAffordanceControls.h:19: class AUDACITY_DLL_API NoteTrackAffordanceControls : public CommonTrackCell {
+src/tracks/playabletrack/notetrack/ui/NoteTrackControls.h:28: class NoteTrackControls : public PlayableTrackControls {
+src/tracks/playabletrack/notetrack/ui/NoteTrackDisplayData.h:22: class AUDACITY_DLL_API NoteTrackRange final : public NoteTrackAttachment {
+src/tracks/playabletrack/wavetrack/ui/WaveformAppearance.h:18: class WaveformAppearance : public TrackAttachment {
+src/tracks/playabletrack/wavetrack/ui/WaveTrackAffordanceControls.h:38: class AUDACITY_DLL_API WaveTrackAffordanceControls : public CommonTrackCell, public TextEditDelegate, public std::enable_shared_from_this<WaveTrackAffordanceControls> {
+src/tracks/playabletrack/wavetrack/ui/WaveTrackControls.h:28: class AUDACITY_DLL_API WaveTrackControls final : public PlayableTrackControls {
+src/tracks/timetrack/ui/TimeTrackControls.h:16: class TimeTrackControls final : public CommonTrackControls {
+
+=== PURE VIRTUAL INTERFACE OF Track.h ===
+libraries/lib-track/Track.h:194: virtual const TypeInfo &GetTypeInfo() const = 0;
+libraries/lib-track/Track.h:212: const = 0;
+libraries/lib-track/Track.h:312: virtual Holder Cut(double t0, double t1) = 0;
+libraries/lib-track/Track.h:323: const = 0;
+libraries/lib-track/Track.h:328: virtual void Clear(double t0, double t1) = 0;
+libraries/lib-track/Track.h:335: virtual void Paste(double t, const Track &src) = 0;
+libraries/lib-track/Track.h:343: Silence(double t0, double t1, ProgressReporter reportProgress = {}) = 0;
+libraries/lib-track/Track.h:348: virtual void InsertSilence(double t, double len) = 0;
+libraries/lib-track/Track.h:359: virtual Holder Clone(bool backup) const = 0;
+libraries/lib-track/Track.h:403: virtual void WriteXML(XMLWriter &xmlFile) const = 0;
+
+=== SUMMARY ===
+Total public inheritance declarations found: 643
+Track-related inheritance declarations found: 55
+Pure virtual Track interface entries found: 10
