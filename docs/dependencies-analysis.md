@@ -1,8 +1,8 @@
-﻿# Dependencies Analysis - Audacity 3.7.7
+﻿# Dependencies Analysis - Audacity (Master Branch)
 
 ## 1. Scope and Methodology
 
-This document reports the dependency analysis performed on Audacity 3.7.7 for the Software Design and Architecture course project.
+This document reports the dependency analysis performed on the active `master` branch of Audacity for the Software Design and Architecture course project.
 
 The analysis focuses on three dependency dimensions:
 
@@ -10,15 +10,36 @@ The analysis focuses on three dependency dimensions:
 2. Data-level dependencies
 3. Behavioral and synchronization dependencies
 
-This first version documents the structural dependency evidence extracted during MT2.
+This version documents the structural dependency evidence extracted from the active codebase.
+
+### 1.1 Active Codebase Requirement
+
+During the project, the analysis was migrated from the static `Audacity-3.7.7` release tag to the active `master` branch to satisfy the course requirement of analyzing an actively updated software system.
+
+This pivot was coordinated with the architecture team after identifying that a frozen release snapshot would not fully satisfy the active-codebase criterion.
+
+After switching to `master`, the static-analysis workflow was regenerated, including the compilation database, Cppcheck results, inheritance extraction, header coupling metrics, and inter-library dependency graph.
+
+### 1.2 Toolchain
+
+The analysis used:
+
+| Tool | Purpose |
+|---|---|
+| CMake + Ninja | Generate compilation database |
+| MSVC Build Tools | C/C++ build environment |
+| Python scripts | Extract dependency evidence |
+| Cppcheck | Static-analysis evidence |
+| Doxygen | Structural exploration support |
+| Graphviz | Dependency graph visualization |
 
 ## 2. Structural Dependencies
 
 ### 2.1 Overview
 
-Structural dependencies in Audacity 3.7.7 appear mainly through compile-time relationships: inheritance chains, header inclusion dependencies, and cross-library include edges.
+Structural dependencies in the active Audacity `master` branch mainly appear through compile-time relationships: inheritance chains, header inclusion dependencies, and cross-library include edges.
 
-The structural analysis was based on the compilation database generated in MT1 and on source-level inspection of the `libraries/` and `src/` directories.
+The analysis was based on the compilation database and source-level inspection of the `libraries/` and `src/` directories.
 
 ### 2.2 Compile Database Baseline
 
@@ -35,6 +56,8 @@ The compilation database contained 1232 translation units.
 | `win` | 1 |
 
 This confirms that Audacity's compile-time structure is not concentrated only in `src/`. A large part of the architectural skeleton is implemented inside internal libraries under `libraries/`.
+
+Because this analysis targets `master`, these numbers should be interpreted as a snapshot of an evolving codebase.
 
 ### 2.3 Track Inheritance Chain
 
@@ -62,11 +85,9 @@ lib-track
 
 This is a strong structural dependency because each subclass is statically bound to the memory layout and virtual interface of its base classes.
 
-`WaveTrack` also inherits from `Observer::Publisher<WaveTrackMessage>`, while `SampleTrack` also inherits from `PlayableSequence`, and `WritableSampleTrack` also inherits from `RecordableSequence`. These additional inheritance relationships increase the compile-time coupling surface of the concrete `WaveTrack` class.
+`WaveTrack` also inherits from `Observer::Publisher<WaveTrackMessage>`, while `SampleTrack` also inherits from `PlayableSequence`, and `WritableSampleTrack` also inherits from `RecordableSequence`.
 
 ### 2.4 Header Fan-in / Fan-out Metrics
-
-The header coupling metrics were computed using the script `scripts/coupling_metrics.py`.
 
 | Header | Ca | Ce | I |
 |---|---:|---:|---:|
@@ -77,15 +98,11 @@ The header coupling metrics were computed using the script `scripts/coupling_met
 | `libraries/lib-track/Track.h` | 52 | 13 | 0.200 |
 | `libraries/lib-audio-io/AudioIO.h` | 40 | 14 | 0.259 |
 
-`WaveTrack.h` is the most relevant structural hotspot for this analysis. It has high fan-in, meaning many files depend on it, while also having non-trivial fan-out, meaning it depends on several other headers.
-
-`Track.h` has lower fan-in than `WaveTrack.h` in the direct include metric, but it remains architecturally critical because it is the root of the audio-track inheritance hierarchy. Therefore, a change to `Track` can propagate through the inheritance chain even when the direct include count is not the highest in the system.
+`WaveTrack.h` emerged as a major structural hotspot because it combines high fan-in with non-trivial fan-out.
 
 ### 2.5 Inter-library Structural Dependencies
 
 The inter-library dependency extraction scanned 78 `lib-*` directories and detected 466 unique inter-library dependency edges.
-
-The strongest measured edges were:
 
 | Source library | Target library | Include count |
 |---|---|---:|
@@ -102,8 +119,6 @@ The generated graph is available at:
 analysis/dependencies/mt2-structural/inter-library-graph.svg
 ```
 
-The inter-library graph confirms that Audacity's architectural structure is not only a set of isolated `lib-*` modules. Several libraries depend on each other through header inclusion, which creates compile-time coupling across module boundaries.
-
 ### 2.6 Structural Risk Summary
 
 | Finding | Evidence | Risk |
@@ -114,11 +129,9 @@ The inter-library graph confirms that Audacity's architectural structure is not 
 | Cross-library include edges | 466 unique inter-library edges | Boundary coupling across `lib-*` modules |
 | `lib-builtin-effects -> lib-wave-track` | include_count = 40 | Effects strongly depend on wave-track abstractions |
 
-Overall, the structural dependency analysis shows that Audacity's audio model is centered around a deep inheritance hierarchy and widely included headers. `WaveTrack.h` is the main hotspot because it combines inheritance coupling, high fan-in, and cross-library usage.
+Overall, the structural dependency analysis shows that the active Audacity `master` branch contains a deep audio-track inheritance hierarchy and strong inter-library compile-time coupling.
 
 ### 2.7 Evidence Artifacts
-
-The structural dependency evidence is stored in the following files:
 
 | Artifact | Purpose |
 |---|---|
