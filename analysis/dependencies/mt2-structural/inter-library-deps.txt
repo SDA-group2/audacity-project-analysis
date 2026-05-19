@@ -1,0 +1,863 @@
+MT2 - Inter-library Structural Dependencies
+================================================================================
+
+Audacity source root: E:\SDA\Audacity-Source\audacity
+Library directories scanned: 78
+Unique inter-library dependency edges: 466
+
+DEPENDENCY EDGES BY SOURCE LIBRARY
+--------------------------------------------------------------------------------
+
+lib-audacity-application-logic
+  -> lib-effects  [include_count=3]
+  -> lib-menus  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-components  [include_count=1]
+  -> lib-module-manager  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-project-history  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-strings  [include_count=1]
+  -> lib-time-frequency-selection  [include_count=1]
+  -> lib-track-selection  [include_count=1]
+  -> lib-viewport  [include_count=1]
+  -> lib-wave-track  [include_count=1]
+
+lib-audio-devices
+  -> lib-utility  [include_count=4]
+  -> lib-preferences  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+
+lib-audio-graph
+  -> lib-math  [include_count=3]
+
+lib-audio-io
+  -> lib-math  [include_count=8]
+  -> lib-audio-devices  [include_count=6]
+  -> lib-mixer  [include_count=6]
+  -> lib-utility  [include_count=6]
+  -> lib-project  [include_count=4]
+  -> lib-project-rate  [include_count=3]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-channel  [include_count=1]
+  -> lib-components  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-realtime-effects  [include_count=1]
+  -> lib-registries  [include_count=1]
+  -> lib-transactions  [include_count=1]
+
+lib-audio-unit
+  -> lib-utility  [include_count=5]
+  -> lib-module-manager  [include_count=4]
+  -> lib-components  [include_count=3]
+  -> lib-strings  [include_count=3]
+  -> lib-effects  [include_count=2]
+  -> lib-exceptions  [include_count=1]
+
+lib-basic-ui
+  -> lib-strings  [include_count=2]
+
+lib-builtin-effects
+  -> lib-effects  [include_count=53]
+  -> lib-wave-track  [include_count=40]
+  -> lib-command-parameters  [include_count=25]
+  -> lib-basic-ui  [include_count=16]
+  -> lib-components  [include_count=15]
+  -> lib-math  [include_count=12]
+  -> lib-preferences  [include_count=10]
+  -> lib-track  [include_count=8]
+  -> lib-track-selection  [include_count=8]
+  -> lib-fft  [include_count=7]
+  -> lib-label-track  [include_count=7]
+  -> lib-utility  [include_count=7]
+  -> lib-project  [include_count=6]
+  -> lib-mixer  [include_count=4]
+  -> lib-dynamic-range-processor  [include_count=3]
+  -> lib-time-frequency-selection  [include_count=3]
+  -> lib-xml  [include_count=2]
+  -> lib-exceptions  [include_count=1]
+  -> lib-files  [include_count=1]
+  -> lib-module-manager  [include_count=1]
+  -> lib-note-track  [include_count=1]
+  -> lib-numeric-formats  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-realtime-effects  [include_count=1]
+  -> lib-wave-track-fft  [include_count=1]
+
+lib-channel
+  -> lib-registries  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-cloud-audiocom
+  -> lib-network-manager  [include_count=33]
+  -> lib-string-utils  [include_count=22]
+  -> lib-utility  [include_count=12]
+  -> lib-wave-track  [include_count=10]
+  -> lib-concurrency  [include_count=9]
+  -> lib-basic-ui  [include_count=8]
+  -> lib-files  [include_count=8]
+  -> lib-import-export  [include_count=7]
+  -> lib-preferences  [include_count=5]
+  -> lib-strings  [include_count=4]
+  -> lib-project  [include_count=3]
+  -> lib-project-file-io  [include_count=3]
+  -> lib-crypto  [include_count=2]
+  -> lib-track  [include_count=2]
+  -> lib-exceptions  [include_count=1]
+  -> lib-math  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-registries  [include_count=1]
+  -> lib-sqlite-helpers  [include_count=1]
+
+lib-command-parameters
+  -> lib-components  [include_count=4]
+  -> lib-preferences  [include_count=1]
+  -> lib-strings  [include_count=1]
+
+lib-components
+  -> lib-strings  [include_count=5]
+  -> lib-utility  [include_count=2]
+
+lib-dynamic-range-processor
+  -> lib-utility  [include_count=3]
+  -> lib-strings  [include_count=2]
+
+lib-effects
+  -> lib-module-manager  [include_count=7]
+  -> lib-wave-track  [include_count=7]
+  -> lib-audio-graph  [include_count=4]
+  -> lib-basic-ui  [include_count=4]
+  -> lib-components  [include_count=4]
+  -> lib-math  [include_count=4]
+  -> lib-mixer  [include_count=4]
+  -> lib-numeric-formats  [include_count=3]
+  -> lib-realtime-effects  [include_count=3]
+  -> lib-time-frequency-selection  [include_count=3]
+  -> lib-track-selection  [include_count=3]
+  -> lib-track  [include_count=2]
+  -> lib-command-parameters  [include_count=1]
+  -> lib-exceptions  [include_count=1]
+  -> lib-files  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-stretching-sequence  [include_count=1]
+  -> lib-strings  [include_count=1]
+  -> lib-transactions  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-exceptions
+  -> lib-basic-ui  [include_count=2]
+  -> lib-strings  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-fft
+  -> lib-utility  [include_count=4]
+  -> lib-math  [include_count=1]
+  -> lib-strings  [include_count=1]
+
+lib-file-formats
+  -> lib-strings  [include_count=3]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-math  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-files
+  -> lib-strings  [include_count=5]
+  -> lib-basic-ui  [include_count=3]
+  -> lib-preferences  [include_count=3]
+  -> lib-utility  [include_count=3]
+  -> lib-exceptions  [include_count=1]
+
+lib-graphics
+  -> lib-utility  [include_count=1]
+
+lib-import-export
+  -> lib-strings  [include_count=11]
+  -> lib-files  [include_count=8]
+  -> lib-file-formats  [include_count=7]
+  -> lib-basic-ui  [include_count=5]
+  -> lib-wave-track  [include_count=5]
+  -> lib-registries  [include_count=4]
+  -> lib-project  [include_count=3]
+  -> lib-track  [include_count=3]
+  -> lib-math  [include_count=2]
+  -> lib-mixer  [include_count=2]
+  -> lib-preferences  [include_count=2]
+  -> lib-stretching-sequence  [include_count=2]
+  -> lib-xml  [include_count=2]
+  -> lib-effects  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-time-frequency-selection  [include_count=1]
+
+lib-ipc
+  -> lib-utility  [include_count=1]
+
+lib-label-track
+  -> lib-track  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-effects  [include_count=1]
+  -> lib-files  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-stretching-sequence  [include_count=1]
+  -> lib-time-frequency-selection  [include_count=1]
+
+lib-ladspa
+  -> lib-module-manager  [include_count=4]
+  -> lib-utility  [include_count=2]
+  -> lib-components  [include_count=1]
+  -> lib-effects  [include_count=1]
+  -> lib-exceptions  [include_count=1]
+  -> lib-files  [include_count=1]
+
+lib-lv2
+  -> lib-utility  [include_count=6]
+  -> lib-module-manager  [include_count=5]
+  -> lib-strings  [include_count=4]
+  -> lib-components  [include_count=3]
+  -> lib-effects  [include_count=2]
+  -> lib-exceptions  [include_count=1]
+  -> lib-math  [include_count=1]
+
+lib-math
+  -> lib-strings  [include_count=4]
+  -> lib-preferences  [include_count=3]
+  -> lib-utility  [include_count=2]
+  -> lib-components  [include_count=1]
+
+lib-menus
+  -> lib-utility  [include_count=7]
+  -> lib-strings  [include_count=4]
+  -> lib-basic-ui  [include_count=3]
+  -> lib-project  [include_count=3]
+  -> lib-project-history  [include_count=2]
+  -> lib-registries  [include_count=2]
+  -> lib-preferences  [include_count=1]
+  -> lib-xml  [include_count=1]
+
+lib-mixer
+  -> lib-audio-graph  [include_count=12]
+  -> lib-math  [include_count=12]
+  -> lib-utility  [include_count=3]
+  -> lib-components  [include_count=2]
+  -> lib-exceptions  [include_count=1]
+  -> lib-xml  [include_count=1]
+
+lib-module-manager
+  -> lib-utility  [include_count=10]
+  -> lib-components  [include_count=8]
+  -> lib-strings  [include_count=8]
+  -> lib-files  [include_count=6]
+  -> lib-ipc  [include_count=6]
+  -> lib-xml  [include_count=6]
+  -> lib-basic-ui  [include_count=4]
+  -> lib-preferences  [include_count=2]
+
+lib-musehub
+  -> lib-network-manager  [include_count=3]
+
+lib-music-information-retrieval
+  -> lib-utility  [include_count=6]
+  -> lib-fft  [include_count=3]
+  -> lib-file-formats  [include_count=1]
+
+lib-network-manager
+  -> lib-string-utils  [include_count=3]
+  -> lib-concurrency  [include_count=1]
+  -> lib-exceptions  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-note-track
+  -> lib-audio-io  [include_count=3]
+  -> lib-preferences  [include_count=3]
+  -> lib-audio-devices  [include_count=1]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-exceptions  [include_count=1]
+  -> lib-mixer  [include_count=1]
+  -> lib-playable-track  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-track  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-numeric-formats
+  -> lib-project  [include_count=7]
+  -> lib-utility  [include_count=4]
+  -> lib-xml  [include_count=4]
+  -> lib-components  [include_count=3]
+  -> lib-project-rate  [include_count=3]
+  -> lib-registries  [include_count=3]
+  -> lib-strings  [include_count=3]
+  -> lib-math  [include_count=2]
+  -> lib-preferences  [include_count=2]
+
+lib-nyquist-effects
+  -> lib-files  [include_count=6]
+  -> lib-module-manager  [include_count=4]
+  -> lib-wave-track  [include_count=4]
+  -> lib-effects  [include_count=3]
+  -> lib-components  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-command-parameters  [include_count=1]
+  -> lib-label-track  [include_count=1]
+  -> lib-math  [include_count=1]
+  -> lib-note-track  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-strings  [include_count=1]
+  -> lib-time-frequency-selection  [include_count=1]
+  -> lib-time-track  [include_count=1]
+  -> lib-track  [include_count=1]
+  -> lib-track-selection  [include_count=1]
+  -> lib-wave-track-settings  [include_count=1]
+
+lib-playable-track
+  -> lib-preferences  [include_count=1]
+  -> lib-track  [include_count=1]
+
+lib-preference-pages
+  -> lib-components  [include_count=1]
+  -> lib-registries  [include_count=1]
+  -> lib-shuttlegui  [include_count=1]
+  -> lib-wx-wrappers  [include_count=1]
+
+lib-preferences
+  -> lib-utility  [include_count=5]
+  -> lib-strings  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-components  [include_count=1]
+  -> lib-wx-init  [include_count=1]
+
+lib-project
+  -> lib-registries  [include_count=3]
+  -> lib-utility  [include_count=3]
+  -> lib-basic-ui  [include_count=2]
+  -> lib-preferences  [include_count=1]
+  -> lib-xml  [include_count=1]
+
+lib-project-file-io
+  -> lib-files  [include_count=8]
+  -> lib-utility  [include_count=6]
+  -> lib-wave-track  [include_count=6]
+  -> lib-strings  [include_count=4]
+  -> lib-xml  [include_count=4]
+  -> lib-basic-ui  [include_count=3]
+  -> lib-project  [include_count=3]
+  -> lib-sentry-reporting  [include_count=3]
+  -> lib-preferences  [include_count=2]
+  -> lib-project-history  [include_count=2]
+  -> lib-registries  [include_count=2]
+  -> lib-string-utils  [include_count=2]
+  -> lib-track  [include_count=2]
+  -> lib-transactions  [include_count=2]
+  -> lib-math  [include_count=1]
+  -> lib-sqlite-helpers  [include_count=1]
+  -> lib-stretching-sequence  [include_count=1]
+
+lib-project-history
+  -> lib-project  [include_count=2]
+  -> lib-registries  [include_count=2]
+  -> lib-utility  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-transactions  [include_count=1]
+
+lib-project-rate
+  -> lib-preferences  [include_count=3]
+  -> lib-audio-devices  [include_count=2]
+  -> lib-xml  [include_count=2]
+  -> lib-math  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-registries  [include_count=1]
+  -> lib-strings  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-realtime-effects
+  -> lib-utility  [include_count=7]
+  -> lib-components  [include_count=5]
+  -> lib-channel  [include_count=3]
+  -> lib-registries  [include_count=3]
+  -> lib-project  [include_count=2]
+  -> lib-xml  [include_count=2]
+  -> lib-math  [include_count=1]
+  -> lib-module-manager  [include_count=1]
+  -> lib-project-history  [include_count=1]
+
+lib-registries
+  -> lib-utility  [include_count=3]
+  -> lib-exceptions  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-preferences  [include_count=1]
+
+lib-sample-track
+  -> lib-math  [include_count=2]
+  -> lib-mixer  [include_count=1]
+  -> lib-playable-track  [include_count=1]
+
+lib-sentry-reporting
+  -> lib-network-manager  [include_count=3]
+  -> lib-string-utils  [include_count=2]
+  -> lib-uuid  [include_count=1]
+
+lib-shuttlegui
+  -> lib-wx-wrappers  [include_count=5]
+  -> lib-command-parameters  [include_count=2]
+  -> lib-preferences  [include_count=2]
+  -> lib-theme  [include_count=2]
+  -> lib-components  [include_count=1]
+  -> lib-strings  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-snapping
+  -> lib-numeric-formats  [include_count=4]
+  -> lib-project  [include_count=3]
+  -> lib-project-rate  [include_count=3]
+  -> lib-registries  [include_count=2]
+  -> lib-utility  [include_count=2]
+  -> lib-xml  [include_count=2]
+  -> lib-components  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-screen-geometry  [include_count=1]
+  -> lib-track  [include_count=1]
+
+lib-sqlite-helpers
+  -> lib-exceptions  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-stretching-sequence
+  -> lib-math  [include_count=12]
+  -> lib-time-and-pitch  [include_count=11]
+  -> lib-wave-track  [include_count=5]
+  -> lib-mixer  [include_count=2]
+  -> lib-utility  [include_count=2]
+  -> lib-channel  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-registries  [include_count=1]
+
+lib-tags
+  -> lib-files  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-project-history  [include_count=1]
+  -> lib-registries  [include_count=1]
+  -> lib-strings  [include_count=1]
+  -> lib-xml  [include_count=1]
+
+lib-theme
+  -> lib-preferences  [include_count=2]
+  -> lib-utility  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-components  [include_count=1]
+  -> lib-files  [include_count=1]
+  -> lib-strings  [include_count=1]
+
+lib-theme-resources
+  -> lib-theme  [include_count=4]
+
+lib-time-and-pitch
+  -> lib-utility  [include_count=2]
+  -> lib-files  [include_count=1]
+  -> lib-preferences  [include_count=1]
+
+lib-time-frequency-selection
+  -> lib-xml  [include_count=6]
+  -> lib-utility  [include_count=3]
+  -> lib-numeric-formats  [include_count=2]
+  -> lib-project  [include_count=2]
+  -> lib-project-history  [include_count=2]
+  -> lib-registries  [include_count=2]
+  -> lib-snapping  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-components  [include_count=1]
+  -> lib-preferences  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-screen-geometry  [include_count=1]
+
+lib-time-track
+  -> lib-mixer  [include_count=2]
+  -> lib-project  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-track  [include_count=1]
+
+lib-track
+  -> lib-utility  [include_count=4]
+  -> lib-project  [include_count=2]
+  -> lib-registries  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-channel  [include_count=1]
+  -> lib-exceptions  [include_count=1]
+  -> lib-project-history  [include_count=1]
+  -> lib-xml  [include_count=1]
+
+lib-track-selection
+  -> lib-track  [include_count=5]
+  -> lib-project  [include_count=3]
+  -> lib-registries  [include_count=3]
+  -> lib-preferences  [include_count=2]
+  -> lib-utility  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-time-frequency-selection  [include_count=1]
+
+lib-transactions
+  -> lib-exceptions  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-url-schemes
+  -> lib-string-utils  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-uuid
+  -> lib-string-utils  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-viewport
+  -> lib-basic-ui  [include_count=1]
+  -> lib-playable-track  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-project-history  [include_count=1]
+  -> lib-registries  [include_count=1]
+  -> lib-snapping  [include_count=1]
+  -> lib-time-frequency-selection  [include_count=1]
+  -> lib-track  [include_count=1]
+  -> lib-track-selection  [include_count=1]
+  -> lib-utility  [include_count=1]
+
+lib-vst
+  -> lib-module-manager  [include_count=3]
+  -> lib-strings  [include_count=3]
+  -> lib-utility  [include_count=3]
+  -> lib-components  [include_count=2]
+  -> lib-effects  [include_count=2]
+  -> lib-xml  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-files  [include_count=1]
+
+lib-vst3
+  -> lib-components  [include_count=5]
+  -> lib-module-manager  [include_count=4]
+  -> lib-utility  [include_count=4]
+  -> lib-effects  [include_count=2]
+  -> lib-exceptions  [include_count=2]
+  -> lib-files  [include_count=2]
+  -> lib-strings  [include_count=2]
+
+lib-wave-track
+  -> lib-math  [include_count=13]
+  -> lib-stretching-sequence  [include_count=11]
+  -> lib-exceptions  [include_count=6]
+  -> lib-utility  [include_count=5]
+  -> lib-basic-ui  [include_count=4]
+  -> lib-xml  [include_count=4]
+  -> lib-mixer  [include_count=3]
+  -> lib-strings  [include_count=3]
+  -> lib-audio-graph  [include_count=2]
+  -> lib-preferences  [include_count=2]
+  -> lib-project-rate  [include_count=2]
+  -> lib-time-and-pitch  [include_count=2]
+  -> lib-track  [include_count=2]
+  -> lib-channel  [include_count=1]
+  -> lib-components  [include_count=1]
+  -> lib-project  [include_count=1]
+  -> lib-registries  [include_count=1]
+  -> lib-sample-track  [include_count=1]
+  -> lib-track-selection  [include_count=1]
+
+lib-wave-track-fft
+  -> lib-fft  [include_count=1]
+  -> lib-wave-track  [include_count=1]
+
+lib-wave-track-paint
+  -> lib-math  [include_count=6]
+  -> lib-utility  [include_count=5]
+  -> lib-wave-track  [include_count=4]
+  -> lib-graphics  [include_count=3]
+  -> lib-screen-geometry  [include_count=3]
+  -> lib-mixer  [include_count=1]
+
+lib-wave-track-settings
+  -> lib-preferences  [include_count=4]
+  -> lib-fft  [include_count=2]
+  -> lib-registries  [include_count=2]
+  -> lib-wave-track  [include_count=2]
+  -> lib-basic-ui  [include_count=1]
+  -> lib-math  [include_count=1]
+  -> lib-project-rate  [include_count=1]
+  -> lib-screen-geometry  [include_count=1]
+
+lib-wx-init
+  -> lib-strings  [include_count=12]
+  -> lib-theme  [include_count=9]
+  -> lib-files  [include_count=7]
+  -> lib-preferences  [include_count=7]
+  -> lib-wx-wrappers  [include_count=7]
+  -> lib-shuttlegui  [include_count=6]
+  -> lib-basic-ui  [include_count=5]
+  -> lib-utility  [include_count=5]
+  -> lib-string-utils  [include_count=2]
+  -> lib-exceptions  [include_count=1]
+  -> lib-sentry-reporting  [include_count=1]
+
+lib-wx-wrappers
+  -> lib-strings  [include_count=6]
+  -> lib-theme  [include_count=4]
+  -> lib-basic-ui  [include_count=2]
+  -> lib-preferences  [include_count=2]
+  -> lib-files  [include_count=1]
+
+lib-xml
+  -> lib-strings  [include_count=3]
+  -> lib-files  [include_count=2]
+  -> lib-string-utils  [include_count=2]
+  -> lib-utility  [include_count=2]
+  -> lib-exceptions  [include_count=1]
+
+
+TOP 30 INTER-LIBRARY EDGES BY INCLUDE COUNT
+--------------------------------------------------------------------------------
+Source                              Target                               Count
+----------------------------------- ----------------------------------- ------
+lib-builtin-effects                 lib-effects                             53
+lib-builtin-effects                 lib-wave-track                          40
+lib-cloud-audiocom                  lib-network-manager                     33
+lib-builtin-effects                 lib-command-parameters                  25
+lib-cloud-audiocom                  lib-string-utils                        22
+lib-builtin-effects                 lib-basic-ui                            16
+lib-builtin-effects                 lib-components                          15
+lib-wave-track                      lib-math                                13
+lib-builtin-effects                 lib-math                                12
+lib-cloud-audiocom                  lib-utility                             12
+lib-mixer                           lib-audio-graph                         12
+lib-mixer                           lib-math                                12
+lib-stretching-sequence             lib-math                                12
+lib-wx-init                         lib-strings                             12
+lib-import-export                   lib-strings                             11
+lib-stretching-sequence             lib-time-and-pitch                      11
+lib-wave-track                      lib-stretching-sequence                 11
+lib-builtin-effects                 lib-preferences                         10
+lib-cloud-audiocom                  lib-wave-track                          10
+lib-module-manager                  lib-utility                             10
+lib-cloud-audiocom                  lib-concurrency                          9
+lib-wx-init                         lib-theme                                9
+lib-audio-io                        lib-math                                 8
+lib-builtin-effects                 lib-track                                8
+lib-builtin-effects                 lib-track-selection                      8
+lib-cloud-audiocom                  lib-files                                8
+lib-cloud-audiocom                  lib-basic-ui                             8
+lib-import-export                   lib-files                                8
+lib-module-manager                  lib-strings                              8
+lib-module-manager                  lib-components                           8
+
+
+EVIDENCE SAMPLES
+--------------------------------------------------------------------------------
+
+lib-builtin-effects -> lib-effects  [include_count=53]
+  libraries/lib-builtin-effects/AmplifyBase.cpp:2: #include EffectOutputTracks.h
+  libraries/lib-builtin-effects/AmplifyBase.h:4: #include StatefulPerTrackEffect.h
+  libraries/lib-builtin-effects/AutoDuckBase.cpp:20: #include EffectOutputTracks.h
+  libraries/lib-builtin-effects/AutoDuckBase.h:13: #include StatefulEffect.h
+  libraries/lib-builtin-effects/BassTrebleBase.h:13: #include PerTrackEffect.h
+
+lib-builtin-effects -> lib-wave-track  [include_count=40]
+  libraries/lib-builtin-effects/AmplifyBase.cpp:4: #include TimeStretching.h
+  libraries/lib-builtin-effects/AmplifyBase.cpp:5: #include WaveChannelUtilities.h
+  libraries/lib-builtin-effects/AmplifyBase.cpp:6: #include WaveTrack.h
+  libraries/lib-builtin-effects/AutoDuckBase.cpp:22: #include TimeStretching.h
+  libraries/lib-builtin-effects/AutoDuckBase.cpp:24: #include WaveClip.h
+
+lib-cloud-audiocom -> lib-network-manager  [include_count=33]
+  libraries/lib-cloud-audiocom/CloudSyncService.cpp:40: #include IResponse.h
+  libraries/lib-cloud-audiocom/CloudSyncService.cpp:41: #include NetworkManager.h
+  libraries/lib-cloud-audiocom/CloudSyncService.cpp:42: #include Request.h
+  libraries/lib-cloud-audiocom/NetworkUtils.cpp:20: #include IResponse.h
+  libraries/lib-cloud-audiocom/NetworkUtils.cpp:21: #include Request.h
+
+lib-builtin-effects -> lib-command-parameters  [include_count=25]
+  libraries/lib-builtin-effects/AmplifyBase.cpp:3: #include ShuttleAutomation.h
+  libraries/lib-builtin-effects/AutoDuckBase.cpp:21: #include ShuttleAutomation.h
+  libraries/lib-builtin-effects/BassTrebleBase.cpp:12: #include ShuttleAutomation.h
+  libraries/lib-builtin-effects/ChangePitchBase.cpp:4: #include ShuttleAutomation.h
+  libraries/lib-builtin-effects/ChangeSpeedBase.cpp:7: #include ShuttleAutomation.h
+
+lib-cloud-audiocom -> lib-string-utils  [include_count=22]
+  libraries/lib-cloud-audiocom/CloudSyncService.cpp:27: #include CodeConversions.h
+  libraries/lib-cloud-audiocom/OAuthService.cpp:20: #include CodeConversions.h
+  libraries/lib-cloud-audiocom/OAuthService.cpp:30: #include UrlDecode.h
+  libraries/lib-cloud-audiocom/OAuthService.cpp:35: #include StringUtils.h
+  libraries/lib-cloud-audiocom/OAuthService.cpp:36: #include UrlEncode.h
+
+lib-builtin-effects -> lib-basic-ui  [include_count=16]
+  libraries/lib-builtin-effects/AutoDuckBase.cpp:19: #include BasicUI.h
+  libraries/lib-builtin-effects/ClickRemovalBase.cpp:27: #include BasicUI.h
+  libraries/lib-builtin-effects/ContrastBase.cpp:9: #include BasicUI.h
+  libraries/lib-builtin-effects/DtmfBase.cpp:2: #include BasicUI.h
+  libraries/lib-builtin-effects/EchoBase.cpp:12: #include BasicUI.h
+
+lib-builtin-effects -> lib-components  [include_count=15]
+  libraries/lib-builtin-effects/AmplifyBase.h:3: #include SettingsVisitor.h
+  libraries/lib-builtin-effects/AutoDuckBase.h:12: #include SettingsVisitor.h
+  libraries/lib-builtin-effects/BassTrebleBase.h:14: #include SettingsVisitor.h
+  libraries/lib-builtin-effects/ChangePitchBase.h:22: #include SettingsVisitor.h
+  libraries/lib-builtin-effects/ChangeSpeedBase.h:3: #include SettingsVisitor.h
+
+lib-wave-track -> lib-math  [include_count=13]
+  libraries/lib-wave-track/SampleBlock.cpp:12: #include SampleFormat.h
+  libraries/lib-wave-track/SampleBlock.h:13: #include SampleFormat.h
+  libraries/lib-wave-track/Sequence.cpp:44: #include Dither.h
+  libraries/lib-wave-track/Sequence.h:18: #include SampleFormat.h
+  libraries/lib-wave-track/Sequence.h:21: #include SampleCount.h
+
+lib-builtin-effects -> lib-math  [include_count=12]
+  libraries/lib-builtin-effects/ChangePitchBase.cpp:9: #include PitchName.h
+  libraries/lib-builtin-effects/ChangeSpeedBase.cpp:6: #include Resample.h
+  libraries/lib-builtin-effects/DistortionBase.h:13: #include SampleCount.h
+  libraries/lib-builtin-effects/EqualizationBase.h:5: #include SampleFormat.h
+  libraries/lib-builtin-effects/EqualizationCurvesList.cpp:18: #include SampleFormat.h
+
+lib-cloud-audiocom -> lib-utility  [include_count=12]
+  libraries/lib-cloud-audiocom/CloudSyncService.cpp:32: #include MemoryX.h
+  libraries/lib-cloud-audiocom/OAuthService.h:19: #include Observer.h
+  libraries/lib-cloud-audiocom/TaskExecutionService.h:21: #include Observer.h
+  libraries/lib-cloud-audiocom/UserService.cpp:26: #include Observer.h
+  libraries/lib-cloud-audiocom/UserService.h:15: #include Observer.h
+
+lib-mixer -> lib-audio-graph  [include_count=12]
+  libraries/lib-mixer/DownmixSource.cpp:16: #include AudioGraphChannel.h
+  libraries/lib-mixer/DownmixStage.h:14: #include AudioGraphBuffers.h
+  libraries/lib-mixer/DownmixStage.h:15: #include AudioGraphSource.h
+  libraries/lib-mixer/EffectStage.cpp:16: #include AudioGraphBuffers.h
+  libraries/lib-mixer/EffectStage.h:18: #include AudioGraphSource.h
+
+lib-mixer -> lib-math  [include_count=12]
+  libraries/lib-mixer/DownmixStage.cpp:18: #include SampleCount.h
+  libraries/lib-mixer/EffectStage.h:20: #include SampleCount.h
+  libraries/lib-mixer/Mix.cpp:22: #include Dither.h
+  libraries/lib-mixer/Mix.cpp:23: #include Resample.h
+  libraries/lib-mixer/Mix.cpp:25: #include float_cast.h
+
+lib-stretching-sequence -> lib-math  [include_count=12]
+  libraries/lib-stretching-sequence/AudioSegment.h:14: #include SampleCount.h
+  libraries/lib-stretching-sequence/AudioSegmentFactoryInterface.h:13: #include SampleCount.h
+  libraries/lib-stretching-sequence/AudioSegmentSampleView.h:16: #include SampleCount.h
+  libraries/lib-stretching-sequence/ClipInterface.h:15: #include SampleCount.h
+  libraries/lib-stretching-sequence/ClipInterface.h:16: #include SampleFormat.h
+
+lib-wx-init -> lib-strings  [include_count=12]
+  libraries/lib-wx-init/AccessibleLinksFormatter.h:16: #include TranslatableString.h
+  libraries/lib-wx-init/AudacityMessageBox.cpp:12: #include Internat.h
+  libraries/lib-wx-init/AudacityMessageBox.cpp:15: #include wxArrayStringEx.h
+  libraries/lib-wx-init/AudacityMessageBox.h:15: #include Internat.h
+  libraries/lib-wx-init/HelpText.cpp:23: #include Internat.h
+
+lib-import-export -> lib-strings  [include_count=11]
+  libraries/lib-import-export/Export.h:17: #include Identifier.h
+  libraries/lib-import-export/ExportPlugin.h:19: #include wxArrayStringEx.h
+  libraries/lib-import-export/ExportPlugin.h:20: #include Identifier.h
+  libraries/lib-import-export/ExportPlugin.h:21: #include TranslatableString.h
+  libraries/lib-import-export/ExportProgressUI.cpp:15: #include Internat.h
+
+lib-stretching-sequence -> lib-time-and-pitch  [include_count=11]
+  libraries/lib-stretching-sequence/AudioSegmentFactory.cpp:16: #include TimeAndPitchInterface.h
+  libraries/lib-stretching-sequence/AudioSegmentFactory.h:16: #include TimeAndPitchInterface.h
+  libraries/lib-stretching-sequence/ClipSegment.cpp:14: #include StaffPadTimeAndPitch.h
+  libraries/lib-stretching-sequence/ClipTimeAndPitchSource.h:16: #include TimeAndPitchInterface.h
+  libraries/lib-stretching-sequence/StretchingSequence.cpp:14: #include StaffPadTimeAndPitch.h
+
+lib-wave-track -> lib-stretching-sequence  [include_count=11]
+  libraries/lib-wave-track/SampleBlock.h:14: #include AudioSegmentSampleView.h
+  libraries/lib-wave-track/Sequence.h:22: #include AudioSegmentSampleView.h
+  libraries/lib-wave-track/TimeStretching.cpp:15: #include TempoChange.h
+  libraries/lib-wave-track/WaveChannelUtilities.cpp:12: #include PlaybackDirection.h
+  libraries/lib-wave-track/WaveClip.h:18: #include ClipInterface.h
+
+lib-builtin-effects -> lib-preferences  [include_count=10]
+  libraries/lib-builtin-effects/ChangeSpeedBase.cpp:5: #include Prefs.h
+  libraries/lib-builtin-effects/ClickRemovalBase.cpp:29: #include Prefs.h
+  libraries/lib-builtin-effects/ContrastBase.cpp:10: #include Prefs.h
+  libraries/lib-builtin-effects/DtmfBase.cpp:3: #include Prefs.h
+  libraries/lib-builtin-effects/Generator.cpp:19: #include Prefs.h
+
+lib-cloud-audiocom -> lib-wave-track  [include_count=10]
+  libraries/lib-cloud-audiocom/sync/BlockHasher.cpp:21: #include SampleBlock.h
+  libraries/lib-cloud-audiocom/sync/LocalProjectSnapshot.cpp:31: #include SampleBlock.h
+  libraries/lib-cloud-audiocom/sync/LocalProjectSnapshot.cpp:32: #include Sequence.h
+  libraries/lib-cloud-audiocom/sync/LocalProjectSnapshot.cpp:34: #include WaveClip.h
+  libraries/lib-cloud-audiocom/sync/LocalProjectSnapshot.cpp:35: #include WaveTrack.h
+
+lib-module-manager -> lib-utility  [include_count=10]
+  libraries/lib-module-manager/AsyncPluginValidator.cpp:21: #include spinlock.h
+  libraries/lib-module-manager/ModuleManager.cpp:32: #include MemoryX.h
+  libraries/lib-module-manager/ModuleManager.h:15: #include IteratorX.h
+  libraries/lib-module-manager/ModuleManager.h:38: #include ModuleConstants.h
+  libraries/lib-module-manager/ModuleSettings.cpp:18: #include MemoryX.h
+
+lib-cloud-audiocom -> lib-concurrency  [include_count=9]
+  libraries/lib-cloud-audiocom/CloudSyncService.h:24: #include concurrency/CancellationContext.h
+  libraries/lib-cloud-audiocom/sync/DataUploader.h:23: #include concurrency/CancellationContext.h
+  libraries/lib-cloud-audiocom/sync/LocalProjectSnapshot.h:25: #include concurrency/CancellationContext.h
+  libraries/lib-cloud-audiocom/sync/MissingBlocksUploader.h:25: #include concurrency/CancellationContext.h
+  libraries/lib-cloud-audiocom/sync/MissingBlocksUploader.h:26: #include concurrency/ICancellable.h
+
+lib-wx-init -> lib-theme  [include_count=9]
+  libraries/lib-wx-init/ErrorDialog.cpp:32: #include AllThemeResources.h
+  libraries/lib-wx-init/ErrorReportDialog.cpp:30: #include AllThemeResources.h
+  libraries/lib-wx-init/ErrorReportDialog.cpp:31: #include Theme.h
+  libraries/lib-wx-init/HelpSystem.cpp:37: #include AllThemeResources.h
+  libraries/lib-wx-init/HelpSystem.cpp:39: #include Theme.h
+
+lib-audio-io -> lib-math  [include_count=8]
+  libraries/lib-audio-io/AudioIO.cpp:66: #include float_cast.h
+  libraries/lib-audio-io/AudioIO.cpp:105: #include Resample.h
+  libraries/lib-audio-io/AudioIO.cpp:116: #include Gain.h
+  libraries/lib-audio-io/AudioIO.h:30: #include SampleCount.h
+  libraries/lib-audio-io/AudioIO.h:31: #include SampleFormat.h
+
+lib-builtin-effects -> lib-track  [include_count=8]
+  libraries/lib-builtin-effects/ChangePitchBase.cpp:6: #include TimeWarper.h
+  libraries/lib-builtin-effects/ChangeSpeedBase.cpp:9: #include TimeWarper.h
+  libraries/lib-builtin-effects/ChangeTempoBase.cpp:3: #include TimeWarper.h
+  libraries/lib-builtin-effects/Generator.cpp:24: #include TimeWarper.h
+  libraries/lib-builtin-effects/PaulstretchBase.cpp:21: #include TimeWarper.h
+
+lib-builtin-effects -> lib-track-selection  [include_count=8]
+  libraries/lib-builtin-effects/ChangeSpeedBase.cpp:8: #include SyncLock.h
+  libraries/lib-builtin-effects/Generator.cpp:20: #include SyncLock.h
+  libraries/lib-builtin-effects/PaulstretchBase.cpp:20: #include SyncLock.h
+  libraries/lib-builtin-effects/RepeatBase.cpp:4: #include SyncLock.h
+  libraries/lib-builtin-effects/Reverse.cpp:15: #include SyncLock.h
+
+lib-cloud-audiocom -> lib-files  [include_count=8]
+  libraries/lib-cloud-audiocom/CloudLibrarySettings.cpp:13: #include FileNames.h
+  libraries/lib-cloud-audiocom/CloudLibrarySettings.cpp:14: #include wxFileNameWrapper.h
+  libraries/lib-cloud-audiocom/CloudSyncService.cpp:38: #include FileNames.h
+  libraries/lib-cloud-audiocom/UploadService.cpp:38: #include TempDirectory.h
+  libraries/lib-cloud-audiocom/UploadService.cpp:39: #include FileNames.h
+
+lib-cloud-audiocom -> lib-basic-ui  [include_count=8]
+  libraries/lib-cloud-audiocom/CloudSyncService.cpp:37: #include BasicUI.h
+  libraries/lib-cloud-audiocom/OAuthService.cpp:32: #include BasicUI.h
+  libraries/lib-cloud-audiocom/TaskExecutionService.cpp:19: #include BasicUI.h
+  libraries/lib-cloud-audiocom/UserService.cpp:24: #include BasicUI.h
+  libraries/lib-cloud-audiocom/sync/DataUploader.cpp:27: #include BasicUI.h
+
+lib-import-export -> lib-files  [include_count=8]
+  libraries/lib-import-export/Export.cpp:25: #include wxFileNameWrapper.h
+  libraries/lib-import-export/Export.h:18: #include FileNames.h
+  libraries/lib-import-export/ExportPlugin.cpp:12: #include wxFileNameWrapper.h
+  libraries/lib-import-export/ExportPlugin.h:22: #include wxFileNameWrapper.h
+  libraries/lib-import-export/ExportProgressUI.cpp:17: #include FileException.h
+
+lib-module-manager -> lib-strings  [include_count=8]
+  libraries/lib-module-manager/ConfigInterface.h:45: #include Identifier.h
+  libraries/lib-module-manager/ModuleManager.h:22: #include Identifier.h
+  libraries/lib-module-manager/ModuleSettings.h:14: #include Identifier.h
+  libraries/lib-module-manager/PluginDescriptor.h:17: #include wxArrayStringEx.h
+  libraries/lib-module-manager/PluginInterface.h:47: #include Identifier.h
+
+lib-module-manager -> lib-components  [include_count=8]
+  libraries/lib-module-manager/ModuleManager.cpp:22: #include PluginProvider.h
+  libraries/lib-module-manager/PluginDescriptor.cpp:20: #include EffectInterface.h
+  libraries/lib-module-manager/PluginDescriptor.h:14: #include EffectInterface.h
+  libraries/lib-module-manager/PluginInterface.h:45: #include EffectInterface.h
+  libraries/lib-module-manager/PluginInterface.h:46: #include ComponentInterface.h
