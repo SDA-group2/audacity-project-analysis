@@ -1,0 +1,77 @@
+AUDACITY 3.7.7 — HEADER COUPLING METRICS
+==========================================================================================
+Ca = Afferent coupling / fan-in
+Ce = Efferent coupling / fan-out
+I  = Ce / (Ca + Ce)
+==========================================================================================
+
+TOP 30 BY AFFERENT COUPLING Ca
+------------------------------------------------------------------------------------------
+File                                                                      Ca    Ce      I
+---------------------------------------------------------------------- ----- ----- ------
+libraries/lib-preferences/Prefs.h                                        166    10  0.057
+libraries/lib-project/Project.h                                          156     6  0.037
+libraries/lib-shuttlegui/ShuttleGui.h                                    151    10  0.062
+libraries/lib-wave-track/WaveTrack.h                                     139    13  0.086
+libraries/lib-basic-ui/BasicUI.h                                         109     4  0.035
+libraries/lib-time-frequency-selection/ViewInfo.h                         95    10  0.095
+libraries/lib-utility/Observer.h                                          87     4  0.044
+libraries/lib-wx-wrappers/wxPanelWrapper.h                                85     8  0.086
+libraries/lib-project-history/ProjectHistory.h                            82     2  0.024
+libraries/lib-theme/AllThemeResources.h                                   76     1  0.013
+libraries/lib-menus/CommandContext.h                                      67     5  0.069
+libraries/lib-theme/Theme.h                                               67    10  0.130
+libraries/lib-utility/MemoryX.h                                           67     8  0.107
+libraries/lib-wx-init/AudacityMessageBox.h                                67     2  0.029
+libraries/lib-theme/AColor.h                                              60     3  0.048
+src/ProjectWindows.h                                                      58     1  0.017
+src/RefreshCode.h                                                         56     0  0.000
+libraries/lib-files/FileNames.h                                           54     3  0.053
+libraries/lib-strings/Internat.h                                          54     4  0.069
+libraries/lib-wave-track/WaveClip.h                                       54    13  0.194
+src/TrackPanelMouseEvent.h                                                52     1  0.019
+libraries/lib-track/Track.h                                               52    13  0.200
+libraries/lib-registries/ClientData.h                                     51     7  0.121
+libraries/lib-strings/Identifier.h                                        49     2  0.039
+libraries/lib-project-history/UndoManager.h                               47     5  0.096
+src/CommonCommandFlags.h                                                  46     1  0.021
+libraries/lib-audio-io/ProjectAudioIO.h                                   44     6  0.120
+libraries/lib-math/SampleCount.h                                          43     2  0.044
+libraries/lib-math/SampleFormat.h                                         42     2  0.045
+libraries/lib-wx-wrappers/WindowAccessible.h                              42     3  0.067
+
+
+TOP 30 BY EFFERENT COUPLING Ce
+------------------------------------------------------------------------------------------
+File                                                                      Ca    Ce      I
+---------------------------------------------------------------------- ----- ----- ------
+src/AudacityHeaders.h                                                      1    27  0.964
+libraries/lib-string-utils/3party/fast_float.h                             1    16  0.941
+libraries/lib-menus/CommandManager.h                                      31    15  0.326
+libraries/lib-audio-io/AudioIO.h                                          40    14  0.259
+libraries/lib-cloud-audiocom/sync/ProjectCloudExtension.h                  3    14  0.824
+libraries/lib-track/Track.h                                               52    13  0.200
+libraries/lib-wave-track/WaveClip.h                                       54    13  0.194
+libraries/lib-wave-track/WaveTrack.h                                     139    13  0.086
+libraries/lib-cloud-audiocom/sync/MixdownUploader.h                        2    13  0.867
+src/update/UpdateManager.h                                                 5    12  0.706
+src/widgets/MeterPanel.h                                                   4    12  0.750
+libraries/lib-realtime-effects/RealtimeEffectState.h                       8    12  0.600
+libraries/lib-cloud-audiocom/sync/RemoteProjectSnapshot.h                  2    12  0.857
+src/effects/EffectUI.h                                                    10    11  0.524
+src/toolbars/ToolManager.h                                                25    11  0.306
+src/effects/lv2/LV2Editor.h                                                2    11  0.846
+libraries/lib-audio-devices/AudioIOBase.h                                 20    11  0.355
+libraries/lib-realtime-effects/RealtimeEffectManager.h                     8    11  0.579
+libraries/lib-cloud-audiocom/sync/LocalProjectSnapshot.h                   1    11  0.917
+libraries/lib-cloud-audiocom/sync/MissingBlocksUploader.h                  3    11  0.786
+src/TrackPanel.h                                                          39    10  0.204
+src/effects/audiounits/AudioUnitEffect.h                                   1    10  0.909
+src/tracks/ui/Scrubbing.h                                                 12    10  0.455
+libraries/lib-cloud-audiocom/CloudSyncService.h                            1    10  0.909
+libraries/lib-lv2/LV2Ports.h                                               6    10  0.625
+libraries/lib-module-manager/PluginManager.h                              28    10  0.263
+libraries/lib-preferences/Prefs.h                                        166    10  0.057
+libraries/lib-project-file-io/DBConnection.h                               3    10  0.769
+libraries/lib-shuttlegui/ShuttleGui.h                                    151    10  0.062
+libraries/lib-theme/Theme.h                                               67    10  0.130
