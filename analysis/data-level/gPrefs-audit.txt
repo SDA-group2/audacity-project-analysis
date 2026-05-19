@@ -1,0 +1,76 @@
+﻿# MT3 — gPrefs Common Coupling Audit
+
+## Purpose
+
+This document summarizes the usage of the global `gPrefs` registry in the active Audacity master branch.
+
+The objective is to identify data-level dependencies caused by shared mutable configuration state.
+
+## Architectural Context
+
+The active master branch separates legacy AU3 code under `au3/` from the newer modular architecture under `src/`.
+
+Despite the ongoing architectural migration, the global `gPrefs` configuration registry remains widely shared across both architectural regions.
+
+This creates a form of common coupling because unrelated subsystems communicate indirectly through shared configuration state.
+
+## Evidence Summary
+
+The following subsystems were observed accessing `gPrefs`:
+
+- `au3-audio-io`
+- `au3-import-export`
+- `au3-module-manager`
+- `au3-command-parameters`
+- `au3-builtin-effects`
+- `playback`
+- `record`
+- `effects`
+- `project`
+- `preferences`
+
+## Representative Evidence
+
+### AudioIO
+
+```cpp
+gPrefs->Read(wxT("/AudioIO/Microfades"), &mbMicroFades, false);
+```
+
+### Import/Export
+
+```cpp
+gPrefs->Write(wxT("/LastOpenType"), type.description.Translation());
+```
+
+### Module Manager
+
+```cpp
+gPrefs->Write(PrefName, iStatus);
+```
+
+### Playback
+
+```cpp
+gPrefs->Read(wxT("/AudioIO/CutPreviewBeforeLen"), &beforeLen, 2.0);
+```
+
+## Dependency Interpretation
+
+The dependency is classified as Common Coupling according to Yourdon & Constantine coupling taxonomy.
+
+Multiple architectural subsystems depend on the same globally shared mutable state object (`gPrefs`) without explicit interface boundaries.
+
+This increases:
+
+- hidden runtime dependencies,
+- configuration propagation complexity,
+- implicit behavioral interactions,
+- and architectural rigidity.
+
+The coupling is especially important because the dependency crosses both:
+
+- legacy AU3 subsystems,
+- and newer modularized services in `src/`.
+
+Therefore, the active master branch still preserves a significant centralized configuration dependency structure.
