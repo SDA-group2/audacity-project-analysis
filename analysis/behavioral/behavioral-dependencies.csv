@@ -1,0 +1,1647 @@
+file,component,category,pattern,line,evidence
+AboutDialog.cpp,Other,callbacks_events,\bEVT_,304,"EVT_BUTTON(wxID_OK, AboutDialog::OnOK)"
+AboutDialog.cpp,Other,state_transitions,\bCommit\b,531,"AddBuildinfoRow(&informationStr, XO(""Commit Id:""), REV_IDENT);"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bCallAfter\b,1356,this->CallAfter(&AdornedRulerPanel::UpdatePrefs);
+AdornedRulerPanel.cpp,Other,callbacks_events,\bCallAfter\b,1379,CallAfter([this]{ CellularPanel::HandleCursorForPresentMouseState(); });
+AdornedRulerPanel.cpp,Other,callbacks_events,\bCallAfter\b,1641,CallAfter([this]{
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,721,EVT_IDLE(AdornedRulerPanel::OnIdle)
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,722,EVT_PAINT(AdornedRulerPanel::OnPaint)
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,723,EVT_SIZE(AdornedRulerPanel::OnSize)
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,724,EVT_LEAVE_WINDOW(AdornedRulerPanel::OnLeave)
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,727,"EVT_MENU(OnMinutesAndSecondsID, AdornedRulerPanel::OnTimelineFormatChange)"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,728,"EVT_MENU(OnBeatsAndMeasuresID, AdornedRulerPanel::OnTimelineFormatChange)"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,729,"EVT_MENU(OnSyncQuickPlaySelID, AdornedRulerPanel::OnSyncSelToQuickPlay)"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,730,"EVT_MENU(OnAutoScrollID, AdornedRulerPanel::OnAutoScroll)"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,731,"EVT_MENU(OnTogglePlayRegionID, AdornedRulerPanel::OnTogglePlayRegion)"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,732,"EVT_MENU(OnClearPlayRegionID, AdornedRulerPanel::OnClearPlayRegion)"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,733,"EVT_MENU(OnSetPlayRegionToSelectionID,"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,735,"EVT_MENU(OnTogglePinnedStateID, AdornedRulerPanel::OnTogglePinnedState)"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bEVT_,737,"EVT_COMMAND(OnTogglePinnedStateID,"
+AdornedRulerPanel.cpp,Other,callbacks_events,\bcallback\b,2146,// callback may change the play region back to the selection
+AdornedRulerPanel.cpp,Other,audio_stream_control,\bAudioIO\b,29,"#include ""AudioIO.h"""
+AdornedRulerPanel.cpp,Other,audio_stream_control,\bAudioIO\b,1352,mAudioIOSubscription = AudioIO::Get()
+AdornedRulerPanel.cpp,Other,state_transitions,\bStart\b,2100,// Start / Restart playback on left click.
+AdornedRulerPanel.cpp,Other,state_transitions,\bStop\b,1212,ProjectAudioManager::Get(*pProject).Stop();
+AdornedRulerPanel.cpp,Other,state_transitions,\bStop\b,2145,"// Stop only after deciding where to start again, because an event"
+AdornedRulerPanel.cpp,Other,state_transitions,\bStop\b,2148,projectAudioManager.Stop();
+AdornedRulerPanel.cpp,Other,state_transitions,\bStop\b,2716,ProjectAudioManager::Get(*mProject).Stop();
+AdornedRulerPanel.cpp,Other,state_transitions,\bFlush\b,2366,gPrefs->Flush();
+AdornedRulerPanel.cpp,Other,state_transitions,\bFlush\b,2377,gPrefs->Flush();
+AudacityApp.cpp,Other,blocking_or_waiting,\bsleep_for\b,1490,std::this_thread::sleep_for(100ms);
+AudacityApp.cpp,Other,blocking_or_waiting,\bsleep_for\b,2023,std::this_thread::sleep_for(10ms);
+AudacityApp.cpp,Other,callbacks_events,\bCallAfter\b,1176,"// Use CallAfter to delay this to the next pass of the event loop,"
+AudacityApp.cpp,Other,callbacks_events,\bCallAfter\b,1180,"CallAfter([pException, pProject] {"
+AudacityApp.cpp,Other,callbacks_events,\bCallAfter\b,1356,this->CallAfter([]{
+AudacityApp.cpp,Other,callbacks_events,\bCallAfter\b,1480,// opened.  So use CallAfter() to delay the rest of initialization.
+AudacityApp.cpp,Other,callbacks_events,\bCallAfter\b,1491,CallAfter([this]{
+AudacityApp.cpp,Other,callbacks_events,\bCallAfter\b,1672,CallAfter([=] () mutable {
+AudacityApp.cpp,Other,callbacks_events,\bBind\(,1278,"mSplashScreen->Bind(wxEVT_DESTROY, [this](wxWindowDestroyEvent& event) {"
+AudacityApp.cpp,Other,callbacks_events,\bBind\(,1324,"mSplashTimer.Bind(wxEVT_TIMER, [this, currentAlpha, transparencyDecrement](wxTimerEvent& evt) mutable {"
+AudacityApp.cpp,Other,callbacks_events,\bBind\(,1708,"dialog->Bind(wxEVT_CLOSE_WINDOW, [dialog](wxCloseEvent&) { dialog->Destroy(); });"
+AudacityApp.cpp,Other,callbacks_events,\bBind\(,1739,"Bind(wxEVT_MENU_OPEN, [=](wxMenuEvent& event)"
+AudacityApp.cpp,Other,callbacks_events,\bBind\(,1745,"Bind(wxEVT_MENU_CLOSE, [=](wxMenuEvent& event)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,969,EVT_IDLE(AudacityApp::OnIdle)
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,971,EVT_QUERY_END_SESSION(AudacityApp::OnQueryEndSession)
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,972,EVT_END_SESSION(AudacityApp::OnEndSession)
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,974,"EVT_TIMER(kAudacityAppTimerID, AudacityApp::OnTimer)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,976,"EVT_MENU(wxID_NEW, AudacityApp::OnMenuNew)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,977,"EVT_MENU(wxID_OPEN, AudacityApp::OnMenuOpen)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,978,"EVT_MENU(wxID_ABOUT, AudacityApp::OnMenuAbout)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,979,"EVT_MENU(wxID_PREFERENCES, AudacityApp::OnMenuPreferences)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,986,"EVT_MENU(wxID_EXIT, AudacityApp::OnMenuExit)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,989,"EVT_SOCKET(ID_IPC_SERVER, AudacityApp::OnServerEvent)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,990,"EVT_SOCKET(ID_IPC_SOCKET, AudacityApp::OnSocketEvent)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,994,"EVT_MENU(FileHistory::ID_RECENT_CLEAR, AudacityApp::OnMRUClear)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,995,"EVT_MENU_RANGE(FileHistory::ID_RECENT_FIRST, FileHistory::ID_RECENT_LAST,"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,999,"EVT_APP_COMMAND(wxID_ANY, AudacityApp::OnReceiveCommand)"
+AudacityApp.cpp,Other,callbacks_events,\bEVT_,1002,EVT_KEY_DOWN(AudacityApp::OnKeyDown)
+AudacityApp.cpp,Other,callbacks_events,\bProcessEvent\b,667,wxGetApp().ProcessEvent(e);
+AudacityApp.cpp,Other,callbacks_events,\bcallback\b,1804,// AppCommandEvent callback - just pass the event on to the CommandHandler
+AudacityApp.cpp,Other,audio_stream_control,\bAudioIO\b,70,"#include ""AudioIO.h"""
+AudacityApp.cpp,Other,audio_stream_control,\bAudioIO\b,1589,AudioIO::Init();
+AudacityApp.cpp,Other,audio_stream_control,\bAudioIO\b,1822,auto gAudioIO = AudioIO::Get();
+AudacityApp.cpp,Other,audio_stream_control,\bAudioIO\b,2463,AudioIO::Deinit();
+AudacityApp.cpp,Other,state_transitions,\bStart\b,457,.Start();
+AudacityApp.cpp,Other,state_transitions,\bStart\b,482,.Start();
+AudacityApp.cpp,Other,state_transitions,\bStart\b,1322,mSplashTimer.Start(fadeStepMs);
+AudacityApp.cpp,Other,state_transitions,\bStart\b,1665,UpdateManager::Start(playingJournal);
+AudacityApp.cpp,Other,state_transitions,\bStart\b,1719,mTimer.Start(200);
+AudacityApp.cpp,Other,state_transitions,\bStart\b,2608,// Start with HKEY_CLASSES_CURRENT_USER.
+AudacityApp.cpp,Other,state_transitions,\bStop\b,1327,mSplashTimer.Stop();
+AudacityApp.cpp,Other,state_transitions,\bStop\b,1329,mSplashTimer.Stop();
+AudacityApp.cpp,Other,state_transitions,\bStop\b,1814,"// Stop play, including scrub, but not record"
+AudacityApp.cpp,Other,state_transitions,\bStop\b,1828,ProjectAudioManager::Get(*project).Stop();
+AudacityApp.cpp,Other,state_transitions,\bStop\b,1871,// Stop wxWidgets from printing its own error messages
+AudacityApp.cpp,Other,state_transitions,\bFlush\b,432,gPrefs->Flush();
+AudacityApp.cpp,Other,state_transitions,\bFlush\b,2449,gPrefs->Flush();
+AudacityApp.cpp,Other,state_transitions,\bFlush\b,2644,gPrefs->Flush();
+AudacityApp.cpp,Other,state_transitions,\bFlush\b,2650,gPrefs->Flush();
+AudacityFileConfig.cpp,Other,callbacks_events,\bBind\(,194,"dlg.Bind(wxEVT_BUTTON, onButton);"
+AudacityFileConfig.cpp,Other,state_transitions,\bFlush\b,43,// Prevent wxFileConfig from attempting a Flush() during object deletion. This happens
+AudacityFileConfig.cpp,Other,state_transitions,\bFlush\b,44,// because we don't use the wxFileConfig::Flush() method and so the wxFileConfig dirty
+AudacityFileConfig.cpp,Other,state_transitions,\bFlush\b,45,"// flag never gets reset. During deletion, the dirty flag is checked and a Flush()"
+AudacityFileConfig.cpp,Other,state_transitions,\bFlush\b,98,bool AudacityFileConfig::Flush(bool bCurrentOnly)
+AudacityFileConfig.h,Other,state_transitions,\bFlush\b,28,bool Flush(bool bCurrentOnly) override;
+AudioPasteDialog.cpp,Other,callbacks_events,\bBind\(,84,S.AddVariableText(audioPasteModeText[i])->Bind(
+AudioPasteDialog.cpp,Other,callbacks_events,\bEVT_,23,"EVT_BUTTON(wxID_OK, AudioPasteDialog::OnContinue)"
+AudioPasteDialog.cpp,Other,callbacks_events,\bEVT_,24,"EVT_BUTTON(wxID_CANCEL, AudioPasteDialog::OnCancel)"
+AudioPasteDialog.cpp,Other,state_transitions,\bFlush\b,139,gPrefs->Flush();
+AutoRecoveryDialog.cpp,Other,callbacks_events,\bEVT_,66,"EVT_BUTTON(ID_QUIT_AUDACITY, AutoRecoveryDialog::OnQuitAudacity)"
+AutoRecoveryDialog.cpp,Other,callbacks_events,\bEVT_,67,"EVT_BUTTON(ID_DISCARD_SELECTED, AutoRecoveryDialog::OnDiscardSelected)"
+AutoRecoveryDialog.cpp,Other,callbacks_events,\bEVT_,68,"EVT_BUTTON(ID_RECOVER_SELECTED, AutoRecoveryDialog::OnRecoverSelected)"
+AutoRecoveryDialog.cpp,Other,callbacks_events,\bEVT_,69,"EVT_BUTTON(ID_SKIP, AutoRecoveryDialog::OnSkip)"
+AutoRecoveryDialog.cpp,Other,callbacks_events,\bEVT_,70,"EVT_LIST_COL_CLICK(ID_FILE_LIST, AutoRecoveryDialog::OnColumnClicked)"
+AutoRecoveryDialog.cpp,Other,callbacks_events,\bEVT_,71,"EVT_LIST_ITEM_ACTIVATED(ID_FILE_LIST, AutoRecoveryDialog::OnItemActivated)"
+BatchCommandDialog.cpp,Other,callbacks_events,\bEVT_,49,"EVT_BUTTON(wxID_OK,                     MacroCommandDialog::OnOk)"
+BatchCommandDialog.cpp,Other,callbacks_events,\bEVT_,50,"EVT_BUTTON(wxID_CANCEL,                 MacroCommandDialog::OnCancel)"
+BatchCommandDialog.cpp,Other,callbacks_events,\bEVT_,51,"EVT_BUTTON(wxID_HELP,                   MacroCommandDialog::OnHelp)"
+BatchCommandDialog.cpp,Other,callbacks_events,\bEVT_,52,"EVT_BUTTON(EditParamsButtonID,          MacroCommandDialog::OnEditParams)"
+BatchCommandDialog.cpp,Other,callbacks_events,\bEVT_,53,"EVT_BUTTON(UsePresetButtonID,           MacroCommandDialog::OnUsePreset)"
+BatchCommandDialog.cpp,Other,callbacks_events,\bEVT_,54,"EVT_LIST_ITEM_ACTIVATED(CommandsListID, MacroCommandDialog::OnItemSelected)"
+BatchCommandDialog.cpp,Other,callbacks_events,\bEVT_,55,"EVT_LIST_ITEM_SELECTED(CommandsListID,  MacroCommandDialog::OnItemSelected)"
+BatchCommands.cpp,Other,blocking_or_waiting,\bJoin\(,369,"label.Join(XO(""(%s)"").Format(mNames[i].GET()), wxT("" ""));"
+BatchCommands.cpp,Other,blocking_or_waiting,\bJoin\(,925,"wxString MacroCommands::Join(const wxString& command, const wxString& param)"
+BatchCommands.cpp,Other,state_transitions,\bStart\b,95,"AddToMacro(wxT(""Select""), wxT(""Start=\""0\"" End=\""1\""""));"
+BatchCommands.cpp,Other,state_transitions,\bStart\b,97,"AddToMacro(wxT(""Select""), wxT(""Start=\""0\"" End=\""1\"" RelativeTo=\""ProjectEnd\""""));"
+BatchCommands.cpp,Other,state_transitions,\bStart\b,99,"AddToMacro(wxT(""Select""), wxT(""Start=\""0\"" End=\""0\""""));"
+BatchCommands.cpp,Other,state_transitions,\bStart\b,246,// Start with a clean slate
+BatchCommands.h,Other,blocking_or_waiting,\bJoin\(,117,"wxString Join(const wxString& command, const wxString& param);"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,85,"EVT_BUTTON(ApplyToProjectID, ApplyMacroDialog::OnApplyToProject)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,86,"EVT_BUTTON(ApplyToFilesID, ApplyMacroDialog::OnApplyToFiles)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,87,"EVT_BUTTON(wxID_CANCEL, ApplyMacroDialog::OnCancel)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,88,"EVT_BUTTON(wxID_CLOSE, ApplyMacroDialog::OnCancel)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,89,"EVT_BUTTON(wxID_HELP, ApplyMacroDialog::OnHelp)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,536,"EVT_LIST_ITEM_SELECTED(MacrosListID, MacrosWindow::OnMacroSelected)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,537,"EVT_LIST_ITEM_SELECTED(CommandsListID, MacrosWindow::OnListSelected)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,538,"EVT_LIST_BEGIN_LABEL_EDIT(MacrosListID, MacrosWindow::OnMacrosBeginEdit)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,539,"EVT_LIST_END_LABEL_EDIT(MacrosListID, MacrosWindow::OnMacrosEndEdit)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,540,"EVT_BUTTON(AddButtonID, MacrosWindow::OnAdd)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,541,"EVT_BUTTON(RemoveButtonID, MacrosWindow::OnRemove)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,542,"EVT_BUTTON(RenameButtonID, MacrosWindow::OnRename)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,543,"EVT_BUTTON(RestoreButtonID, MacrosWindow::OnRestore)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,544,"EVT_BUTTON(ImportButtonID, MacrosWindow::OnImport)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,545,"EVT_BUTTON(ExportButtonID, MacrosWindow::OnExport)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,546,"EVT_BUTTON(SaveButtonID, MacrosWindow::OnSave)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,548,"EVT_BUTTON(ExpandID, MacrosWindow::OnExpand)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,549,"EVT_BUTTON(ShrinkID, MacrosWindow::OnShrink)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,550,EVT_SIZE(MacrosWindow::OnSize)
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,552,"EVT_LIST_ITEM_ACTIVATED(CommandsListID, MacrosWindow::OnCommandActivated)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,553,"EVT_BUTTON(InsertButtonID, MacrosWindow::OnInsert)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,554,"EVT_BUTTON(EditButtonID, MacrosWindow::OnEditCommandParams)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,555,"EVT_BUTTON(DeleteButtonID, MacrosWindow::OnDelete)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,556,"EVT_BUTTON(UpButtonID, MacrosWindow::OnUp)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,557,"EVT_BUTTON(DownButtonID, MacrosWindow::OnDown)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,559,"EVT_BUTTON(wxID_OK, MacrosWindow::OnOK)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,560,"EVT_BUTTON(wxID_CANCEL, MacrosWindow::OnCancel)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,561,"EVT_BUTTON(wxID_CLOSE, MacrosWindow::OnCancel)"
+BatchProcessDialog.cpp,Other,callbacks_events,\bEVT_,563,EVT_KEY_DOWN(MacrosWindow::OnKeyDown)
+BatchProcessDialog.cpp,Other,state_transitions,\bFlush\b,309,gPrefs->Flush();
+BatchProcessDialog.cpp,Other,state_transitions,\bFlush\b,344,gPrefs->Flush();
+BatchProcessDialog.cpp,Other,state_transitions,\bFlush\b,1343,gPrefs->Flush();
+Benchmark.cpp,Other,callbacks_events,\bEVT_,128,"EVT_BUTTON(RunID,   BenchmarkDialog::OnRun)"
+Benchmark.cpp,Other,callbacks_events,\bEVT_,129,"EVT_BUTTON(BSaveID,  BenchmarkDialog::OnSave)"
+Benchmark.cpp,Other,callbacks_events,\bEVT_,130,"EVT_BUTTON(ClearID, BenchmarkDialog::OnClear)"
+Benchmark.cpp,Other,callbacks_events,\bEVT_,131,"EVT_BUTTON(wxID_CANCEL, BenchmarkDialog::OnClose)"
+Benchmark.cpp,Other,state_transitions,\bStart\b,444,timer.Start();
+Benchmark.cpp,Other,state_transitions,\bStart\b,533,timer.Start();
+Benchmark.cpp,Other,state_transitions,\bStart\b,563,timer.Start();
+Benchmark.cpp,Other,state_transitions,\bFlush\b,424,t->Flush();
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,117,EVT_MOUSE_EVENTS(CellularPanel::OnMouseEvent)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,118,EVT_MOUSE_CAPTURE_LOST(CellularPanel::OnCaptureLost)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,119,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, CellularPanel::OnCaptureKey)"
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,119,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, CellularPanel::OnCaptureKey)"
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,120,EVT_KEY_DOWN(CellularPanel::OnKeyDown)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,121,EVT_KEY_UP(CellularPanel::OnKeyUp)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,122,EVT_CHAR(CellularPanel::OnChar)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,123,EVT_SET_FOCUS(CellularPanel::OnSetFocus)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,124,EVT_KILL_FOCUS(CellularPanel::OnKillFocus)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,125,EVT_CONTEXT_MENU(CellularPanel::OnContextMenu)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,533,#if defined(__WXMAC__) && defined(EVT_MAGNIFY)
+CellularPanel.cpp,Other,callbacks_events,\bEVT_,733,#if defined(__WXMAC__) && defined(EVT_MAGNIFY)
+CellularPanel.cpp,Other,callbacks_events,\bProcessEvent\b,157,this->ProcessEvent(evt);
+CellularPanel.cpp,Other,callbacks_events,\bProcessEvent\b,771,GetParent()->GetEventHandler()->ProcessEvent(e);
+CellularPanel.cpp,Other,state_transitions,\bStop\b,1210,struct Stop {};
+CellularPanel.cpp,Other,state_transitions,\bStop\b,1214,"result = rect, throw Stop {}"
+CellularPanel.cpp,Other,state_transitions,\bStop\b,1218,catch (const Stop&) {}
+CellularPanel.cpp,Other,state_transitions,\bStop\b,1228,struct Stop {};
+CellularPanel.cpp,Other,state_transitions,\bStop\b,1232,"result = rect, throw Stop {}"
+CellularPanel.cpp,Other,state_transitions,\bStop\b,1236,catch (const Stop&) {}
+Clipboard.cpp,Other,callbacks_events,\bCallAfter\b,50,BasicUI::CallAfter([this]{ Publish({}); });
+Clipboard.cpp,Other,callbacks_events,\bCallAfter\b,68,BasicUI::CallAfter([this]{ Publish({}); });
+CommonCommandFlags.cpp,Other,audio_stream_control,\bAudioIO\b,15,"#include ""AudioIO.h"""
+CommonCommandFlags.cpp,Other,audio_stream_control,\bAudioIO\b,262,auto gAudioIO = AudioIO::Get();
+CrashReport.cpp,Other,threading,\bstd::thread\b,52,auto thread = std::thread([&]
+CrashReport.cpp,Other,blocking_or_waiting,\bsleep_for\b,88,std::this_thread::sleep_for(50ms);
+Dependencies.cpp,Other,callbacks_events,\bEVT_,288,"EVT_LIST_ITEM_SELECTED(FileListID, DependencyDialog::OnList)"
+Dependencies.cpp,Other,callbacks_events,\bEVT_,289,"EVT_LIST_ITEM_DESELECTED(FileListID, DependencyDialog::OnList)"
+Dependencies.cpp,Other,callbacks_events,\bEVT_,290,"EVT_LIST_ITEM_RIGHT_CLICK(FileListID, DependencyDialog::OnRightClick)"
+Dependencies.cpp,Other,callbacks_events,\bEVT_,291,"EVT_BUTTON(CopySelectedFilesButtonID, DependencyDialog::OnCopySelectedFiles)"
+Dependencies.cpp,Other,callbacks_events,\bEVT_,292,EVT_SIZE(DependencyDialog::OnSize)
+Dependencies.cpp,Other,callbacks_events,\bEVT_,293,"EVT_BUTTON(wxID_NO, DependencyDialog::OnNo)    // mIsSaving ? ""Cancel Save"" : ""Save Without Copying"""
+Dependencies.cpp,Other,callbacks_events,\bEVT_,294,"EVT_BUTTON(wxID_YES, DependencyDialog::OnYes)    // ""Copy All Files (Safer)"""
+Dependencies.cpp,Other,callbacks_events,\bEVT_,295,"EVT_BUTTON(wxID_CANCEL, DependencyDialog::OnCancel)     // ""Cancel Save"""
+Dependencies.cpp,Other,callbacks_events,\bEVT_,296,"EVT_MENU(CopyNamesToClipboardID, DependencyDialog::OnCopyToClipboard)"
+Dependencies.cpp,Other,state_transitions,\bFlush\b,585,gPrefs->Flush();
+Diags.cpp,Other,state_transitions,\bStart\b,71,MasterWatch.Start();
+DoEffect.cpp,Other,state_transitions,\bStop\b,25,return [&]() { ProjectAudioManager::Get(project).Stop(); };
+DropoutDetector.cpp,Other,callbacks_events,\bCallAfter\b,49,// CallAfter so that we avoid any problems of yielding
+DropoutDetector.cpp,Other,callbacks_events,\bCallAfter\b,53,wxTheApp->CallAfter([&window] {
+DropoutDetector.cpp,Other,callbacks_events,\bcallback\b,50,"// to the event loop while still inside the timer callback,"
+FrameStatisticsDialog.cpp,Other,callbacks_events,\bBind\(,60,Bind(
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,97,DEFINE_EVENT_TYPE(EVT_FREQWINDOW_RECALC);
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,171,EVT_CLOSE(FrequencyPlotDialog::OnCloseWindow)
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,172,EVT_SIZE(FrequencyPlotDialog::OnSize)
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,173,"EVT_SLIDER(FreqZoomSliderID, FrequencyPlotDialog::OnZoomSlider)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,174,"EVT_COMMAND_SCROLL(FreqPanScrollerID, FrequencyPlotDialog::OnPanScroller)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,175,"EVT_CHOICE(FreqAlgChoiceID, FrequencyPlotDialog::OnAlgChoice)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,176,"EVT_CHOICE(FreqSizeChoiceID, FrequencyPlotDialog::OnSizeChoice)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,177,"EVT_CHOICE(FreqFuncChoiceID, FrequencyPlotDialog::OnFuncChoice)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,178,"EVT_CHOICE(FreqAxisChoiceID, FrequencyPlotDialog::OnAxisChoice)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,179,"EVT_BUTTON(FreqExportButtonID, FrequencyPlotDialog::OnExport)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,180,"EVT_BUTTON(ReplotButtonID, FrequencyPlotDialog::OnReplot)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,181,"EVT_BUTTON(wxID_CANCEL, FrequencyPlotDialog::OnCloseButton)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,182,"EVT_BUTTON(wxID_HELP, FrequencyPlotDialog::OnGetURL)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,183,"EVT_CHECKBOX(GridOnOffID, FrequencyPlotDialog::OnGridOnOff)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,184,"EVT_COMMAND(wxID_ANY, EVT_FREQWINDOW_RECALC, FrequencyPlotDialog::OnRecalc)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,184,"EVT_COMMAND(wxID_ANY, EVT_FREQWINDOW_RECALC, FrequencyPlotDialog::OnRecalc)"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,939,"wxCommandEvent e(EVT_FREQWINDOW_RECALC, wxID_ANY);"
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,1114,EVT_ERASE_BACKGROUND(FreqPlot::OnErase)
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,1115,EVT_PAINT(FreqPlot::OnPaint)
+FreqWindow.cpp,Other,callbacks_events,\bEVT_,1116,EVT_MOUSE_EVENTS(FreqPlot::OnMouseEvent)
+FreqWindow.cpp,Other,state_transitions,\bFlush\b,932,gPrefs->Flush();
+FreqWindow.h,Other,callbacks_events,\bEVT_,33,"DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_FREQWINDOW_RECALC, -1);"
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,124,EVT_SHOW(HistoryDialog::OnShow)
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,125,EVT_SIZE(HistoryDialog::OnSize)
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,126,EVT_CLOSE(HistoryDialog::OnCloseWindow)
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,127,"EVT_LIST_ITEM_SELECTED(wxID_ANY, HistoryDialog::OnItemSelected)"
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,128,"EVT_BUTTON(ID_DISCARD, HistoryDialog::OnDiscard)"
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,129,"EVT_BUTTON(ID_DISCARD_CLIPBOARD, HistoryDialog::OnDiscardClipboard)"
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,130,"EVT_BUTTON(ID_COMPACT, HistoryDialog::OnCompact)"
+HistoryWindow.cpp,Other,callbacks_events,\bEVT_,131,"EVT_BUTTON(wxID_HELP, HistoryDialog::OnGetURL)"
+HistoryWindow.cpp,Other,audio_stream_control,\bAudioIO\b,31,"#include ""AudioIO.h"""
+HistoryWindow.cpp,Other,audio_stream_control,\bAudioIO\b,153,"mAudioIOSubscription = AudioIO::Get()->Subscribe(*this, &HistoryDialog::OnAudioIO);"
+IncompatiblePluginsDialog.cpp,Other,callbacks_events,\bCallAfter\b,110,BasicUI::CallAfter([]()
+IncompatiblePluginsDialog.cpp,Other,callbacks_events,\bBind\(,56,"pluginManagerButton->Bind(wxEVT_BUTTON, &IncompatiblePluginsDialog::OnPluginManagerClicked, this);"
+JournalEvents.cpp,Other,callbacks_events,\bCallAfter\b,437,BasicUI::CallAfter([]{
+JournalEvents.cpp,Other,callbacks_events,\bcallback\b,453,// Add a callback for startup of journalling
+JournalEvents.h,Other,state_transitions,\bStop\b,20,"//\brief Stop watching events, and give the user an error message"
+KeyboardCapture.cpp,Other,callbacks_events,\bEVT_,35,DEFINE_EVENT_TYPE(EVT_CAPTURE_KEY);
+KeyboardCapture.cpp,Other,callbacks_events,\bEVT_,251,wxCommandEvent e(EVT_CAPTURE_KEY);
+KeyboardCapture.cpp,Other,callbacks_events,\bProcessEvent\b,254,if (!handler->ProcessEvent(e)) {
+KeyboardCapture.cpp,Other,callbacks_events,\bProcessEvent\b,263,bool processed = handler->ProcessEvent(temp);
+KeyboardCapture.cpp,Other,callbacks_events,\bProcessEvent\b,284,handler->ProcessEvent(temp);
+KeyboardCapture.h,Other,callbacks_events,\bEVT_,28,"/// translations of the EVT_CHAR_HOOK event); or, wxEVT_KEY_UP (really from"
+KeyboardCapture.h,Other,callbacks_events,\bEVT_,30,"DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_CAPTURE_KEY, -1);"
+KeyboardCapture.h,Other,callbacks_events,\bEVT_,47,EVT_CAPTURE_KEY or the following wxKEY_DOWN event (but not if
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,76,EVT_GRID_SELECT_CELL(LabelDialog::OnSelectCell)
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,77,EVT_GRID_CELL_CHANGED(LabelDialog::OnCellChange)
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,78,"EVT_BUTTON(ID_INSERTA, LabelDialog::OnInsert)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,79,"EVT_BUTTON(ID_INSERTB, LabelDialog::OnInsert)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,80,"EVT_BUTTON(ID_REMOVE,  LabelDialog::OnRemove)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,81,"EVT_BUTTON(ID_IMPORT,  LabelDialog::OnImport)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,82,"EVT_BUTTON(ID_EXPORT,  LabelDialog::OnExport)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,83,"EVT_BUTTON(wxID_OK,      LabelDialog::OnOK)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,84,"EVT_BUTTON(wxID_CANCEL,  LabelDialog::OnCancel)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,85,"EVT_COMMAND(wxID_ANY, EVT_TIMETEXTCTRL_UPDATED, LabelDialog::OnUpdate)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,85,"EVT_COMMAND(wxID_ANY, EVT_TIMETEXTCTRL_UPDATED, LabelDialog::OnUpdate)"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,86,"EVT_COMMAND(wxID_ANY, EVT_FREQUENCYTEXTCTRL_UPDATED,"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,86,"EVT_COMMAND(wxID_ANY, EVT_FREQUENCYTEXTCTRL_UPDATED,"
+LabelDialog.cpp,Other,callbacks_events,\bEVT_,88,"EVT_BUTTON(wxID_HELP, LabelDialog::OnHelp)"
+LabelDialog.cpp,Other,state_transitions,\bStart\b,135,"XO(""Start Time""),"
+LabelDialog.cpp,Other,state_transitions,\bFlush\b,909,gPrefs->Flush();
+LangChoice.cpp,Other,callbacks_events,\bEVT_,63,"EVT_BUTTON(wxID_OK, LangChoiceDialog::OnOk)"
+Legacy.cpp,Other,state_transitions,\bCommit\b,307,// Close original before Commit() tries to overwrite it.
+Legacy.cpp,Other,state_transitions,\bCommit\b,311,xmlFile.Commit();
+ListNavigationEnabled.cpp,Other,callbacks_events,\bProcessEvent\b,58,if (!child->GetEventHandler()->ProcessEvent(evt)) {
+ListNavigationEnabled.h,Other,callbacks_events,\bBind\(,34,"WindowBase::Bind(wxEVT_NAVIGATION_KEY, &ListNavigationEnabled::OnNavigationKeyEvent, this);"
+ListNavigationEnabled.h,Other,callbacks_events,\bBind\(,35,"WindowBase::Bind(wxEVT_KEY_DOWN, &ListNavigationEnabled::OnKeyDown, this);"
+ListNavigationEnabled.h,Other,callbacks_events,\bBind\(,36,"WindowBase::Bind(wxEVT_CHAR_HOOK, &ListNavigationEnabled::OnCharHook, this);"
+ListNavigationPanel.cpp,Other,callbacks_events,\bBind\(,32,"Bind(wxEVT_PAINT, &ListNavigationPanel::OnPaint, this);"
+ListNavigationPanel.cpp,Other,callbacks_events,\bBind\(,33,"Bind(wxEVT_SET_FOCUS, &ListNavigationPanel::OnChangeFocus, this);"
+ListNavigationPanel.cpp,Other,callbacks_events,\bBind\(,34,"Bind(wxEVT_KILL_FOCUS, &ListNavigationPanel::OnChangeFocus, this);"
+MenuCreator.cpp,Other,callbacks_events,\bcallback\b,596,// Register a callback for the journal
+MenuCreator.cpp,Other,state_transitions,\bFlush\b,588,gPrefs->Flush();
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,73,EVT_MOUSE_EVENTS(MixerTrackSlider::OnMouseEvent)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,75,EVT_SET_FOCUS(MixerTrackSlider::OnFocus)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,76,EVT_KILL_FOCUS(MixerTrackSlider::OnFocus)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,77,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, MixerTrackSlider::OnCaptureKey)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,77,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, MixerTrackSlider::OnCaptureKey)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,155,EVT_MOUSE_EVENTS(MixerTrackCluster::OnMouseEvent)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,156,EVT_PAINT(MixerTrackCluster::OnPaint)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,158,"EVT_BUTTON(ID_BITMAPBUTTON_MUSICAL_INSTRUMENT, MixerTrackCluster::OnButton_MusicalInstrument)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,159,"EVT_SLIDER(ID_SLIDER_PAN, MixerTrackCluster::OnSlider_Pan)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,160,"EVT_SLIDER(ID_SLIDER_GAIN, MixerTrackCluster::OnSlider_Gain)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,161,"EVT_SLIDER(ID_SLIDER_VELOCITY, MixerTrackCluster::OnSlider_Velocity)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,162,"//v EVT_COMMAND_SCROLL(ID_SLIDER_GAIN, MixerTrackCluster::OnSliderScroll_Gain)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,163,"EVT_COMMAND(ID_TOGGLEBUTTON_MUTE, wxEVT_COMMAND_BUTTON_CLICKED, MixerTrackCluster::OnButton_Mute)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,164,"EVT_COMMAND(ID_TOGGLEBUTTON_SOLO, wxEVT_COMMAND_BUTTON_CLICKED, MixerTrackCluster::OnButton_Solo)"
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,823,EVT_MOUSE_EVENTS(MixerBoardScrolledWindow::OnMouseEvent)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,861,EVT_PAINT(MixerBoard::OnPaint)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,862,EVT_SIZE(MixerBoard::OnSize)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,1395,EVT_KEY_DOWN(MixerBoardFrame::OnKeyEvent)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,1396,EVT_CLOSE(MixerBoardFrame::OnCloseWindow)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,1397,EVT_MAXIMIZE(MixerBoardFrame::OnMaximize)
+MixerBoard.cpp,Other,callbacks_events,\bEVT_,1398,EVT_SIZE(MixerBoardFrame::OnSize)
+MixerBoard.cpp,Other,callbacks_events,\bProcessEvent\b,323,GetEventHandler()->ProcessEvent(event);
+MixerBoard.cpp,Other,audio_stream_control,\bAudioIO\b,27,"#include ""AudioIO.h"""
+MixerBoard.cpp,Other,audio_stream_control,\bAudioIO\b,943,"=AudioIO::Get()->Subscribe(*this, &MixerBoard::OnStartStop);"
+MixerBoard.cpp,Other,audio_stream_control,\bAudioIO\b,1346,"//   Now it's in AudioIO::SetMeters() and AudioIO::StopStream(), as with Meter Toolbar meters."
+MixerBoard.cpp,Other,audio_stream_control,\bAudioIO\b,1346,"//   Now it's in AudioIO::SetMeters() and AudioIO::StopStream(), as with Meter Toolbar meters."
+MixerBoard.cpp,Other,audio_stream_control,\bAudioIO\b,1356,auto gAudioIO = AudioIO::Get();
+MixerBoard.cpp,Other,state_transitions,\bStart\b,579,//      // Mono: Start with raw values same as left.
+MovableControl.cpp,Other,callbacks_events,\bBind\(,67,"Bind(wxEVT_LEFT_DOWN, &MovableControl::OnMouseDown, this);"
+MovableControl.cpp,Other,callbacks_events,\bBind\(,68,"Bind(wxEVT_LEFT_UP, &MovableControl::OnMouseUp, this);"
+MovableControl.cpp,Other,callbacks_events,\bBind\(,69,"Bind(wxEVT_MOTION, &MovableControl::OnMove, this);"
+MovableControl.cpp,Other,callbacks_events,\bBind\(,70,"Bind(wxEVT_KEY_DOWN, &MovableControl::OnKeyDown, this);"
+MovableControl.cpp,Other,callbacks_events,\bBind\(,71,"Bind(wxEVT_MOUSE_CAPTURE_LOST, &MovableControl::OnMouseCaptureLost, this);"
+MovableControl.cpp,Other,callbacks_events,\bEVT_,15,"wxDEFINE_EVENT(EVT_MOVABLE_CONTROL_DRAG_STARTED, MovableControlEvent);"
+MovableControl.cpp,Other,callbacks_events,\bEVT_,16,"wxDEFINE_EVENT(EVT_MOVABLE_CONTROL_DRAG_POSITION, MovableControlEvent);"
+MovableControl.cpp,Other,callbacks_events,\bEVT_,17,"wxDEFINE_EVENT(EVT_MOVABLE_CONTROL_DRAG_FINISHED, MovableControlEvent);"
+MovableControl.cpp,Other,callbacks_events,\bEVT_,127,"ProcessDragEvent(GetParent(), EVT_MOVABLE_CONTROL_DRAG_FINISHED);"
+MovableControl.cpp,Other,callbacks_events,\bEVT_,145,"ProcessDragEvent(parent, EVT_MOVABLE_CONTROL_DRAG_FINISHED);"
+MovableControl.cpp,Other,callbacks_events,\bEVT_,160,"ProcessDragEvent(GetParent(), EVT_MOVABLE_CONTROL_DRAG_STARTED);"
+MovableControl.cpp,Other,callbacks_events,\bEVT_,221,"ProcessDragEvent(parent, EVT_MOVABLE_CONTROL_DRAG_POSITION);"
+MovableControl.cpp,Other,callbacks_events,\bProcessEvent\b,80,target->GetEventHandler()->ProcessEvent(event);
+MovableControl.h,Other,callbacks_events,\bEVT_,36,"wxDECLARE_EVENT(EVT_MOVABLE_CONTROL_DRAG_STARTED, MovableControlEvent);"
+MovableControl.h,Other,callbacks_events,\bEVT_,37,"wxDECLARE_EVENT(EVT_MOVABLE_CONTROL_DRAG_POSITION, MovableControlEvent);"
+MovableControl.h,Other,callbacks_events,\bEVT_,38,"wxDECLARE_EVENT(EVT_MOVABLE_CONTROL_DRAG_FINISHED, MovableControlEvent);"
+PluginDataViewCtrl.cpp,Other,callbacks_events,\bBind\(,467,"GetChildren()[0]->Bind(wxEVT_CHAR_HOOK, &PluginDataViewCtrl::OnTableCharHook, this);"
+PluginDataViewCtrl.cpp,Other,callbacks_events,\bBind\(,471,"Bind(wxEVT_DATAVIEW_ITEM_ACTIVATED, [=](wxDataViewEvent& evt) {"
+PluginDataViewCtrl.cpp,Other,callbacks_events,\bEVT_,8,EVT_CHAR(PluginDataViewCtrl::OnCharEvent)
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bCallAfter\b,283,wxTheApp->CallAfter([self = wxWeakRef(this)] {
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bBind\(,172,"searchCtrl->Bind(wxEVT_TEXT, &PluginRegistrationDialog::OnSearchTextChanged, this);"
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bEVT_,52,"EVT_BUTTON(wxID_OK, PluginRegistrationDialog::OnOK)"
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bEVT_,53,"EVT_BUTTON(wxID_CANCEL, PluginRegistrationDialog::OnCancel)"
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bEVT_,54,"EVT_BUTTON(ID_Rescan, PluginRegistrationDialog::OnRescan)"
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bEVT_,55,"EVT_BUTTON(ID_GetMoreEffects, PluginRegistrationDialog::OnGetMoreEffects)"
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bEVT_,56,"EVT_CHOICE(ID_FilterState, PluginRegistrationDialog::OnStateFilterValueChanged)"
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bEVT_,57,"EVT_CHOICE(ID_FilterType, PluginRegistrationDialog::OnTypeFilterValueChanged)"
+PluginRegistrationDialog.cpp,Other,callbacks_events,\bEVT_,58,"EVT_CHOICE(ID_FilterCategory, PluginRegistrationDialog::OnCategoryFilterValueChanged)"
+PluginStartupRegistration.cpp,Other,threading,\bstd::thread\b,259,std::thread([validator = std::shared_ptr<AsyncPluginValidator>(std::move(mValidator))]{ }).detach();
+PluginStartupRegistration.cpp,Other,callbacks_events,\bBind\(,92,"Bind(wxEVT_SHOW, &PluginScanDialog::OnShow, this);"
+PluginStartupRegistration.cpp,Other,callbacks_events,\bBind\(,93,"Bind(wxEVT_IDLE, &PluginScanDialog::OnIdle, this);"
+PluginStartupRegistration.cpp,Other,callbacks_events,\bBind\(,215,"dialog.Bind(wxEVT_BUTTON, [this](wxCommandEvent& evt) {"
+PluginStartupRegistration.cpp,Other,callbacks_events,\bBind\(,221,"dialog.Bind(wxEVT_TIMER, [this](wxTimerEvent& evt) {"
+PluginStartupRegistration.cpp,Other,callbacks_events,\bBind\(,232,"dialog.Bind(wxEVT_CLOSE_WINDOW, [this](wxCloseEvent& evt) {"
+PluginStartupRegistration.cpp,Other,state_transitions,\bStop\b,244,void PluginStartupRegistration::Stop()
+PluginStartupRegistration.cpp,Other,state_transitions,\bStop\b,285,Stop();
+PluginStartupRegistration.cpp,Other,state_transitions,\bStop\b,291,Stop();
+PluginStartupRegistration.h,Other,state_transitions,\bStop\b,58,void Stop();
+Profiler.cpp,Other,synchronization,\bstd::mutex\b,63,std::lock_guard<std::mutex> guard{ mTasksMutex };
+Profiler.cpp,Other,synchronization,\bstd::mutex\b,70,std::lock_guard<std::mutex> guard{ mTasksMutex };
+Profiler.cpp,Other,synchronization,\bstd::lock_guard\b,63,std::lock_guard<std::mutex> guard{ mTasksMutex };
+Profiler.cpp,Other,synchronization,\bstd::lock_guard\b,70,std::lock_guard<std::mutex> guard{ mTasksMutex };
+Profiler.h,Other,synchronization,\bstd::mutex\b,60,std::mutex mTasksMutex;
+ProjectAudioManager.cpp,Other,callbacks_events,\bCallAfter\b,453,window.CallAfter([&]{
+ProjectAudioManager.cpp,Other,callbacks_events,\bCallAfter\b,983,BasicUI::CallAfter([pProject = project.weak_from_this()]{
+ProjectAudioManager.cpp,Other,callbacks_events,\bCallAfter\b,1133,wxTheApp->CallAfter([&]{ projectFileIO.AutoSave(true); });
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,19,"#include ""AudioIO.h"""
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,334,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,415,"gPrefs->Read(wxT(""/AudioIO/CutPreviewBeforeLen""), &beforeLen, 2.0);"
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,416,"gPrefs->Read(wxT(""/AudioIO/CutPreviewAfterLen""), &afterLen, 1.0);"
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,520,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,754,"gPrefs->Read(wxT(""/AudioIO/Duplex""), &duplex, true);"
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,778,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1028,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1112,auto flags = AudioIO::Get()->HasRecordingException()
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1119,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1145,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1168,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1180,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1189,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1243,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1268,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bAudioIO\b,1318,auto gAudioIO = AudioIO::Get();
+ProjectAudioManager.cpp,Other,audio_stream_control,\bStartStream\b,428,token = gAudioIO->StartStream(
+ProjectAudioManager.cpp,Other,audio_stream_control,\bStartStream\b,439,token = gAudioIO->StartStream(
+ProjectAudioManager.cpp,Other,audio_stream_control,\bStartStream\b,994,"=gAudioIO->StartStream(transportSequences, t0, t1, t1, options);"
+ProjectAudioManager.cpp,Other,state_transitions,\bStart\b,1232,// Start play from left edge of selection
+ProjectAudioManager.cpp,Other,state_transitions,\bStop\b,504,void ProjectAudioManager::Stop(bool stopStream /* = true*/)
+ProjectAudioManager.cpp,Other,state_transitions,\bStop\b,1041,Stop();
+ProjectAudioManager.cpp,Other,state_transitions,\bStop\b,1162,Stop();
+ProjectAudioManager.cpp,Other,state_transitions,\bStop\b,1253,"// Stop playing or recording, if paused."
+ProjectAudioManager.cpp,Other,state_transitions,\bStop\b,1257,Stop();
+ProjectAudioManager.cpp,Other,state_transitions,\bStop\b,1320,Stop();
+ProjectAudioManager.cpp,Other,state_transitions,\bPause\b,1046,scrubber.Pause(paused);
+ProjectAudioManager.h,Other,synchronization,\bstd::atomic\b,162,std::atomic<int> mPaused{ 0 };
+ProjectAudioManager.h,Other,callbacks_events,\bcallback\b,142,// Audio IO callback methods
+ProjectAudioManager.h,Other,state_transitions,\bStart\b,48,//! Start time and duration
+ProjectAudioManager.h,Other,state_transitions,\bStop\b,119,// Stop playing or recording
+ProjectAudioManager.h,Other,state_transitions,\bStop\b,120,void Stop(bool stopStream = true);
+ProjectFileManager.cpp,Other,callbacks_events,\bCallAfter\b,1341,"BasicUI::CallAfter([wTrack = lastTrack->weak_from_this(), wProject = mProject.weak_from_this()] {"
+ProjectFileManager.cpp,Other,callbacks_events,\bBind\(,1509,"FindWindowById(wxID_YES, this)->Bind(wxEVT_BUTTON, &CompactDialog::OnYes, this);"
+ProjectFileManager.cpp,Other,callbacks_events,\bBind\(,1510,"FindWindowById(wxID_NO, this)->Bind(wxEVT_BUTTON, &CompactDialog::OnNo, this);"
+ProjectFileManager.cpp,Other,callbacks_events,\bBind\(,1511,"FindWindowById(wxID_HELP, this)->Bind(wxEVT_BUTTON, &CompactDialog::OnGetURL, this);"
+ProjectFileManager.cpp,Other,state_transitions,\bStop\b,1292,mImportFileHandle->Stop();
+ProjectFileManager.cpp,Other,state_transitions,\bCommit\b,245,parseResult->Commit();
+ProjectFSCK.cpp,Other,state_transitions,\bFlush\b,389,wxLog::FlushActive(); // Flush is modal and will clear the log (both desired).
+ProjectManager.cpp,Other,callbacks_events,\bBind\(,95,"window.Bind(wxEVT_CLOSE_WINDOW, &ProjectManager::OnCloseWindow, this);"
+ProjectManager.cpp,Other,callbacks_events,\bEVT_,105,"EVT_TIMER(AudacityProjectTimerID, ProjectManager::OnTimer)"
+ProjectManager.cpp,Other,audio_stream_control,\bAudioIO\b,14,"#include ""AudioIO.h"""
+ProjectManager.cpp,Other,audio_stream_control,\bAudioIO\b,344,auto gAudioIO = AudioIO::Get();
+ProjectManager.cpp,Other,audio_stream_control,\bAudioIO\b,386,auto gAudioIO = AudioIO::Get();
+ProjectManager.cpp,Other,audio_stream_control,\bAudioIO\b,761,auto gAudioIO = AudioIO::Get();
+ProjectManager.cpp,Other,state_transitions,\bStart\b,747,mTimer->Start(3000); // Update messages as needed once every 3 s.
+ProjectManager.cpp,Other,state_transitions,\bStop\b,413,ProjectAudioManager::Get(project).Stop();
+ProjectManager.cpp,Other,state_transitions,\bStop\b,475,// Stop the timer since there's no need to update anything anymore
+ProjectManager.cpp,Other,state_transitions,\bStop\b,746,// mTimer->Stop(); // not really needed
+ProjectManager.cpp,Other,state_transitions,\bCommit\b,694,void ProjectManager::ProjectChooser::Commit()
+ProjectManager.cpp,Other,state_transitions,\bCommit\b,706,chooser.Commit();
+ProjectManager.h,Other,state_transitions,\bCommit\b,60,One indicates there that the file opening succeeded by calling Commit().  But if that is never
+ProjectManager.h,Other,state_transitions,\bCommit\b,81,//! Commit the creation of any fresh project or changes to the existing project
+ProjectManager.h,Other,state_transitions,\bCommit\b,82,void Commit();
+ProjectWindow.cpp,Other,callbacks_events,\bBind\(,585,"container->Bind(wxEVT_SPLITTER_DOUBLECLICKED, [](wxSplitterEvent& event){"
+ProjectWindow.cpp,Other,callbacks_events,\bBind\(,589,"container->Bind(wxEVT_SPLITTER_SASH_POS_CHANGING, [=](wxSplitterEvent& event){"
+ProjectWindow.cpp,Other,callbacks_events,\bBind\(,930,statusBar->Bind(
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,371,EVT_SET_FOCUS(ScrollBar::OnSetFocus)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,650,"EVT_MENU(wxID_ANY, ProjectWindow::OnMenu)"
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,651,EVT_MOUSE_EVENTS(ProjectWindow::OnMouseEvent)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,652,EVT_CLOSE(ProjectWindow::OnCloseWindow)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,653,EVT_SIZE(ProjectWindow::OnSize)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,654,EVT_SHOW(ProjectWindow::OnShow)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,655,EVT_ICONIZE(ProjectWindow::OnIconize)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,656,EVT_MOVE(ProjectWindow::OnMove)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,657,EVT_ACTIVATE(ProjectWindow::OnActivate)
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,658,"EVT_COMMAND_SCROLL_LINEUP(HSBarID, ProjectWindow::OnScrollLeftButton)"
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,659,"EVT_COMMAND_SCROLL_LINEDOWN(HSBarID, ProjectWindow::OnScrollRightButton)"
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,660,"EVT_COMMAND_SCROLL(HSBarID, ProjectWindow::OnScroll)"
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,661,"EVT_COMMAND_SCROLL(VSBarID, ProjectWindow::OnScroll)"
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,663,"EVT_UPDATE_UI(1, ProjectWindow::OnUpdateUI)"
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,664,"EVT_COMMAND(wxID_ANY, EVT_TOOLBAR_UPDATED, ProjectWindow::OnToolBarUpdate)"
+ProjectWindow.cpp,Other,callbacks_events,\bEVT_,664,"EVT_COMMAND(wxID_ANY, EVT_TOOLBAR_UPDATED, ProjectWindow::OnToolBarUpdate)"
+ProjectWindow.cpp,Other,callbacks_events,\bQueueEvent\b,1142,// QueueEvent() will take ownership of the event
+ProjectWindow.cpp,Other,callbacks_events,\bQueueEvent\b,1143,GetEventHandler()->QueueEvent(safenew wxSizeEvent(GetSize()));
+ProjectWindow.cpp,Other,audio_stream_control,\bAudioIO\b,14,"#include ""AudioIO.h"""
+ProjectWindow.cpp,Other,audio_stream_control,\bAudioIO\b,1290,auto gAudioIO = AudioIO::Get();
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bCallAfter\b,940,wxTheApp->CallAfter([ref = wxWeakRef { window }] {
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,132,"menu.Bind(wxEVT_MENU, [&](wxCommandEvent evt) { commandId = evt.GetId(); });"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,305,"Bind(wxEVT_PAINT, &DropHintLine::OnPaint, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,347,"Bind(wxEVT_PAINT, &HyperLinkCtrlWrapper::OnPaint, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,485,"Bind(wxEVT_PAINT, &RealtimeEffectControl::OnPaint, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,486,"Bind(wxEVT_SET_FOCUS, &RealtimeEffectControl::OnFocusChange, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,487,"Bind(wxEVT_KILL_FOCUS, &RealtimeEffectControl::OnFocusChange, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,499,"enableButton->Bind(wxEVT_BUTTON, [this](wxCommandEvent&) {"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,520,"optionsButton->Bind(wxEVT_BUTTON, &RealtimeEffectControl::OnOptionsClicked, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,527,"changeButton->Bind(wxEVT_BUTTON, &RealtimeEffectControl::OnChangeButtonClicked, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,813,"addEffect->Bind(wxEVT_BUTTON, &RealtimeEffectListWindow::OnAddEffectClicked, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,827,"Bind(EVT_MOVABLE_CONTROL_DRAG_STARTED, [dropHintLine](const MovableControlEvent& event)"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,833,"Bind(EVT_MOVABLE_CONTROL_DRAG_POSITION, [this, dropHintLine](const MovableControlEvent& event)"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,864,"Bind(EVT_MOVABLE_CONTROL_DRAG_FINISHED, [this, dropHintLine](const MovableControlEvent& event)"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1189,"Bind(wxEVT_CHAR_HOOK, &RealtimeEffectPanel::OnCharHook, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1307,"Bind(wxEVT_CLOSE_WINDOW, [this](wxCloseEvent&) {"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1416,"toggleEffects->Bind(wxEVT_BUTTON, [this](wxCommandEvent&) {"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1449,"close->Bind(wxEVT_BUTTON, [this](wxCommandEvent&) { Close(); });"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1473,addEffectTutorialLink->Bind(
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1482,"footer->Bind(wxEVT_SIZE, [=](wxSizeEvent& event)"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1521,"Bind(wxEVT_LEFT_DOWN, &SashLine::OnMouseDown, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1522,"Bind(wxEVT_LEFT_UP, &SashLine::OnMouseUp, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1523,"Bind(wxEVT_MOTION, &SashLine::OnMove, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1524,"Bind(wxEVT_MOUSE_CAPTURE_LOST, &SashLine::OnMouseCaptureLost, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1525,"Bind(wxEVT_PAINT, &SashLine::OnPaint, this);"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bBind\(,1615,"toggleEffects->Bind(wxEVT_BUTTON, [this](wxCommandEvent&) {"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bEVT_,827,"Bind(EVT_MOVABLE_CONTROL_DRAG_STARTED, [dropHintLine](const MovableControlEvent& event)"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bEVT_,833,"Bind(EVT_MOVABLE_CONTROL_DRAG_POSITION, [this, dropHintLine](const MovableControlEvent& event)"
+RealtimeEffectPanel.cpp,Other,callbacks_events,\bEVT_,864,"Bind(EVT_MOVABLE_CONTROL_DRAG_FINISHED, [this, dropHintLine](const MovableControlEvent& event)"
+RealtimeEffectPanel.cpp,Other,audio_stream_control,\bAudioIO\b,27,"#include ""AudioIO.h"""
+RealtimeEffectPanel.cpp,Other,audio_stream_control,\bAudioIO\b,592,//After AudioIO::RemoveState call this will be destroyed
+RealtimeEffectPanel.cpp,Other,audio_stream_control,\bAudioIO\b,595,"AudioIO::Get()->RemoveState(*mProject, mDelegate->GetChannelGroup(), std::move(mEffectState));"
+RealtimeEffectPanel.cpp,Other,audio_stream_control,\bAudioIO\b,659,if (auto state = AudioIO::Get()
+RealtimeEffectPanel.cpp,Other,audio_stream_control,\bAudioIO\b,1080,"if (const auto state = AudioIO::Get()->AddState(*mProject, mDelegate->GetChannelGroup(), *effectId)) {"
+ScrubState.cpp,Other,synchronization,\bstd::atomic\b,273,std::atomic<bool> mStopped { false };
+ScrubState.cpp,Other,audio_stream_control,\bAudioIO\b,7,Paul Licameli split from AudioIO.cpp
+ScrubState.cpp,Other,audio_stream_control,\bAudioIO\b,12,"#include ""AudioIO.h"""
+ScrubState.cpp,Other,audio_stream_control,\bAudioIO\b,45,// Called by the thread that calls AudioIO::SequenceBufferExchange
+ScrubState.cpp,Other,audio_stream_control,\bAudioIO\b,367,auto gAudioIO = AudioIO::Get();
+ScrubState.cpp,Other,audio_stream_control,\bAudioIO\b,420,auto gAudioIO = AudioIO::Get();
+ScrubState.cpp,Other,state_transitions,\bStop\b,108,void Stop()
+ScrubState.cpp,Other,state_transitions,\bStop\b,310,ScrubQueue::Instance.Stop();
+ScrubState.cpp,Other,state_transitions,\bStop\b,426,// Stop even if we don't fill up available
+ScrubState.cpp,Other,state_transitions,\bStop\b,469,queue.Stop();
+ScrubState.h,Other,audio_stream_control,\bAudioIO\b,7,Paul Licameli split from AudioIO.cpp
+SelectUtilities.cpp,Other,audio_stream_control,\bAudioIO\b,16,"#include ""AudioIO.h"""
+SelectUtilities.cpp,Other,audio_stream_control,\bAudioIO\b,280,auto gAudioIO = AudioIO::Get();
+SoundActivatedRecord.cpp,Other,callbacks_events,\bEVT_,28,"EVT_BUTTON(wxID_OK, SoundActivatedRecordDialog::OnOK)"
+SoundActivatedRecord.cpp,Other,audio_stream_control,\bAudioIO\b,57,"{ wxT(""/AudioIO/SilenceLevel""), -50 },"
+SoundActivatedRecord.cpp,Other,state_transitions,\bFlush\b,71,gPrefs->Flush();
+SpectralDataDialog.cpp,Other,callbacks_events,\bCallAfter\b,399,wxTheApp->CallAfter([&]{
+SpectralDataDialog.cpp,Other,callbacks_events,\bCallAfter\b,406,wxTheApp->CallAfter([&]{
+SpectralDataDialog.cpp,Other,callbacks_events,\bCallAfter\b,412,wxTheApp->CallAfter([&]{ projectSettings.SetTool(oldValue); });
+SpectralDataDialog.cpp,Other,callbacks_events,\bBind\(,374,"wxTheApp->Bind(wxEVT_IDLE, &SpectralDataDialogWorker::OnIdle, this);"
+SpectralDataDialog.cpp,Other,callbacks_events,\bEVT_,147,"EVT_TOGGLEBUTTON(ID_BRUSH_BUTTON, SpectralDataDialog::OnBrushButton)"
+SpectralDataDialog.cpp,Other,callbacks_events,\bEVT_,149,"EVT_CHECKBOX(ID_CHECKBOX_SMART, SpectralDataDialog::OnCheckSmartSelection)"
+SpectralDataDialog.cpp,Other,callbacks_events,\bEVT_,151,"EVT_CHECKBOX(ID_CHECKBOX_OVERTONES, SpectralDataDialog::OnCheckOvertones)"
+SpectralDataDialog.cpp,Other,callbacks_events,\bEVT_,152,EVT_CLOSE(SpectralDataDialog::OnCloseWindow)
+SpectralDataDialog.cpp,Other,callbacks_events,\bEVT_,153,"EVT_SLIDER(ID_SLIDER_BRUSH_SIZE, SpectralDataDialog::OnBrushSizeSlider)"
+SpectralDataDialog.cpp,Other,audio_stream_control,\bAudioIO\b,41,"#include ""AudioIO.h"""
+SpectralDataDialog.cpp,Other,audio_stream_control,\bAudioIO\b,171,mAudioIOSubscription = AudioIO::Get()
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,85,// Since this is now happening in the EVT_CHAR event EmulateKeyPress is no
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,195,EVT_GRID_CELL_CHANGED(TagsEditorDialog::OnChange)
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,196,"EVT_BUTTON(PrevID, TagsEditorDialog::OnPrev)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,197,"EVT_BUTTON(NextID, TagsEditorDialog::OnNext)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,198,"EVT_BUTTON(EditID, TagsEditorDialog::OnEdit)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,199,"EVT_BUTTON(ResetID, TagsEditorDialog::OnReset)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,200,"EVT_BUTTON(ClearID, TagsEditorDialog::OnClear)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,201,"EVT_BUTTON(LoadID, TagsEditorDialog::OnLoad)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,202,"EVT_BUTTON(SaveID, TagsEditorDialog::OnSave)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,203,"EVT_BUTTON(SaveDefaultsID, TagsEditorDialog::OnSaveDefaults)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,204,"EVT_BUTTON(AddID, TagsEditorDialog::OnAdd)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,205,"EVT_BUTTON(RemoveID, TagsEditorDialog::OnRemove)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,206,"EVT_BUTTON(wxID_HELP, TagsEditorDialog::OnHelp)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,207,"EVT_BUTTON(wxID_CANCEL, TagsEditorDialog::OnCancel)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,208,"EVT_BUTTON(wxID_OK, TagsEditorDialog::OnOk)"
+TagsEditor.cpp,Other,callbacks_events,\bEVT_,209,EVT_KEY_DOWN(TagsEditorDialog::OnKeyDown)
+TagsEditor.cpp,Other,state_transitions,\bCommit\b,777,writer.Commit();
+TagsEditor.cpp,Other,state_transitions,\bCommit\b,1012,// Commit the change to project state only now.
+TagsEditor.cpp,Other,state_transitions,\bFlush\b,810,gPrefs->Flush();
+TagsEditor.cpp,Other,state_transitions,\bFlush\b,872,gPrefs->Flush();
+TimeDialog.cpp,Other,callbacks_events,\bEVT_,25,"EVT_COMMAND(wxID_ANY, EVT_TIMETEXTCTRL_UPDATED, TimeDialog::OnUpdate)"
+TimeDialog.cpp,Other,callbacks_events,\bEVT_,25,"EVT_COMMAND(wxID_ANY, EVT_TIMETEXTCTRL_UPDATED, TimeDialog::OnUpdate)"
+TimeDisplayMode.h,Other,callbacks_events,\bcallback\b,32,Observer::Subscription Subscribe(Callback callback)
+TimeDisplayMode.h,Other,callbacks_events,\bcallback\b,35,std::move(callback));
+TimeDisplayMode.h,Other,callbacks_events,\bCallback\b,31,template<typename Callback>
+TimeDisplayMode.h,Other,callbacks_events,\bCallback\b,32,Observer::Subscription Subscribe(Callback callback)
+TimerRecordDialog.cpp,Other,blocking_or_waiting,\bsleep_for\b,586,std::this_thread::sleep_for(kTimerInterval);
+TimerRecordDialog.cpp,Other,blocking_or_waiting,\bsleep_for\b,1110,std::this_thread::sleep_for(kTimerInterval);
+TimerRecordDialog.cpp,Other,blocking_or_waiting,\bsleep_for\b,1160,std::this_thread::sleep_for(kTimerInterval);
+TimerRecordDialog.cpp,Other,callbacks_events,\bCallAfter\b,1291,wxTheApp->CallAfter([]{
+TimerRecordDialog.cpp,Other,callbacks_events,\bBind\(,383,exportDialog.Bind(
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,146,"EVT_DATE_CHANGED(ID_DATEPICKER_START, TimerRecordDialog::OnDatePicker_Start)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,147,"EVT_TEXT(ID_TIMETEXT_START, TimerRecordDialog::OnTimeText_Start)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,149,"EVT_DATE_CHANGED(ID_DATEPICKER_END, TimerRecordDialog::OnDatePicker_End)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,150,"EVT_TEXT(ID_TIMETEXT_END, TimerRecordDialog::OnTimeText_End)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,152,"EVT_TEXT(ID_TIMETEXT_DURATION, TimerRecordDialog::OnTimeText_Duration)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,154,"EVT_BUTTON(wxID_OK, TimerRecordDialog::OnOK)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,155,"EVT_BUTTON(wxID_HELP, TimerRecordDialog::OnHelpButtonClick)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,157,"EVT_TIMER(TIMER_ID, TimerRecordDialog::OnTimer)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,159,"EVT_BUTTON(ID_AUTOSAVEPATH_BUTTON, TimerRecordDialog::OnAutoSavePathButton_Click)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,160,"EVT_BUTTON(ID_AUTOEXPORTPATH_BUTTON, TimerRecordDialog::OnAutoExportPathButton_Click)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,162,"EVT_CHECKBOX(ID_AUTOSAVE_CHECKBOX, TimerRecordDialog::OnAutoSaveCheckBox_Change)"
+TimerRecordDialog.cpp,Other,callbacks_events,\bEVT_,163,"EVT_CHECKBOX(ID_AUTOEXPORT_CHECKBOX, TimerRecordDialog::OnAutoExportCheckBox_Change)"
+TimerRecordDialog.cpp,Other,audio_stream_control,\bAudioIO\b,41,"#include ""AudioIO.h"""
+TimerRecordDialog.cpp,Other,audio_stream_control,\bAudioIO\b,529,const auto gAudioIO = AudioIO::Get();
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,227,m_timer.Start(kSlowTimerInterval);
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,239,this->UpdateEnd(); // Keep Duration constant and update End for changed Start.
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,259,"// Always update End for changed Start, keeping Duration constant."
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,296,"// DatePickerCtrls use SetRange to make sure End is never less than Start, but"
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,304,this->UpdateDuration(); // Keep Start constant and update Duration for changed End.
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,335,this->UpdateEnd(); // Keep Start constant and update End for changed Duration.
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,837,"S.StartStatic(XO(""Start Date and Time""), true);"
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,848,"S.Name(XO(""Start Date""))"
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,858,"S.Name(XO(""Start Time""))"
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,1068,// MY: The Waiting For Start dialog now shows what actions will occur after recording has completed
+TimerRecordDialog.cpp,Other,state_transitions,\bStart\b,1097,"XO(""Audacity Timer Record - Waiting for Start""),"
+TimerRecordDialog.cpp,Other,state_transitions,\bStop\b,484,m_timer.Stop(); // Don't need to keep updating m_DateTime_Start to prevent backdating.
+TimerRecordDialog.cpp,Other,state_transitions,\bStop\b,594,ProjectAudioManager::Get(mProject).Stop();
+TimerRecordDialog.cpp,Other,state_transitions,\bFlush\b,489,gPrefs->Flush();
+TimerRecordExportDialog.cpp,Other,callbacks_events,\bBind\(,27,"void TimerRecordExportDialog::Bind(wxFileName& filename,"
+TimerRecordExportDialog.cpp,Other,callbacks_events,\bEVT_,11,"EVT_BUTTON(wxID_OK, TimerRecordExportDialog::OnOK)"
+TimerRecordExportDialog.cpp,Other,callbacks_events,\bEVT_,12,"EVT_BUTTON(EditMetadataID, TimerRecordExportDialog::OnEditMetadata)"
+TimerRecordExportDialog.cpp,Other,callbacks_events,\bEVT_,13,"EVT_COMMAND(ExportFilePanelID, AUDACITY_EXPORT_FORMAT_CHANGE_EVENT, TimerRecordExportDialog::OnFormatChanged)"
+TimerRecordExportDialog.h,Other,callbacks_events,\bBind\(,20,"void Bind(wxFileName& filename, wxString& format, int& sampleRate, int& channels, ExportProcessor::Parameters& paramters);"
+TrackPanel.cpp,Other,blocking_or_waiting,\bJoin\(,640,"status.Join(XO(""(Esc to cancel)""), "" "");"
+TrackPanel.cpp,Other,callbacks_events,\bCallAfter\b,746,"this->CallAfter([this, event]{"
+TrackPanel.cpp,Other,callbacks_events,\bCallAfter\b,819,CallAfter([this]{
+TrackPanel.cpp,Other,callbacks_events,\bCallAfter\b,832,CallAfter([this]{ CellularPanel::HandleCursorForPresentMouseState(); });
+TrackPanel.cpp,Other,callbacks_events,\bBind\(,301,"ProjectWindow::Get(*GetProject()).Bind(wxEVT_IDLE,"
+TrackPanel.cpp,Other,callbacks_events,\bEVT_,175,EVT_MOUSE_EVENTS(TrackPanel::OnMouseEvent)
+TrackPanel.cpp,Other,callbacks_events,\bEVT_,176,EVT_KEY_DOWN(TrackPanel::OnKeyDown)
+TrackPanel.cpp,Other,callbacks_events,\bEVT_,178,EVT_PAINT(TrackPanel::OnPaint)
+TrackPanel.cpp,Other,callbacks_events,\bEVT_,180,"EVT_TIMER(wxID_ANY, TrackPanel::OnTimer)"
+TrackPanel.cpp,Other,callbacks_events,\bEVT_,182,EVT_SIZE(TrackPanel::OnSize)
+TrackPanel.cpp,Other,audio_stream_control,\bAudioIO\b,74,"#include ""AudioIO.h"""
+TrackPanel.cpp,Other,audio_stream_control,\bAudioIO\b,331,"=AudioIO::Get()->Subscribe(*this, &TrackPanel::OnAudioIO);"
+TrackPanel.cpp,Other,audio_stream_control,\bAudioIO\b,422,auto gAudioIO = AudioIO::Get();
+TrackPanel.cpp,Other,state_transitions,\bStart\b,400,"mTimer.Start(std::chrono::milliseconds { kTimerInterval }.count(), FALSE);"
+TrackPanel.cpp,Other,state_transitions,\bStart\b,741,"mTimer.Start(std::chrono::milliseconds { kTimerInterval }.count(), FALSE);"
+TrackPanel.cpp,Other,state_transitions,\bStop\b,352,mTimer.Stop();
+TrackPanel.cpp,Other,state_transitions,\bStop\b,429,projectAudioManager.Stop(!gAudioIO->IsStreamActive());
+TrackPanel.cpp,Other,state_transitions,\bStop\b,740,mTimer.Stop();
+TrackPanel.h,Other,callbacks_events,\bQueueEvent\b,197,// QueueEvent() will take ownership of the event
+TrackPanel.h,Other,callbacks_events,\bQueueEvent\b,198,parent->GetEventHandler()->QueueEvent(safenew wxTimerEvent(*this));
+TransportUtilities.cpp,Other,blocking_or_waiting,\bsleep_for\b,61,std::this_thread::sleep_for(100ms);
+TransportUtilities.cpp,Other,blocking_or_waiting,\bsleep_for\b,103,std::this_thread::sleep_for(100ms);
+TransportUtilities.cpp,Other,blocking_or_waiting,\bsleep_for\b,143,std::this_thread::sleep_for(100ms);
+TransportUtilities.cpp,Other,audio_stream_control,\bAudioIO\b,15,"#include ""AudioIO.h"""
+TransportUtilities.cpp,Other,audio_stream_control,\bAudioIO\b,48,auto gAudioIO = AudioIO::Get();
+TransportUtilities.cpp,Other,audio_stream_control,\bAudioIO\b,90,auto gAudioIO = AudioIO::Get();
+TransportUtilities.cpp,Other,audio_stream_control,\bAudioIO\b,130,auto gAudioIO = AudioIO::Get();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,53,projectAudioManager.Stop();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,65,projectAudioManager.Stop();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,95,projectAudioManager.Stop();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,107,projectAudioManager.Stop();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,135,projectAudioManager.Stop();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,147,projectAudioManager.Stop();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,165,projectAudioManager.Stop();
+TransportUtilities.cpp,Other,state_transitions,\bStop\b,188,otherProjectAudioManager.Stop();
+WhatsNewDialog.cpp,Other,callbacks_events,\bEVT_,156,"EVT_BUTTON(wxID_OK, WhatsNewDialog::OnOK)"
+WhatsNewDialog.cpp,Other,state_transitions,\bFlush\b,279,gPrefs->Flush();
+commands/AppCommandEvent.h,Other,callbacks_events,\bEVT_,51,"#define EVT_APP_COMMAND(winid, fn) DECLARE_EVENT_TABLE_ENTRY(wxEVT_APP_COMMAND_RECEIVED, winid, wxID_ANY, wxAppCommandEventHandler(fn), \"
+commands/AudacityCommand.cpp,Other,callbacks_events,\bEVT_,232,"EVT_BUTTON(wxID_OK, AudacityCommandDialog::OnOk)"
+commands/AudacityCommand.cpp,Other,callbacks_events,\bEVT_,233,"EVT_BUTTON(wxID_HELP, AudacityCommandDialog::OnHelp)"
+commands/AudacityCommand.cpp,Other,callbacks_events,\bEVT_,234,"EVT_BUTTON(wxID_CANCEL, AudacityCommandDialog::OnCancel)"
+commands/CommandDispatch.cpp,Other,state_transitions,\bStop\b,72,ProjectAudioManager::Get(project).Stop();
+commands/DragCommand.cpp,Other,callbacks_events,\bProcessEvent\b,133,pWin->GetEventHandler()->ProcessEvent(Evt);
+commands/DragCommand.cpp,Other,callbacks_events,\bProcessEvent\b,134,pWin->GetEventHandler()->ProcessEvent(Evt);
+commands/DragCommand.cpp,Other,callbacks_events,\bProcessEvent\b,141,pWin->GetEventHandler()->ProcessEvent(Evt2);
+commands/DragCommand.cpp,Other,callbacks_events,\bProcessEvent\b,148,pWin->GetEventHandler()->ProcessEvent(Evt3);
+commands/DragCommand.cpp,Other,callbacks_events,\bProcessEvent\b,149,pWin->GetEventHandler()->ProcessEvent(Evt3);
+commands/DragCommand.cpp,Other,callbacks_events,\bProcessEvent\b,154,pWin->GetEventHandler()->ProcessEvent(Evt4);
+commands/GetInfoCommand.cpp,Other,audio_stream_control,\bAudioIO\b,48,"#include ""AudioIO.h"""
+commands/GetInfoCommand.cpp,Other,state_transitions,\bStart\b,620,"context.AddItem(selectedRegion.t0(), ""Start""); // Send selection start position"
+commands/LoadCommands.cpp,Other,callbacks_events,\bcallback\b,171,const RegistrationCallback& callback)
+commands/LoadCommands.cpp,Other,callbacks_events,\bcallback\b,177,if (callback) {
+commands/LoadCommands.cpp,Other,callbacks_events,\bcallback\b,178,"callback(this, Command.get());"
+commands/LoadCommands.h,Other,callbacks_events,\bcallback\b,69,"const PluginPath& path, TranslatableString& errMsg, const RegistrationCallback& callback)"
+commands/OpenSaveCommands.cpp,Other,state_transitions,\bCommit\b,80,chooser.Commit();
+commands/PreferenceCommands.cpp,Other,state_transitions,\bFlush\b,109,"bool bOK = gPrefs->Write(mName, mValue) && gPrefs->Flush();"
+commands/ResponseQueue.cpp,Other,blocking_or_waiting,\bWait\(,40,mCondition.Wait();
+commands/ScriptCommandRelay.cpp,Other,threading,\bstd::thread\b,87,"std::thread(server, scriptFn).detach();"
+commands/SelectCommand.cpp,Other,state_transitions,\bStart\b,63,"{ wxT(""ProjectStart""), XO(""Project Start"") },"
+commands/SelectCommand.cpp,Other,state_transitions,\bStart\b,66,"{ wxT(""SelectionStart""), XO(""Selection Start"") },"
+commands/SelectCommand.cpp,Other,state_transitions,\bStart\b,76,"S.OptionalY(bHasT0).Define(mT0, wxT(""Start""), 0.0, -100.0, (double)FLT_MAX);"
+commands/SelectCommand.cpp,Other,state_transitions,\bStart\b,95,"S.Optional(bHasT0).TieTextBox(XXO(""Start Time:""), mT0);"
+commands/SetClipCommand.cpp,Other,state_transitions,\bStart\b,66,"S.OptionalN(bHasT0).Define(mT0,             wxT(""Start""),      0.0, -5.0, 1000000.0);"
+commands/SetClipCommand.cpp,Other,state_transitions,\bStart\b,85,"S.Optional(bHasT0).TieNumericTextBox(XXO(""Start:""),         mT0);"
+commands/SetClipCommand.cpp,Other,state_transitions,\bStart\b,102,|| (interval->Start() <= mContainsTime
+commands/SetLabelCommand.cpp,Other,state_transitions,\bStart\b,50,"S.OptionalY(bHasT0).Define(mT0,          wxT(""Start""),      0.0, 0.0, 100000.0);"
+commands/SetLabelCommand.cpp,Other,state_transitions,\bStart\b,74,"S.Optional(bHasT0).TieNumericTextBox(XXO(""Start:""),    mT0);"
+commands/wxCommandTargets.cpp,Other,callbacks_events,\bEVT_,71,"EVT_BUTTON(wxID_OK, LongMessageDialog::OnOk)"
+commands/wxCommandTargets.cpp,Other,state_transitions,\bFlush\b,55,static void Flush();
+commands/wxCommandTargets.cpp,Other,state_transitions,\bFlush\b,138,void LongMessageDialog::Flush()
+commands/wxCommandTargets.cpp,Other,state_transitions,\bFlush\b,156,virtual ~MessageDialogTarget() { Flush(); }
+commands/wxCommandTargets.cpp,Other,state_transitions,\bFlush\b,162,void Flush() override
+commands/wxCommandTargets.cpp,Other,state_transitions,\bFlush\b,164,LongMessageDialog::Flush();
+effects/Amplify.cpp,Effects,callbacks_events,\bEVT_,56,"EVT_SLIDER(ID_Amp, EffectAmplify::OnAmpSlider)"
+effects/Amplify.cpp,Effects,callbacks_events,\bEVT_,57,"EVT_TEXT(ID_Amp, EffectAmplify::OnAmpText)"
+effects/Amplify.cpp,Effects,callbacks_events,\bEVT_,58,"EVT_TEXT(ID_Peak, EffectAmplify::OnPeakText)"
+effects/Amplify.cpp,Effects,callbacks_events,\bEVT_,59,"EVT_CHECKBOX(ID_Clip, EffectAmplify::OnClipCheckBox)"
+effects/AutoDuck.cpp,Effects,callbacks_events,\bEVT_,33,"EVT_TEXT(wxID_ANY, EffectAutoDuck::OnValueChanged)"
+effects/AutoDuck.cpp,Effects,callbacks_events,\bEVT_,172,EVT_PAINT(EffectAutoDuck::Panel::OnPaint)
+effects/AutoDuck.cpp,Effects,callbacks_events,\bEVT_,173,EVT_MOUSE_CAPTURE_CHANGED(EffectAutoDuck::Panel::OnMouseCaptureChanged)
+effects/AutoDuck.cpp,Effects,callbacks_events,\bEVT_,174,EVT_MOUSE_CAPTURE_LOST(EffectAutoDuck::Panel::OnMouseCaptureLost)
+effects/AutoDuck.cpp,Effects,callbacks_events,\bEVT_,175,EVT_LEFT_DOWN(EffectAutoDuck::Panel::OnLeftDown)
+effects/AutoDuck.cpp,Effects,callbacks_events,\bEVT_,176,EVT_LEFT_UP(EffectAutoDuck::Panel::OnLeftUp)
+effects/AutoDuck.cpp,Effects,callbacks_events,\bEVT_,177,EVT_MOTION(EffectAutoDuck::Panel::OnMotion)
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,59,"EVT_CHOICE(ID_FromPitch, EffectChangePitch::OnChoice_FromPitch)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,60,"EVT_TEXT(ID_FromOctave, EffectChangePitch::OnSpin_FromOctave)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,61,"EVT_CHOICE(ID_ToPitch, EffectChangePitch::OnChoice_ToPitch)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,62,"EVT_TEXT(ID_ToOctave, EffectChangePitch::OnSpin_ToOctave)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,64,"EVT_TEXT(ID_SemitonesChange, EffectChangePitch::OnText_SemitonesChange)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,66,"EVT_TEXT(ID_FromFrequency, EffectChangePitch::OnText_FromFrequency)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,67,"EVT_TEXT(ID_ToFrequency, EffectChangePitch::OnText_ToFrequency)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,69,"EVT_TEXT(ID_PercentChange, EffectChangePitch::OnText_PercentChange)"
+effects/ChangePitch.cpp,Effects,callbacks_events,\bEVT_,70,"EVT_SLIDER(ID_PercentChange, EffectChangePitch::OnSlider_PercentChange)"
+effects/ChangePitch.cpp,Effects,state_transitions,\bStart\b,92,"XO(""Estimated Start Pitch: %s%d (%.3f Hz)"")"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,56,"EVT_TEXT(ID_PercentChange, EffectChangeSpeed::OnText_PercentChange)"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,57,"EVT_TEXT(ID_Multiplier, EffectChangeSpeed::OnText_Multiplier)"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,58,"EVT_SLIDER(ID_PercentChange, EffectChangeSpeed::OnSlider_PercentChange)"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,59,"EVT_CHOICE(ID_FromVinyl, EffectChangeSpeed::OnChoice_Vinyl)"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,60,"EVT_CHOICE(ID_ToVinyl, EffectChangeSpeed::OnChoice_Vinyl)"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,61,"EVT_TEXT(ID_ToLength, EffectChangeSpeed::OnTimeCtrl_ToLength)"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,62,"EVT_COMMAND(ID_ToLength, EVT_TIMETEXTCTRL_UPDATED, EffectChangeSpeed::OnTimeCtrlUpdate)"
+effects/ChangeSpeed.cpp,Effects,callbacks_events,\bEVT_,62,"EVT_COMMAND(ID_ToLength, EVT_TIMETEXTCTRL_UPDATED, EffectChangeSpeed::OnTimeCtrlUpdate)"
+effects/ChangeTempo.cpp,Effects,callbacks_events,\bEVT_,51,"EVT_TEXT(ID_PercentChange, EffectChangeTempo::OnText_PercentChange)"
+effects/ChangeTempo.cpp,Effects,callbacks_events,\bEVT_,52,"EVT_SLIDER(ID_PercentChange, EffectChangeTempo::OnSlider_PercentChange)"
+effects/ChangeTempo.cpp,Effects,callbacks_events,\bEVT_,53,"EVT_TEXT(ID_FromBPM, EffectChangeTempo::OnText_FromBPM)"
+effects/ChangeTempo.cpp,Effects,callbacks_events,\bEVT_,54,"EVT_TEXT(ID_ToBPM, EffectChangeTempo::OnText_ToBPM)"
+effects/ChangeTempo.cpp,Effects,callbacks_events,\bEVT_,55,"EVT_TEXT(ID_ToLength, EffectChangeTempo::OnText_ToLength)"
+effects/ClickRemoval.cpp,Effects,callbacks_events,\bEVT_,32,"EVT_SLIDER(ID_Thresh, EffectClickRemoval::OnThreshSlider)"
+effects/ClickRemoval.cpp,Effects,callbacks_events,\bEVT_,33,"EVT_SLIDER(ID_Width, EffectClickRemoval::OnWidthSlider)"
+effects/ClickRemoval.cpp,Effects,callbacks_events,\bEVT_,34,"EVT_TEXT(ID_Thresh, EffectClickRemoval::OnThreshText)"
+effects/ClickRemoval.cpp,Effects,callbacks_events,\bEVT_,35,"EVT_TEXT(ID_Width, EffectClickRemoval::OnWidthText)"
+effects/ClipIndicatorPanel.cpp,Effects,callbacks_events,\bEVT_,17,EVT_PAINT(ClipIndicatorPanel::OnPaint)
+effects/ClipIndicatorPanel.cpp,Effects,audio_stream_control,\bAudioIO\b,12,"#include ""AudioIO.h"""
+effects/ClipIndicatorPanel.cpp,Effects,audio_stream_control,\bAudioIO\b,22,", mPlaybackStartStopSubscription{AudioIO::Get()->Subscribe("
+effects/CompressionMeterPanel.cpp,Effects,callbacks_events,\bEVT_,33,EVT_PAINT(CompressionMeterPanel::OnPaint)
+effects/CompressionMeterPanel.cpp,Effects,callbacks_events,\bEVT_,34,"EVT_TIMER(timerId, CompressionMeterPanel::OnTimer)"
+effects/CompressionMeterPanel.cpp,Effects,audio_stream_control,\bAudioIO\b,12,"#include ""AudioIO.h"""
+effects/CompressionMeterPanel.cpp,Effects,audio_stream_control,\bAudioIO\b,54,mPlaybackPausedSubscription { AudioIO::Get()->Subscribe(
+effects/CompressionMeterPanel.cpp,Effects,state_transitions,\bStart\b,62,mTimer.Start(compressorMeterUpdatePeriodMs);
+effects/CompressionMeterPanel.cpp,Effects,state_transitions,\bStart\b,96,mTimer.Start(compressorMeterUpdatePeriodMs);
+effects/CompressionMeterPanel.cpp,Effects,state_transitions,\bStop\b,60,mTimer.Stop();
+effects/CompressionMeterPanel.cpp,Effects,state_transitions,\bStop\b,212,mTimer.Stop();
+effects/Contrast.cpp,Effects,callbacks_events,\bEVT_,75,"EVT_BUTTON(ID_BUTTON_USECURRENTF, ContrastDialog::OnGetForeground)"
+effects/Contrast.cpp,Effects,callbacks_events,\bEVT_,76,"EVT_BUTTON(ID_BUTTON_USECURRENTB, ContrastDialog::OnGetBackground)"
+effects/Contrast.cpp,Effects,callbacks_events,\bEVT_,77,"EVT_BUTTON(wxID_HELP, ContrastDialog::OnGetURL)"
+effects/Contrast.cpp,Effects,callbacks_events,\bEVT_,78,"EVT_BUTTON(ID_BUTTON_EXPORT, ContrastDialog::OnExport)"
+effects/Contrast.cpp,Effects,callbacks_events,\bEVT_,79,"EVT_BUTTON(ID_BUTTON_RESET, ContrastDialog::OnReset)"
+effects/Contrast.cpp,Effects,callbacks_events,\bEVT_,80,"EVT_BUTTON(wxID_CANCEL, ContrastDialog::OnClose)"
+effects/Contrast.cpp,Effects,state_transitions,\bStart\b,143,"S.AddFixedText(XO(""Start""));"
+effects/Distortion.cpp,Effects,blocking_or_waiting,\bJoin\(,687,"name.Join(suffix, wxT("" ""));"
+effects/Distortion.cpp,Effects,blocking_or_waiting,\bJoin\(,706,"name.Join(suffix, wxT("" ""));"
+effects/Distortion.cpp,Effects,blocking_or_waiting,\bJoin\(,721,"name.Join(suffix, wxT("" ""));"
+effects/Distortion.cpp,Effects,blocking_or_waiting,\bJoin\(,736,"name.Join(suffix, wxT("" ""));"
+effects/Distortion.cpp,Effects,blocking_or_waiting,\bJoin\(,751,"name.Join(suffix, wxT("" ""));"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,244,"->Bind(wxEVT_LEFT_UP, [this](wxMouseEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,280,"input->Bind(wxEVT_CHECKBOX, [this](wxCommandEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,288,"output->Bind(wxEVT_CHECKBOX, [&](wxCommandEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,298,"actual->Bind(wxEVT_CHECKBOX, [&](wxCommandEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,308,"target->Bind(wxEVT_CHECKBOX, [&](wxCommandEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,337,"->Bind(wxEVT_LEFT_UP, [this](wxMouseEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,420,"setting.text->Bind(wxEVT_TEXT, [&](wxCommandEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,438,"setting.slider->Bind(wxEVT_SLIDER, [&](wxCommandEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,452,"setting.slider->Bind(wxEVT_SCROLL_LINEDOWN, [&](wxScrollEvent& evt) {"
+effects/DynamicRangeProcessorEditor.cpp,Effects,callbacks_events,\bBind\(,461,"setting.slider->Bind(wxEVT_SCROLL_LINEUP, [&](wxScrollEvent& evt) {"
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,callbacks_events,\bEVT_,51,EVT_PAINT(DynamicRangeProcessorHistoryPanel::OnPaint)
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,callbacks_events,\bEVT_,52,EVT_SIZE(DynamicRangeProcessorHistoryPanel::OnSize)
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,callbacks_events,\bEVT_,53,"EVT_TIMER(timerId, DynamicRangeProcessorHistoryPanel::OnTimer)"
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,audio_stream_control,\bAudioIO\b,14,"#include ""AudioIO.h"""
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,audio_stream_control,\bAudioIO\b,88,mPlaybackEventSubscription { AudioIO::Get()->Subscribe(
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,state_transitions,\bStart\b,98,mTimer.Start(timerPeriodMs);
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,state_transitions,\bStart\b,546,mTimer.Start(timerPeriodMs);
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,state_transitions,\bStop\b,73,// Stop the
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,state_transitions,\bStop\b,79,mTimer.Stop();
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,state_transitions,\bStop\b,94,mTimer.Stop();
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,state_transitions,\bPause\b,95,mClock.Pause();
+effects/DynamicRangeProcessorHistoryPanel.cpp,Effects,state_transitions,\bResume\b,97,mClock.Resume();
+effects/DynamicRangeProcessorTransferFunctionPanel.cpp,Effects,callbacks_events,\bEVT_,25,EVT_PAINT(DynamicRangeProcessorTransferFunctionPanel::OnPaint)
+effects/DynamicRangeProcessorTransferFunctionPanel.cpp,Effects,callbacks_events,\bEVT_,26,EVT_SIZE(DynamicRangeProcessorTransferFunctionPanel::OnSize)
+effects/EffectEditor.h,Effects,callbacks_events,\bBind\(,87,"src.Bind(eventType, pmf, static_cast<Class*>(this));"
+effects/EffectPresetDialog.cpp,Effects,callbacks_events,\bEVT_,12,"EVT_CHOICE(ID_Type, EffectPresetsDialog::OnType)"
+effects/EffectPresetDialog.cpp,Effects,callbacks_events,\bEVT_,13,"EVT_LISTBOX_DCLICK(wxID_ANY, EffectPresetsDialog::OnOk)"
+effects/EffectPresetDialog.cpp,Effects,callbacks_events,\bEVT_,14,"EVT_BUTTON(wxID_OK, EffectPresetsDialog::OnOk)"
+effects/EffectPresetDialog.cpp,Effects,callbacks_events,\bEVT_,15,"EVT_BUTTON(wxID_CANCEL, EffectPresetsDialog::OnCancel)"
+effects/EffectPreview.cpp,Effects,blocking_or_waiting,\bsleep_for\b,202,std::this_thread::sleep_for(100ms);
+effects/EffectPreview.cpp,Effects,blocking_or_waiting,\bsleep_for\b,212,std::this_thread::sleep_for(100ms);
+effects/EffectPreview.cpp,Effects,audio_stream_control,\bAudioIO\b,17,"#include ""AudioIO.h"""
+effects/EffectPreview.cpp,Effects,audio_stream_control,\bAudioIO\b,48,auto gAudioIO = AudioIO::Get();
+effects/EffectPreview.cpp,Effects,audio_stream_control,\bAudioIO\b,62,"gPrefs->Read(wxT(""/AudioIO/EffectsPreviewLen""), &previewLen, 6.0);"
+effects/EffectPreview.cpp,Effects,audio_stream_control,\bStartStream\b,188,"int token = gAudioIO->StartStream(tracks, mT0, t1, t1, options);"
+effects/EffectPreview.cpp,Effects,state_transitions,\bStart\b,186,// Start audio playing
+effects/EffectPreview.cpp,Effects,state_transitions,\bStop\b,165,"); // Have only ""Stop"" button."
+effects/EffectUI.cpp,Effects,callbacks_events,\bBind\(,652,"menu.Bind(wxEVT_MENU, [](auto&){}, kUserPresetsDummyID);"
+effects/EffectUI.cpp,Effects,callbacks_events,\bBind\(,653,"menu.Bind(wxEVT_MENU, [](auto&){}, kDeletePresetDummyID);"
+effects/EffectUI.cpp,Effects,callbacks_events,\bBind\(,720,"sub->Bind(wxEVT_MENU, [](auto&){}, kDummyID);"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,141,EVT_INIT_DIALOG(EffectUIHost::OnInitDialog)
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,142,EVT_ERASE_BACKGROUND(EffectUIHost::OnErase)
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,143,EVT_PAINT(EffectUIHost::OnPaint)
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,144,EVT_CLOSE(EffectUIHost::OnClose)
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,145,"EVT_BUTTON(eDebugID, EffectUIHost::OnApply)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,146,"EVT_BUTTON(wxID_CANCEL, EffectUIHost::OnCancel)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,147,"EVT_BUTTON(wxID_APPLY, EffectUIHost::OnDebug)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,148,"EVT_BUTTON(kMenuID, EffectUIHost::OnMenu)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,149,"EVT_BUTTON(kEnableID, EffectUIHost::OnEnable)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,150,"EVT_BUTTON(kPlayID, EffectUIHost::OnPlay)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,151,"EVT_MENU(kSaveAsID, EffectUIHost::OnSaveAs)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,152,"EVT_MENU(kImportID, EffectUIHost::OnImport)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,153,"EVT_MENU(kExportID, EffectUIHost::OnExport)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,154,"EVT_MENU(kOptionsID, EffectUIHost::OnOptions)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,155,"EVT_MENU(kDefaultsID, EffectUIHost::OnDefaults)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,156,"EVT_MENU_RANGE(kUserPresetsID, kUserPresetsID + 999, EffectUIHost::OnUserPreset)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,157,"EVT_MENU_RANGE(kDeletePresetID, kDeletePresetID + 999, EffectUIHost::OnDeletePreset)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,158,"EVT_MENU_RANGE(kFactoryPresetsID, kFactoryPresetsID + 999, EffectUIHost::OnFactoryPreset)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,159,EVT_IDLE(EffectUIHost::OnIdle)
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,160,EVT_CHAR_HOOK(EffectUIHost::OnCharHook)
+effects/EffectUI.cpp,Effects,callbacks_events,\bEVT_,1130,"EVT_BUTTON(wxID_OK, EffectDialog::OnOk)"
+effects/EffectUI.cpp,Effects,callbacks_events,\bcallback\b,599,// It should callback to the EffectManager to kick off the processing
+effects/EffectUI.cpp,Effects,audio_stream_control,\bAudioIO\b,102,"#include ""AudioIO.h"""
+effects/EffectUI.cpp,Effects,audio_stream_control,\bAudioIO\b,1027,auto gAudioIO = AudioIO::Get();
+effects/EffectUI.cpp,Effects,audio_stream_control,\bAudioIO\b,1034,"=AudioIO::Get()->AddState(mProject, nullptr, GetID(mEffectUIHost));"
+effects/EffectUI.cpp,Effects,audio_stream_control,\bAudioIO\b,1056,mAudioIOSubscription = AudioIO::Get()->Subscribe([this](AudioIOEvent event){
+effects/EffectUI.cpp,Effects,audio_stream_control,\bAudioIO\b,1081,"AudioIO::Get()->RemoveState(mProject, nullptr, mpTempProjectState);"
+effects/EffectUI.cpp,Effects,state_transitions,\bFlush\b,174,void Flush() override;
+effects/EffectUI.cpp,Effects,state_transitions,\bFlush\b,218,void EffectSettingsAccessTee::Flush()
+effects/EffectUI.cpp,Effects,state_transitions,\bFlush\b,220,mpMain->Flush();
+effects/EffectUI.cpp,Effects,state_transitions,\bFlush\b,222,pSide->Flush();
+effects/EffectUI.cpp,Effects,state_transitions,\bFlush\b,328,mpAccess->Flush();
+effects/EffectUI.cpp,Effects,state_transitions,\bFlush\b,936,mpAccess->Flush();
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,23,"EVT_BUTTON(UpButtonID, EqualizationCurvesDialog::OnUp)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,24,"EVT_BUTTON(DownButtonID, EqualizationCurvesDialog::OnDown)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,25,"EVT_BUTTON(RenameButtonID, EqualizationCurvesDialog::OnRename)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,26,"EVT_BUTTON(DeleteButtonID, EqualizationCurvesDialog::OnDelete)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,27,"EVT_BUTTON(ImportButtonID, EqualizationCurvesDialog::OnImport)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,28,"EVT_BUTTON(ExportButtonID, EqualizationCurvesDialog::OnExport)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,29,"EVT_BUTTON(LibraryButtonID, EqualizationCurvesDialog::OnLibrary)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,30,"EVT_BUTTON(DefaultsButtonID, EqualizationCurvesDialog::OnDefaults)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,31,"EVT_BUTTON(wxID_OK, EqualizationCurvesDialog::OnOK)"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,32,"EVT_LIST_ITEM_SELECTED(CurvesListID,"
+effects/EqualizationCurvesDialog.cpp,Effects,callbacks_events,\bEVT_,34,"EVT_LIST_ITEM_DESELECTED(CurvesListID,"
+effects/EqualizationPanel.cpp,Effects,callbacks_events,\bEVT_,43,EVT_PAINT(EqualizationPanel::OnPaint)
+effects/EqualizationPanel.cpp,Effects,callbacks_events,\bEVT_,44,EVT_MOUSE_EVENTS(EqualizationPanel::OnMouseEvent)
+effects/EqualizationPanel.cpp,Effects,callbacks_events,\bEVT_,45,EVT_MOUSE_CAPTURE_LOST(EqualizationPanel::OnCaptureLost)
+effects/EqualizationPanel.cpp,Effects,callbacks_events,\bEVT_,46,EVT_SIZE(EqualizationPanel::OnSize)
+effects/EqualizationPanel.cpp,Effects,callbacks_events,\bEVT_,47,EVT_IDLE(EqualizationPanel::OnIdle)
+effects/EqualizationUI.cpp,Effects,callbacks_events,\bEVT_,37,EVT_SIZE(EqualizationUI::OnSize)
+effects/EqualizationUI.cpp,Effects,callbacks_events,\bEVT_,38,EVT_IDLE(EqualizationUI::OnIdle)
+effects/EqualizationUI.h,Effects,callbacks_events,\bBind\(,59,"src.Bind(eventType, pmf, static_cast<Class*>(this));"
+effects/FindClipping.cpp,Effects,state_transitions,\bStart\b,44,"&mStart, NumValidatorStyle::DEFAULT, Start.min)"
+effects/FindClipping.cpp,Effects,state_transitions,\bStart\b,45,".TieTextBox(XXO(""&Start threshold (samples):""), mStart, 10);"
+effects/FindClipping.cpp,Effects,state_transitions,\bStop\b,49,"&mStop, NumValidatorStyle::DEFAULT, Stop.min)"
+effects/LegacyCompressor.cpp,Effects,callbacks_events,\bEVT_,52,"EVT_SLIDER(wxID_ANY, EffectLegacyCompressor::OnSlider)"
+effects/LegacyCompressor.cpp,Effects,callbacks_events,\bEVT_,284,EVT_PAINT(EffectLegacyCompressorPanel::OnPaint)
+effects/LegacyCompressor.cpp,Effects,callbacks_events,\bEVT_,285,EVT_SIZE(EffectLegacyCompressorPanel::OnSize)
+effects/Loudness.cpp,Effects,callbacks_events,\bEVT_,29,"EVT_CHOICE(wxID_ANY, EffectLoudness::OnChoice)"
+effects/Loudness.cpp,Effects,callbacks_events,\bEVT_,30,"EVT_CHECKBOX(wxID_ANY, EffectLoudness::OnUpdateUI)"
+effects/Loudness.cpp,Effects,callbacks_events,\bEVT_,31,"EVT_TEXT(wxID_ANY, EffectLoudness::OnUpdateUI)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,313,"EVT_BUTTON(wxID_OK, EffectNoiseReduction::Dialog::OnReduceNoise)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,314,"EVT_BUTTON(wxID_CANCEL, EffectNoiseReduction::Dialog::OnCancel)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,315,"EVT_BUTTON(ID_EFFECT_PREVIEW, EffectNoiseReduction::Dialog::OnPreview)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,316,"EVT_BUTTON(ID_BUTTON_GETPROFILE, EffectNoiseReduction::Dialog::OnGetProfile)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,317,"EVT_BUTTON(wxID_HELP, EffectNoiseReduction::Dialog::OnHelp)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,319,"EVT_RADIOBUTTON(ID_RADIOBUTTON_KEEPSIGNAL, EffectNoiseReduction::Dialog::OnNoiseReductionChoice)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,321,"EVT_RADIOBUTTON(ID_RADIOBUTTON_KEEPNOISE, EffectNoiseReduction::Dialog::OnNoiseReductionChoice)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,324,"EVT_RADIOBUTTON(ID_RADIOBUTTON_RESIDUE, EffectNoiseReduction::Dialog::OnNoiseReductionChoice)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,328,"EVT_CHOICE(ID_CHOICE_METHOD, EffectNoiseReduction::Dialog::OnMethodChoice)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,331,"EVT_SLIDER(ID_GAIN_SLIDER, EffectNoiseReduction::Dialog::OnSlider)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,332,"EVT_TEXT(ID_GAIN_TEXT, EffectNoiseReduction::Dialog::OnText)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,334,"EVT_SLIDER(ID_NEW_SENSITIVITY_SLIDER, EffectNoiseReduction::Dialog::OnSlider)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,335,"EVT_TEXT(ID_NEW_SENSITIVITY_TEXT, EffectNoiseReduction::Dialog::OnText)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,337,"EVT_SLIDER(ID_FREQ_SLIDER, EffectNoiseReduction::Dialog::OnSlider)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,338,"EVT_TEXT(ID_FREQ_TEXT, EffectNoiseReduction::Dialog::OnText)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,341,"EVT_SLIDER(ID_ATTACK_TIME_SLIDER, EffectNoiseReduction::Dialog::OnSlider)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,342,"EVT_TEXT(ID_ATTACK_TIME_TEXT, EffectNoiseReduction::Dialog::OnText)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,344,"EVT_SLIDER(ID_RELEASE_TIME_SLIDER, EffectNoiseReduction::Dialog::OnSlider)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,345,"EVT_TEXT(ID_RELEASE_TIME_TEXT, EffectNoiseReduction::Dialog::OnText)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,349,"EVT_SLIDER(ID_OLD_SENSITIVITY_SLIDER, EffectNoiseReduction::Dialog::OnSlider)"
+effects/NoiseReduction.cpp,Effects,callbacks_events,\bEVT_,350,"EVT_TEXT(ID_OLD_SENSITIVITY_TEXT, EffectNoiseReduction::Dialog::OnText)"
+effects/Normalize.cpp,Effects,callbacks_events,\bEVT_,34,"EVT_CHECKBOX(wxID_ANY, EffectNormalize::OnUpdateUI)"
+effects/Normalize.cpp,Effects,callbacks_events,\bEVT_,35,"EVT_TEXT(wxID_ANY, EffectNormalize::OnUpdateUI)"
+effects/RealtimeEffectStateUI.cpp,Effects,callbacks_events,\bEVT_,33,EVT_CLOSE(RealtimeEffectStateUI::OnClose)
+effects/RealtimeEffectStateUI.cpp,Effects,callbacks_events,\bProcessEvent\b,201,next->ProcessEvent(evt);
+effects/Repeat.cpp,Effects,callbacks_events,\bEVT_,37,"EVT_TEXT(wxID_ANY, EffectRepeat::OnRepeatTextChange)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,69,EVT_SIZE(EffectScienFilter::OnSize)
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,71,"EVT_SLIDER(ID_dBMax, EffectScienFilter::OnSliderDBMAX)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,72,"EVT_SLIDER(ID_dBMin, EffectScienFilter::OnSliderDBMIN)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,73,"EVT_CHOICE(ID_Order, EffectScienFilter::OnOrder)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,74,"EVT_CHOICE(ID_Type, EffectScienFilter::OnFilterType)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,75,"EVT_CHOICE(ID_SubType, EffectScienFilter::OnFilterSubtype)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,76,"EVT_TEXT(ID_Cutoff, EffectScienFilter::OnCutoff)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,77,"EVT_TEXT(ID_Ripple, EffectScienFilter::OnRipple)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,78,"EVT_TEXT(ID_StopbandRipple, EffectScienFilter::OnStopbandRipple)"
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,437,EVT_PAINT(EffectScienFilterPanel::OnPaint)
+effects/ScienFilter.cpp,Effects,callbacks_events,\bEVT_,438,EVT_SIZE(EffectScienFilterPanel::OnSize)
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,290,"//   EVT_BUTTON(wxID_OK, ScoreAlignDialog::OnOK)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,291,"//   EVT_BUTTON(wxID_CANCEL, ScoreAlignDialog::OnCancel)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,292,"EVT_BUTTON(ID_DEFAULT, ScoreAlignDialog::OnDefault)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,293,"EVT_SLIDER(ID_FRAMEPERIOD, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,294,"EVT_SLIDER(ID_WINDOWSIZE, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,295,"EVT_SLIDER(ID_SILENCETHRESHOLD, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,296,"EVT_CHECKBOX(ID_FORCEFINALALIGNMENT, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,297,"EVT_CHECKBOX(ID_IGNORESILENCE, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,298,"EVT_SLIDER(ID_PRESMOOTH, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,299,"EVT_SLIDER(ID_LINETIME, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,callbacks_events,\bEVT_,300,"EVT_SLIDER(ID_SMOOTHTIME, ScoreAlignDialog::OnSlider)"
+effects/ScoreAlignDialog.cpp,Effects,state_transitions,\bFlush\b,218,gPrefs->Flush();
+effects/StatefulEffectUIServices.cpp,Effects,callbacks_events,\bBind\(,30,// Inherit wxEvtHandler so that Un-Bind()-ing is automatic in the destructor
+effects/ToneGen.cpp,Effects,callbacks_events,\bEVT_,50,"EVT_TEXT(wxID_ANY, EffectToneGen::OnControlUpdate)"
+effects/ToneGen.cpp,Effects,state_transitions,\bStart\b,93,"S.AddTitle(XO(""Start""));"
+effects/ToneGen.cpp,Effects,state_transitions,\bStart\b,110,"t = S.Name(XO(""Frequency Hertz Start""))"
+effects/ToneGen.cpp,Effects,state_transitions,\bStart\b,139,"t = S.Name(XO(""Amplitude Start""))"
+effects/TruncSilence.cpp,Effects,callbacks_events,\bEVT_,29,"EVT_CHOICE(wxID_ANY, EffectTruncSilence::OnControlChange)"
+effects/TruncSilence.cpp,Effects,callbacks_events,\bEVT_,30,"EVT_TEXT(wxID_ANY, EffectTruncSilence::OnControlChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,134,"EVT_COMMAND(ExportFilePanelID, AUDACITY_EXPORT_FORMAT_CHANGE_EVENT, ExportAudioDialog::OnFormatChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,136,"EVT_RADIOBUTTON(ExportRangeProjectID, ExportAudioDialog::OnExportRangeChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,137,"EVT_RADIOBUTTON(ExportRangeSelectionID, ExportAudioDialog::OnExportRangeChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,138,"EVT_RADIOBUTTON(ExportRangeSplitID, ExportAudioDialog::OnExportRangeChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,140,"EVT_RADIOBUTTON(ExportModeTracksID, ExportAudioDialog::OnSplitModeChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,141,"EVT_RADIOBUTTON(ExportModeLabelsID, ExportAudioDialog::OnSplitModeChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,143,"EVT_RADIOBUTTON(ExportSplitNamePolicyTrackNameID, ExportAudioDialog::OnSplitNamePolicyChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,144,"EVT_RADIOBUTTON(ExportSplitNamePolicyNumberingBeforeNameID, ExportAudioDialog::OnSplitNamePolicyChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,145,"EVT_RADIOBUTTON(ExportSplitNamePolicyNumberingAfterPrefixID, ExportAudioDialog::OnSplitNamePolicyChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,147,"EVT_CHECKBOX(TrimBlankSpaceBeforeFirstClipID, ExportAudioDialog::OnTrimBlankSpaceBeforeFirstClip)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,148,"EVT_CHECKBOX(IncludeAudioBeforeFirstLabelID, ExportAudioDialog::OnIncludeAudioBeforeFirstLabelChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,150,"EVT_TEXT(FileNamePrefixID, ExportAudioDialog::OnFileNamePrefixChange)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,152,"EVT_BUTTON(EditMetadataID, ExportAudioDialog::OnEditMetadata)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,153,"EVT_BUTTON(wxID_HELP, ExportAudioDialog::OnHelp)"
+export/ExportAudioDialog.cpp,Other,callbacks_events,\bEVT_,155,"EVT_BUTTON(wxID_OK, ExportAudioDialog::OnExport)"
+export/ExportAudioDialog.cpp,Other,state_transitions,\bStart\b,983,"wxLogDebug(wxT(""Channels: %i, Start: %lf, End: %lf ""), channels, t0, t1);"
+export/ExportAudioDialog.h,Other,state_transitions,\bStart\b,46,double t0; /**< Start time for the export */
+export/ExportFilePanel.cpp,Other,callbacks_events,\bBind\(,157,"mFullName->Bind(wxEVT_KILL_FOCUS, &ExportFilePanel::OnFullNameFocusKill, this);"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,110,"EVT_TEXT(CustomSampleRateID, CustomSampleRateDialog::OnSampleRateChange)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,114,"EVT_BUTTON(FolderBrowseID, ExportFilePanel::OnFolderBrowse)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,116,"EVT_CHOICE(FormatID, ExportFilePanel::OnFormatChange)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,118,"EVT_RADIOBUTTON(AudioMixModeMonoID, ExportFilePanel::OnChannelsChange)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,119,"EVT_RADIOBUTTON(AudioMixModeStereoID, ExportFilePanel::OnChannelsChange)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,120,"EVT_RADIOBUTTON(AudioMixModeCustomID, ExportFilePanel::OnChannelsChange)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,122,"EVT_BUTTON(AudioChannelsConfigureID, ExportFilePanel::OnChannelsConfigure)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bEVT_,124,"EVT_CHOICE(SampleRateID, ExportFilePanel::OnSampleRateChange)"
+export/ExportFilePanel.cpp,Other,callbacks_events,\bwxPostEvent\b,517,"wxPostEvent(GetParent(), wxCommandEvent { AUDACITY_EXPORT_FORMAT_CHANGE_EVENT, GetId() });"
+export/ExportMixerDialog.cpp,Other,callbacks_events,\bEVT_,31,"EVT_BUTTON(wxID_OK, ExportMixerDialog::OnOk)"
+export/ExportMixerDialog.cpp,Other,callbacks_events,\bEVT_,32,"EVT_BUTTON(wxID_CANCEL, ExportMixerDialog::OnCancel)"
+export/ExportMixerDialog.cpp,Other,callbacks_events,\bEVT_,33,"EVT_BUTTON(wxID_HELP, ExportMixerDialog::OnMixerPanelHelp)"
+export/ExportMixerDialog.cpp,Other,callbacks_events,\bEVT_,34,EVT_SIZE(ExportMixerDialog::OnSize)
+export/ExportMixerDialog.cpp,Other,callbacks_events,\bEVT_,35,"EVT_SLIDER(ID_SLIDER_CHANNEL, ExportMixerDialog::OnSlider)"
+export/ExportMixerPanel.cpp,Other,callbacks_events,\bEVT_,20,EVT_PAINT(ExportMixerPanel::OnPaint)
+export/ExportMixerPanel.cpp,Other,callbacks_events,\bEVT_,21,EVT_MOUSE_EVENTS(ExportMixerPanel::OnMouseEvent)
+export/ExportOptionsHandler.cpp,Other,callbacks_events,\bBind\(,138,"control->Bind(wxEVT_CHOICE, [this, id = option.id, indexValueMap](const wxCommandEvent& evt)"
+export/ExportOptionsHandler.cpp,Other,callbacks_events,\bBind\(,151,"control->Bind(wxEVT_CHECKBOX, [this, id = option.id](const wxCommandEvent& evt)"
+export/ExportOptionsHandler.cpp,Other,callbacks_events,\bBind\(,163,"control->Bind(wxEVT_SLIDER, [this, id = option.id](const wxCommandEvent& evt)"
+export/ExportOptionsHandler.cpp,Other,callbacks_events,\bBind\(,170,"control->Bind(wxEVT_SPINCTRL, [this, id = option.id](const wxSpinEvent& evt)"
+export/ExportOptionsHandler.cpp,Other,callbacks_events,\bBind\(,177,"control->Bind(wxEVT_TEXT, [this, id = option.id](const wxCommandEvent& evt)"
+export/ExportOptionsHandler.cpp,Other,callbacks_events,\bBind\(,187,"control->Bind(wxEVT_TEXT, [this, id = option.id](const wxCommandEvent& evt)"
+import/ImportRaw.cpp,Other,callbacks_events,\bEVT_,285,"EVT_BUTTON(wxID_OK, ImportRawDialog::OnOK)"
+import/ImportRaw.cpp,Other,callbacks_events,\bEVT_,286,"EVT_BUTTON(wxID_CANCEL, ImportRawDialog::OnCancel)"
+import/ImportRaw.cpp,Other,callbacks_events,\bEVT_,287,"EVT_BUTTON(PlayID, ImportRawDialog::OnPlay)"
+import/ImportRaw.cpp,Other,callbacks_events,\bEVT_,288,"EVT_BUTTON(DetectID, ImportRawDialog::OnDetect)"
+import/ImportRaw.cpp,Other,callbacks_events,\bEVT_,289,"EVT_CHOICE(ChoiceID, ImportRawDialog::OnChoice)"
+import/ImportRaw.cpp,Other,state_transitions,\bStart\b,378,"mOffsetText = S.AddTextBox(XXO(""Start offset:""),"
+import/ImportStreamDialog.cpp,Other,callbacks_events,\bEVT_,23,"EVT_BUTTON(wxID_OK, ImportStreamDialog::OnOk)"
+import/ImportStreamDialog.cpp,Other,callbacks_events,\bEVT_,24,"EVT_BUTTON(wxID_CANCEL, ImportStreamDialog::OnCancel)"
+menus/EditMenus.cpp,Other,blocking_or_waiting,\bJoin\(,1006,wt->Join(
+menus/EditMenus.cpp,Other,state_transitions,\bCommit\b,313,// Survived possibility of exceptions.  Commit changes to the clipboard now.
+menus/EditMenus.cpp,Other,state_transitions,\bCommit\b,420,// Survived possibility of exceptions.  Commit changes to the clipboard now.
+menus/EditMenus.cpp,Other,state_transitions,\bCommit\b,801,// Survived possibility of exceptions.  Commit changes to the clipboard now.
+menus/FileMenus.cpp,Other,callbacks_events,\bCallAfter\b,492,wxTheApp->CallAfter([=] {
+menus/FileMenus.cpp,Other,callbacks_events,\bProcessEvent\b,426,wxTheApp->ProcessEvent(evt);
+menus/HelpMenus.cpp,Other,callbacks_events,\bBind\(,119,"->Bind(wxEVT_BUTTON, [this, prefSetter, id](wxCommandEvent&){"
+menus/HelpMenus.cpp,Other,callbacks_events,\bBind\(,129,"b->Bind(wxEVT_BUTTON, [this, Help](const wxCommandEvent&){"
+menus/HelpMenus.cpp,Other,callbacks_events,\bBind\(,198,"pBtn->Bind(wxEVT_BUTTON, [this]( const wxCommandEvent& ){"
+menus/HelpMenus.cpp,Other,callbacks_events,\bEVT_,72,"EVT_BUTTON(wxID_OK,                                            QuickFixDialog::OnOk)"
+menus/HelpMenus.cpp,Other,callbacks_events,\bEVT_,73,"EVT_BUTTON(wxID_CANCEL,                                        QuickFixDialog::OnCancel)"
+menus/HelpMenus.cpp,Other,audio_stream_control,\bAudioIO\b,8,"#include ""AudioIO.h"""
+menus/HelpMenus.cpp,Other,state_transitions,\bFlush\b,157,gPrefs->Flush();
+menus/LabelMenus.cpp,Other,blocking_or_waiting,\bJoin\(,647,"t.Join(t0 - sampleTime, t1 + sampleTime, std::move(reportProgress));"
+menus/LabelMenus.cpp,Other,audio_stream_control,\bAudioIO\b,1,"#include ""AudioIO.h"""
+menus/LabelMenus.cpp,Other,audio_stream_control,\bAudioIO\b,348,auto gAudioIO = AudioIO::Get();
+menus/LabelMenus.cpp,Other,state_transitions,\bCommit\b,319,// Survived possibility of exceptions.  Commit changes to the clipboard now.
+menus/LabelMenus.cpp,Other,state_transitions,\bFlush\b,426,gPrefs->Flush();
+menus/PluginMenus.cpp,Other,audio_stream_control,\bAudioIO\b,12,"#include ""AudioIO.h"""
+menus/PluginMenus.cpp,Other,audio_stream_control,\bAudioIO\b,217,auto gAudioIO = AudioIO::Get();
+menus/PluginMenus.cpp,Other,audio_stream_control,\bAudioIO\b,228,auto gAudioIO = AudioIO::Get();
+menus/PluginMenus.cpp,Other,audio_stream_control,\bAudioIO\b,555,return AudioIO::Get()->mSimulateRecordingErrors;
+menus/PluginMenus.cpp,Other,audio_stream_control,\bAudioIO\b,563,return AudioIO::Get()->mDetectUpstreamDropouts
+menus/PluginMenus.cpp,Other,state_transitions,\bStop\b,91,// - Stop playback/recording and unapply pause.
+menus/PluginMenus.cpp,Other,state_transitions,\bFlush\b,100,gPrefs->Flush();
+menus/PluginMenus.cpp,Other,state_transitions,\bFlush\b,117,gPrefs->Flush();
+menus/SelectMenus.cpp,Other,audio_stream_control,\bAudioIO\b,2,"#include ""AudioIO.h"""
+menus/SelectMenus.cpp,Other,audio_stream_control,\bAudioIO\b,160,auto gAudioIO = AudioIO::Get();
+menus/SelectMenus.cpp,Other,audio_stream_control,\bAudioIO\b,388,auto gAudioIO = AudioIO::Get();
+menus/SelectMenus.cpp,Other,audio_stream_control,\bAudioIO\b,609,auto gAudioIO = AudioIO::Get();
+menus/SelectMenus.cpp,Other,audio_stream_control,\bAudioIO\b,627,auto gAudioIO = AudioIO::Get();
+menus/SelectMenus.cpp,Other,audio_stream_control,\bAudioIO\b,937,"gPrefs->Read(wxT(""/AudioIO/SeekShortPeriod""), &mSeekInfo.mSeekShort, 1.0);"
+menus/SelectMenus.cpp,Other,audio_stream_control,\bAudioIO\b,938,"gPrefs->Read(wxT(""/AudioIO/SeekLongPeriod""), &mSeekInfo.mSeekLong, 15.0);"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1006,"Command(wxT(""SelTrackStartToCursor""), XXO(""Track &Start to Cursor""),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1008,"Options { wxT(""Shift+J""), XO(""Select Track Start to Cursor"") }),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1012,"Command(wxT(""SelTrackStartToEnd""), XXO(""Track Start to En&d""),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1014,"Options {}.LongName(XO(""Select Track Start to End"")))"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1070,"Command(wxT(""SelStart""), XXO(""Selection to &Start""), FN(OnSelToStart),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1121,"Options {}.LongName(XO(""Cursor to Selection Start""))),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1127,"Command(wxT(""CursTrackStart""), XXO(""Track &Start""),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1130,"Options { wxT(""J""), XO(""Cursor to Track Start"") }),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1136,"Command(wxT(""CursProjectStart""), XXO(""&Project Start""),"
+menus/SelectMenus.cpp,Other,state_transitions,\bStart\b,1139,"Options { wxT(""Home""), XO(""Cursor to Project Start"") }),"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,164,"{ wxT(""StartToZero""),     XXO(""Start to &Zero"") },"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,165,"{ wxT(""StartToSelStart""), XXO(""Start to &Cursor/Selection Start"") },"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,165,"{ wxT(""StartToSelStart""), XXO(""Start to &Cursor/Selection Start"") },"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,166,"{ wxT(""StartToSelEnd""),   XXO(""Start to Selection &End"") },"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,167,"{ wxT(""EndToSelStart""),   XXO(""End to Cu&rsor/Selection Start"") },"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,215,"? XO(""Align/Move Start"")"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,216,": XO(""Align Start"");"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,224,"? XO(""Align/Move Start"")"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,225,": XO(""Align Start"");"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,233,"? XO(""Align/Move Start"")"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,234,": XO(""Align Start"");"
+menus/TrackMenus.cpp,Other,state_transitions,\bStart\b,1300,"Command(wxT(""SortByTime""), XXO(""By &Start Time""), OnSortTime,"
+menus/TrackMenus.cpp,Other,state_transitions,\bFlush\b,798,gPrefs->Flush();
+menus/TrackMenus.cpp,Other,state_transitions,\bFlush\b,954,gPrefs->Flush();
+menus/TransportMenus.cpp,Other,blocking_or_waiting,\bsleep_for\b,58,std::this_thread::sleep_for(100ms);
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,1,"#include ""AudioIO.h"""
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,207,auto gAudioIO = AudioIO::Get();
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,431,"gPrefs->Read(wxT(""/AudioIO/Duplex""), &Duplex, true);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,432,"gPrefs->Write(wxT(""/AudioIO/Duplex""), !Duplex);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,440,"gPrefs->Read(wxT(""/AudioIO/SWPlaythrough""), &SWPlaythrough, false);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,441,"gPrefs->Write(wxT(""/AudioIO/SWPlaythrough""), !SWPlaythrough);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,536,"gPrefs->Read(wxT(""/AudioIO/CutPreviewBeforeLen""), &beforeLen, 2.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,559,"gPrefs->Read(wxT(""/AudioIO/CutPreviewAfterLen""), &afterLen, 1.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,588,"gPrefs->Read(wxT(""/AudioIO/CutPreviewBeforeLen""), &beforeLen, 2.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,616,"gPrefs->Read(wxT(""/AudioIO/CutPreviewAfterLen""), &afterLen, 1.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,640,"gPrefs->Read(wxT(""/AudioIO/CutPreviewBeforeLen""), &beforeLen, 2.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,642,"gPrefs->Read(wxT(""/AudioIO/CutPreviewAfterLen""), &afterLen, 1.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,672,"gPrefs->Read(wxT(""/AudioIO/CutPreviewBeforeLen""), &beforeLen, 2.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,674,"gPrefs->Read(wxT(""/AudioIO/CutPreviewAfterLen""), &afterLen, 1.0);"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,836,"Options {}.CheckTest(wxT(""/AudioIO/Duplex""), true)),"
+menus/TransportMenus.cpp,Other,audio_stream_control,\bAudioIO\b,840,"Options {}.CheckTest(wxT(""/AudioIO/SWPlaythrough""), false))"
+menus/TransportMenus.cpp,Other,state_transitions,\bStart\b,271,auto start = floor(pInterval->Start() * rate + 0.5);
+menus/TransportMenus.cpp,Other,state_transitions,\bStart\b,746,/* i18n-hint: (verb) Start or Stop audio playback*/
+menus/TransportMenus.cpp,Other,state_transitions,\bStart\b,855,/* i18n-hint: (verb) Start playing audio*/
+menus/TransportMenus.cpp,Other,state_transitions,\bStart\b,867,"XXO(""Play &Before Selection Start""), OnPlayBeforeSelectionStart,"
+menus/TransportMenus.cpp,Other,state_transitions,\bStart\b,870,"XXO(""Play Af&ter Selection Start""), OnPlayAfterSelectionStart,"
+menus/TransportMenus.cpp,Other,state_transitions,\bStart\b,879,"XXO(""Play Before a&nd After Selection Start""),"
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,448,ProjectAudioManager::Get(context.project).Stop();
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,725,ProjectAudioManager::Get(project).Stop();
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,746,/* i18n-hint: (verb) Start or Stop audio playback*/
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,747,"Command(wxT(""DefaultPlayStop""), XXO(""Pl&ay/Stop""), OnPlayDefaultOrStop,"
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,749,"Command(wxT(""PlayStopSelect""), XXO(""Play/Stop and &Set Cursor""),"
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,751,"Command(wxT(""OncePlayStop""), XXO(""Play &Once/Stop""), OnPlayOnceOrStop,"
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,858,/* i18n-hint: (verb) Stop playing audio*/
+menus/TransportMenus.cpp,Other,state_transitions,\bStop\b,859,"Command(wxT(""Stop""), XXO(""Sto&p""), OnStop,"
+menus/TransportMenus.cpp,Other,state_transitions,\bPause\b,753,"Command(wxT(""Pause""), XXO(""&Pause""), OnPause,"
+menus/TransportMenus.cpp,Other,state_transitions,\bPause\b,753,"Command(wxT(""Pause""), XXO(""&Pause""), OnPause,"
+menus/TransportMenus.cpp,Other,state_transitions,\bPause\b,788,"Command(wxT(""Pause""), XXO(""&Pause""), OnPause,"
+menus/TransportMenus.cpp,Other,state_transitions,\bPause\b,788,"Command(wxT(""Pause""), XXO(""&Pause""), OnPause,"
+menus/TransportMenus.cpp,Other,state_transitions,\bFlush\b,424,gPrefs->Flush();
+menus/TransportMenus.cpp,Other,state_transitions,\bFlush\b,433,gPrefs->Flush();
+menus/TransportMenus.cpp,Other,state_transitions,\bFlush\b,442,gPrefs->Flush();
+menus/ViewMenus.cpp,Other,audio_stream_control,\bAudioIO\b,1,"#include ""AudioIO.h"""
+menus/ViewMenus.cpp,Other,audio_stream_control,\bAudioIO\b,130,auto gAudioIO = AudioIO::Get();
+menus/ViewMenus.cpp,Other,state_transitions,\bStart\b,328,"Options { wxT(""Ctrl+[""), XO(""Skip to Selection Start"") }),"
+menus/ViewMenus.cpp,Other,state_transitions,\bFlush\b,260,gPrefs->Flush();
+menus/ViewMenus.cpp,Other,state_transitions,\bFlush\b,272,gPrefs->Flush();
+menus/ViewMenus.cpp,Other,state_transitions,\bFlush\b,283,gPrefs->Flush();
+prefs/ApplicationPrefs.cpp,Other,state_transitions,\bCommit\b,105,bool ApplicationPrefs::Commit()
+prefs/ApplicationPrefs.h,Other,state_transitions,\bCommit\b,29,bool Commit() override;
+prefs/BatchPrefs.cpp,Other,state_transitions,\bCommit\b,83,bool BatchPrefs::Commit()
+prefs/BatchPrefs.h,Other,state_transitions,\bCommit\b,32,bool Commit() override;
+prefs/DevicePrefs.cpp,Other,callbacks_events,\bEVT_,63,"EVT_CHOICE(HostID, DevicePrefs::OnHost)"
+prefs/DevicePrefs.cpp,Other,callbacks_events,\bEVT_,64,"EVT_CHOICE(RecordID, DevicePrefs::OnDevice)"
+prefs/DevicePrefs.cpp,Other,callbacks_events,\bEVT_,65,"EVT_CHOICE(DefaultSampleRateChoice, DevicePrefs::OnDefaultSampleRateChoice)"
+prefs/DevicePrefs.cpp,Other,callbacks_events,\bEVT_,66,"EVT_CHOICE(ProjectSampleRateChoice, DevicePrefs::OnProjectSampleRateChoice)"
+prefs/DevicePrefs.cpp,Other,state_transitions,\bCommit\b,512,bool DevicePrefs::Commit()
+prefs/DevicePrefs.cpp,Other,state_transitions,\bFlush\b,550,gPrefs->Flush();
+prefs/DevicePrefs.h,Other,state_transitions,\bCommit\b,33,bool Commit() override;
+prefs/DirectoriesPrefs.cpp,Other,callbacks_events,\bEVT_,107,EVT_CHAR(FilesystemValidator::OnChar)
+prefs/DirectoriesPrefs.cpp,Other,callbacks_events,\bEVT_,133,"EVT_TEXT(TempTextID, DirectoriesPrefs::OnTempText)"
+prefs/DirectoriesPrefs.cpp,Other,callbacks_events,\bEVT_,134,"EVT_BUTTON(TempButtonID, DirectoriesPrefs::OnTempBrowse)"
+prefs/DirectoriesPrefs.cpp,Other,callbacks_events,\bEVT_,135,"EVT_COMMAND_RANGE(ButtonsStart, ButtonsEnd, wxEVT_BUTTON, DirectoriesPrefs::OnBrowse)"
+prefs/DirectoriesPrefs.cpp,Other,state_transitions,\bCommit\b,498,bool DirectoriesPrefs::Commit()
+prefs/DirectoriesPrefs.h,Other,state_transitions,\bCommit\b,32,bool Commit() override;
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bBind\(,90,"mAddNewLocation->Bind(wxEVT_BUTTON, &EffectsLocationPanel::OnAddNewLocationClicked, this);"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bBind\(,113,"text->Bind(wxEVT_TEXT, [this](wxCommandEvent& evt)"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bBind\(,120,"browse->Bind(wxEVT_BUTTON, &EffectsLocationPanel::OnBrowseClicked, this);"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bBind\(,121,"remove->Bind(wxEVT_BUTTON, &EffectsLocationPanel::OnRemoveClicked, this);"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bBind\(,315,"panel->Bind(EVT_PLUGIN_LOCATIONS_CHANGED, [wnd = wxWeakRef(scroller)](const auto&)"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bBind\(,331,"pButton->Bind(wxEVT_BUTTON, [this](auto) {"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bEVT_,40,"wxDEFINE_EVENT(EVT_PLUGIN_LOCATIONS_CHANGED, wxCommandEvent);"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bEVT_,133,"wxPostEvent(this, wxCommandEvent(EVT_PLUGIN_LOCATIONS_CHANGED));"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bEVT_,180,"wxPostEvent(this, wxCommandEvent(EVT_PLUGIN_LOCATIONS_CHANGED));"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bEVT_,315,"panel->Bind(EVT_PLUGIN_LOCATIONS_CHANGED, [wnd = wxWeakRef(scroller)](const auto&)"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bwxPostEvent\b,133,"wxPostEvent(this, wxCommandEvent(EVT_PLUGIN_LOCATIONS_CHANGED));"
+prefs/EffectsPrefs.cpp,Other,callbacks_events,\bwxPostEvent\b,180,"wxPostEvent(this, wxCommandEvent(EVT_PLUGIN_LOCATIONS_CHANGED));"
+prefs/EffectsPrefs.cpp,Other,state_transitions,\bCommit\b,344,bool EffectsPrefs::Commit()
+prefs/EffectsPrefs.h,Other,state_transitions,\bCommit\b,35,bool Commit() override;
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bBind\(,69,"Bind(wxEVT_SHOW, &ExtImportPrefs::OnShow, this);"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,43,"EVT_LIST_KEY_DOWN(EIPPluginList, ExtImportPrefs::OnPluginKeyDown)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,44,"EVT_LIST_BEGIN_DRAG(EIPPluginList, ExtImportPrefs::OnPluginBeginDrag)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,45,EVT_KEY_DOWN(ExtImportPrefs::OnRuleTableKeyDown)
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,46,EVT_GRID_CELL_LEFT_CLICK(ExtImportPrefs::OnRuleTableCellClick)
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,47,EVT_GRID_EDITOR_HIDDEN(ExtImportPrefs::OnRuleTableEdit)
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,48,EVT_GRID_SELECT_CELL(ExtImportPrefs::OnRuleTableSelect)
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,49,EVT_GRID_RANGE_SELECT(ExtImportPrefs::OnRuleTableSelectRange)
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,50,"EVT_BUTTON(EIPAddRule, ExtImportPrefs::OnAddRule)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,51,"EVT_BUTTON(EIPDelRule, ExtImportPrefs::OnDelRule)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,52,"EVT_BUTTON(EIPMoveRuleUp, ExtImportPrefs::OnRuleMoveUp)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,53,"EVT_BUTTON(EIPMoveRuleDown, ExtImportPrefs::OnRuleMoveDown)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,54,"EVT_BUTTON(EIPMoveFilterUp, ExtImportPrefs::OnFilterMoveUp)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bEVT_,55,"EVT_BUTTON(EIPMoveFilterDown, ExtImportPrefs::OnFilterMoveDown)"
+prefs/ExtImportPrefs.cpp,Other,callbacks_events,\bProcessEvent\b,655,GetEventHandler()->ProcessEvent(fakeevent);
+prefs/ExtImportPrefs.cpp,Other,state_transitions,\bCommit\b,211,bool ExtImportPrefs::Commit()
+prefs/ExtImportPrefs.h,Other,state_transitions,\bCommit\b,57,bool Commit() override;
+prefs/GUIPrefs.cpp,Other,state_transitions,\bStart\b,123,"// Start wording of options with a verb, if possible."
+prefs/GUIPrefs.cpp,Other,state_transitions,\bCommit\b,148,bool GUIPrefs::Commit()
+prefs/GUIPrefs.cpp,Other,state_transitions,\bFlush\b,160,gPrefs->Flush();
+prefs/GUIPrefs.h,Other,state_transitions,\bCommit\b,34,bool Commit() override;
+prefs/ImportExportPrefs.cpp,Other,state_transitions,\bCommit\b,162,bool ImportExportPrefs::Commit()
+prefs/ImportExportPrefs.h,Other,state_transitions,\bCommit\b,55,bool Commit() override;
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bBind\(,107,"Bind(wxEVT_SHOW, &KeyConfigPrefs::OnShow, this);"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bBind\(,597,"Menu.Bind(wxEVT_COMMAND_MENU_SELECTED, &KeyConfigPrefs::OnImportDefaults, this);"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,76,"EVT_BUTTON(AssignDefaultsButtonID, KeyConfigPrefs::OnDefaults)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,77,"EVT_BUTTON(SetButtonID, KeyConfigPrefs::OnSet)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,78,"EVT_BUTTON(ClearButtonID, KeyConfigPrefs::OnClear)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,79,"EVT_BUTTON(ExportButtonID, KeyConfigPrefs::OnExport)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,80,"EVT_BUTTON(ImportButtonID, KeyConfigPrefs::OnImport)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,81,"EVT_LISTBOX(CommandsListID, KeyConfigPrefs::OnSelected)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,82,"EVT_RADIOBUTTON(ViewByTreeID, KeyConfigPrefs::OnViewBy)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,83,"EVT_RADIOBUTTON(ViewByNameID, KeyConfigPrefs::OnViewBy)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,84,"EVT_RADIOBUTTON(ViewByKeyID, KeyConfigPrefs::OnViewBy)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bEVT_,85,"EVT_TIMER(FilterTimerID, KeyConfigPrefs::OnFilterTimer)"
+prefs/KeyConfigPrefs.cpp,Other,callbacks_events,\bProcessEvent\b,694,t->GetParent()->GetEventHandler()->ProcessEvent(nevent);
+prefs/KeyConfigPrefs.cpp,Other,state_transitions,\bStart\b,712,"mFilterTimer.Start(500, wxTIMER_ONE_SHOT);"
+prefs/KeyConfigPrefs.cpp,Other,state_transitions,\bCommit\b,586,prefFile.Commit();
+prefs/KeyConfigPrefs.cpp,Other,state_transitions,\bCommit\b,876,bool KeyConfigPrefs::Commit()
+prefs/KeyConfigPrefs.cpp,Other,state_transitions,\bFlush\b,616,gPrefs->Flush();
+prefs/KeyConfigPrefs.cpp,Other,state_transitions,\bFlush\b,911,return gPrefs->Flush();
+prefs/KeyConfigPrefs.h,Other,state_transitions,\bCommit\b,39,bool Commit() override;
+prefs/MidiIOPrefs.cpp,Other,callbacks_events,\bEVT_,48,"EVT_CHOICE(HostID, MidiIOPrefs::OnHost)"
+prefs/MidiIOPrefs.cpp,Other,callbacks_events,\bEVT_,49,"//   EVT_CHOICE(RecordID, MidiIOPrefs::OnDevice)"
+prefs/MidiIOPrefs.cpp,Other,state_transitions,\bCommit\b,259,bool MidiIOPrefs::Commit()
+prefs/MidiIOPrefs.cpp,Other,state_transitions,\bFlush\b,283,return gPrefs->Flush();
+prefs/MidiIOPrefs.h,Other,state_transitions,\bCommit\b,33,bool Commit() override;
+prefs/ModulePrefs.cpp,Other,state_transitions,\bCommit\b,139,bool ModulePrefs::Commit()
+prefs/ModulePrefs.h,Other,state_transitions,\bCommit\b,33,bool Commit() override;
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,68,"return ""/AudioIO/UnpinnedScrubbing"";"
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,92,"{ wxT(""/AudioIO/EffectsPreviewLen""),"
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,108,"{ wxT(""/AudioIO/CutPreviewBeforeLen""),"
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,115,"{ wxT(""/AudioIO/CutPreviewAfterLen""),"
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,130,"{ wxT(""/AudioIO/SeekShortPeriod""),"
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,137,"{ wxT(""/AudioIO/SeekLongPeriod""),"
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,151,"//S.TieCheckBox(XXO(""&Vari-Speed Play""), {""/AudioIO/VariSpeedPlay"", true});"
+prefs/PlaybackPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,152,"S.TieCheckBox(XXO(""&Micro-fades""), { ""/AudioIO/Microfades"", false });"
+prefs/PlaybackPrefs.cpp,Other,state_transitions,\bCommit\b,176,bool PlaybackPrefs::Commit()
+prefs/PlaybackPrefs.h,Other,state_transitions,\bCommit\b,31,bool Commit() override;
+prefs/PrefsDialog.cpp,Other,blocking_or_waiting,\bsleep_for\b,778,std::this_thread::sleep_for(100ms);
+prefs/PrefsDialog.cpp,Other,blocking_or_waiting,\bJoin\(,630,"Temp.Join(Verbatim(mUniquePage->GetLabel()), wxT("" ""));"
+prefs/PrefsDialog.cpp,Other,callbacks_events,\bEVT_,379,"EVT_BUTTON(wxID_OK, PrefsDialog::OnOK)"
+prefs/PrefsDialog.cpp,Other,callbacks_events,\bEVT_,380,"EVT_BUTTON(wxID_CANCEL, PrefsDialog::OnCancel)"
+prefs/PrefsDialog.cpp,Other,callbacks_events,\bEVT_,381,"EVT_BUTTON(wxID_PREVIEW, PrefsDialog::OnPreview)"
+prefs/PrefsDialog.cpp,Other,callbacks_events,\bEVT_,382,"EVT_BUTTON(wxID_HELP, PrefsDialog::OnHelp)"
+prefs/PrefsDialog.cpp,Other,callbacks_events,\bEVT_,383,"EVT_TREE_KEY_DOWN(wxID_ANY, PrefsDialog::OnTreeKeyDown)    // Handles key events when tree has focus"
+prefs/PrefsDialog.cpp,Other,state_transitions,\bCommit\b,742,panel->Commit();
+prefs/PrefsDialog.cpp,Other,state_transitions,\bCommit\b,746,mUniquePage->Commit();
+prefs/PrefsDialog.cpp,Other,state_transitions,\bCommit\b,794,mTransaction->Commit();
+prefs/PrefsDialog.cpp,Other,state_transitions,\bFlush\b,656,gPrefs->Flush();
+prefs/PrefsDialog.cpp,Other,state_transitions,\bFlush\b,733,gPrefs->Flush();
+prefs/PrefsDialog.cpp,Other,state_transitions,\bFlush\b,754,gPrefs->Flush();
+prefs/PrefsDialog.cpp,Other,state_transitions,\bFlush\b,851,gPrefs->Flush();
+prefs/QualityPrefs.cpp,Other,state_transitions,\bCommit\b,109,bool QualityPrefs::Commit()
+prefs/QualityPrefs.h,Other,state_transitions,\bCommit\b,34,bool Commit() override;
+prefs/RecordingPrefs.cpp,Other,callbacks_events,\bEVT_,39,"EVT_CHECKBOX(UseCustomTrackNameID, RecordingPrefs::OnToggleCustomName)"
+prefs/RecordingPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,22,"#include ""AudioIO.h"""
+prefs/RecordingPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,90,"{ wxT(""/AudioIO/Duplex""),"
+prefs/RecordingPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,97,"{ wxT(""/AudioIO/Playthrough""),"
+prefs/RecordingPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,101,"{ wxT(""/AudioIO/SWPlaythrough""),"
+prefs/RecordingPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,127,"{ wxT(""/AudioIO/SilenceLevel""),"
+prefs/RecordingPrefs.cpp,Other,state_transitions,\bStart\b,88,"// Start wording of options with a verb, if possible."
+prefs/RecordingPrefs.cpp,Other,state_transitions,\bCommit\b,212,bool RecordingPrefs::Commit()
+prefs/RecordingPrefs.h,Other,audio_stream_control,\bAudioIO\b,28,"#define AUDIO_PRE_ROLL_KEY (wxT(""/AudioIO/PreRoll""))"
+prefs/RecordingPrefs.h,Other,audio_stream_control,\bAudioIO\b,31,"#define AUDIO_ROLL_CROSSFADE_KEY (wxT(""/AudioIO/Crossfade""))"
+prefs/RecordingPrefs.h,Other,state_transitions,\bCommit\b,42,bool Commit() override;
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,507,"EVT_CHOICE(ID_WINDOW_SIZE, SpectrumPrefs::OnWindowSize)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,508,"EVT_CHECKBOX(ID_DEFAULTS, SpectrumPrefs::OnDefaults)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,509,"EVT_CHOICE(ID_ALGORITHM, SpectrumPrefs::OnAlgorithm)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,512,"EVT_CHOICE(ID_WINDOW_TYPE, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,513,"EVT_CHOICE(ID_PADDING_SIZE, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,514,"EVT_CHOICE(ID_SCALE, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,515,"EVT_TEXT(ID_MINIMUM, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,516,"EVT_TEXT(ID_MAXIMUM, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,517,"EVT_TEXT(ID_GAIN, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,518,"EVT_TEXT(ID_RANGE, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,519,"EVT_TEXT(ID_FREQUENCY_GAIN, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,520,"EVT_CHOICE(ID_COLOR_SCHEME, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,callbacks_events,\bEVT_,521,"EVT_CHECKBOX(ID_SPECTRAL_SELECTION, SpectrumPrefs::OnControl)"
+prefs/SpectrumPrefs.cpp,Other,state_transitions,\bCommit\b,429,bool SpectrumPrefs::Commit()
+prefs/SpectrumPrefs.cpp,Other,state_transitions,\bRollback\b,64,Rollback();
+prefs/SpectrumPrefs.cpp,Other,state_transitions,\bRollback\b,345,void SpectrumPrefs::Rollback()
+prefs/SpectrumPrefs.h,Other,state_transitions,\bCommit\b,49,bool Commit() override;
+prefs/SpectrumPrefs.h,Other,state_transitions,\bRollback\b,51,void Rollback();
+prefs/TracksBehaviorsPrefs.cpp,Other,callbacks_events,\bBind\(,148,pText->Bind(
+prefs/TracksBehaviorsPrefs.cpp,Other,state_transitions,\bCommit\b,167,bool TracksBehaviorsPrefs::Commit()
+prefs/TracksBehaviorsPrefs.h,Other,state_transitions,\bCommit\b,32,bool Commit() override;
+prefs/TracksPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,42,"return wxT(""/AudioIO/PinnedHead"");"
+prefs/TracksPrefs.cpp,Other,audio_stream_control,\bAudioIO\b,52,"return wxT(""/AudioIO/PinnedHeadPosition"");"
+prefs/TracksPrefs.cpp,Other,state_transitions,\bCommit\b,400,bool TracksPrefs::Commit()
+prefs/TracksPrefs.cpp,Other,state_transitions,\bFlush\b,127,gPrefs->Flush();
+prefs/TracksPrefs.cpp,Other,state_transitions,\bFlush\b,379,gPrefs->Flush();
+prefs/TracksPrefs.cpp,Other,state_transitions,\bFlush\b,396,gPrefs->Flush();
+prefs/TracksPrefs.cpp,Other,state_transitions,\bFlush\b,412,gPrefs->Flush();
+prefs/TracksPrefs.h,Other,state_transitions,\bCommit\b,37,bool Commit() override;
+prefs/WaveformPrefs.cpp,Other,callbacks_events,\bEVT_,244,"EVT_CHOICE(ID_SCALE, WaveformPrefs::OnScale)"
+prefs/WaveformPrefs.cpp,Other,callbacks_events,\bEVT_,245,"EVT_CHOICE(ID_RANGE, WaveformPrefs::OnControl)"
+prefs/WaveformPrefs.cpp,Other,callbacks_events,\bEVT_,247,"EVT_CHECKBOX(ID_DEFAULTS, WaveformPrefs::OnDefaults)"
+prefs/WaveformPrefs.cpp,Other,state_transitions,\bCommit\b,156,bool WaveformPrefs::Commit()
+prefs/WaveformPrefs.h,Other,state_transitions,\bCommit\b,33,bool Commit() override;
+toolbars/AudioSetupToolBar.cpp,Other,blocking_or_waiting,\bsleep_for\b,728,std::this_thread::sleep_for(100ms);
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bCallAfter\b,696,BasicUI::CallAfter([]
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bBind\(,220,"menu.Bind(wxEVT_MENU_CLOSE, [this](auto&) { mAudioSetup->PopUp(); });"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bBind\(,221,"menu.Bind(wxEVT_MENU, &AudioSetupToolBar::OnAudioDeviceRescan, this, kAudioDeviceRescan);"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bBind\(,222,"menu.Bind(wxEVT_MENU, &AudioSetupToolBar::OnSettings, this, kAudioSettings);"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bBind\(,559,"subMenu->Bind(wxEVT_MENU,"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bEVT_,72,"EVT_BUTTON(ID_AUDIO_SETUP_BUTTON, AudioSetupToolBar::OnAudioSetup)"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bProcessEvent\b,110,GetEventHandler()->ProcessEvent(event);
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bcallback\b,549,"Callback callback, const wxString& title)"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bcallback\b,560,"[&toolbar, callback, ii](wxCommandEvent&){ (toolbar.*callback)(ii); },"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bcallback\b,560,"[&toolbar, callback, ii](wxCommandEvent&){ (toolbar.*callback)(ii); },"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bcallback\b,571,"wxMenu& menu, Callback callback, const wxString& title)"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bcallback\b,574,"AppendSubMenu(toolBar, menu, mStrings, mIndex, callback, title);"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bCallback\b,549,"Callback callback, const wxString& title)"
+toolbars/AudioSetupToolBar.cpp,Other,callbacks_events,\bCallback\b,571,"wxMenu& menu, Callback callback, const wxString& title)"
+toolbars/AudioSetupToolBar.cpp,Other,state_transitions,\bFlush\b,498,gPrefs->Flush();
+toolbars/AudioSetupToolBar.cpp,Other,state_transitions,\bFlush\b,604,gPrefs->Flush();
+toolbars/AudioSetupToolBar.cpp,Other,state_transitions,\bFlush\b,622,gPrefs->Flush();
+toolbars/AudioSetupToolBar.cpp,Other,state_transitions,\bFlush\b,635,gPrefs->Flush();
+toolbars/AudioSetupToolBar.h,Other,callbacks_events,\bcallback\b,78,"// Bind menu items to lambdas that invoke callback,"
+toolbars/AudioSetupToolBar.h,Other,callbacks_events,\bcallback\b,81,"static void AppendSubMenu(AudioSetupToolBar& toolbar, wxMenu& menu, const wxArrayString& labels, int checkedItem, Callback callback,"
+toolbars/AudioSetupToolBar.h,Other,callbacks_events,\bcallback\b,149,"void AppendSubMenu(AudioSetupToolBar& toolBar, wxMenu& menu, Callback callback, const wxString& title);"
+toolbars/AudioSetupToolBar.h,Other,callbacks_events,\bCallback\b,76,using Callback = void (AudioSetupToolBar::*)(int id);
+toolbars/AudioSetupToolBar.h,Other,callbacks_events,\bCallback\b,81,"static void AppendSubMenu(AudioSetupToolBar& toolbar, wxMenu& menu, const wxArrayString& labels, int checkedItem, Callback callback,"
+toolbars/AudioSetupToolBar.h,Other,callbacks_events,\bCallback\b,149,"void AppendSubMenu(AudioSetupToolBar& toolBar, wxMenu& menu, Callback callback, const wxString& title);"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,76,EVT_CHAR(ControlToolBar::OnKeyEvent)
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,77,"EVT_BUTTON(ID_PLAY_BUTTON,   ControlToolBar::OnPlay)"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,78,"EVT_BUTTON(ID_STOP_BUTTON,   ControlToolBar::OnStop)"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,79,"EVT_BUTTON(ID_RECORD_BUTTON, ControlToolBar::OnRecord)"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,80,"EVT_BUTTON(ID_REW_BUTTON,    ControlToolBar::OnRewind)"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,81,"EVT_BUTTON(ID_FF_BUTTON,     ControlToolBar::OnFF)"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,82,"EVT_BUTTON(ID_PAUSE_BUTTON,  ControlToolBar::OnPause)"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,83,"EVT_BUTTON(ID_LOOP_BUTTON,   ControlToolBar::OnLoop)"
+toolbars/ControlToolBar.cpp,Other,callbacks_events,\bEVT_,84,EVT_IDLE(ControlToolBar::OnIdle)
+toolbars/ControlToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,53,"#include ""AudioIO.h"""
+toolbars/ControlToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,477,auto gAudioIO = AudioIO::Get();
+toolbars/ControlToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,789,auto gAudioIO = AudioIO::Get();
+toolbars/ControlToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,797,"gPrefs->Read(wxT(""/AudioIO/Duplex""), &duplex, true);"
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bStart\b,219,"XO(""Skip to Start""),"
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bStart\b,338,"wxT(""SelStart""), XO(""Select to Start"") });"
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bStop\b,212,"XO(""Stop""),"
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bStop\b,291,"name = wxT(""Stop"");"
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bStop\b,539,projectAudioManager.Stop();
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bStop\b,558,projectAudioManager.Stop();
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bStop\b,569,projectAudioManager.Stop();
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bPause\b,181,"XO(""Pause""),"
+toolbars/ControlToolBar.cpp,Other,state_transitions,\bPause\b,288,"name = wxT(""Pause"");"
+toolbars/CutCopyPasteToolBar.cpp,Other,callbacks_events,\bEVT_,83,"EVT_COMMAND_RANGE(TBCutID + first_TB_ID,"
+toolbars/DeviceToolBar.cpp,Other,blocking_or_waiting,\bsleep_for\b,690,std::this_thread::sleep_for(100ms);
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,191,"mHost->Bind(wxEVT_SET_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,194,"mHost->Bind(wxEVT_KILL_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,197,"mOutput->Bind(wxEVT_SET_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,200,"mOutput->Bind(wxEVT_KILL_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,203,"mInput->Bind(wxEVT_SET_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,206,"mInput->Bind(wxEVT_KILL_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,209,"mInputChannels->Bind(wxEVT_SET_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bBind\(,212,"mInputChannels->Bind(wxEVT_KILL_FOCUS,"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bEVT_,61,"EVT_CHOICE(wxID_ANY, DeviceToolBar::OnChoice)"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bEVT_,62,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, DeviceToolBar::OnCaptureKey)"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bEVT_,62,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, DeviceToolBar::OnCaptureKey)"
+toolbars/DeviceToolBar.cpp,Other,callbacks_events,\bProcessEvent\b,111,GetEventHandler()->ProcessEvent(event);
+toolbars/DeviceToolBar.cpp,Other,state_transitions,\bFlush\b,509,gPrefs->Flush();
+toolbars/DeviceToolBar.cpp,Other,state_transitions,\bFlush\b,588,gPrefs->Flush();
+toolbars/DeviceToolBar.cpp,Other,state_transitions,\bFlush\b,606,gPrefs->Flush();
+toolbars/DeviceToolBar.cpp,Other,state_transitions,\bFlush\b,618,gPrefs->Flush();
+toolbars/EditToolBar.cpp,Other,callbacks_events,\bEVT_,113,"EVT_COMMAND_RANGE(ETBZoomInID + first_ETB_ID,"
+toolbars/MeterToolBar.cpp,Other,callbacks_events,\bBind\(,275,"mRecordSetupButton->Bind(wxEVT_BUTTON, [=](wxCommandEvent&)"
+toolbars/MeterToolBar.cpp,Other,callbacks_events,\bBind\(,329,"mPlaySetupButton->Bind(wxEVT_BUTTON, [=](wxCommandEvent&)"
+toolbars/MeterToolBar.cpp,Other,callbacks_events,\bEVT_,129,EVT_SIZE(MeterToolBar::OnSize)
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bCallAfter\b,307,CallAfter([this]{
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bBind\(,216,pCtrl->Bind(
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bBind\(,258,menu.Bind(
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bBind\(,270,"menu.Bind(wxEVT_MENU_CLOSE, [setupBtn](auto&) { setupBtn->PopUp(); });"
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bBind\(,275,"setupBtn->Bind(wxEVT_BUTTON, [this, showMenu](auto&) { showMenu(); });"
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bEVT_,112,EVT_SIZE(SelectionBar::OnSize)
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bEVT_,114,EVT_IDLE(SelectionBar::OnIdle)
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bEVT_,116,"EVT_COMMAND(wxID_ANY, EVT_TIMETEXTCTRL_UPDATED, SelectionBar::OnUpdate)"
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bEVT_,116,"EVT_COMMAND(wxID_ANY, EVT_TIMETEXTCTRL_UPDATED, SelectionBar::OnUpdate)"
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bEVT_,117,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, SelectionBar::OnCaptureKey)"
+toolbars/SelectionBar.cpp,Other,callbacks_events,\bEVT_,117,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, SelectionBar::OnCaptureKey)"
+toolbars/SelectionBar.cpp,Other,audio_stream_control,\bAudioIO\b,43,"#include ""AudioIO.h"""
+toolbars/SelectionBar.cpp,Other,state_transitions,\bStart\b,79,"const TranslatableString StartTimeText = XO(""Start"");"
+toolbars/SelectionBar.cpp,Other,state_transitions,\bStart\b,243,"_(""Start and End of Selection""),"
+toolbars/SelectionBar.cpp,Other,state_transitions,\bStart\b,244,"_(""Start and Length of Selection""),"
+toolbars/SelectionBar.cpp,Other,state_transitions,\bFlush\b,75,gPrefs->Flush();
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bCallAfter\b,156,BasicUI::CallAfter([this] { Dismiss(); });
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bBind\(,130,menuStack.back()->Bind(
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bBind\(,347,mSnapModeCheckBox->Bind(
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bBind\(,350,mSnapModeCheckBox->Bind(
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bBind\(,366,mSnapModeCheckBox->Bind(
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bBind\(,370,mSnapModeCheckBox->Bind(
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bBind\(,376,mSnapToCombo->Bind(
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bBind\(,379,snapLabelCtrl->Bind(
+toolbars/SnappingToolBar.cpp,Other,callbacks_events,\bEVT_,238,EVT_SIZE(SnappingToolBar::OnSize)
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bCallAfter\b,224,CallAfter([this]{
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,72,EVT_SIZE(SpectralSelectionBar::OnSize)
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,73,"EVT_TEXT(OnCenterID, SpectralSelectionBar::OnCtrl)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,74,"EVT_TEXT(OnWidthID, SpectralSelectionBar::OnCtrl)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,75,"EVT_TEXT(OnLowID, SpectralSelectionBar::OnCtrl)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,76,"EVT_TEXT(OnHighID, SpectralSelectionBar::OnCtrl)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,77,"EVT_CHOICE(OnChoiceID, SpectralSelectionBar::OnChoice)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,78,"EVT_COMMAND(wxID_ANY, EVT_FREQUENCYTEXTCTRL_UPDATED, SpectralSelectionBar::OnUpdate)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,78,"EVT_COMMAND(wxID_ANY, EVT_FREQUENCYTEXTCTRL_UPDATED, SpectralSelectionBar::OnUpdate)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,79,"EVT_COMMAND(wxID_ANY, EVT_BANDWIDTHTEXTCTRL_UPDATED, SpectralSelectionBar::OnUpdate)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,79,"EVT_COMMAND(wxID_ANY, EVT_BANDWIDTHTEXTCTRL_UPDATED, SpectralSelectionBar::OnUpdate)"
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,80,EVT_IDLE(SpectralSelectionBar::OnIdle)
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,236,wxCommandEvent e(EVT_FREQUENCYTEXTCTRL_UPDATED);
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,244,wxCommandEvent e(EVT_BANDWIDTHTEXTCTRL_UPDATED);
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,397,if (type == EVT_FREQUENCYTEXTCTRL_UPDATED) {
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,401,&& type == EVT_BANDWIDTHTEXTCTRL_UPDATED) {
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,484,wxCommandEvent e(EVT_FREQUENCYTEXTCTRL_UPDATED);
+toolbars/SpectralSelectionBar.cpp,Other,callbacks_events,\bEVT_,498,wxCommandEvent e(EVT_BANDWIDTHTEXTCTRL_UPDATED);
+toolbars/SpectralSelectionBar.cpp,Other,state_transitions,\bFlush\b,344,gPrefs->Flush();
+toolbars/TimeSignatureToolBar.cpp,Other,callbacks_events,\bBind\(,161,mTempoControl->Bind(
+toolbars/TimeSignatureToolBar.cpp,Other,callbacks_events,\bBind\(,173,mUpperSignatureControl->Bind(
+toolbars/TimeSignatureToolBar.cpp,Other,callbacks_events,\bBind\(,186,mLowerSignatureControl->Bind(
+toolbars/TimeSignatureToolBar.cpp,Other,callbacks_events,\bEVT_,48,EVT_SIZE(TimeSignatureToolBar::OnSize)
+toolbars/TimeSignatureToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,31,"#include ""AudioIO.h"""
+toolbars/TimeSignatureToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,72,"mPlaybackStateChangedSubscription(AudioIO::Get()->Subscribe(*this, &TimeSignatureToolBar::OnAudioIOEvent))"
+toolbars/TimeToolBar.cpp,Other,callbacks_events,\bCallAfter\b,109,CallAfter([this]{
+toolbars/TimeToolBar.cpp,Other,callbacks_events,\bEVT_,46,"EVT_COMMAND(AudioPositionID, EVT_TIMETEXTCTRL_UPDATED, TimeToolBar::OnUpdate)"
+toolbars/TimeToolBar.cpp,Other,callbacks_events,\bEVT_,46,"EVT_COMMAND(AudioPositionID, EVT_TIMETEXTCTRL_UPDATED, TimeToolBar::OnUpdate)"
+toolbars/TimeToolBar.cpp,Other,callbacks_events,\bEVT_,47,EVT_SIZE(TimeToolBar::OnSize)
+toolbars/TimeToolBar.cpp,Other,callbacks_events,\bEVT_,48,EVT_IDLE(TimeToolBar::OnIdle)
+toolbars/TimeToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,26,"#include ""AudioIO.h"""
+toolbars/TimeToolBar.cpp,Other,audio_stream_control,\bAudioIO\b,380,auto gAudioIO = AudioIO::Get();
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,103,EVT_ERASE_BACKGROUND(ToolBarResizer::OnErase)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,104,EVT_PAINT(ToolBarResizer::OnPaint)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,105,EVT_LEFT_DOWN(ToolBarResizer::OnLeftDown)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,106,EVT_LEFT_UP(ToolBarResizer::OnLeftUp)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,107,EVT_ENTER_WINDOW(ToolBarResizer::OnEnter)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,108,EVT_LEAVE_WINDOW(ToolBarResizer::OnLeave)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,109,EVT_MOTION(ToolBarResizer::OnMotion)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,110,EVT_MOUSE_CAPTURE_LOST(ToolBarResizer::OnCaptureLost)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,111,EVT_KEY_DOWN(ToolBarResizer::OnKeyDown)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,311,DEFINE_EVENT_TYPE(EVT_TOOLBAR_UPDATED)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,317,EVT_PAINT(ToolBar::OnPaint)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,318,EVT_ERASE_BACKGROUND(ToolBar::OnErase)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,319,EVT_MOUSE_EVENTS(ToolBar::OnMouseEvents)
+toolbars/ToolBar.cpp,Other,callbacks_events,\bEVT_,685,"//wxCommandEvent e( EVT_TOOLBAR_UPDATED, GetId() );"
+toolbars/ToolBar.cpp,Other,state_transitions,\bStart\b,143,// Start with a clean background
+toolbars/ToolBar.h,Other,callbacks_events,\bEVT_,50,"DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_TOOLBAR_UPDATED, -1);"
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,400,//DEFINE_EVENT_TYPE( EVT_TOOLBAR_FLOAT );
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,403,"EVT_GRABBER(wxID_ANY, ToolDock::OnGrabber)"
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,404,EVT_ERASE_BACKGROUND(ToolDock::OnErase)
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,405,EVT_PAINT(ToolDock::OnPaint)
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,406,EVT_SIZE(ToolDock::OnSize)
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,407,EVT_MOUSE_EVENTS(ToolDock::OnMouseEvents)
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,890,// Queues an EVT_TOOLBAR_UPDATED command event to notify any
+toolbars/ToolDock.cpp,Other,callbacks_events,\bEVT_,896,"wxCommandEvent e(EVT_TOOLBAR_UPDATED, GetId());"
+toolbars/ToolDock.cpp,Other,callbacks_events,\bProcessEvent\b,908,mManager->ProcessEvent(event);
+toolbars/ToolDock.cpp,Other,callbacks_events,\bcallback\b,802,// Now wait until the other callback below to discover x and y
+toolbars/ToolDock.cpp,Other,state_transitions,\bStart\b,937,// Start with a clean background
+toolbars/ToolDock.cpp,Other,state_transitions,\bStop\b,766,struct Stop {};
+toolbars/ToolDock.cpp,Other,state_transitions,\bStop\b,818,throw Stop {};
+toolbars/ToolDock.cpp,Other,state_transitions,\bStop\b,850,} catch (const Inserter::Stop&) {}
+toolbars/ToolManager.cpp,Other,callbacks_events,\bBind\(,387,"mIndicator->Bind(wxEVT_CREATE,"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bBind\(,392,"mIndicator->Bind(wxEVT_PAINT,"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bBind\(,407,"window.Bind(wxEVT_LEFT_UP,"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bBind\(,410,"window.Bind(wxEVT_MOTION,"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bBind\(,413,"window.Bind(wxEVT_MOUSE_CAPTURE_LOST,"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,293,"EVT_GRABBER(wxID_ANY, ToolFrame::OnGrabber)"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,294,EVT_PAINT(ToolFrame::OnPaint)
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,295,EVT_MOUSE_EVENTS(ToolFrame::OnMotion)
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,296,EVT_MOUSE_CAPTURE_LOST(ToolFrame::OnCaptureLost)
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,297,EVT_CLOSE(ToolFrame::OnClose)
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,298,"EVT_COMMAND(wxID_ANY, EVT_TOOLBAR_UPDATED, ToolFrame::OnToolBarUpdate)"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,298,"EVT_COMMAND(wxID_ANY, EVT_TOOLBAR_UPDATED, ToolFrame::OnToolBarUpdate)"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,299,EVT_KEY_DOWN(ToolFrame::OnKeyDown)
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,309,"EVT_GRABBER(wxID_ANY, ToolManager::OnGrabber)"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,310,"EVT_TIMER(wxID_ANY, ToolManager::OnTimer)"
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,991,// Queues an EVT_TOOLBAR_UPDATED command event to notify any
+toolbars/ToolManager.cpp,Other,callbacks_events,\bEVT_,997,wxCommandEvent e(EVT_TOOLBAR_UPDATED);
+toolbars/ToolManager.cpp,Other,callbacks_events,\bProcessEvent\b,146,mManager->ProcessEvent(event);
+toolbars/ToolManager.cpp,Other,state_transitions,\bStart\b,1407,// Start monitoring shift key changes
+toolbars/ToolManager.cpp,Other,state_transitions,\bStart\b,1409,mTimer.Start(100);
+toolbars/ToolManager.cpp,Other,state_transitions,\bStop\b,1464,mTimer.Stop();
+toolbars/ToolManager.cpp,Other,state_transitions,\bFlush\b,952,gPrefs->Flush();
+toolbars/ToolsToolBar.cpp,Other,callbacks_events,\bEVT_,63,"EVT_COMMAND_RANGE(ToolCodes::firstTool + FirstToolID,"
+toolbars/ToolsToolBar.cpp,Other,callbacks_events,\bcallback\b,230,// This will cause callback to OnToolChanged
+toolbars/ToolsToolBar.cpp,Other,state_transitions,\bFlush\b,265,gPrefs->Flush();
+update/NoUpdatesAvailableDialog.cpp,Other,callbacks_events,\bEVT_,27,"EVT_BUTTON(wxID_OK, NoUpdatesAvailableDialog::OnOk)"
+update/UpdateManager.cpp,Other,synchronization,\bstd::mutex\b,109,std::lock_guard<std::mutex> lock(mUpdateMutex);
+update/UpdateManager.cpp,Other,synchronization,\bstd::lock_guard\b,109,std::lock_guard<std::mutex> lock(mUpdateMutex);
+update/UpdateManager.cpp,Other,callbacks_events,\bCallAfter\b,165,wxTheApp->CallAfter([this]{ mProgressDialog.reset(); });
+update/UpdateManager.cpp,Other,callbacks_events,\bCallAfter\b,173,wxTheApp->CallAfter([] {
+update/UpdateManager.cpp,Other,callbacks_events,\bCallAfter\b,192,"wxTheApp->CallAfter([cmd] { wxExecute(cmd, wxEXEC_ASYNC); });"
+update/UpdateManager.cpp,Other,callbacks_events,\bCallAfter\b,223,"wxTheApp->CallAfter([this, current, expected]{"
+update/UpdateManager.cpp,Other,callbacks_events,\bEVT_,52,"EVT_TIMER(ID_TIMER, UpdateManager::OnTimer)"
+update/UpdateManager.cpp,Other,audio_stream_control,\bAudioIO\b,16,"#include ""AudioIO.h"""
+update/UpdateManager.cpp,Other,audio_stream_control,\bAudioIO\b,118,auto gAudioIO = AudioIO::Get();
+update/UpdateManager.cpp,Other,state_transitions,\bStart\b,62,void UpdateManager::Start(bool suppressModal)
+update/UpdateManager.cpp,Other,state_transitions,\bFlush\b,77,gPrefs->Flush();
+update/UpdateManager.cpp,Other,state_transitions,\bFlush\b,311,gPrefs->Flush();
+update/UpdateManager.h,Other,synchronization,\bstd::mutex\b,61,std::mutex mUpdateMutex;
+update/UpdateManager.h,Other,state_transitions,\bStart\b,39,static void Start(bool suppressModal);
+update/UpdateNoticeDialog.cpp,Other,callbacks_events,\bEVT_,39,"EVT_BUTTON(wxID_OK, UpdateNoticeDialog::OnOk)"
+update/UpdateNoticeDialog.cpp,Other,callbacks_events,\bEVT_,40,EVT_SIZE(UpdateNoticeDialog::OnSize)
+update/UpdatePopupDialog.cpp,Other,callbacks_events,\bEVT_,26,"EVT_BUTTON(wxID_YES, UpdatePopupDialog::OnUpdate)"
+update/UpdatePopupDialog.cpp,Other,callbacks_events,\bEVT_,27,"EVT_BUTTON(wxID_NO, UpdatePopupDialog::OnSkip)"
+update/UpdatePopupDialog.cpp,Other,callbacks_events,\bEVT_,28,"EVT_CHECKBOX(DontShowID, UpdatePopupDialog::OnDontShow)"
+widgets/AButton.cpp,GUI/UI,blocking_or_waiting,\bJoin\(,545,"tipText.Join(XO(""(disabled)""), "" "");"
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,43,EVT_MOUSE_EVENTS(AButton::OnMouseEvent)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,44,EVT_MOUSE_CAPTURE_LOST(AButton::OnCaptureLost)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,45,EVT_KEY_DOWN(AButton::OnKeyDown)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,46,EVT_CHAR_HOOK(AButton::OnCharHook)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,47,EVT_SET_FOCUS(AButton::OnSetFocus)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,48,EVT_KILL_FOCUS(AButton::OnKillFocus)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,49,EVT_PAINT(AButton::OnPaint)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,50,EVT_SIZE(AButton::OnSize)
+widgets/AButton.cpp,GUI/UI,callbacks_events,\bEVT_,51,EVT_ERASE_BACKGROUND(AButton::OnErase)
+widgets/AButton.h,GUI/UI,state_transitions,\bPause\b,262,"// It is used for the Pause button, and possibly"
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,167,EVT_PAINT(TipWindow::OnPaint)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,250,"EVT_TEXT(wxID_ANY, SliderDialog::OnTextChange)"
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,251,"EVT_SLIDER(wxID_ANY, SliderDialog::OnSlider)"
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1588,EVT_KEY_DOWN(ASlider::OnKeyDown)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1589,EVT_MOUSE_EVENTS(ASlider::OnMouseEvent)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1590,EVT_MOUSE_CAPTURE_LOST(ASlider::OnCaptureLost)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1591,EVT_PAINT(ASlider::OnPaint)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1592,EVT_SIZE(ASlider::OnSize)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1593,EVT_ERASE_BACKGROUND(ASlider::OnErase)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1594,"EVT_SLIDER(wxID_ANY, ASlider::OnSlider)"
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1595,EVT_SET_FOCUS(ASlider::OnSetFocus)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1596,EVT_KILL_FOCUS(ASlider::OnKillFocus)
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bEVT_,1597,"EVT_TIMER(wxID_ANY, ASlider::OnTimer)"
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,1308,mParent->GetEventHandler()->ProcessEvent(cevent);
+widgets/ASlider.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,1352,mParent->GetEventHandler()->ProcessEvent(e);
+widgets/ASlider.cpp,GUI/UI,state_transitions,\bStop\b,1705,mTimer.Stop();
+widgets/AttachableScrollBar.cpp,GUI/UI,callbacks_events,\bEVT_,36,EVT_SCROLL(AttachableScrollBar::OnScroll)
+widgets/auStaticText.cpp,GUI/UI,callbacks_events,\bEVT_,28,EVT_PAINT(auStaticText::OnPaint)
+widgets/auStaticText.cpp,GUI/UI,callbacks_events,\bEVT_,29,EVT_ERASE_BACKGROUND(auStaticText::OnErase)
+widgets/BackedPanel.cpp,GUI/UI,callbacks_events,\bEVT_,83,EVT_SIZE(BackedPanel::OnSize)
+widgets/BasicMenu.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,204,if (pMenu->ProcessEvent(event)) {
+widgets/BasicMenu.cpp,GUI/UI,callbacks_events,\bcallback\b,147,// Add a callback for startup of journalling
+widgets/FileHistory.cpp,GUI/UI,state_transitions,\bFlush\b,141,settings.Flush();
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,38,DEFINE_EVENT_TYPE(EVT_GRABBER_CLICKED)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,41,EVT_ENTER_WINDOW(Grabber::OnEnter)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,42,EVT_LEAVE_WINDOW(Grabber::OnLeave)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,43,EVT_LEFT_DOWN(Grabber::OnLeftDown)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,44,EVT_LEFT_UP(Grabber::OnLeftUp)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,45,EVT_ERASE_BACKGROUND(Grabber::OnErase)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,46,EVT_PAINT(Grabber::OnPaint)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,47,EVT_KEY_DOWN(Grabber::OnKeyDown)
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,194,"SendEvent(EVT_GRABBER_CLICKED, event.GetPosition(), false);"
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,286,"SendEvent(EVT_GRABBER_CLICKED, wxPoint { -1, -1 }, true);"
+widgets/Grabber.cpp,GUI/UI,callbacks_events,\bEVT_,293,EVT_ERASE_BACKGROUND(AStaticBitmap::OnErase)
+widgets/Grabber.h,GUI/UI,callbacks_events,\bEVT_,45,"DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_GRABBER_CLICKED, -1)"
+widgets/Grabber.h,GUI/UI,callbacks_events,\bEVT_,97,"#define EVT_GRABBER(id, fn) \"
+widgets/Grabber.h,GUI/UI,callbacks_events,\bEVT_,98,"DECLARE_EVENT_TABLE_ENTRY(EVT_GRABBER_CLICKED, id, wxID_ANY, \"
+widgets/Grid.cpp,GUI/UI,callbacks_events,\bEVT_,449,EVT_SET_FOCUS(Grid::OnSetFocus)
+widgets/Grid.cpp,GUI/UI,callbacks_events,\bEVT_,450,EVT_KEY_DOWN(Grid::OnKeyDown)
+widgets/Grid.cpp,GUI/UI,callbacks_events,\bEVT_,451,EVT_GRID_SELECT_CELL(Grid::OnSelectCell)
+widgets/Grid.cpp,GUI/UI,callbacks_events,\bEVT_,452,EVT_GRID_EDITOR_SHOWN(Grid::OnEditorShown)
+widgets/Grid.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,694,GetParent()->GetEventHandler()->ProcessEvent(cevent);
+widgets/Grid.h,GUI/UI,callbacks_events,\bBind\(,152,"w->GetEventHandler()->Bind(wxEVT_KILL_FOCUS, OnKillFocus);"
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bEVT_,138,EVT_LEFT_DOWN(KeyView::OnLeftDown)
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bEVT_,139,EVT_KEY_DOWN(KeyView::OnKeyDown)
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bEVT_,140,"EVT_LISTBOX(wxID_ANY, KeyView::OnSelected)"
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bEVT_,141,EVT_SET_FOCUS(KeyView::OnSetFocus)
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bEVT_,142,EVT_KILL_FOCUS(KeyView::OnKillFocus)
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bEVT_,143,EVT_SIZE(KeyView::OnSize)
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bEVT_,144,EVT_SCROLLWIN(KeyView::OnScroll)
+widgets/KeyView.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,1043,(void)GetEventHandler()->ProcessEvent(event);
+widgets/KeyView.cpp,GUI/UI,state_transitions,\bStart\b,602,// Start clean
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,210,"EVT_TIMER(OnMeterUpdateID, MeterPanel::OnMeterUpdate)"
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,211,"EVT_TIMER(OnTipTimeoutID, MeterPanel::OnTipTimeout)"
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,212,"EVT_SLIDER(wxID_ANY, MeterPanel::SetMixer)"
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,213,EVT_MOUSE_EVENTS(MeterPanel::OnMouse)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,214,EVT_CONTEXT_MENU(MeterPanel::OnContext)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,215,EVT_KEY_DOWN(MeterPanel::OnKeyDown)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,216,EVT_CHAR_HOOK(MeterPanel::OnCharHook)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,217,EVT_SET_FOCUS(MeterPanel::OnSetFocus)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,218,EVT_KILL_FOCUS(MeterPanel::OnKillFocus)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,219,EVT_ERASE_BACKGROUND(MeterPanel::OnErase)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,220,EVT_PAINT(MeterPanel::OnPaint)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,221,EVT_SIZE(MeterPanel::OnSize)
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,222,"EVT_MENU(OnMonitorID, MeterPanel::OnMonitor)"
+widgets/MeterPanel.cpp,GUI/UI,callbacks_events,\bEVT_,223,"EVT_MENU(OnPreferencesID, MeterPanel::OnPreferences)"
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,58,"#include ""AudioIO.h"""
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,302,mAudioIOStatusSubscription = AudioIO::Get()
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,305,mAudioCaptureSubscription = AudioIO::Get()
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,388,auto gAudioIO = AudioIO::Get();
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,404,auto gAudioIO = AudioIO::Get();
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,724,auto gAudioIO = AudioIO::Get();
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,1670,auto gAudioIO = AudioIO::Get();
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,1690,auto gAudioIO = AudioIO::Get();
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,1739,// isn't a clear way of doing that just yet.  (It should NOT query AudioIO.)
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bStartMonitoring\b,21,"MeterToolBar meters, e.g., MeterPanel::StartMonitoring,"
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bStartMonitoring\b,1666,void MeterPanel::StartMonitoring()
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bStartMonitoring\b,1678,gAudioIO->StartMonitoring(ProjectAudioIO::GetDefaultOptions(*p));
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bStartMonitoring\b,1796,StartMonitoring();
+widgets/MeterPanel.cpp,GUI/UI,audio_stream_control,\bStartMonitoring\b,1955,m->StartMonitoring();
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bStart\b,797,mTimer.Start(1000 / mMeterRefreshRate);
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bStart\b,1709,mTimer.Start(1000 / mMeterRefreshRate);
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bStart\b,1756,mTimer.Start(1000 / mMeterRefreshRate);
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bStop\b,627,mTipTimer.Stop();
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bStop\b,697,mTipTimer.Stop();
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bStop\b,790,mTimer.Stop();
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bStop\b,1714,mTimer.Stop();
+widgets/MeterPanel.cpp,GUI/UI,state_transitions,\bFlush\b,1904,gPrefs->Flush();
+widgets/MeterPanel.h,GUI/UI,callbacks_events,\bcallback\b,118,* different thread (like from an audio I/O callback).
+widgets/MeterPanel.h,GUI/UI,callbacks_events,\bcallback\b,128,* (like from an audio I/O callback).
+widgets/MeterPanel.h,GUI/UI,callbacks_events,\bcallback\b,156,* different thread (like from an audio I/O callback).
+widgets/MeterPanel.h,GUI/UI,audio_stream_control,\bStartMonitoring\b,168,void StartMonitoring();
+widgets/MissingPluginsErrorDialog.cpp,GUI/UI,callbacks_events,\bEVT_,18,"EVT_BUTTON(wxID_OK, MissingPluginsErrorDialog::OnOk)"
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bBind\(,608,"menu.Bind(wxEVT_MENU, [](auto&){});"
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,125,DEFINE_EVENT_TYPE(EVT_TIMETEXTCTRL_UPDATED)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,126,DEFINE_EVENT_TYPE(EVT_FREQUENCYTEXTCTRL_UPDATED)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,127,DEFINE_EVENT_TYPE(EVT_BANDWIDTHTEXTCTRL_UPDATED)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,130,EVT_ERASE_BACKGROUND(NumericTextCtrl::OnErase)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,131,EVT_PAINT(NumericTextCtrl::OnPaint)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,132,EVT_CONTEXT_MENU(NumericTextCtrl::OnContext)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,133,EVT_MOUSE_EVENTS(NumericTextCtrl::OnMouse)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,134,EVT_KEY_DOWN(NumericTextCtrl::OnKeyDown)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,135,EVT_KEY_UP(NumericTextCtrl::OnKeyUp)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,136,EVT_SET_FOCUS(NumericTextCtrl::OnFocus)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,137,EVT_KILL_FOCUS(NumericTextCtrl::OnFocus)
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,138,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, NumericTextCtrl::OnCaptureKey)"
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,138,"EVT_COMMAND(wxID_ANY, EVT_CAPTURE_KEY, NumericTextCtrl::OnCaptureKey)"
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,614,"// This used to be in an EVT_MENU() event handler, but GTK"
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,624,eventType = EVT_TIMETEXTCTRL_UPDATED;
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,626,eventType = EVT_FREQUENCYTEXTCTRL_UPDATED;
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bEVT_,628,eventType = EVT_BANDWIDTHTEXTCTRL_UPDATED;
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,874,GetParent()->GetEventHandler()->ProcessEvent(nevent);
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,887,GetParent()->GetEventHandler()->ProcessEvent(cevent);
+widgets/NumericTextCtrl.cpp,GUI/UI,callbacks_events,\bProcessEvent\b,924,GetEventHandler()->ProcessEvent(event);
+widgets/NumericTextCtrl.h,GUI/UI,callbacks_events,\bEVT_,29,"DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_TIMETEXTCTRL_UPDATED, -1);"
+widgets/NumericTextCtrl.h,GUI/UI,callbacks_events,\bEVT_,30,"DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_FREQUENCYTEXTCTRL_UPDATED, -1);"
+widgets/NumericTextCtrl.h,GUI/UI,callbacks_events,\bEVT_,31,"DECLARE_EXPORTED_EVENT_TYPE(AUDACITY_DLL_API, EVT_BANDWIDTHTEXTCTRL_UPDATED,"
+widgets/numformatter.cpp,GUI/UI,state_transitions,\bStart\b,182,// Start grouping at the end of an integer number.
+widgets/PopupMenuTable.cpp,GUI/UI,callbacks_events,\bBind\(,96,mMenu->Bind(
+widgets/PopupMenuTable.h,GUI/UI,callbacks_events,\bcallback\b,105,"Pointer remains valid for the duration of any callback, if"
+widgets/PopupMenuTable.h,GUI/UI,callbacks_events,\bcallback\b,204,// This callback might check or disable a menu item:
+widgets/PopupMenuTable.h,GUI/UI,callbacks_events,\bcallback\b,209,// This callback might check or disable a menu item:
+widgets/PopupMenuTable.h,GUI/UI,callbacks_events,\bcallback\b,215,// This callback might check or disable a menu item:
+widgets/RulerPanel.cpp,GUI/UI,callbacks_events,\bEVT_,27,EVT_ERASE_BACKGROUND(RulerPanel::OnErase)
+widgets/RulerPanel.cpp,GUI/UI,callbacks_events,\bEVT_,28,EVT_PAINT(RulerPanel::OnPaint)
+widgets/RulerPanel.cpp,GUI/UI,callbacks_events,\bEVT_,29,EVT_SIZE(RulerPanel::OnSize)
+widgets/UnwritableLocationErrorDialog.cpp,GUI/UI,callbacks_events,\bEVT_,20,"EVT_BUTTON(wxID_OK, UnwritableLocationErrorDialog::OnOk)"
+widgets/UnwritableLocationErrorDialog.cpp,GUI/UI,callbacks_events,\bEVT_,21,"EVT_BUTTON(wxID_HELP, UnwritableLocationErrorDialog::OnError)"
+widgets/valnum.cpp,GUI/UI,callbacks_events,\bEVT_,53,EVT_CHAR(NumValidatorBase::OnChar)
+widgets/valnum.cpp,GUI/UI,callbacks_events,\bEVT_,54,"EVT_TEXT_PASTE(wxID_ANY, NumValidatorBase::OnPaste)"
+widgets/valnum.cpp,GUI/UI,callbacks_events,\bEVT_,55,EVT_KILL_FOCUS(NumValidatorBase::OnKillFocus)
+widgets/valnum.cpp,GUI/UI,callbacks_events,\bEVT_,267,// Use SetValue because effect still needs EVT_TEXT (bug 1357)
+widgets/valnum.cpp,GUI/UI,state_transitions,\bStop\b,362,"// Is blank, but allowed. Stop here"
+widgets/valnum.cpp,GUI/UI,state_transitions,\bStop\b,489,"return true; //Is blank, but allowed. Stop here"
+widgets/Warning.cpp,GUI/UI,callbacks_events,\bEVT_,42,"EVT_BUTTON(wxID_OK, WarningDialog::OnOK)"
+widgets/Warning.cpp,GUI/UI,state_transitions,\bFlush\b,103,gPrefs->Flush();
+effects/audiounits/AudioUnitEditor.cpp,Effects,callbacks_events,\bBind\(,38,"wxTheApp->Bind(wxEVT_IDLE, &AudioUnitEditor::OnIdle, this);"
+effects/audiounits/AudioUnitEditor.cpp,Effects,callbacks_events,\bcallback\b,54,// Register a callback with the audio unit
+effects/audiounits/AudioUnitEffectOptionsDialog.cpp,Effects,callbacks_events,\bEVT_,27,"EVT_BUTTON(wxID_OK, AudioUnitEffectOptionsDialog::OnOk)"
+effects/ladspa/LadspaEditor.cpp,Effects,callbacks_events,\bEVT_,78,EVT_IDLE(LadspaEffectMeter::OnIdle)
+effects/ladspa/LadspaEditor.cpp,Effects,callbacks_events,\bEVT_,79,EVT_ERASE_BACKGROUND(LadspaEffectMeter::OnErase)
+effects/ladspa/LadspaEditor.cpp,Effects,callbacks_events,\bEVT_,80,EVT_PAINT(LadspaEffectMeter::OnPaint)
+effects/ladspa/LadspaEditor.cpp,Effects,callbacks_events,\bEVT_,81,EVT_SIZE(LadspaEffectMeter::OnSize)
+effects/ladspa/LadspaEditor.cpp,Effects,state_transitions,\bStop\b,55,"// Stop using mVal, it might be dangling now"
+effects/ladspa/LadspaEffectOptionsDialog.cpp,Effects,callbacks_events,\bEVT_,18,"EVT_BUTTON(wxID_OK, LadspaEffectOptionsDialog::OnOk)"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bBind\(,359,"pNativeWin->Bind(wxEVT_SIZE, &LV2Editor::OnSize, this);"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bEVT_,136,"EVT_COMMAND_RANGE(ID_Triggers, ID_Triggers + 999, wxEVT_COMMAND_BUTTON_CLICKED, LV2Editor::OnTrigger)"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bEVT_,137,"EVT_COMMAND_RANGE(ID_Toggles, ID_Toggles + 999, wxEVT_COMMAND_CHECKBOX_CLICKED, LV2Editor::OnToggle)"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bEVT_,138,"EVT_COMMAND_RANGE(ID_Sliders, ID_Sliders + 999, wxEVT_COMMAND_SLIDER_UPDATED, LV2Editor::OnSlider)"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bEVT_,139,"EVT_COMMAND_RANGE(ID_Choices, ID_Choices + 999, wxEVT_COMMAND_CHOICE_SELECTED, LV2Editor::OnChoice)"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bEVT_,140,"EVT_COMMAND_RANGE(ID_Texts, ID_Texts + 999, wxEVT_COMMAND_TEXT_UPDATED, LV2Editor::OnText)"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bEVT_,142,EVT_IDLE(LV2Editor::OnIdle)
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bcallback\b,318,"// callback functions, which were given to suil_host_new:"
+effects/lv2/LV2Editor.cpp,Effects,callbacks_events,\bcallback\b,1038,// static callback
+effects/lv2/LV2Editor.cpp,Effects,state_transitions,\bStart\b,339,mTimer.Start(20);
+effects/lv2/LV2Editor.cpp,Effects,state_transitions,\bFlush\b,881,mAccess.Flush();
+effects/lv2/LV2EffectMeter.cpp,Effects,callbacks_events,\bEVT_,28,EVT_IDLE(LV2EffectMeter::OnIdle)
+effects/lv2/LV2EffectMeter.cpp,Effects,callbacks_events,\bEVT_,29,EVT_ERASE_BACKGROUND(LV2EffectMeter::OnErase)
+effects/lv2/LV2EffectMeter.cpp,Effects,callbacks_events,\bEVT_,30,EVT_PAINT(LV2EffectMeter::OnPaint)
+effects/lv2/LV2EffectMeter.cpp,Effects,callbacks_events,\bEVT_,31,EVT_SIZE(LV2EffectMeter::OnSize)
+effects/lv2/LV2EffectMeter.h,Effects,state_transitions,\bStop\b,29,"// Stop using mValue, it may be dangling"
+effects/lv2/LV2PreferencesDialog.cpp,Effects,callbacks_events,\bEVT_,31,"EVT_BUTTON(wxID_OK, LV2PreferencesDialog::OnOk)"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,66,"EVT_BUTTON(ID_Load, NyquistEffect::OnLoad)"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,67,"EVT_BUTTON(ID_Save, NyquistEffect::OnSave)"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,69,"EVT_COMMAND_RANGE(ID_Slider, ID_Slider + 99,"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,71,"EVT_COMMAND_RANGE(ID_Text, ID_Text + 99,"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,73,"EVT_COMMAND_RANGE(ID_Choice, ID_Choice + 99,"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,75,"EVT_COMMAND_RANGE(ID_Time, ID_Time + 99,"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,77,"EVT_COMMAND_RANGE(ID_FILE, ID_FILE + 99,"
+effects/nyquist/Nyquist.cpp,Effects,callbacks_events,\bEVT_,779,"EVT_BUTTON(wxID_OK, NyquistOutputDialog::OnOk)"
+effects/vamp/LoadVamp.cpp,Effects,callbacks_events,\bcallback\b,200,const RegistrationCallback& callback)
+effects/vamp/LoadVamp.cpp,Effects,callbacks_events,\bcallback\b,209,if (callback) {
+effects/vamp/LoadVamp.cpp,Effects,callbacks_events,\bcallback\b,210,"callback(this, &effect);"
+effects/vamp/LoadVamp.h,Effects,callbacks_events,\bcallback\b,53,"const PluginPath& path, TranslatableString& errMsg, const RegistrationCallback& callback)"
+effects/vamp/VampEffect.cpp,Effects,callbacks_events,\bEVT_,56,"EVT_SLIDER(wxID_ANY, VampEffect::OnSlider)"
+effects/vamp/VampEffect.cpp,Effects,callbacks_events,\bEVT_,57,"EVT_TEXT(wxID_ANY, VampEffect::OnTextCtrl)"
+effects/vamp/VampEffect.cpp,Effects,callbacks_events,\bEVT_,58,"EVT_CHECKBOX(wxID_ANY, VampEffect::OnCheckBox)"
+effects/vamp/VampEffect.cpp,Effects,callbacks_events,\bEVT_,59,"EVT_CHOICE(wxID_ANY, VampEffect::OnChoice)"
+effects/vamp/VampEffect.cpp,Effects,state_transitions,\bCommit\b,448,addedTrack->Commit();
+effects/VST/VSTEditor.cpp,Effects,callbacks_events,\bBind\(,263,"mDialog->Bind(wxEVT_SIZE, OnSize);"
+effects/VST/VSTEditor.cpp,Effects,callbacks_events,\bBind\(,528,"wxTheApp->Bind(wxEVT_IDLE, &VSTEditor::OnIdle, this);"
+effects/VST/VSTEditor.cpp,Effects,callbacks_events,\bEVT_,85,"wxDEFINE_EVENT(EVT_SIZEWINDOW, wxCommandEvent);"
+effects/VST/VSTEditor.cpp,Effects,callbacks_events,\bEVT_,86,DEFINE_LOCAL_EVENT_TYPE(EVT_UPDATEDISPLAY);
+effects/VST/VSTEditor.cpp,Effects,callbacks_events,\bEVT_,210,wxCommandEvent sw(EVT_SIZEWINDOW);
+effects/VST/VSTEditor.cpp,Effects,callbacks_events,\bEVT_,265,"BindTo(*mDialog, EVT_SIZEWINDOW, &VSTEditor::OnSizeWindow);"
+effects/VST/VSTEditor.cpp,Effects,state_transitions,\bStart\b,134,mTimer->Start(100);
+effects/VST/VSTEditor.cpp,Effects,state_transitions,\bStart\b,145,mTimer->Start(100);
+effects/VST/VSTEditor.cpp,Effects,state_transitions,\bFlush\b,105,void VSTEditor::Flush()
+effects/VST/VSTEditor.cpp,Effects,state_transitions,\bFlush\b,107,mAccess.Flush();
+effects/VST/VSTEditor.cpp,Effects,state_transitions,\bFlush\b,179,mAccess.Flush();
+effects/VST/VSTEditor.cpp,Effects,state_transitions,\bFlush\b,597,mAccess.Flush();
+effects/VST/VSTEditor.h,Effects,state_transitions,\bFlush\b,64,void Flush() override;
+effects/VST/VSTEffect.cpp,Effects,callbacks_events,\bEVT_,55,"wxDEFINE_EVENT(EVT_SIZEWINDOW, wxCommandEvent);"
+effects/VST/VSTEffect.cpp,Effects,callbacks_events,\bEVT_,56,DEFINE_LOCAL_EVENT_TYPE(EVT_UPDATEDISPLAY);
+effects/VST/VSTEffect.cpp,Effects,callbacks_events,\bcallback\b,122,// to it calls coming from the vst callback
+effects/VST/VSTEffectOptionsDialog.cpp,Effects,callbacks_events,\bEVT_,22,"EVT_BUTTON(wxID_OK, VSTEffectOptionsDialog::OnOk)"
+effects/VST3/VST3Editor.cpp,Effects,callbacks_events,\bBind\(,66,"Bind(wxEVT_IDLE, &VST3Editor::OnIdle, this);"
+effects/VST3/VST3Editor.cpp,Effects,state_transitions,\bFlush\b,172,//Flush changes if there is no processing performed at the moment
+effects/VST3/VST3Editor.cpp,Effects,state_transitions,\bFlush\b,178,mAccess.Flush();
+effects/VST3/VST3Editor.cpp,Effects,state_transitions,\bFlush\b,197,mAccess.Flush();
+effects/VST3/VST3OptionsDialog.cpp,Effects,callbacks_events,\bEVT_,17,"EVT_BUTTON(wxID_OK, VST3OptionsDialog::OnOk)"
+effects/VST3/VST3ParametersWindow.cpp,Effects,callbacks_events,\bBind\(,313,"toggle->Bind(wxEVT_CHECKBOX, &VST3ParametersWindow::OnParameterValueChanged, this);"
+effects/VST3/VST3ParametersWindow.cpp,Effects,callbacks_events,\bBind\(,332,"list->Bind(wxEVT_CHOICE, &VST3ParametersWindow::OnParameterValueChanged, this);"
+effects/VST3/VST3ParametersWindow.cpp,Effects,callbacks_events,\bBind\(,343,"slider->Bind(wxEVT_SLIDER, &VST3ParametersWindow::OnParameterValueChanged, this);"
+effects/VST3/VST3ParametersWindow.cpp,Effects,callbacks_events,\bBind\(,353,"slider->Bind(wxEVT_SLIDER, &VST3ParametersWindow::OnParameterValueChanged, this);"
+tracks/ui/BrushHandle.cpp,GUI/UI,state_transitions,\bCommit\b,389,mpStateSaver->Commit();
+tracks/ui/BrushHandle.h,GUI/UI,state_transitions,\bCommit\b,36,// Call Init() on click; Commit() on release; destroy on cancel
+tracks/ui/BrushHandle.h,GUI/UI,state_transitions,\bCommit\b,43,void Commit()
+tracks/ui/CommonTrackControls.cpp,GUI/UI,blocking_or_waiting,\bJoin\(,138,"XXO(""Move Track &Up"").Join("
+tracks/ui/CommonTrackControls.cpp,GUI/UI,blocking_or_waiting,\bJoin\(,148,"XXO(""Move Track &Down"").Join("
+tracks/ui/CommonTrackControls.cpp,GUI/UI,blocking_or_waiting,\bJoin\(,158,"XXO(""Move Track to &Top"").Join("
+tracks/ui/CommonTrackControls.cpp,GUI/UI,blocking_or_waiting,\bJoin\(,168,"XXO(""Move Track to &Bottom"").Join("
+tracks/ui/CommonTrackPanelCell.cpp,GUI/UI,callbacks_events,\bBind\(,94,"menu.Bind(wxEVT_COMMAND_MENU_SELECTED, dispatcher);"
+tracks/ui/PlayIndicatorOverlay.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,16,"#include ""AudioIO.h"""
+tracks/ui/PlayIndicatorOverlay.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,83,auto gAudioIO = AudioIO::Get();
+tracks/ui/PlayIndicatorOverlay.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,102,auto gAudioIO = AudioIO::Get();
+tracks/ui/PlayIndicatorOverlay.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,195,auto gAudioIO = AudioIO::Get();
+tracks/ui/Scrubbing.cpp,GUI/UI,threading,\bstd::thread\b,734,mThread = std::thread{
+tracks/ui/Scrubbing.cpp,GUI/UI,blocking_or_waiting,\bsleep_for\b,145,std::this_thread::sleep_for(ScrubPollInterval);
+tracks/ui/Scrubbing.cpp,GUI/UI,callbacks_events,\bEVT_,991,"EVT_MENU(CMD_ID,     THUNK(OnScrub))"
+tracks/ui/Scrubbing.cpp,GUI/UI,callbacks_events,\bEVT_,992,"EVT_MENU(CMD_ID + 1, THUNK(OnSeek))"
+tracks/ui/Scrubbing.cpp,GUI/UI,callbacks_events,\bEVT_,993,"EVT_MENU(CMD_ID + 2, THUNK(OnToggleScrubRuler))"
+tracks/ui/Scrubbing.cpp,GUI/UI,callbacks_events,\bcallback\b,592,"// timer callback, to a left click event detected elsewhere.)"
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,15,"#include ""AudioIO.h"""
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,372,auto gAudioIO = AudioIO::Get();
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,503,if (HasMark() || AudioIO::Get()->IsBusy()) {
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,534,// delay and minStutterTime are used in AudioIO::AllocateBuffers() for setting the
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,595,auto gAudioIO = AudioIO::Get();
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,755,auto gAudioIO = AudioIO::Get();
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,1054,auto gAudioIO = AudioIO::Get();
+tracks/ui/Scrubbing.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,1069,auto gAudioIO = AudioIO::Get();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStart\b,738,mPoller->Start(0.9
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,322,// Stop any play in progress
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,325,projectAudioManager.Stop();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,396,projectAudioManager.Stop();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,687,// Stop and set cursor
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,691,projectAudioManager.Stop();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,750,mPoller->Stop();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,761,// Stop and set cursor
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,887,// Stop keyboard scrubbing if losing focus
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,890,ProjectAudioManager::Get(*mProject).Stop();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,928,projectAudioManager.Stop();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bStop\b,1085,ProjectAudioManager::Get(project).Stop();
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,866,void Scrubber::Pause(bool paused)
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,879,"// Pause if Pause down, or not scrubbing."
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,879,"// Pause if Pause down, or not scrubbing."
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,881,Pause(true);
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,883,Pause(true);
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,885,Pause(true);
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,894,Pause(false);
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,898,Pause(true);
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bPause\b,900,Pause(false);
+tracks/ui/Scrubbing.cpp,GUI/UI,state_transitions,\bFlush\b,980,gPrefs->Flush();
+tracks/ui/Scrubbing.h,GUI/UI,threading,\bstd::thread\b,183,std::thread mThread;
+tracks/ui/Scrubbing.h,GUI/UI,synchronization,\bstd::atomic\b,184,std::atomic<bool> mFinishThread{ false };
+tracks/ui/Scrubbing.h,GUI/UI,state_transitions,\bPause\b,137,void Pause(bool paused);
+tracks/ui/ScrubUI.cpp,GUI/UI,callbacks_events,\bEVT_,290,EVT_MOUSE_EVENTS(ScrubForwarder::OnMouse)
+tracks/ui/SelectHandle.cpp,GUI/UI,blocking_or_waiting,\bJoin\(,1018,tip.Join(
+tracks/ui/SelectHandle.cpp,GUI/UI,state_transitions,\bStart\b,1369,// Start center snapping
+tracks/ui/SelectHandle.cpp,GUI/UI,state_transitions,\bCommit\b,1035,mSelectionStateChanger->Commit();
+tracks/ui/SliderHandle.cpp,GUI/UI,state_transitions,\bCommit\b,108,// Commit changes to the project data:
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,165,return !(interval.End() < myInterval.Start()
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,166,|| myInterval.End() < interval.Start());
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,370,"interval->Start(), interval->End() });"
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,456,"candidates.emplace_back(interval->Start(), &track);"
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,457,if (interval->Start() != interval->End()) {
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,531,< fabs(clickTime - pInterval->Start()));
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,551,clipLeft = pInterval->Start() + desiredSlideAmount;
+tracks/ui/TimeShiftHandle.cpp,GUI/UI,state_transitions,\bStart\b,881,// Start by undoing the current slide amount; everything
+tracks/ui/TimeShiftHandle.h,GUI/UI,state_transitions,\bStart\b,85,@invariant `Start() <= End()`
+tracks/ui/TimeShiftHandle.h,GUI/UI,state_transitions,\bStart\b,92,double Start() const { return mStart; }
+tracks/ui/TrackButtonHandles.cpp,GUI/UI,callbacks_events,\bCallAfter\b,177,trackPanel.CallAfter(
+tracks/ui/TrackSelectHandle.cpp,GUI/UI,state_transitions,\bStop\b,184,"// , message // Stop showing the tooltip after the click"
+tracks/labeltrack/ui/LabelTrackControls.cpp,GUI/UI,state_transitions,\bFlush\b,163,gPrefs->Flush();
+tracks/labeltrack/ui/LabelTrackShifter.cpp,GUI/UI,callbacks_events,\bcallback\b,170,mpTrack->SortLabels(); // causes callback to OnLabelPermuted
+tracks/labeltrack/ui/LabelTrackShifter.cpp,GUI/UI,state_transitions,\bStart\b,112,double Start() const override { return start; }
+tracks/labeltrack/ui/LabelTrackShifter.cpp,GUI/UI,state_transitions,\bStart\b,123,"pInterval->Start(), pInterval->End(), *pTrack->GetLabel(index));"
+tracks/labeltrack/ui/LabelTrackView.cpp,GUI/UI,callbacks_events,\bBind\(,1915,"menu.Bind(wxEVT_MENU,"
+tracks/playabletrack/wavetrack/ui/ClipPitchAndSpeedButtonHandle.cpp,GUI/UI,callbacks_events,\bCallAfter\b,143,"BasicUI::CallAfter([project = pProject->weak_from_this(), track = mTrack,"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bCallAfter\b,311,"CallAfter([this, semiSpin] {"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bCallAfter\b,336,"CallAfter([this, centSpin] {"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bBind\(,178,"Bind(wxEVT_CLOSE_WINDOW, [this](const auto&) { Show(false); });"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bBind\(,180,"Bind(wxEVT_CHAR_HOOK, [this](wxKeyEvent& event) {"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bBind\(,308,"semiSpin->Bind(wxEVT_SPINCTRL, [this, semiSpin](const auto&) {"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bBind\(,335,"centSpin->Bind(wxEVT_SPINCTRL, [this, centSpin](const auto&) {"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bBind\(,362,txtCtrl->Bind(
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,callbacks_events,\bBind\(,385,"->Bind(wxEVT_CHECKBOX, [this](auto&) {"
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,12,"#include ""AudioIO.h"""
+tracks/playabletrack/wavetrack/ui/PitchAndSpeedDialog.cpp,GUI/UI,audio_stream_control,\bAudioIO\b,188,if (const auto audioIo = AudioIO::Get()) {
+tracks/playabletrack/wavetrack/ui/SpectrumView.cpp,GUI/UI,state_transitions,\bStop\b,813,"XO(""Stop the Audio First""),"
+tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp,GUI/UI,state_transitions,\bStart\b,84,interval.Start() + 1.0 / track.GetRate()
+tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp,GUI/UI,state_transitions,\bStart\b,113,return nextInterval ? nextInterval->Start()
+tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp,GUI/UI,state_transitions,\bStart\b,119,nextInterval->Start());
+tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp,GUI/UI,state_transitions,\bStart\b,180,"addSnapPoint(interval->Start(), track);"
+tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp,GUI/UI,state_transitions,\bStart\b,181,if (interval->Start() != interval->End()) {
+tracks/playabletrack/wavetrack/ui/WaveClipAdjustBorderHandle.cpp,GUI/UI,state_transitions,\bStart\b,201,", mInitialBorderPosition{adjustLeftBorder ? mInterval->Start()"
+tracks/playabletrack/wavetrack/ui/WaveformView.cpp,GUI/UI,synchronization,\bstd::atomic\b,329,std::atomic<bool> mChanged = false;
+tracks/playabletrack/wavetrack/ui/WaveTrackAffordanceControls.cpp,GUI/UI,state_transitions,\bStart\b,433,return interval->Start() == viewInfo.selectedRegion.t0()
+tracks/playabletrack/wavetrack/ui/WaveTrackAffordanceControls.cpp,GUI/UI,state_transitions,\bStart\b,436,return interval->Start() <= viewInfo.selectedRegion.t0()
+tracks/playabletrack/wavetrack/ui/WaveTrackControls.cpp,GUI/UI,callbacks_events,\bcallback\b,272,// the Sequence::ConvertToSampleFormat. This callback function is used
+tracks/playabletrack/wavetrack/ui/WaveTrackControls.cpp,GUI/UI,state_transitions,\bStart\b,770,//Start() and End() are always snapped to a sample grid
+tracks/playabletrack/wavetrack/ui/WaveTrackControls.cpp,GUI/UI,state_transitions,\bStart\b,771,return std::abs(a->Start() - b->Start()) < eps
+tracks/playabletrack/wavetrack/ui/WaveTrackControls.cpp,GUI/UI,state_transitions,\bStart\b,771,return std::abs(a->Start() - b->Start()) < eps
+tracks/playabletrack/wavetrack/ui/WaveTrackShifter.cpp,GUI/UI,state_transitions,\bStart\b,82,mpTrack->TimeToLongSamples(interval.Start()) < c1

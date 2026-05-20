@@ -142,3 +142,41 @@ Overall, the structural dependency analysis shows that the active Audacity `mast
 | `analysis/dependencies/mt2-structural/inter-library-deps.txt` | Inter-library dependency edges |
 | `analysis/dependencies/mt2-structural/inter-library-deps.dot` | Graphviz DOT graph |
 | `analysis/dependencies/mt2-structural/inter-library-graph.svg` | Rendered inter-library graph |
+
+
+
+## MT4 — Behavioral and Synchronization Dependencies
+
+Behavioral and synchronization dependencies were analyzed to identify execution-order assumptions, callback-based control flow, blocking operations, and synchronization relations in Audacity. This dimension complements the structural and data-level analyses: structural dependencies describe compile-time relations, data-level dependencies describe coupling through shared project state, while behavioral dependencies describe how components depend on each other during execution.
+
+The analysis was performed on the `au3/src` subtree of the Audacity source code. The first attempt on the full repository was interrupted because it included large external and generated subtrees. The final scan was restricted to the main Audacity source directory in order to focus on the application code relevant to the design analysis.
+
+A lightweight Python static analyzer was implemented to search for behavioral and synchronization indicators in C/C++ files. The analyzer grouped matches into six categories: callback/event dispatch, state transitions, audio stream control, blocking or waiting operations, synchronization primitives, and threading constructs.
+
+### MT4 results
+
+| Category | Matches |
+|---|---:|
+| callbacks_events | 1012 |
+| state_transitions | 410 |
+| audio_stream_control | 172 |
+| blocking_or_waiting | 35 |
+| synchronization | 12 |
+| threading | 5 |
+
+The results show that Audacity’s behavioral dependency structure is dominated by callback/event-based execution. This is consistent with the nature of the system: Audacity is an interactive desktop audio editor where user actions, GUI events, playback/recording requests, and background operations trigger execution indirectly through framework events and callbacks.
+
+The second largest category is state-transition dependency. This indicates that many Audacity operations depend on a correct ordering of lifecycle actions such as starting, stopping, pausing, committing, flushing, or closing resources. Such dependencies are architecturally relevant because an incorrect execution order may lead to inconsistent project state, invalid audio-stream state, or incorrect user-visible behavior.
+
+The `audio_stream_control` category is also significant. It captures behavioral coupling around the audio engine and stream lifecycle. In Audacity, playback, recording, and monitoring are not isolated operations. They require a sequence of interactions between the GUI command layer, project-level audio management, the AudioIO subsystem, and the underlying audio stream implementation.
+
+A simplified execution path is:
+
+```text
+User action
+   -> GUI command / toolbar handler
+   -> project-level command or audio manager
+   -> AudioIO
+   -> stream setup
+   -> stream start / stop
+   -> audio callback execution
