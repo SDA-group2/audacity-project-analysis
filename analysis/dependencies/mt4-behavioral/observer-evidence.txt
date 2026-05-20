@@ -1,0 +1,419 @@
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceChange.cpp:111:                This->mHandler->Publish(DeviceChangeMessage::Change);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceChange.cpp:234:                            This->mHandler->Publish(DeviceChangeMessage::Change);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceChange.cpp:325:                    This->mHandler->Publish(DeviceChangeMessage::Change);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceChange.cpp:352:    // Subscribe to self!
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceChange.cpp:353:    mSubscription = this->Subscribe(*this, &DeviceChangeHandler::OnChange);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceChange.h:19:using DeviceChangeMessagePublisher = Observer::Publisher<DeviceChangeMessage>;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceManager.cpp:374:        Publish(DeviceChangeMessage::Rescan);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:883:    Publish({ pOwningProject.get(), AudioIOEvent::MONITOR, true });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1215:        Publish({ pOwningProject.get(), AudioIOEvent::PLAYBACK, true });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1218:        Publish({ pOwningProject.get(), AudioIOEvent::CAPTURE, true });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1767:            Publish({ pOwningProject.get(), AudioIOEvent::PLAYBACK, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1770:            Publish({ pOwningProject.get(),
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1817:        Publish({ mOwningProject.lock().get(), AudioIOEvent::PAUSE, state });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:416:class AUDIO_IO_API AudioIO final : public AudioIoCallback, public Observer::Publisher<AudioIOEvent>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.cpp:119:        Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.h:30:class AUDIO_IO_API ProjectAudioIO final : public ClientData::Base, public Observer::Publisher<SpeedChangeMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:130:    InitializeProcessingSettingsPublisher::Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:142:    RealtimeResumePublisher::Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:159:    InitializeProcessingSettingsPublisher::Publish(std::nullopt);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.h:23:    =Observer::Publisher<std::optional<InitializeProcessingSettings> >;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.h:24:using RealtimeResumePublisher = Observer::Publisher<Unbypassed>;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:218:    Publish({ {}, {}, trace, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:449:            SafePublish({ {}, body, trace, false, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:501:            SafePublish({ {}, body, trace, false, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:540:                SafePublish({ {}, body, trace, false, silent });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:563:        SafePublish({ {}, body, trace, false, silent });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:595:    SafePublish({ mAccessToken, {}, trace, true, silent });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:598:void OAuthService::SafePublish(const AuthStateChangedMessage& message)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:600:    BasicUI::CallAfter([this, message]() { Publish(message); });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.h:40:class CLOUD_AUDIOCOM_API OAuthService final : public Observer::Publisher<AuthStateChangedMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.h:127:    void SafePublish(const AuthStateChangedMessage& message);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:63:struct ProjectCloudExtension::CloudStatusChangedNotifier final : private Observer::Publisher<CloudStatusChangedMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:89:            Publish(message);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:94:    SubscribeSafe(std::function<void(const CloudStatusChangedMessage&)> callback)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:97:        return Subscribe(std::move(callback));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:109:    , mProjectPathChangedSubscription{ProjectFileIO::Get(project).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:346:    Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:355:        Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:449:        Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:479:Observer::Subscription ProjectCloudExtension::SubscribeStatusChanged(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:483:    return onUIThread ? mUIStateNotifier->SubscribeSafe(std::move(callback))
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:484:           : mAsyncStateNotifier->SubscribeSafe(std::move(callback));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:506:    Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:535:    Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:542:void ProjectCloudExtension::Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:633:        Publish({ AudiocomTrace::ignore, ProjectSyncStatus::Local }, false);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.h:107:    Observer::Subscription SubscribeStatusChanged(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.h:126:    void Publish(CloudStatusChangedMessage cloudStatus, bool canMerge);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:265:        Publish(AppTaskReceivedMessage { task });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.h:29:class CLOUD_AUDIOCOM_API TaskExecutionService final : public Observer::Publisher<AppTaskReceivedMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:624:const auto tempChangedSubscription = TempDirectory::GetTempPathObserver().Subscribe([](const auto&) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UserService.cpp:47:    =GetOAuthService().Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UserService.cpp:121:            Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UserService.cpp:131:        // No valid data was present, do not spam Publish()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UserService.cpp:143:        Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UserService.cpp:233:            Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UserService.h:25:class CLOUD_AUDIOCOM_API UserService final : public Observer::Publisher <UserDataChanged>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-files\TempDirectory.cpp:17:struct TempDirChangedPublisher final : Observer::Publisher<FilePath>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-files\TempDirectory.cpp:22:            Publish(path);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-files\TempDirectory.cpp:154:Observer::Publisher<FilePath>& TempDirectory::GetTempPathObserver()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-files\TempDirectory.h:35:FILES_API Observer::Publisher<FilePath>& GetTempPathObserver();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-graphics\FrameStatistics.cpp:116:FrameStatistics::Subscribe(UpdatePublisher::Callback callback)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-graphics\FrameStatistics.cpp:118:    return GetInstance().mUpdatePublisher.Subscribe(std::move(callback));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-graphics\FrameStatistics.cpp:131:    Publish(id);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-graphics\FrameStatistics.h:50:    struct GRAPHICS_API UpdatePublisher : Observer::Publisher<SectionID>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-graphics\FrameStatistics.h:107:    //! Subscribe to sections update
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-graphics\FrameStatistics.h:108:    static Observer::Subscription Subscribe(UpdatePublisher::Callback callback);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-label-track\LabelTrack.cpp:412:        Publish({ LabelTrackEvent::Selection,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-label-track\LabelTrack.cpp:1141:    Publish({ LabelTrackEvent::Addition,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-label-track\LabelTrack.cpp:1154:    Publish({ LabelTrackEvent::Deletion,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-label-track\LabelTrack.cpp:1165:            Publish({ LabelTrackEvent::Deletion,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-label-track\LabelTrack.cpp:1207:        Publish({ LabelTrackEvent::Permutation,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-label-track\LabelTrack.h:108:class LABEL_TRACK_API LabelTrack final : public UniqueChannelTrack<>, public Observer::Publisher<struct LabelTrackEvent>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-menus\CommandManager.cpp:126:      .Subscribe(*this, &CommandManager::OnUndoRedo) }
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-menus\CommandManager.cpp:1518:   Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-menus\CommandManager.h:50:    public Observer::Publisher<MenuUpdateMessage>, private PrefsListener
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginManager.cpp:496:    Publisher<PluginsChangedMessage>::Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginManager.h:46:class MODULE_MANAGER_API PluginManager final : public PluginManagerInterface, public Observer::Publisher<PluginsChangedMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\formatters\BeatsNumericConverterFormatter.cpp:67:              .Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\formatters\BeatsNumericConverterFormatter.cpp:73:            Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\formatters\BeatsNumericConverterFormatter.cpp:214:        Publish({ value, oldDigits > mFields[0].digits });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\formatters\ParsedNumericConverterFormatter.cpp:174:                // We need a non const object to subscribe...
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\formatters\ParsedNumericConverterFormatter.cpp:177:                      .Subscribe([this](const auto&) { UpdateFormat(); });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\formatters\ParsedNumericConverterFormatter.cpp:352:        Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\NumericConverter.cpp:254:            =mFormatter->Subscribe([this](const auto& msg) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\NumericConverter.cpp:256:            Publish({ msg.value });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\NumericConverter.h:33:class NUMERIC_FORMATS_API NumericConverter /* not final */ : public Observer::Publisher<FormatChangedToFitValueMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\NumericConverterFormatter.h:60:struct NUMERIC_FORMATS_API NumericConverterFormatter /* not final */ : public Observer::Publisher<NumericConverterFormatChangedMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\ProjectNumericFormats.cpp:72:        Publish(e);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\ProjectNumericFormats.cpp:98:        Publish(e);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\ProjectNumericFormats.cpp:110:        Publish(e);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\ProjectNumericFormats.cpp:127:        Publish(e);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\ProjectNumericFormats.h:31:class NUMERIC_FORMATS_API ProjectNumericFormats final : public ClientData::Base, public Observer::Publisher<ProjectNumericFormatsEvent>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\ProjectTimeSignature.cpp:111:    Publish(TimeSignatureChangedMessage { mTempo, mUpperTimeSignature,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-numeric-formats\ProjectTimeSignature.h:25:class NUMERIC_FORMATS_API ProjectTimeSignature final : public ClientData::Base, public Observer::Publisher<TimeSignatureChangedMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-preferences\Prefs.cpp:118:struct Hub : Observer::Publisher<int>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-preferences\Prefs.cpp:133:        hub().Publish(id);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-preferences\Prefs.cpp:140:    mSubscription = hub().Subscribe(*this, &Impl::OnEvent);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:40:    , mFieldChangedSubscription{ProjectStatusFieldsRegistry::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:44:            Publish(field);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:89:    { Publish(item.name); });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:116:struct Dispatcher final : Observer::Publisher<Message>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:121:        Publish(Message { project, identifier });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:125:    Subscribe(std::function<void(const AudacityProject&, const StatusBarField&)>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:128:        return Observer::Publisher<Message>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:273:Observer::Subscription ProjectStatusFieldsRegistry::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.cpp:276:    return Dispatcher::Get().Subscribe(std::move(handler));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.h:97:    Subscribe(std::function<void(const AudacityProject&, const StatusBarField&)>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\ProjectStatus.h:104:class PROJECT_API ProjectStatus final : public ClientData::Base, public PrefsListener, public Observer::Publisher<StatusBarField>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:1596:                pThis->Publish(ProjectFileIOMessage::ProjectTitleChange);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:1616:                pThis->Publish(ProjectFileIOMessage::ProjectFilePathChange);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:1720:    Publish(ProjectFileIOMessage::CheckpointFailure);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:2172:                    Publish(ProjectFileIOMessage::ReconnectionFailure);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.h:53://! Subscribe to ProjectFileIO to receive messages; always in idle time
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.h:65:    public std::enable_shared_from_this<ProjectFileIO>, public Observer::Publisher<ProjectFileIOMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\SqliteSampleBlock.cpp:186:                        .Subscribe([this](UndoRedoMessage message){
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-history\UndoManager.cpp:119:            pThis->Publish(message);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-history\UndoManager.cpp:126:    Publish({ UndoRedoMessage::BeginPurge, begin, end });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-history\UndoManager.cpp:128:        =finally([&]{ Publish({ UndoRedoMessage::EndPurge }); });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-history\UndoManager.h:166:class PROJECT_HISTORY_API UndoManager final : public ClientData::Base, public Observer::Publisher<UndoRedoMessage>,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-rate\ProjectRate.cpp:62:        Publish(rate);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-rate\ProjectRate.h:21:class PROJECT_RATE_API ProjectRate final : public ClientData::Base, public Observer::Publisher<double>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.cpp:100:        Publisher<RealtimeEffectListMessage>::Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.cpp:125:        Publisher<RealtimeEffectListMessage>::Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.cpp:136:        Publisher<RealtimeEffectListMessage>::Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.cpp:163:        Publisher<RealtimeEffectListMessage>::Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.cpp:181:        Publisher<RealtimeEffectListMessage>::Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.cpp:240:    Publisher<RealtimeEffectListMessage>::Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.h:46:    public XMLTagHandler, public Observer::Publisher<RealtimeEffectListMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:255:    Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:283:    Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:301:    Publish({
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:48:class REALTIME_EFFECTS_API RealtimeEffectManager final : public ClientData::Base, public Observer::Publisher<RealtimeEffectManagerMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:755:    Publish(active
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.h:36:    public Observer::Publisher<RealtimeEffectStateChange>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-snapping\ProjectSnap.cpp:49:        Publish(SnapChangedMessage { mode, mSnapTo });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-snapping\ProjectSnap.cpp:66:        Publish(SnapChangedMessage { mSnapMode, snap });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-snapping\ProjectSnap.h:26:class SNAPPING_API ProjectSnap final : public ClientData::Base, public Observer::Publisher<SnapChangedMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\ClipInterface.h:57:    SubscribeToCentShiftChange(std::function<void(int)> cb) const = 0;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\ClipInterface.h:62:    SubscribeToPitchAndSpeedPresetChange(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\ClipSegment.cpp:48:    , mOnSemitoneShiftChangeSubscription{clip.SubscribeToCentShiftChange(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\ClipSegment.cpp:54:    clip.SubscribeToPitchAndSpeedPresetChange(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\ClipSegment.h:23:using PitchRatioChangeCbSubscriber
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\tests\FloatVectorClip.h:57:    SubscribeToCentShiftChange(std::function<void(int)> cb) const override
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\tests\FloatVectorClip.h:67:    Observer::Subscription SubscribeToPitchAndSpeedPresetChange(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ProjectSelectionManager.cpp:43:    , mSnappingChangedSubscription{ProjectSnap::Get(project).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ProjectSelectionManager.cpp:49:    ProjectTimeSignature::Get(project).Subscribe([this](auto&)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ProjectSelectionManager.cpp:51:mProjectRateChangedSubscription { ProjectRate::Get(project).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ProjectSelectionManager.cpp:64:                           .Subscribe(*this, &ProjectSelectionManager::OnFormatsChanged);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ViewInfo.cpp:138:                This->Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ViewInfo.cpp:142:        Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ViewInfo.cpp:228:    Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ViewInfo.h:29:class TIME_FREQUENCY_SELECTION_API NotifyingSelectedRegion : public Observer::Publisher<NotifyingSelectedRegionMessage>, public wxTrackable
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-time-frequency-selection\ViewInfo.h:107:class TIME_FREQUENCY_SELECTION_API PlayRegion : public Observer::Publisher<PlayRegionMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\PendingTracks.cpp:33:    , mTrackListSubscription{mTracks.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\PendingTracks.cpp:46:        Publish(event);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\PendingTracks.h:23:class TRACK_API PendingTracks final : public ClientData::Base, public Observer::Publisher<TrackListEvent>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.cpp:310:// should use TrackList::Subscribe().
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.cpp:437:    // has many subscribers on the main thread.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.cpp:443:    Publish(event);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.cpp:446:    //         pThis->Publish(event);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.cpp:488:        Publish({ TrackListEvent::ADDITION, *node });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.cpp:667:        Publish({ TrackListEvent::UNDO_REDO_BEGIN });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.cpp:676:        Publish({ TrackListEvent::UNDO_REDO_END });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.h:420:    // Send a notification to subscribers when state of the track changes
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track\Track.h:871:class TRACK_API TrackList final : public Observer::Publisher<TrackListEvent>, private ListOfTracks,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track-selection\TrackFocus.cpp:88:                pFocus->Publish({ focusPanel });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-track-selection\TrackFocus.h:38:class TRACK_SELECTION_API TrackFocus final : public ClientData::Base, public Observer::Publisher<TrackFocusChangeMessage>,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-url-schemes\URLSchemesRegistry.cpp:54:    Publish({ url });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-url-schemes\URLSchemesRegistry.h:27:class URL_SCHEMES_API URLSchemesRegistry final : public Observer::Publisher<URLschemeHandlerMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-url-schemes\URLSchemesRegistry.h:56:    //! subscribers.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\AppEvents.cpp:18:struct EventHandlers final : public Observer::Publisher<IdleEvent>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\AppEvents.cpp:26:    using Observer::Publisher<IdleEvent>::Subscribe;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\AppEvents.cpp:27:    using Observer::Publisher<IdleEvent>::Publish;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\AppEvents.cpp:73:    return GetEventHandlers().Subscribe([callback = std::move(callback)](auto&)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\AppEvents.cpp:93:    GetEventHandlers().Publish(IdleEvent {});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.cpp:6:  @brief Publisher-subscriber pattern, also known as Observer
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.cpp:41:Subscription RecordList::Subscribe(std::shared_ptr<RecordBase> pRecord)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.cpp:57:        m_pPolicy->OnBeginPublish();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.cpp:79:        m_pPolicy->OnEndPublish();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:6:  @brief Publisher-subscriber pattern, also known as Observer
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:31:    virtual void OnBeginPublish() = 0;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:36:    virtual void OnEndPublish() noexcept(false) = 0;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:59:    Subscription Subscribe(std::shared_ptr<RecordBase> pRecord);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:99://! An object that sends messages to an open-ended list of subscribed callbacks
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:106:   returning true causes earlier subscribed callbacks to be skipped
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:136:     During Publish(), the callback may have the side-effect of adding or
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:142:    [[nodiscard]] Subscription Subscribe(Callback callback);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:144:    //! Overload of Subscribe takes an object and pointer-to-member-function
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:146:    Subscription Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:149:        return Subscribe([&obj, callback](const Message& message){
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:169:    CallbackReturn Publish(const Message& message);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:179:Publisher<Message, NotifyAll>::Publisher(ExceptionPolicy* pPolicy, Alloc a)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:204:auto Publisher<Message, NotifyAll>::Subscribe(Callback callback)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:208:    return m_list->Subscribe(m_factory(std::move(callback)));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\Observer.h:212:auto Publisher<Message, NotifyAll>::Publish(const Message& message)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:46:                                   ProjectSnap::Get(project).Subscribe([this](auto&){ Redraw(); })},
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:48:    UndoManager::Get(project).Subscribe([this](UndoRedoMessage message){
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:93:        Publish({ true, false, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:396:    Publish({ (refresh || rescroll),
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:405:            This->Publish({ false, false, true });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:447:        Publish({ true, false, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:502:    Publish({ true, false, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:592:    Publish({ true, false, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.cpp:782:            This->Publish({ true, false, false });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-viewport\Viewport.h:60:class VIEWPORT_API Viewport final : public Observer::Publisher<ViewportMessage>, public ClientData::Base,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\SampleBlock.cpp:32:    Publisher<SampleBlockCreateMessage>::Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\SampleBlock.cpp:44:    Publisher<SampleBlockCreateMessage>::Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\SampleBlock.cpp:56:    Publisher<SampleBlockCreateMessage>::Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\SampleBlock.cpp:67:    Publisher<SampleBlockCreateMessage>::Publish({});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\SampleBlock.h:107:class WAVE_TRACK_API SampleBlockFactory : public Observer::Publisher<SampleBlockCreateMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:371:    Observer::Publisher<WaveClipDtorCalled>::Publish(WaveClipDtorCalled {});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:691:    Observer::Publisher<StretchRatioChange>::Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:711:    Observer::Publisher<StretchRatioChange>::Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:737:    Observer::Publisher<StretchRatioChange>::Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:767:WaveClip::SubscribeToCentShiftChange(std::function<void(int)> cb) const
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:772:           Observer::Publisher<CentShiftChange>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:776:Observer::Subscription WaveClip::SubscribeToPitchAndSpeedPresetChange(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:782:           Observer::Publisher<PitchAndSpeedPresetChange>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:1792:    Observer::Publisher<CentShiftChange>::Publish(CentShiftChange { cents });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.cpp:1799:    Observer::Publisher<PitchAndSpeedPresetChange>::Publish(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.h:225:        WaveClip, WaveClipListener, ClientData::DeepCopying>, public Observer::Publisher<CentShiftChange>,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.h:226:    public Observer::Publisher<PitchAndSpeedPresetChange>, public Observer::Publisher<StretchRatioChange>,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.h:227:    public Observer::Publisher<WaveClipDtorCalled>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.h:435:    SubscribeToCentShiftChange(std::function<void(int)> cb) const override;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveClip.h:439:    SubscribeToPitchAndSpeedPresetChange(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveTrack.cpp:2008:    Publish({ clips.back(),
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveTrack.cpp:2728:        Publish({ clips.back(), WaveTrackMessage::Deserialized });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveTrack.h:196:class WAVE_TRACK_API WaveTrack final : public WritableSampleTrack, public Observer::Publisher<WaveTrackMessage>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\waveform\WaveBitmapCache.cpp:294:                                  .Observer::Publisher<StretchRatioChange>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\waveform\WaveDataCache.cpp:278:    .Observer::Publisher<StretchRatioChange>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:120:    auto authSubscription = oauthService.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:142:    : mAuthStateChangedSubscription(GetOAuthService().Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\CloudProjectMixdownUtils.cpp:111:            auto subscription = projectCloudExtension.SubscribeStatusChanged(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\LinkUrlHandler.cpp:20:auto subscription = URLSchemesRegistry::Get().Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\CloudSyncStatusField.cpp:343:    , mCloudStatusChangedSubscription{mCloudExtension.SubscribeStatusChanged(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\LoginDialog.cpp:99:        =audacity::cloud::audiocom::GetOAuthService().Subscribe(*this, &LoginDialog::OnOAuthStateChanged);
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\ShareAudioDialog.cpp:596:        mUserDataChangedSubscription = userPanel->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\ProjectCloudUIExtension.cpp:51:                                      ProjectCloudExtension::Get(project).SubscribeStatusChanged(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\UserPanel.cpp:57:    , mUserDataChangedSubscription{userService.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\UserPanel.cpp:102:    Publish(UserPanelStateChangedMessage { isAuthorized });
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\UserPanel.h:32:class UserPanel final : public wxPanelWrapper, public Observer::Publisher<UserPanelStateChangedMessage>
+E:\SDA\Audacity-Source\audacity\au3\src\AdornedRulerPanel.cpp:1353:                           ->Subscribe(*this, &AdornedRulerPanel::OnAudioStartStop);
+E:\SDA\Audacity-Source\audacity\au3\src\AdornedRulerPanel.cpp:1359:        =theTheme.Subscribe(*this, &AdornedRulerPanel::OnThemeChange);
+E:\SDA\Audacity-Source\audacity\au3\src\AdornedRulerPanel.cpp:1362:    mPlayRegionSubscription = mViewInfo->selectedRegion.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\AdornedRulerPanel.cpp:1366:        =mRuler.Subscribe([this](auto) { Refresh(); });
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:1458:    mThemeChangeSubscription = theTheme.Subscribe(OnThemeChange);
+E:\SDA\Audacity-Source\audacity\au3\src\Clipboard.cpp:50:        BasicUI::CallAfter([this]{ Publish({}); });
+E:\SDA\Audacity-Source\audacity\au3\src\Clipboard.cpp:68:        BasicUI::CallAfter([this]{ Publish({}); });
+E:\SDA\Audacity-Source\audacity\au3\src\Clipboard.h:24:class AUDACITY_DLL_API Clipboard final : public Observer::Publisher<ClipboardChangeMessage>
+E:\SDA\Audacity-Source\audacity\au3\src\DropoutDetector.cpp:27:        mSubscription = ProjectAudioManager::Get(project).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\audiounits\AudioUnitEditor.cpp:235:            Publish({ inEvent->mArgument.mParameter.mParameterID, inParameterValue });
+E:\SDA\Audacity-Source\audacity\au3\src\effects\BassTreble.cpp:223:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\BassTreble.cpp:243:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\BassTreble.cpp:257:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\BassTreble.cpp:275:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\BassTreble.cpp:293:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\BassTreble.cpp:306:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\BassTreble.cpp:316:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\ClipIndicatorPanel.cpp:22:    , mPlaybackStartStopSubscription{AudioIO::Get()->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\CompressionMeterPanel.cpp:45:                                     .Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\CompressionMeterPanel.cpp:54:    mPlaybackPausedSubscription { AudioIO::Get()->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:375:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:387:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:399:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:414:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:425:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:436:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:447:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:458:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:469:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:480:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:491:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Distortion.cpp:502:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\DynamicRangeProcessorEditor.cpp:427:        Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\DynamicRangeProcessorEditor.cpp:444:        Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\DynamicRangeProcessorEditor.cpp:516:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\DynamicRangeProcessorHistoryPanel.cpp:64:                                                .Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\DynamicRangeProcessorHistoryPanel.cpp:83:                                  .Subscribe([this](auto) {
+E:\SDA\Audacity-Source\audacity\au3\src\effects\DynamicRangeProcessorHistoryPanel.cpp:88:mPlaybackEventSubscription { AudioIO::Get()->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\EffectEditor.h:31:class AUDACITY_DLL_API EffectEditor /* not final */ : public Observer::Publisher<EffectSettingChanged>
+E:\SDA\Audacity-Source\audacity\au3\src\effects\EffectUI.cpp:1049:            mEffectStateSubscription = mpState->Subscribe([this](RealtimeEffectStateChange state) {
+E:\SDA\Audacity-Source\audacity\au3\src\effects\EffectUI.cpp:1056:            mAudioIOSubscription = AudioIO::Get()->Subscribe([this](AudioIOEvent event){
+E:\SDA\Audacity-Source\audacity\au3\src\effects\ladspa\LadspaEditor.cpp:611:    Publish({ size_t(index), value });
+E:\SDA\Audacity-Source\audacity\au3\src\effects\lv2\LV2Editor.cpp:758:    Publish({ mPorts.mControlPorts[controlPortIndex]->mIndex, value });
+E:\SDA\Audacity-Source\audacity\au3\src\effects\lv2\LV2Editor.cpp:1012:            Publish({ size_t(port_index), value });
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:268:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:280:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:295:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:310:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:322:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:338:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:350:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:364:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:378:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:392:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:406:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:420:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:434:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Phaser.cpp:448:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\RealtimeEffectStateUI.cpp:108:    mProjectWindowDestroyedSubscription = projectWindow.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\RealtimeEffectStateUI.cpp:115:    mParameterChangedSubscription = mEffectUIHost->GetEditor()->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Reverb.cpp:210:        Publish(EffectSettingChanged {}); \
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Reverb.cpp:219:        Publish(EffectSettingChanged {}); \
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Reverb.cpp:235:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\VST\VSTEditor.cpp:167:            Publish(EffectSettingChanged { size_t(index), value });
+E:\SDA\Audacity-Source\audacity\au3\src\effects\VST3\VST3Editor.cpp:61:        Publish({ static_cast<size_t>(id), static_cast<float>(value) });
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:243:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:258:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:270:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:282:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:294:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:306:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:319:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:332:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:345:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:358:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:371:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\effects\Wahwah.cpp:384:    Publish(EffectSettingChanged {});
+E:\SDA\Audacity-Source\audacity\au3\src\export\ExportFilePanel.cpp:508:        mOptionsChangeSubscription = mOptionsHandler->Subscribe(*this, &ExportFilePanel::OnOptionsHandlerEvent);
+E:\SDA\Audacity-Source\audacity\au3\src\export\ExportOptionsHandler.cpp:240:    Publish({ ExportOptionsHandlerEvent::FormatInfoChange });
+E:\SDA\Audacity-Source\audacity\au3\src\export\ExportOptionsHandler.cpp:245:    Publish({ ExportOptionsHandlerEvent::SampleRateListChange });
+E:\SDA\Audacity-Source\audacity\au3\src\export\ExportOptionsHandler.h:38:class ExportOptionsHandler final : public ExportOptionsEditor::Listener, public Observer::Publisher<ExportOptionsHandlerEvent>
+E:\SDA\Audacity-Source\audacity\au3\src\FrameStatisticsDialog.cpp:55:        mStatisticsUpdated = FrameStatistics::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\HistoryWindow.cpp:153:    mAudioIOSubscription = AudioIO::Get()->Subscribe(*this, &HistoryDialog::OnAudioIO);
+E:\SDA\Audacity-Source\audacity\au3\src\HistoryWindow.cpp:156:                             .Subscribe(*this, &HistoryDialog::UpdateDisplayForClipboard);
+E:\SDA\Audacity-Source\audacity\au3\src\HistoryWindow.cpp:160:                            .Subscribe(*this, &HistoryDialog::UpdateDisplay);
+E:\SDA\Audacity-Source\audacity\au3\src\menus\EditMenus.cpp:492:    return pSampleBlockFactory->Subscribe([
+E:\SDA\Audacity-Source\audacity\au3\src\MixerBoard.cpp:923:          .Subscribe(*this, &MixerBoard::OnTimer);
+E:\SDA\Audacity-Source\audacity\au3\src\MixerBoard.cpp:926:        =PendingTracks::Get(*mProject).Subscribe([this](const TrackListEvent& event){
+E:\SDA\Audacity-Source\audacity\au3\src\MixerBoard.cpp:943:        =AudioIO::Get()->Subscribe(*this, &MixerBoard::OnStartStop);
+E:\SDA\Audacity-Source\audacity\au3\src\MixerBoard.cpp:1413:                               .Subscribe([this](ProjectFileIOMessage message){
+E:\SDA\Audacity-Source\audacity\au3\src\prefs\TracksPrefs.cpp:434:                            .Subscribe([this](const UndoRedoMessage& message){
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:73:                                     .Subscribe(*this, &ProjectAudioManager::OnCheckpointFailure);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:1122:                Publish(RecordingDropoutEvent { intervals });
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.h:61:    public std::enable_shared_from_this< ProjectAudioManager >, public Observer::Publisher<RecordingDropoutEvent>
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectManager.cpp:97:                                 .Subscribe(*this, &ProjectManager::OnStatusChange);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectManager.cpp:99:                                 .Subscribe(*this, &ProjectManager::OnReconnectionFailure);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectManager.cpp:472:    window.Publish(ProjectWindowDestroyedMessage {});
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectSettings.cpp:78:        Publish({ ProjectSettingsEvent::ChangedTool, oldValue, tool });
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectSettings.h:52:class AUDACITY_DLL_API ProjectSettings final : public ClientData::Base, public Observer::Publisher<ProjectSettingsEvent>,
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectTempoListener.cpp:40:    , mTrackListSubstription{trackList.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectTempoListener.cpp:50:        =ProjectTimeSignature::Get(project).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectTimeRuler.cpp:44:                                      .Subscribe([this](const auto& msg) {
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectTimeRuler.cpp:52:        timeDisplayModeChanged { TimeDisplayModePreference.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.cpp:554:                            .Subscribe(*this, &ProjectWindow::OnViewportMessage)}
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.cpp:631:        =theTheme.Subscribe(*this, &ProjectWindow::OnThemeChange);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.cpp:633:    // Subscribe to title changes published by ProjectFileIO
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.cpp:635:                               .Subscribe(*this, &ProjectWindow::OnProjectTitleChange);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.cpp:1295:        this->Publish({});
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.h:34:    public Observer::Publisher<ProjectWindowDestroyedMessage>
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.h:37:    using Observer::Publisher<ProjectWindowDestroyedMessage>::Publish;
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectWindow.h:77:    class PlaybackScroller final : public Observer::Publisher<PlaybackScrollerMessage>
+E:\SDA\Audacity-Source\audacity\au3\src\RealtimeEffectPanel.cpp:168:        mPluginsChangedSubscription = PluginManager::Get().Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\RealtimeEffectPanel.cpp:558:        mSubscription = mEffectState->Subscribe([this](RealtimeEffectStateChange state) {
+E:\SDA\Audacity-Source\audacity\au3\src\RealtimeEffectPanel.cpp:1007:            mEffectListItemMovedSubscription = mDelegate->GetEffectList().Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\RealtimeEffectPanel.cpp:1191:        =PendingTracks::Get(mProject).Subscribe([this](const TrackListEvent& evt) {
+E:\SDA\Audacity-Source\audacity\au3\src\RealtimeEffectPanel.cpp:1222:    mUndoSubscription = UndoManager::Get(mProject).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\RealtimeEffectPanel.cpp:1300:                               .Subscribe([this](const TrackFocusChangeMessage& msg) {
+E:\SDA\Audacity-Source\audacity\au3\src\RealtimeEffectPanel.h:56:    // so we cannot subscribe to Prefs directly
+E:\SDA\Audacity-Source\audacity\au3\src\SpectralDataDialog.cpp:172:                           ->Subscribe(*this, &SpectralDataDialog::OnAudioIO);
+E:\SDA\Audacity-Source\audacity\au3\src\SpectralDataDialog.cpp:175:                             .Subscribe(*this, &::SpectralDataDialog::UpdateDisplayForClipboard);
+E:\SDA\Audacity-Source\audacity\au3\src\SpectralDataDialog.cpp:178:                        .Subscribe(*this, &SpectralDataDialog::UpdateDisplay);
+E:\SDA\Audacity-Source\audacity\au3\src\SpectralDataDialog.cpp:373:                            .Subscribe(*this, &SpectralDataDialogWorker::OnToolChanged);
+E:\SDA\Audacity-Source\audacity\au3\src\ThemedWrappers.h:47:            =theTheme.Subscribe(*this, &ThemedWindowWrapper::OnThemeChange);
+E:\SDA\Audacity-Source\audacity\au3\src\ThemedWrappers.h:113:            =theTheme.Subscribe(*this, &ThemedButtonWrapper::OnThemeChange);
+E:\SDA\Audacity-Source\audacity\au3\src\ThemedWrappers.h:217:            =theTheme.Subscribe(*this, &ThemedAButtonWrapper::OnThemeChange);
+E:\SDA\Audacity-Source\audacity\au3\src\TimeDisplayMode.cpp:34:    Publish(value);
+E:\SDA\Audacity-Source\audacity\au3\src\TimeDisplayMode.h:24:class TimeDisplayModeSetting : public EnumSetting<TimeDisplayMode>, private Observer::Publisher<TimeDisplayMode>
+E:\SDA\Audacity-Source\audacity\au3\src\TimeDisplayMode.h:32:    Observer::Subscription Subscribe(Callback callback)
+E:\SDA\Audacity-Source\audacity\au3\src\TimeDisplayMode.h:34:        return Observer::Publisher<TimeDisplayMode>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\AudioSetupToolBar.cpp:84:    mSubscription = DeviceManager::Instance()->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\DeviceToolBar.cpp:80:    mSubscription = DeviceManager::Instance()->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\SelectionBar.cpp:129:    mFormatsSubscription{ProjectNumericFormats::Get(project).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\SelectionBar.cpp:224:    mFormatChangedToFitValueSubscription[id] = pCtrl->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\SnappingToolBar.cpp:59:        , mSnappingModeChangedSubscription(ProjectSnap::Get(project).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\SnappingToolBar.cpp:248:    , mSnappingModeChangedSubscription(ProjectSnap::Get(mProject).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\SpectralSelectionBar.cpp:99:                           .Subscribe(*this, &SpectralSelectionBar::OnFormatsChanged);
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\TimeSignatureToolBar.cpp:58:    , mTimeSignatureChangedSubscription(ProjectTimeSignature::Get(mProject).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\TimeSignatureToolBar.cpp:72:    mPlaybackStateChangedSubscription(AudioIO::Get()->Subscribe(*this, &TimeSignatureToolBar::OnAudioIOEvent))
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\TimeToolBar.cpp:61:                           .Subscribe(*this, &TimeToolBar::OnFormatsChanged);
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\TimeToolBar.cpp:126:    mFormatChangedToFitValueSubscription = mAudioTime->Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\ToolManager.cpp:458:                               .Subscribe(*this, &ToolManager::OnMenuUpdate);
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\ToolsToolBar.cpp:119:                    .Subscribe(*this, &ToolsToolBar::OnToolChanged);
+E:\SDA\Audacity-Source\audacity\au3\src\TrackInfo.cpp:31:// Subscribe to preference changes to update static variables
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:306:                             .Subscribe([this](const TrackListEvent& event){
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:322:                            .Subscribe(*this, &TrackPanel::OnSyncLockChange);
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:325:                               .Subscribe(*this, &TrackPanel::OnTrackFocusChange);
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:328:                        .Subscribe(*this, &TrackPanel::OnUndoReset);
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:331:        =AudioIO::Get()->Subscribe(*this, &TrackPanel::OnAudioIO);
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:334:                                         .Subscribe([this](const RealtimeEffectManagerMessage& msg)
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:343:        =ProjectTimeRuler::Get(*theProject).GetRuler().Subscribe([this](auto mode) { Refresh(); });
+E:\SDA\Audacity-Source\audacity\au3\src\TrackPanel.cpp:345:                             .Subscribe([this](auto&){ Refresh(false); });
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\labeltrack\ui\LabelGlyphHandle.cpp:34:    mSubscription = pLT->Subscribe(*this, &LabelTrackHit::OnLabelPermuted);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\labeltrack\ui\LabelTrackShifter.cpp:19:        mSubscription = mpTrack->Subscribe([this](const LabelTrackEvent& e){
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\labeltrack\ui\LabelTrackView.cpp:130:    mSubscription = pParent->Subscribe([this](const LabelTrackEvent& e){
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\notetrack\ui\NoteTrackControls.cpp:364:    static auto subscription = theTheme.Subscribe(ReCreateVelocitySlider);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\PitchAndSpeedDialog.cpp:174:    , mProjectCloseSubscription{ProjectWindow::Get(mProject).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\PitchAndSpeedDialog.cpp:190:            =audioIo->Subscribe([this](const AudioIOEvent& event) {
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\PitchAndSpeedDialog.cpp:229:        =leftClip->Observer::Publisher<WaveClipDtorCalled>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\PitchAndSpeedDialog.cpp:232:        =leftClip->Observer::Publisher<CentShiftChange>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\PitchAndSpeedDialog.cpp:239:        =leftClip->Observer::Publisher<StretchRatioChange>::Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveformAppearance.cpp:49:    Subscribe(mwTrack.lock());
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveformAppearance.cpp:54:void WaveformAppearance::Subscribe(const std::shared_ptr<WaveTrack>& pTrack)
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveformAppearance.cpp:58:            =pTrack->Subscribe([this](const WaveTrackMessage& message){
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveformAppearance.cpp:83:    Subscribe(mwTrack.lock());
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveformAppearance.h:41:    void Subscribe(const std::shared_ptr<WaveTrack>& pTrack);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveTrackAffordanceControls.cpp:161:            mTrackListEventSubscription = PendingTracks(*pProject).Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveTrackAffordanceControls.cpp:166:                    =viewInfo.selectedRegion.Subscribe(
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveTrackControls.cpp:1070:    static auto subscription = theTheme.Subscribe(ReCreateVolumeSlider);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveTrackControls.cpp:1123:    static auto subscription = theTheme.Subscribe(ReCreatePanSlider);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\ChannelView.cpp:271:                        .Subscribe(*this, &TrackPositioner::OnUpdate);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\PlayIndicatorOverlay.cpp:147:                    .GetPlaybackScroller().Subscribe(*this, &PlayIndicatorOverlay::OnTimer);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\ScrubUI.cpp:60:                    .Subscribe(*this, &ScrubbingOverlay::OnTimer);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\SelectHandle.cpp:1094:                            .GetPlaybackScroller().Subscribe(*this, &SelectHandle::TimerHandler::OnTimer);
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.cpp:303:                                 ->Subscribe(*this, &MeterPanel::OnAudioIOStatus);
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.cpp:306:                                ->Subscribe(*this, &MeterPanel::OnAudioCapture);
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\Ruler.cpp:336:    Publish(RulerInvalidatedMessage {});
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\Ruler.h:32:class AUDACITY_DLL_API Ruler : public Observer::Publisher<RulerInvalidatedMessage>

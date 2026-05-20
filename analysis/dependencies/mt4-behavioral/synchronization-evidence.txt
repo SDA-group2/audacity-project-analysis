@@ -1,0 +1,698 @@
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:112:  void waitReadWrite();
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:113:  void waitAnalyze(int i);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:114:  void waitExtract(int c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:115:  void waitAssign(int c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:116:  void waitTrial2(int c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:117:  void waitAdjust2();
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:118:  void waitTrial1(int c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:119:  void waitAdjust1();
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:120:  void waitRender(int c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:162:    threadInterface->waitAnalyze(i);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:182:    threadInterface->waitExtract(c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:200:    threadInterface->waitAssign(c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:223:    threadInterface->waitTrial2(c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:240:    threadInterface->waitAdjust2();
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:262:    threadInterface->waitTrial1(c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:279:    threadInterface->waitAdjust1();
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:305:    threadInterface->waitRender(c);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:514:void ThreadInterface :: waitReadWrite() {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:533:    pthread_cond_wait(&readWriteCond,&readWriteMutex);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:538:void ThreadInterface :: waitAnalyze(int i) {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:541:    pthread_cond_wait(&analyzeCond[i],&analyzeMutex[i]);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:546:void ThreadInterface :: waitExtract(int c) {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:549:    pthread_cond_wait(&extractCond[c],&extractMutex[c]);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:554:void ThreadInterface :: waitAssign(int c) {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:557:    pthread_cond_wait(&assignCond[c],&assignMutex[c]);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:562:void ThreadInterface :: waitTrial2(int c) {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:565:    pthread_cond_wait(&trial2Cond[c],&trial2Mutex[c]);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:570:void ThreadInterface :: waitAdjust2() {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:573:    pthread_cond_wait(&adjust2Cond,&adjust2Mutex);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:578:void ThreadInterface :: waitTrial1(int c) {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:581:    pthread_cond_wait(&trial1Cond[c],&trial1Mutex[c]);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:586:void ThreadInterface :: waitAdjust1() {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:589:    pthread_cond_wait(&adjust1Cond,&adjust1Mutex);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:594:void ThreadInterface :: waitRender(int c) {
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:597:    pthread_cond_wait(&renderCond[c],&renderMutex[c]);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:717:      threadInterface->waitReadWrite();
+E:\SDA\Audacity-Source\audacity\au3\lib-src\libsbsms\src\sbsms.cpp:761:      threadInterface->waitReadWrite();  
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn.h:198:   this to take effect; wait until GetStatus says 1.0 to close
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_macosx.cpp:776:   this to take effect; wait until GetStatus says 1.0 to close
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv1.cpp:180:   /* This should never actually reach 1.0; we wait until the BurnComplete
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv1.cpp:655:      WaitForSingleObject(h->hThread, INFINITE);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv1.cpp:901:   this to take effect; wait until GetStatus says 1.0 to close
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv1.cpp:957:   WaitForSingleObject(h->hThread, 100);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv1.cpp:964:      WaitForSingleObject(h->hThread, INFINITE);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv1.cpp:1142:   WaitForSingleObject(h->hThread, 100);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv1.cpp:1148:      WaitForSingleObject(h->hThread, INFINITE);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv2.cpp:1226:            SleepEx(100, true);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv2.cpp:1620:      WaitForSingleObject(h->hThread, INFINITE);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv2.cpp:1900:   this to take effect; wait until GetStatus says 1.0 to close
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv2.cpp:1952:   WaitForSingleObject(h->hThread, 100);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv2.cpp:1958:      WaitForSingleObject(h->hThread, INFINITE);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv2.cpp:2131:   WaitForSingleObject(h->hThread, 100);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\portburn_winxpv2.cpp:2137:      WaitForSingleObject(h->hThread, INFINITE);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\test_portburn.cpp:86://         Sleep(1000);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\test_portburn.cpp:88:         sleep(1);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\test_portburn.cpp:150:      Sleep(1000);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portburn\test_portburn.cpp:152:      sleep(1);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portsmf\apps\seq2midi.cpp:21:void wait_until(double time)
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portsmf\apps\seq2midi.cpp:23:    // print "." to stdout while waiting
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portsmf\apps\seq2midi.cpp:28:        Pt_Sleep(1);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portsmf\apps\seq2midi.cpp:130:        wait_until(next_time);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\portsmf\apps\seq2midi.cpp:161:        wait_until(time_elapsed() + 1);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\soundtouch\source\SoundTouch\SoundTouch.cpp:352:    // check how many samples still await processing, and scale
+E:\SDA\Audacity-Source\audacity\au3\lib-src\soundtouch\source\SoundTouch\TDStretch.cpp:478:        // If there are samples in pMidBuffer waiting for overlapping,
+E:\SDA\Audacity-Source\audacity\au3\lib-src\soundtouch\source\SoundTouch\TDStretch.cpp:483:            // wait until we've got overlapLength input samples
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:1457:** The xRandomness(), xSleep(), xCurrentTime(), and xCurrentTimeInt64()
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:1463:** The xSleep() method causes the calling thread to sleep for at
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:1506:  int (*xSleep)(sqlite3_vfs*, int microseconds);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:3006:** ^This routine sets a [sqlite3_busy_handler | busy handler] that sleeps
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:3008:** will sleep multiple times until at least "ms" milliseconds of sleeping
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:3009:** have accumulated.  ^After at least "ms" milliseconds of sleeping,
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6624:** The sqlite3_sleep() function causes the current thread to suspend execution
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6627:** If the operating system does not support sleep requests with
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6629:** the nearest second. The number of milliseconds of sleep actually
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6632:** ^SQLite implements this interface by calling the xSleep()
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6633:** method of the default [sqlite3_vfs] object.  If the xSleep() method
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6635:** all, then the behavior of sqlite3_sleep() may deviate from the description
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6638:** If a negative argument is passed to sqlite3_sleep() the results vary by
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6640:** instruction to sleep forever.  Others understand it to mean do not sleep
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6642:** argument passed into sqlite3_sleep() is changed to zero before it is relayed
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6643:** down into the xSleep method of the VFS.
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:6645:SQLITE_API int sqlite3_sleep(int);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9641:** database waits for the callback to be issued before taking any further
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9643:** application to deadlock. For example, if connection X is waiting for
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9645:** Y is waiting on connection X's transaction, then neither connection
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9658:** C's transaction, where connection C is waiting on connection A. ^Any
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9680:  sqlite3 *pBlocked,                          /* Waiting connection */
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9865:**   ^Checkpoint as many frames as possible without waiting for any database
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9914:** is successfully obtained. ^The busy-handler is also invoked while waiting for
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9916:** the writer lock is obtained or while waiting for database readers, the
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9964:#define SQLITE_CHECKPOINT_FULL     1  /* Wait for writers, then checkpoint */
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3.h:9965:#define SQLITE_CHECKPOINT_RESTART  2  /* Like FULL but wait for readers */
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3ext.h:193:  int (*sleep)(int);
+E:\SDA\Audacity-Source\audacity\au3\lib-src\sqlite\sqlite3ext.h:545:#define sqlite3_sleep                  sqlite3_api->sleep
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:514:        Pa_Sleep(10);   // There are ALSA drivers that don't like being probed
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:533:        Pa_Sleep(10);   // There are ALSA drivers that don't like being probed
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:566:        Pa_Sleep(10);   // There are ALSA drivers that don't like being probed
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:608:        Pa_Sleep(10);   // There are ALSA drivers that don't like being probed
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:653:        Pa_Sleep(10);   // There are ALSA drivers that don't like being probed
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h:71:    // The return value is duration to sleep before calling again
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h:327:    std::atomic<bool> mPaused{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h:330:    std::atomic<int> mStreamToken{ 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceChange.cpp:207:        // Get the file descriptor we'll wait on
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:232:    if (!std::atomic<double> {}.is_lock_free()) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:727:        std::this_thread::sleep_for(1s);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:756:    // Don't want the system to sleep while audio I/O is active
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:903:        WaitWhileBusy();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:907:void AudioIO::WaitWhileBusy() const
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:911:        std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1014:            // Don't cause a busy wait in the audio thread after stopping scrubbing
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1148:        std::this_thread::sleep_for(interval);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1223:    WaitForAudioThreadStarted();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1245:        std::lock_guard<std::mutex> guard{ mPostRecordingActionMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1563:    // Re-enable system sleep
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1574:        // the sound card, then do so.  If we can't, don't wait around.  Just stop quickly and accept
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1578:            std::this_thread::sleep_for(milliseconds { latency + 50 });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1582:    wxMutexLocker locker(mSuspendAudioThread);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1641:    WaitForAudioThreadStopped();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1657:        ProcessOnceAndWait();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1745:            // So the actions can keep waiting
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1748:        // In case some other thread was waiting on the mutex too:
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1750:        std::lock_guard<std::mutex> guard { mPostRecordingActionMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1794:    // Don't cause a busy wait in the audio thread after stopping scrubbing
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1879:void AudioIO::AudioThread(std::atomic<bool>& finish)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1889:        const auto interval = schedule.GetPolicy().SleepInterval(schedule);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1936:        std::this_thread::sleep_until(loopPassStart + interval);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:2393:        WaitWhileBusy();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3400:    wxMutexLocker locker(mSuspendAudioThread);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3402:        // This stream got destroyed while we waited for it
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3406:    // Pause audio thread and wait for it to finish
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3409:    // a single call to StopAudioThreadAndWait()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3424:        std::this_thread::sleep_for(50ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3455:    ProcessOnceAndWait();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3496:void AudioIoCallback::WaitForAudioThreadStarted()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3501:        std::this_thread::sleep_for(50ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3511:void AudioIoCallback::WaitForAudioThreadStopped()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3516:        std::this_thread::sleep_for(50ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3521:void AudioIoCallback::ProcessOnceAndWait(std::chrono::milliseconds sleepTime)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3530:        std::this_thread::sleep_for(sleepTime);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:232:    std::atomic<bool> mFinishAudioThread{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:265:    std::atomic<float> mMixerOutputVol{ 1.0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:299:    std::atomic<bool> mAudioThreadShouldCallSequenceBufferExchangeOnce;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:300:    std::atomic<bool> mAudioThreadSequenceBufferExchangeLoopRunning;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:301:    std::atomic<bool> mAudioThreadSequenceBufferExchangeLoopActive;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:303:    std::atomic<Acknowledge> mAudioThreadAcknowledge;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:305:    // Async start/stop + wait of AudioThread processing.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:307:    // never call Stop between Start and the wait for Started (and the converse)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:309:    void WaitForAudioThreadStarted();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:311:    void WaitForAudioThreadStopped();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:313:    void ProcessOnceAndWait(std::chrono::milliseconds sleepTime = std::chrono::milliseconds(50));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:315:    std::atomic<bool> mForceFadeOut{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:352:    wxMutex mSuspendAudioThread;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:388:    std::atomic<bool> mDetectUpstreamDropouts{ true };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:455:    /** \brief Wait for busy state to end */
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:456:    void WaitWhileBusy() const;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:558:    static void AudioThread(std::atomic<bool>& finish);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:633:    std::mutex mPostRecordingActionMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.cpp:83:std::chrono::milliseconds PlaybackPolicy::SleepInterval(PlaybackSchedule&)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:117:    //! How long to wait between calls to AudioIO::SequenceBufferExchange
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:119:    SleepInterval(PlaybackSchedule& schedule);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:167:    std::atomic<double> mTime;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:255:            std::atomic<int> head { 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:256:            std::atomic<int> tail { 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:259:            std::atomic<Node*> next{};
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:264:            std::atomic_flag active = ATOMIC_FLAG_INIT;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:352:    std::atomic<bool> mPolicyValid{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.h:86:    std::atomic<double> mPlaySpeed{};
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\RingBuffer.h:63:    NonInterfering< std::atomic<size_t> > mStart{ 0 }, mEnd{ 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-basic-ui\BasicUI.cpp:22:#include <sys/wait.h>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-basic-ui\BasicUI.cpp:179:        waitpid(pid, &status, 0);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-basic-ui\BasicUI.cpp:214:static std::recursive_mutex sActionsMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-basic-ui\BasicUI.cpp:223:        auto guard = std::lock_guard{ sActionsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-basic-ui\BasicUI.cpp:233:            auto guard = std::lock_guard{ sActionsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-basic-ui\BasicUI.h:248://! Dispatch waiting events, including actions enqueued by CallAfter
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\AutoDuckBase.cpp:193:    // the minimum number of samples we have to wait until the maximum
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.cpp:47:std::mutex& GetResponsesMutex()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.cpp:49:    static std::mutex mutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.cpp:64:    std::lock_guard lock { GetResponsesMutex() };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.cpp:134:    std::lock_guard lock { GetResponsesMutex() };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.h:181:    std::atomic<double> mDownloadProgress { 0.0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.h:182:    std::atomic<bool> mProgressUpdateQueued { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.h:183:    std::atomic<bool> mAudioProgressUpdateQueued { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.h:185:    std::atomic<bool> mSyncInProcess { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\CloudSyncService.h:186:    std::atomic<bool> mDownloadInProcess { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:210:    std::lock_guard<std::recursive_mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:278:    std::lock_guard<std::recursive_mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:350:    std::lock_guard<std::recursive_mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:356:    std::lock_guard<std::recursive_mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.cpp:573:        std::lock_guard<std::recursive_mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\OAuthService.h:131:    mutable std::recursive_mutex mMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\BlockHasher.cpp:73:        mWaiter = std::async(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\BlockHasher.cpp:78:                fut.wait();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\BlockHasher.cpp:91:            return result.wait_for(std::chrono::seconds(0))
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\BlockHasher.cpp:169:    std::future<void> mWaiter;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\CloudProjectsDatabase.cpp:129:    auto lock = std::lock_guard { mConnectionMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\CloudProjectsDatabase.cpp:935:    auto lock = std::lock_guard { mConnectionMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\CloudProjectsDatabase.h:155:    std::mutex mConnectionMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\CloudSyncHousekeeper.cpp:89:            mHousekeepingOperation.wait();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\CloudSyncHousekeeper.cpp:114:    std::atomic<bool> mHousekeepingCancelled { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\DataUploader.cpp:49:    std::atomic<bool> UploadFailed { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\DataUploader.cpp:230:    auto lock = std::lock_guard { mResponseMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\DataUploader.cpp:268:    auto lock = std::lock_guard { mResponseMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\DataUploader.cpp:280:    auto lock = std::lock_guard { mResponseMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\DataUploader.h:58:    std::mutex mResponseMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\LocalProjectSnapshot.cpp:464:        auto lock = std::lock_guard { mCreateSnapshotResponseMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\LocalProjectSnapshot.h:112:    std::mutex mCreateSnapshotResponseMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\LocalProjectSnapshot.h:121:    std::atomic<bool> mCompleted { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\LocalProjectSnapshot.h:122:    std::atomic<bool> mCancelled { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\LocalProjectSnapshot.h:123:    std::atomic<bool> mProjectDataReady { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:88:    std::lock_guard lock(mProgressDataMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:102:        std::unique_lock<std::mutex> lock(mUploadsMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:103:        mUploadsNotFull.wait(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:140:    std::unique_lock<std::mutex> lock(mRingBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:141:    mRingBufferNotFull.wait(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:162:    std::unique_lock<std::mutex> lock(mRingBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:163:    mRingBufferNotEmpty.wait(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:187:        std::lock_guard<std::mutex> lock(mProgressDataMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:195:        std::lock_guard<std::mutex> lock(mUploadsMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:206:        std::lock_guard<std::mutex> lock(mProgressDataMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:216:        std::lock_guard<std::mutex> lock(mUploadsMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:231:            std::lock_guard<std::mutex> lock(mBlocksMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.cpp:246:                std::lock_guard<std::mutex> lock(mProgressDataMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:108:    std::atomic_bool mIsRunning { true };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:113:    std::mutex mBlocksMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:116:    std::mutex mUploadsMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:117:    std::condition_variable mUploadsNotFull;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:120:    std::mutex mRingBufferMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:122:    std::condition_variable mRingBufferNotEmpty;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:123:    std::condition_variable mRingBufferNotFull;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MissingBlocksUploader.h:129:    std::mutex mProgressDataMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.cpp:204:    std::atomic<bool> mCancelled { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.cpp:249:    auto lock = std::lock_guard { mUploadUrlsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.cpp:269:    // And ensure that WaitingForUrls is interrupted too
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.cpp:392:    ReportProgress(MixdownState::WaitingForUrls, 0.0, {});
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.cpp:395:        auto lock = std::unique_lock { mUploadUrlsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.cpp:396:        mUploadUrlsSet.wait(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.h:40:    WaitingForUrls,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.h:88:    std::mutex mUploadUrlsMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.h:89:    std::condition_variable mUploadUrlsSet;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.h:99:    std::atomic<double> mProgress {};
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.h:103:    std::atomic<bool> mUploadCancelled { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\MixdownUploader.h:104:    std::atomic<bool> mFinished { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:67:        auto lock = std::lock_guard { QueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:82:            auto lock = std::lock_guard { QueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:86:        auto lock = std::lock_guard { ObserverMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:96:        auto lock = std::lock_guard { ObserverMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:102:    std::mutex QueueMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:104:    std::recursive_mutex ObserverMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:138:    auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:161:    auto lock = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:175:        auto lock = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:186:    auto lock = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:200:    auto lock    = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:241:        auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:247:    auto lock    = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:263:    auto lock    = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:279:    auto lock    = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:295:    auto lock = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:328:                auto lock   = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:367:        auto lock = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:386:    auto lock = std::lock_guard { mStatusMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:393:    auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:400:    auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:407:    auto lock = std::lock_guard { mUploadQueueMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:463:    auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:500:        auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:546:        auto lock   = std::lock_guard { mStatusMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:621:        auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:673:    auto lock = std::lock_guard {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:682:    auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.cpp:693:    auto lock = std::lock_guard { mIdentifiersMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.h:141:    mutable std::mutex mIdentifiersMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.h:145:    std::mutex mUploadQueueMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.h:148:    mutable std::mutex mStatusMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ProjectCloudExtension.h:153:    std::atomic<bool> mUINotificationPending { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:147:        mCopyBlocksFuture->wait();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:379:        auto responsesLock = std::lock_guard { mResponsesMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:643:        auto lock = std::lock_guard { mResponsesMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:652:        auto lock = std::lock_guard { mRequestsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:733:            auto lock = std::unique_lock { mRequestsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:736:                mRequestsCV.wait(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:758:        // TODO: Random sleep to avoid overloading the server
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.cpp:759:        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:129:    std::atomic<State> mState { State::Downloading };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:138:    std::mutex mRequestsMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:139:    std::condition_variable mRequestsCV;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:146:    std::mutex mResponsesMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:150:    std::atomic<int64_t> mDownloadedBlocks { 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:151:    std::atomic<int64_t> mCopiedBlocks { 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:152:    std::atomic<int64_t> mDownloadedBytes { 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\RemoteProjectSnapshot.h:158:    std::atomic<bool> mProjectDownloaded { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\sync\ResumedSnaphotUploadOperation.cpp:440:    std::atomic<bool> mCompleted { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:61:            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:85:    std::lock_guard<std::mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:112:            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:152:            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:194:        const int maxWaitSeconds = 30;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:195:        for (int i = 0; i < maxWaitSeconds && !responseReceived && !mStopRequested; ++i) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:196:            std::this_thread::sleep_for(std::chrono::seconds(1));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:233:    std::lock_guard<std::mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:298:        const int maxWaitSeconds = 10;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:299:        for (int i = 0; i < maxWaitSeconds && !response->isFinished() && !mStopRequested; ++i) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:300:            std::this_thread::sleep_for(std::chrono::seconds(1));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.cpp:376:        std::lock_guard<std::mutex> lock(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.h:48:    std::atomic<bool> mRunning { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.h:49:    std::atomic<bool> mStopRequested { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.h:50:    std::atomic<int> mPollIntervalSeconds { 10 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.h:51:    std::atomic<bool> mPollingDisabled { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.h:52:    std::atomic<bool> mPollImmediately { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\TaskExecutionService.h:55:    std::mutex mMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:217:    mutable std::mutex mStatusMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:218:    mutable std::mutex mCallbacksMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:243:            std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:247:        std::lock_guard<std::mutex> callbacksLock(mCallbacksMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:261:            std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:265:        std::lock_guard<std::mutex> callbacksLock(mCallbacksMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:308:        std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:384:        std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:419:            std::lock_guard<std::mutex> callbacksLock(mCallbacksMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:441:            std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:466:        std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:494:        std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:501:            std::lock_guard<std::mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:515:        std::lock_guard<std::mutex> callbacksLock(mCallbacksMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-cloud-audiocom\UploadService.cpp:611:        // In any case, let's wait for some better time
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-concurrency\concurrency\CancellationContext.cpp:32:        auto lock = std::lock_guard { mCancellableObjectsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-concurrency\concurrency\CancellationContext.cpp:63:    auto lock = std::lock_guard { mCancellableObjectsMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-concurrency\concurrency\CancellationContext.h:43:    std::atomic<bool> mCancelled { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-concurrency\concurrency\CancellationContext.h:45:    std::mutex mCancellableObjectsMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-dynamic-range-processor\SimpleCompressor\GainReductionComputer.h:124:    std::atomic<float> maxInputLevel { -std::numeric_limits<float>::infinity() };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-dynamic-range-processor\SimpleCompressor\GainReductionComputer.h:125:    std::atomic<float> maxGainReduction { 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-fft\RealFFTf.cpp:94:wxCriticalSection getFFTMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-fft\RealFFTf.cpp:103:    wxCriticalSectionLocker locker{ getFFTMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-fft\RealFFTf.cpp:126:    wxCriticalSectionLocker locker{ getFFTMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-file-formats\FileFormats.cpp:340://std::mutex libSndFileMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-file-formats\FileFormats.h:126://extern std::mutex libSndFileMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-file-formats\FileFormats.h:131:    //std::lock_guard<std::mutex> guard{ libSndFileMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-files\AudacityLogger.cpp:76:        wxMutexGuiEnter();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-files\AudacityLogger.cpp:94:        wxMutexGuiLeave();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-import-export\ExportProgressUI.cpp:22:    std::atomic<bool> mCancelled { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-import-export\ExportProgressUI.cpp:23:    std::atomic<bool> mStopped { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-import-export\ExportProgressUI.cpp:24:    std::atomic<double> mProgress {};
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-import-export\ExportProgressUI.cpp:84:    while (f.wait_for(std::chrono::milliseconds(50)) != std::future_status::ready) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\internal\BufferedIPCChannel.cpp:56:        std::lock_guard lck(mSocketSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\internal\BufferedIPCChannel.cpp:81:            std::unique_lock lck(mSocketSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\internal\BufferedIPCChannel.cpp:82:            mSendCondition.wait(lck, [this]{ return !mAlive || !mOutputBuffer.empty(); });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\internal\BufferedIPCChannel.cpp:132:                std::lock_guard lck(mSocketSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\internal\BufferedIPCChannel.h:36:    std::mutex mSocketSync;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\internal\BufferedIPCChannel.h:37:    std::condition_variable mSendCondition;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\IPCServer.cpp:27:    std::mutex mSync;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\IPCServer.cpp:78:                    std::lock_guard lck { mSync };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ipc\IPCServer.cpp:125:            std::lock_guard lck{ mSync };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ladspa\LadspaEffectsModule.cpp:271:        // A sleep of even 1 ms was enough to fix the problem for me, but let's be even more generous.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ladspa\LadspaEffectsModule.cpp:273:        std::this_thread::sleep_for(10ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-menus\CommandTargets.h:224:        mSemaphore.Wait();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\AsyncPluginValidator.cpp:37:    std::atomic<std::chrono::system_clock::duration::rep> mLastTimeActive;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\AsyncPluginValidator.cpp:39:    //The main reason to use spinlock instead of std::mutex here
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\AsyncPluginValidator.cpp:97:                        std::lock_guard lck_sync(self->mSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\AsyncPluginValidator.cpp:160:        std::lock_guard lck(mSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\AsyncPluginValidator.cpp:178:            std::lock_guard lck(mSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\AsyncPluginValidator.cpp:219:        std::lock_guard lck(mSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.cpp:90:    std::lock_guard lck(mSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.cpp:111:                std::lock_guard lck(mSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.cpp:126:    std::unique_lock lck(mSync);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.cpp:127:    mRequestCondition.wait(lck, [this]{ return !mRunning || mRequest.has_value(); });
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.cpp:169:            std::lock_guard lck(mSync);//may throw
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.h:29: * host starts to wait for a request from server. Once request
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.h:42:    std::mutex mSync;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-module-manager\PluginHost.h:43:    std::condition_variable mRequestCondition;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlHandleManager.cpp:291:    std::lock_guard<std::mutex> lock(mHandleCacheLock);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlHandleManager.cpp:333:    std::lock_guard<std::mutex> lock(mHandleCacheLock);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlHandleManager.cpp:359:    std::lock_guard<std::mutex> lock(mHandleCacheLock);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlHandleManager.h:124:    std::mutex mHandleCacheLock;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:98:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:104:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:110:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:116:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:122:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:128:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:134:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:140:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:146:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:162:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:168:    std::lock_guard<std::mutex> lock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:179:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:183:    std::lock_guard<std::recursive_mutex> statusLock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:192:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:198:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:204:    std::lock_guard<std::mutex> lock(mDataBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:214:    std::lock_guard<std::mutex> lock(mDataBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:332:        std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:351:    std::lock_guard<std::mutex> lock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:366:        std::lock_guard<std::recursive_mutex> lock(request->mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:387:        std::lock_guard<std::mutex> lock(request->mDataBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:391:    std::lock_guard<std::mutex> lock(request->mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:403:        std::lock_guard<std::recursive_mutex> lock(request->mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:425:    std::lock_guard<std::mutex> lock(request->mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:445:        std::lock_guard<std::recursive_mutex> lock(clientp->mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.cpp:452:    std::lock_guard<std::mutex> callbackLock(clientp->mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.h:83:    mutable std::mutex mCallbackMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.h:89:    mutable std::mutex mHeadersMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.h:93:    mutable std::mutex mDataBufferMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\curl\CurlResponse.h:96:    mutable std::recursive_mutex mStatusMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:45:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:51:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:57:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:63:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:69:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:75:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:81:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:87:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:93:    std::lock_guard<std::mutex> lock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:110:        std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:125:    std::lock_guard<std::mutex> lock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:136:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:140:    std::lock_guard<std::recursive_mutex> statusLock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:149:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:155:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:161:    std::lock_guard<std::mutex> lock(mDataBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:171:    std::lock_guard<std::mutex> lock(mDataBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:312:        std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:317:        std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:343:        std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:362:            std::lock_guard<std::mutex> lock(mDataBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:368:        std::lock_guard<std::mutex> lock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:377:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:390:        std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:395:                std::lock_guard<std::mutex> dataLock(mDataBufferMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:426:        std::lock_guard<std::mutex> lock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:444:        std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:450:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:460:        std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:466:    std::lock_guard<std::mutex> callbackLock(mCallbackMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:475:    std::lock_guard<std::recursive_mutex> lock(mStatusMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.cpp:499:    std::lock_guard<std::mutex> headerLock(mHeadersMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.h:95:    mutable std::mutex mCallbackMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.h:101:    mutable std::mutex mHeadersMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.h:105:    mutable std::mutex mDataBufferMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\Response.h:108:    mutable std::recursive_mutex mStatusMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\ResponseFactory.cpp:235:        if (!mNetworkThread->wait(5000)) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\qt\ResponseFactory.cpp:237:            mNetworkThread->wait();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\ThreadPool\ThreadPool.h:28:    std::mutex queue_mutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\ThreadPool\ThreadPool.h:29:    std::condition_variable condition;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\ThreadPool\ThreadPool.h:46:                        std::unique_lock<std::mutex> lock(this->queue_mutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\ThreadPool\ThreadPool.h:47:                        this->condition.wait(lock,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\ThreadPool\ThreadPool.h:74:        std::unique_lock<std::mutex> lock(queue_mutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-network-manager\ThreadPool\ThreadPool.h:90:        std::unique_lock<std::mutex> lock(queue_mutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\MIDIPlay.cpp:122:  paused or while waiting for initialization, MIDI latency, etc.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\MIDIPlay.cpp:131:  really full, and the callback thread is going to block waiting for space
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\MIDIPlay.cpp:773:            std::this_thread::sleep_for(1ms); // deliver the all-off messages
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\MIDIPlay.cpp:862:    // we'll just wait for the note-off events to happen.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\NoteTrack.h:228:    std::atomic<float> mVelocity{ 0.0f }; // velocity offset
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\NoteTrack.h:231:    std::atomic<unsigned> mVisibleChannels{ ALL_CHANNELS };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-playable-track\PlayableTrack.cpp:40:    std::atomic<bool> mMute{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-playable-track\PlayableTrack.cpp:42:    std::atomic<bool> mSolo{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\Project.cpp:44:    std::lock_guard<std::mutex> guard{ Mutex() };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\Project.cpp:63:    std::lock_guard<std::mutex> guard{ Mutex() };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\Project.cpp:67:std::mutex& AllProjects::Mutex()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\Project.cpp:69:    static std::mutex theMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project\Project.h:70:    static std::mutex& Mutex();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:254:        // Wait for the checkpoints to end
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:258:            std::this_thread::sleep_for(50ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:265:        std::lock_guard<std::mutex> guard(mCheckpointMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:270:    // And wait for it to do so
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:277:        std::lock_guard<std::mutex> guard(mStatementMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:421:    std::lock_guard<std::mutex> guard(mStatementMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:479:            // Wait for work or the stop signal
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:480:            std::unique_lock<std::mutex> lock(mCheckpointMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:481:            mCheckpointCondition.wait(lock,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:508:        while (rc == SQLITE_BUSY && (std::this_thread::sleep_for(1ms), true));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.cpp:572:    std::lock_guard<std::mutex> guard(that->mCheckpointMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.h:110:    std::condition_variable mCheckpointCondition;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.h:111:    std::mutex mCheckpointMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.h:112:    std::atomic_bool mCheckpointStop{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.h:113:    std::atomic_bool mCheckpointPending{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.h:114:    std::atomic_bool mCheckpointActive{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\DBConnection.h:116:    std::mutex mStatementMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:1237:    std::atomic_bool done = { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:1251:    // Wait for the checkpoints to end
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:1255:        std::this_thread::sleep_for(50ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:2210:            std::atomic_bool done = { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:2229:            // Wait for the checkpoints to end
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\ProjectFileIO.cpp:2233:                std::this_thread::sleep_for(50ms);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\SqliteSampleBlock.cpp:42:    std::mutex mCacheMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\SqliteSampleBlock.cpp:296:    std::lock_guard<std::mutex> lock(mCacheMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-file-io\SqliteSampleBlock.cpp:800:        std::lock_guard<std::mutex> lock(mCacheMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-project-history\UndoManager.h:72:        // Eagerly sent messages (not waiting for idle time)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.h:162:    using LockGuard = std::lock_guard<Lock>;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectList.h:165:    std::atomic<bool> mActive{ true };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:188:    std::atomic<bool> mSuspended{ true };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:86:            std::unique_lock lk(mLockForCV);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:206:    std::mutex mLockForCV;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:207:    std::condition_variable mCV;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:233:                    // Not yet waiting on the other thread's progress
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:310:                    std::unique_lock lk(pAccessState->mLockForCV);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:311:                    pAccessState->mCV.wait(lk,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:26:    NonrecursiveLocking, //!< using std::mutex
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:27:    RecursiveLocking,   //!< using std::recursive_mutex
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:68://! Specialization for real locking with std::mutex
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:69:template< typename Object > struct Lockable< Object, NonrecursiveLocking >: Object, std::mutex {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:70:    using Lock = std::unique_lock< std::mutex >;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:73://! Specialization for real locking with std::recursive_mutex
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:74:template< typename Object > struct Lockable< Object, RecursiveLocking >: Object, std::recursive_mutex {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-registries\ClientDataHelpers.h:75:    using Lock = std::unique_lock< std::recursive_mutex >;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-sentry-reporting\SentryReport.cpp:51:        std::lock_guard<std::mutex> lock(mDataMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-sentry-reporting\SentryReport.cpp:58:        std::lock_guard<std::mutex> lock(mDataMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-sentry-reporting\SentryReport.cpp:77:    std::mutex mDataMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-sqlite-helpers\sqlite\SafeConnection.cpp:93:        mLock = std::unique_lock { mSafeConnection->mConnectionMutex };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-sqlite-helpers\sqlite\SafeConnection.h:26:    using MutexType = std::recursive_mutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-sqlite-helpers\sqlite\SafeConnection.h:68:        std::unique_lock<MutexType> mLock;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\ClipSegment.h:47:    std::atomic<bool> mUpdateFormantPreservation = false;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-stretching-sequence\ClipSegment.h:48:    std::atomic<bool> mUpdateCentShift = false;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\LockFreeQueue.h:34:    NonInterfering<std::atomic<size_t> > mStart { 0 }, mEnd { 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\MemoryX.h:366:struct AtomicUniquePointer : public std::atomic<T*> {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\MemoryX.h:368:    using std::atomic<T*>::atomic;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\MemoryX.h:387:    using std::atomic<T*>::fetch_add;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\MemoryX.h:388:    using std::atomic<T*>::fetch_sub;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\MessageBuffer.h:27:        std::atomic<bool> mBusy{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\MessageBuffer.h:31:    std::atomic<unsigned char> mLastWrittenSlot{ 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\spinlock.h:19: * can be used with std::lock_guard.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-utility\spinlock.h:23:    std::atomic_flag flag = ATOMIC_FLAG_INIT;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.cpp:227:    std::lock_guard<std::mutex> guard(mDeferredChunkMutex);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.h:110:    std::atomic_bool mPresetLoadedWhilePlaying{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.h:112:    std::mutex mDeferredChunkMutex;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTWrapper.cpp:660:    std::lock_guard guard(mDispatcherLock);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTWrapper.h:119:    std::recursive_mutex mDispatcherLock;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\Sequence.h:246:    std::atomic<size_t> mBlockCount{ 0 };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveTrack.cpp:236:    std::atomic<float> mGain{ 1.0f };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveTrack.cpp:238:    std::atomic<float> mPan{ 0.0f };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveTrack.h:858:    wxCriticalSection mFlushCriticalSection;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track\WaveTrack.h:859:    wxCriticalSection mAppendCriticalSection;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\GraphicsDataCache.cpp:213:        data->AwaitsEviction  = false;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\GraphicsDataCache.cpp:279:    newElement.Data->AwaitsEviction  = false;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\GraphicsDataCache.cpp:398:        data->AwaitsEviction = true;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\GraphicsDataCache.cpp:404:            [](auto item) { return item.Data->AwaitsEviction; }),
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\GraphicsDataCache.h:50:    bool AwaitsEviction { false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wave-track-paint\waveform\WaveDataCache.cpp:479:    if (prevElement == nullptr || prevElement->AwaitsEviction || AvailableColumns == 0) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wx-init\ProgressDialog.cpp:1342:    // Note that this causes a problem for Timer Record wait dialog
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wx-init\ProgressDialog.cpp:1343:    // (see TimerRecordDialog::RunWaitDialog()), because it makes it
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wx-init\ProgressDialog.cpp:1345:    // while waiting for Timer Record to start -- and then also
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wx-init\ProgressDialog.cpp:1713:    // Running in TimerRecordDialog::RunWaitDialog(), for some unknown reason,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wx-init\ProgressDialog.cpp:1720:    // stf. Update was being called after wxMilliSleep(<ms>), which could be up to <ms>
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wx-init\ProgressDialog.cpp:1721:    // beyond the completion time. My guess is that the microsleep in RunWaitDialog was originally 10 ms
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-wx-init\ProgressDialog.cpp:1723:    // the Assert (Bug 1367). By calling Update() before sleeping then I think nGaugeValue <= 1000 should work.
+E:\SDA\Audacity-Source\audacity\au3\modules\import-export\mod-cl\ExportCL.cpp:689:    // Wait for process to terminate
+E:\SDA\Audacity-Source\audacity\au3\modules\import-export\mod-cl\ExportCL.cpp:692:        std::this_thread::sleep_for(10ms);
+E:\SDA\Audacity-Source\audacity\au3\modules\scripting\mod-script-pipe\PipeServer.cpp:23:        PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT | PIPE_REJECT_REMOTE_CLIENTS,
+E:\SDA\Audacity-Source\audacity\au3\modules\scripting\mod-script-pipe\PipeServer.cpp:38:        PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT | PIPE_REJECT_REMOTE_CLIENTS,
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:24:#include "ui/dialogs/WaitForActionDialog.h"
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:34:std::optional<AuthResult> WaitForAuth(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:41:        future.wait_for(std::chrono::milliseconds { 100 })
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:43:        auto waitResult
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:44:            =WaitForActionDialog {
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:45:            project, XO("Waiting for audio.com"),
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:53:                future.wait_for(std::chrono::milliseconds { 50 })
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:61:        if (waitResult == WaitForActionDialog::CancelButtonIdentifier()) {
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:102:        if (auto waitResult = WaitForAuth(promise.get_future(), project)) {
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:103:            return *waitResult;
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:132:    auto waitResult = WaitForAuth(promise.get_future(), project);
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:134:    if (waitResult) {
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\AuthorizationHandler.cpp:135:        return *waitResult;
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\CloudProjectFileIOExtensions.cpp:86:        // while (future.wait_for(std::chrono::milliseconds(50)) !=
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\CloudProjectMixdownUtils.cpp:126:            while (future.wait_for(std::chrono::milliseconds(50))
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\CloudProjectOpenUtils.cpp:54:    while (future.wait_for(std::chrono::milliseconds(50))
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\ProjectsListDialog.cpp:179:        while (std::future_status::ready != future.wait_for(100ms))
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\ShareAudioDialog.cpp:159:    std::atomic<bool> mCancelled{ false };
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\ShareAudioDialog.cpp:160:    std::atomic<double> mProgress;
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\ShareAudioDialog.cpp:369:                while (f.wait_for(std::chrono::milliseconds(50)) != std::future_status::ready) {
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.cpp:6:  WaitForActionDialog.cpp
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.cpp:11:#include "WaitForActionDialog.h"
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.cpp:14:WaitForActionDialog::WaitForActionDialog(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.cpp:26:bool WaitForActionDialog::HasSeparator() const
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.h:6:  WaitForActionDialog.h
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.h:16:class WaitForActionDialog final : public AudioComDialogBase
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.h:19:    WaitForActionDialog(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\dialogs\WaitForActionDialog.h:20:        const AudacityProject* project, const TranslatableString& title   = XO("Waiting for audio.com"), const TranslatableString& message = XO(
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\ProjectCloudUIExtension.cpp:23:#include "dialogs/WaitForActionDialog.h"
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\ProjectCloudUIExtension.cpp:153:            WaitForActionDialog {
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\ProjectCloudUIExtension.cpp:155:                XO("Waiting for space to free up"),
+E:\SDA\Audacity-Source\audacity\au3\modules\sharing\mod-cloud-audiocom\ui\ProjectCloudUIExtension.h:48:    std::atomic<bool> mInSync { false };
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:1484:    // This call is what probably makes the sleep unnecessary:
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:1488:    // This sleep may be unnecessary, but it is harmless.  It less NS framework
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:1490:    std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:2023:            std::this_thread::sleep_for(10ms);
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:2163:        op.sem_flg = IPC_NOWAIT | SEM_UNDO;
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:2184:        auto serv = std::make_unique<wxSocketServer>(addr, wxSOCKET_NOWAIT);
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:2198:        // to allow any waiters to continue. The SERVER semaphore will
+E:\SDA\Audacity-Source\audacity\au3\src\AudacityApp.cpp:2239:    sock->SetFlags(wxSOCKET_WAITALL);
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.cpp:31:    wxMutexLocker locker(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.cpp:36:Response ResponseQueue::WaitAndGetResponse()
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.cpp:38:    wxMutexLocker locker(mMutex);
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.cpp:40:        mCondition.Wait();
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.h:29:yet). Wraps a std::queue<Response> inside a wxMutex with a wxCondition to
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.h:30:force the script thread to wait until a response is available.
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.h:42:class wxMutex;
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.h:44:class wxMutexLocker;
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.h:65:    wxMutex mMutex;
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ResponseQueue.h:73:    Response WaitAndGetResponse();
+E:\SDA\Audacity-Source\audacity\au3\src\commands\ScriptCommandRelay.cpp:53:        // Wait for and retrieve the response
+E:\SDA\Audacity-Source\audacity\au3\src\CrashReport.cpp:51:        std::atomic_bool done = { false };
+E:\SDA\Audacity-Source\audacity\au3\src\CrashReport.cpp:84:        // Wait for information to be gathered
+E:\SDA\Audacity-Source\audacity\au3\src\CrashReport.cpp:88:            std::this_thread::sleep_for(50ms);
+E:\SDA\Audacity-Source\audacity\au3\src\CrossFade.cpp:226:                    // -- hey wait, you never even tried to initialize floatSeq,
+E:\SDA\Audacity-Source\audacity\au3\src\effects\audiounits\AudioUnitEditor.cpp:198:#ifdef __WX_EVTLOOP_BUSY_WAITING__
+E:\SDA\Audacity-Source\audacity\au3\src\effects\audiounits\AudioUnitEditor.cpp:199:        wxEventLoop::SetBusyWaiting(true);
+E:\SDA\Audacity-Source\audacity\au3\src\effects\audiounits\AudioUnitEffect.cpp:133:#ifdef __WX_EVTLOOP_BUSY_WAITING__
+E:\SDA\Audacity-Source\audacity\au3\src\effects\audiounits\AudioUnitEffect.cpp:134:    wxEventLoop::SetBusyWaiting(false);
+E:\SDA\Audacity-Source\audacity\au3\src\effects\DynamicRangeProcessorHistoryPanel.cpp:356:            const auto text = XO("awaiting playback");
+E:\SDA\Audacity-Source\audacity\au3\src\effects\EffectPreview.cpp:202:                    std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\effects\EffectPreview.cpp:212:                std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\effects\lv2\LV2Editor.cpp:394:#ifdef __WX_EVTLOOP_BUSY_WAITING__
+E:\SDA\Audacity-Source\audacity\au3\src\effects\lv2\LV2Editor.cpp:395:    wxEventLoop::SetBusyWaiting(true);
+E:\SDA\Audacity-Source\audacity\au3\src\effects\lv2\LV2Effect.cpp:132:#ifdef __WX_EVTLOOP_BUSY_WAITING__
+E:\SDA\Audacity-Source\audacity\au3\src\effects\lv2\LV2Effect.cpp:133:    wxEventLoop::SetBusyWaiting(false);
+E:\SDA\Audacity-Source\audacity\au3\src\effects\VST\VSTEditor.cpp:268:#ifdef __WX_EVTLOOP_BUSY_WAITING__
+E:\SDA\Audacity-Source\audacity\au3\src\effects\VST\VSTEditor.cpp:269:    wxEventLoop::SetBusyWaiting(true);
+E:\SDA\Audacity-Source\audacity\au3\src\effects\VST\VSTEditor.cpp:573:#ifdef __WX_EVTLOOP_BUSY_WAITING__
+E:\SDA\Audacity-Source\audacity\au3\src\effects\VST\VSTEditor.cpp:574:    wxEventLoop::SetBusyWaiting(false);
+E:\SDA\Audacity-Source\audacity\au3\src\menus\EditMenus.cpp:503:                progressDialog = BasicUI::MakeProgress(XO("Paste clip"), XO("Pasting clip contents, please wait"), 0);
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:58:        std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:179:    TransportUtilities::PlayCurrentRegionAndWait(context, true);
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:189:    TransportUtilities::RecordAndWait(context, false);
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:196:    TransportUtilities::RecordAndWait(context, true);
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:462:    TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:515:    TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:540:    TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:564:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:568:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:593:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:597:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:620:    TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:647:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:651:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:679:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:683:        TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\menus\TransportMenus.cpp:698:    TransportUtilities::PlayCurrentRegionAndWait(context, false, true);
+E:\SDA\Audacity-Source\audacity\au3\src\prefs\PrefsDialog.cpp:778:                std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\Profiler.cpp:63:    std::lock_guard<std::mutex> guard{ mTasksMutex };
+E:\SDA\Audacity-Source\audacity\au3\src\Profiler.cpp:70:    std::lock_guard<std::mutex> guard{ mTasksMutex };
+E:\SDA\Audacity-Source\audacity\au3\src\Profiler.h:60:    std::mutex mTasksMutex;
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.h:162:    std::atomic<int> mPaused{ 0 };
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectFileManager.cpp:1022:                // Wait until LinkConsistencyFix is called on the second track
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectManager.cpp:668:            // Ensure that it happens here: don't wait for the application level
+E:\SDA\Audacity-Source\audacity\au3\src\ScrubState.cpp:273:    std::atomic<bool> mStopped { false };
+E:\SDA\Audacity-Source\audacity\au3\src\ScrubState.cpp:355:ScrubbingPlaybackPolicy::SleepInterval(PlaybackSchedule&)
+E:\SDA\Audacity-Source\audacity\au3\src\ScrubState.h:63:    SleepInterval(PlaybackSchedule&) override;
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:96:// This timer interval is used in some busy-wait loops and is much shorter.
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:523:/// Runs the wait for start dialog.  Returns -1 if the user clicks stop while we are recording
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:525:int TimerRecordDialog::RunWaitDialog()
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:535:            updateResult = this->WaitForStart();
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:539:            // Don't proceed, but don't treat it as canceled recording. User just canceled waiting.
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:540:            return POST_TIMER_RECORD_CANCEL_WAIT;
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:586:                std::this_thread::sleep_for(kTimerInterval);
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1066:ProgressResult TimerRecordDialog::WaitForStart()
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1068:    // MY: The Waiting For Start dialog now shows what actions will occur after recording has completed
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1075:            XO("Waiting to start recording at:"),
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1094:    wxDateTime startWait_DateTime = wxDateTime::UNow();
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1095:    wxTimeSpan waitDuration = m_DateTime_Start - startWait_DateTime;
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1096:    TimerProgressDialog progress(waitDuration.GetMilliseconds().GetValue(),
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1097:                                 XO("Audacity Timer Record - Waiting for Start"),
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1110:        std::this_thread::sleep_for(kTimerInterval);
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1145:    wxTimeSpan tsWait = wxTimeSpan(0, 1, 0, 0);
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1146:    wxDateTime dtActionTime = dtNow.Add(tsWait);
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1148:    TimerProgressDialog dlgAction(tsWait.GetMilliseconds().GetValue(),
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1149:                                  XO("Audacity Timer Record - Waiting"),
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1160:        std::this_thread::sleep_for(kTimerInterval);
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1249:    //we break the prompting and waiting dialogs into two sections
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1272:        int iTimerRecordingOutcome = dialog.RunWaitDialog();
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1274:        case POST_TIMER_RECORD_CANCEL_WAIT:
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1275:            // Canceled on the wait dialog
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.cpp:1279:            // RunWaitDialog() shows the "wait for start" as well as "recording"
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.h:43:    POST_TIMER_RECORD_CANCEL_WAIT,
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.h:67:    ///Runs the wait for start dialog.  Returns false if the user clicks stop.
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.h:68:    int RunWaitDialog();
+E:\SDA\Audacity-Source\audacity\au3\src\TimerRecordDialog.h:90:    ProgressResult WaitForStart();
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\AudioSetupToolBar.cpp:728:                std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\DeviceToolBar.cpp:690:                std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\toolbars\ToolDock.cpp:802:                // Now wait until the other callback below to discover x and y
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\playabletrack\wavetrack\ui\WaveformView.cpp:329:    std::atomic<bool> mChanged = false;
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\Scrubbing.cpp:145:        std::this_thread::sleep_for(ScrubPollInterval);
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\Scrubbing.cpp:489:            // Wait to test again
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\Scrubbing.cpp:496:        // Return true whether we started scrub, or are still waiting to decide.
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\Scrubbing.h:184:    std::atomic<bool> mFinishThread{ false };
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\SelectHandle.cpp:1123:    //  than waiting for the next update event; this makes scrolling
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:28:void TransportUtilities::PlayCurrentRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:61:            std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:70:void TransportUtilities::PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:103:            std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:112:void TransportUtilities::RecordAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:143:            std::this_thread::sleep_for(100ms);
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:204:        PlayCurrentRegionAndWait(context, newDefault);
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.h:24:    static void PlayCurrentRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.h:26:    static void PlayPlayRegionAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.h:28:    static void RecordAndWait(
+E:\SDA\Audacity-Source\audacity\au3\src\update\UpdateManager.cpp:109:            std::lock_guard<std::mutex> lock(mUpdateMutex);
+E:\SDA\Audacity-Source\audacity\au3\src\update\UpdateManager.h:61:    std::mutex mUpdateMutex;
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\Overlay.h:46:calling Refresh() and without waiting for OnPaint() to be called.
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\RulerPanel.cpp:97://      instead of waiting for a wxEVT_SIZE to come through.  This is needed by (at least)

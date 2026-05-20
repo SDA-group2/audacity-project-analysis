@@ -1,0 +1,15 @@
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIOExt.cpp
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIOListener.cpp
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.cpp
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-mixer\AudioIOSequences.cpp
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIOExt.h
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIOListener.h
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.h
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-mixer\AudioIOSequences.h
+E:\SDA\Audacity-Source\audacity\build-sda\conan\home\p\vst3s8d695774af910\p\include\public.sdk\source\vst\interappaudio\AudioIO.h
+E:\SDA\Audacity-Source\audacity\build-sda\conan\home\p\vst3s932e84a92f9c5\p\include\public.sdk\source\vst\interappaudio\AudioIO.h
+E:\SDA\Audacity-Source\audacity\src\au3audio\internal\au3audioiolistener.h

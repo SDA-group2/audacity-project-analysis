@@ -1,0 +1,222 @@
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:200:    error = Pa_OpenStream(&stream,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:210:            Pa_CloseStream(stream);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:217:        error = Pa_OpenStream(&stream,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:226:                Pa_CloseStream(stream);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:234:        error = Pa_OpenStream(&stream,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:243:                Pa_CloseStream(stream);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:285:    Pa_CloseStream(stream);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:958:        error = Pa_OpenStream(&stream,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:965:            error = Pa_OpenStream(&stream,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:981:            Pa_CloseStream(stream);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.cpp:1026:        Pa_CloseStream(stream);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h:43:// To avoid growing the argument list of StartStream, add fields here
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h:44:struct AudioIOStartStreamOptions
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h:47:    AudioIOStartStreamOptions(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\AudioIOBase.h:75:        std::unique_ptr<PlaybackPolicy>(const AudioIOStartStreamOptions&) >;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceManager.cpp:309:        error = Pa_OpenStream(&stream,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-devices\DeviceManager.cpp:319:        Pa_CloseStream(stream);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:56:\class AudioIOStartStreamOptions
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:156:                   unsigned numPlaybackChannels, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:163:                move(wOwningProject), sampleRate, numPlaybackChannels, audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:174:                ->AddGroup(*pGroup, numPlaybackChannels, sampleRate, audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:200:int audacityAudioCallback(const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:245:    mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:247:    mAudioThreadSequenceBufferExchangeLoopRunning
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:249:    mAudioThreadSequenceBufferExchangeLoopActive
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:252:    mAudioThreadAcknowledge.store(Acknowledge::eNone, std::memory_order_relaxed);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:306:    mAudioThread = std::thread(AudioThread, ref(mFinishAudioThread));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:339:    mFinishAudioThread.store(true, std::memory_order_release);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:340:    mAudioThread.join();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:476:bool AudioIO::StartPortAudioStream(const AudioIOStartStreamOptions& options,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:507:    // Pa_OpenStream() will return paInvalidSampleRate when trying to create the
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:656:    //mchinen nov 30 2010.  For some reason Pa_OpenStream resets the input volume on windows.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:682:        mLastPaError = Pa_OpenStream(&mPortStreamV19,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:687:                                     audacityAudioCallback, lpUserData);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:838:void AudioIO::StartMonitoring(const AudioIOStartStreamOptions& options)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:885:    // FIXME: TRAP_ERR PaErrorCode 'noted' but not reported in StartMonitoring.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:888:    // AudioIO::StartStream?
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:889:    mLastPaError = Pa_StartStream(mPortStreamV19);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:915:int AudioIO::StartStream(const TransportSequences& sequences,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:917:                         const AudioIOStartStreamOptions& options)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:946:    // somehow called StartStream at the same time...
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1138:    mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1141:    while (mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1154:        // audacityAudioCallback.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1158:        // between the call of audacityAudioCallback and the actual output of
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1179:        // This affects AudioThread (not the portaudio callback).
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1183:        StartAudioThread();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1189:        err = Pa_StartStream(mPortStreamV19);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1194:            StopAudioThread();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1199:            StartStreamCleanup();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1223:    WaitForAudioThreadStarted();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1267:    const AudioIOStartStreamOptions& options,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1273:            StartStreamCleanup(false);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1393:                    // By the precondition of StartStream which is sole caller of
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1483:            StartStreamCleanup(true);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1505:void AudioIO::StartStreamCleanup(bool bOnlyBuffers)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1519:        Pa_AbortStream(mPortStreamV19);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1520:        Pa_CloseStream(mPortStreamV19);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1567:    if (mAudioThreadSequenceBufferExchangeLoopRunning
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1582:    wxMutexLocker locker(mSuspendAudioThread);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1608:    // DV: Seems that Pa_CloseStream calls Pa_AbortStream internally,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1611:    StopAudioThread();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1627:        // DV: Pa_CloseStream will close Pa_AbortStream internally,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1629:        // PA_AbortStream will silently fail if stream is stopped.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1631:            Pa_AbortStream(mPortStreamV19);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1634:        Pa_CloseStream(mPortStreamV19);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1639:    // We previously told AudioThread to stop processing, now let's
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1641:    WaitForAudioThreadStopped();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1666:    // we allocated in StartStream()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1879:void AudioIO::AudioThread(std::atomic<bool>& finish)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1892:        gAudioIO->mAudioThreadSequenceBufferExchangeLoopActive
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1894:        if (gAudioIO->mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1897:            gAudioIO->mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1901:        } else if (gAudioIO->mAudioThreadSequenceBufferExchangeLoopRunning
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1905:                gAudioIO->mAudioThreadAcknowledge.store(Acknowledge::eStart,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1913:            // This is unlike the case with mAudioThreadShouldCallSequenceBufferExchangeOnce where the
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1923:                gAudioIO->mAudioThreadAcknowledge.store(Acknowledge::eStop,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:1933:        gAudioIO->mAudioThreadSequenceBufferExchangeLoopActive
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:2411:        if (mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:2696:int audacityAudioCallback(const void* inputBuffer, void* outputBuffer,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3400:    wxMutexLocker locker(mSuspendAudioThread);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3409:    // a single call to StopAudioThreadAndWait()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3412:    // atomic before the return, with a call to StartAudioThread()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3414:    // If that works, then we can remove mAudioThreadSequenceBufferExchangeLoopActive,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3415:    // as it will become unused; consequently, the AudioThread loop would get simpler too.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3417:    mAudioThreadSequenceBufferExchangeLoopRunning
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3420:    while (mAudioThreadSequenceBufferExchangeLoopActive
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3458:    mAudioThreadSequenceBufferExchangeLoopRunning
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3491:void AudioIoCallback::StartAudioThread()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3493:    mAudioThreadSequenceBufferExchangeLoopRunning.store(true, std::memory_order_release);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3496:void AudioIoCallback::WaitForAudioThreadStarted()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3498:    while (mAudioThreadAcknowledge.load(std::memory_order_acquire) != Acknowledge::eStart)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3503:    mAudioThreadAcknowledge.store(Acknowledge::eNone, std::memory_order_release);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3506:void AudioIoCallback::StopAudioThread()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3508:    mAudioThreadSequenceBufferExchangeLoopRunning.store(false, std::memory_order_release);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3511:void AudioIoCallback::WaitForAudioThreadStopped()
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3513:    while (mAudioThreadAcknowledge.load(std::memory_order_acquire) != Acknowledge::eStop)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3518:    mAudioThreadAcknowledge.store(Acknowledge::eNone, std::memory_order_release);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3523:    mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.cpp:3526:    while (mAudioThreadShouldCallSequenceBufferExchangeOnce
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:96:int audacityAudioCallback(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:231:    std::thread mAudioThread;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:232:    std::atomic<bool> mFinishAudioThread{ false };
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:299:    std::atomic<bool> mAudioThreadShouldCallSequenceBufferExchangeOnce;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:300:    std::atomic<bool> mAudioThreadSequenceBufferExchangeLoopRunning;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:301:    std::atomic<bool> mAudioThreadSequenceBufferExchangeLoopActive;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:303:    std::atomic<Acknowledge> mAudioThreadAcknowledge;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:305:    // Async start/stop + wait of AudioThread processing.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:308:    void StartAudioThread();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:309:    void WaitForAudioThreadStarted();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:310:    void StopAudioThread();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:311:    void WaitForAudioThreadStopped();
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:352:    wxMutex mSuspendAudioThread;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:386:    // Whether to check the error code passed to audacityAudioCallback to
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:450:    void StartMonitoring(const AudioIOStartStreamOptions& options);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:471:    int StartStream(const TransportSequences& sequences, double t0, double t1, double mixerLimit, //!< Time at which mixer stops producing, maybe > t1
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:472:                    const AudioIOStartStreamOptions& options);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:558:    static void AudioThread(std::atomic<bool>& finish);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:580:    bool StartPortAudioStream(const AudioIOStartStreamOptions& options, unsigned int numPlaybackChannels, unsigned int numCaptureChannels);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:626:        const AudioIOStartStreamOptions& options, const TransportSequences& sequences, double t0, double t1, double sampleRate);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:628:    /** \brief Clean up after StartStream if it fails.
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\AudioIO.h:631:    void StartStreamCleanup(bool bOnlyBuffers = false);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.cpp:171:    const AudioIOStartStreamOptions& options,
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:23:struct AudioIOStartStreamOptions;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\PlaybackSchedule.h:285:        double t0, double t1, const AudioIOStartStreamOptions& options, const RecordingSchedule* pRecordingSchedule);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.cpp:18:AudioIOStartStreamOptions
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.cpp:22:    AudioIOStartStreamOptions options{
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.cpp:34:AudioIOStartStreamOptions ProjectAudioIO::GetDefaultOptions(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.h:23:struct AudioIOStartStreamOptions;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.h:34:    static AudioIOStartStreamOptions
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.h:37:    //! Global hook making AudioIOStartStreamOptions for a project, which
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-io\ProjectAudioIO.h:44:    static AudioIOStartStreamOptions GetDefaultOptions(
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-audio-unit\AudioUnitInstance.h:52:    bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\BassTrebleBase.h:86:        bool RealtimeInitialize(EffectSettings& settings, double, size_t audioThreadBufferSize) override;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:28:    , mAudioThreadBufferSize{std::move(other.mAudioThreadBufferSize)}
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:40:const std::optional<size_t>& CompressorInstance::GetAudioThreadBufferSize() const
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:42:    return mAudioThreadBufferSize;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:123:bool CompressorInstance::RealtimeInitialize(EffectSettings&, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:129:    mAudioThreadBufferSize = audioThreadBufferSize;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.cpp:131:        std::make_optional(InitializeProcessingSettings { sampleRate, audioThreadBufferSize }));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.h:34:    const std::optional<size_t>& GetAudioThreadBufferSize() const;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.h:50:    RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize) override;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\CompressorInstance.h:81:    std::optional<size_t> mAudioThreadBufferSize;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\DistortionBase.h:104:        bool RealtimeInitialize(EffectSettings& settings, double, size_t audioThreadBufferSize) override;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-builtin-effects\PhaserBase.h:104:        bool RealtimeInitialize(EffectSettings& settings, double, size_t audioThreadBufferSize) override;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-components\EffectInterface.h:532:    virtual bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-dynamic-range-processor\DynamicRangeProcessorTypes.h:34:    explicit InitializeProcessingSettings(double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-dynamic-range-processor\DynamicRangeProcessorTypes.h:35:        : sampleRate{sampleRate}, audioThreadBufferSize{audioThreadBufferSize}
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-dynamic-range-processor\DynamicRangeProcessorTypes.h:40:    size_t audioThreadBufferSize;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-effects\StatefulEffectBase.cpp:30:    EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-effects\StatefulEffectBase.cpp:32:    return GetEffect().RealtimeInitialize(settings, sampleRate, audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-effects\StatefulEffectBase.h:38:        bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-effects\StatefulEffectBase.h:80:    virtual bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-ladspa\LadspaInstance.h:73:    bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-lv2\LV2Instance.h:55:    bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\MIDIPlay.cpp:37:  in the Audio callback (audacityAudioCallback) for use by a time
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-note-track\MIDIPlay.cpp:686:    // Duplicating a bit of AudioIO::StartStream
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:56:    double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:67:    VisitAll([&scope, sampleRate, audioThreadBufferSize](RealtimeEffectState& state, bool) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:68:        scope.mInstances.push_back(state.Initialize(sampleRate, audioThreadBufferSize));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:75:        scope.mInstances.push_back(state.AddGroup(MasterGroup, numPlaybackChannels, sampleRate, audioThreadBufferSize));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:81:    const ChannelGroup& group, unsigned chans, float rate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:88:        scope.mInstances.push_back(state.AddGroup(&group, chans, rate, audioThreadBufferSize));
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:207:        auto pInstance = state.Initialize(pScope->mSampleRate, pScope->mAudioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:211:            auto pInstance2 = state.AddGroup(MasterGroup, pScope->mNumPlaybackChannels, pScope->mSampleRate, pScope->mAudioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.cpp:221:                    =state.AddGroup(group, pScope->mNumPlaybackChannels, mRates[group], pScope->mAudioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:128:                    size_t audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:132:                  size_t audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:207:        unsigned numPlaybackChannels, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:211:        , mAudioThreadBufferSize{audioThreadBufferSize}
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:214:            RealtimeEffectManager::Get(*pProject).Initialize(*this, numPlaybackChannels, sampleRate, audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:228:                  unsigned chans, float rate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:232:            .AddGroup(*this, group, chans, rate, audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectManager.h:239:    size_t mAudioThreadBufferSize;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:433:RealtimeEffectState::EnsureInstance(double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:457:        if (!pInstance->RealtimeInitialize(mMainSettings.settings, sampleRate, audioThreadBufferSize)) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:477:RealtimeEffectState::Initialize(double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:486:    return EnsureInstance(sampleRate, audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:520:    const ChannelGroup* group, unsigned chans, float sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.cpp:522:    auto pInstance = EnsureInstance(sampleRate, audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.h:74:    std::shared_ptr<EffectInstance> Initialize(double rate, size_t audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.h:77:    AddGroup(const ChannelGroup* group, unsigned chans, float sampleRate, size_t audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-realtime-effects\RealtimeEffectState.h:124:    std::shared_ptr<EffectInstance> EnsureInstance(double rate, size_t audioThreadBufferSize);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.cpp:255:    const bool IsAudioThread = (mMainThreadId != std::this_thread::get_id());
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.cpp:257:    return IsAudioThread && mIsMeldaPlugin;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.cpp:297:        const bool IsAudioThread = (mMainThreadId != std::this_thread::get_id());
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.cpp:298:        if (IsAudioThread) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst\VSTInstance.h:40:    bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst3\VST3Instance.cpp:60:    assert(m_audioThreadBufferSize > 0);
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst3\VST3Instance.cpp:61:    if (!uProcessor->RealtimeInitialize(settings, sampleRate, m_audioThreadBufferSize)) {
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst3\VST3Instance.cpp:81:bool VST3Instance::RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize)
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst3\VST3Instance.cpp:85:        m_audioThreadBufferSize = audioThreadBufferSize;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst3\VST3Instance.h:51:    bool RealtimeInitialize(EffectSettings& settings, double sampleRate, size_t audioThreadBufferSize) override;
+E:\SDA\Audacity-Source\audacity\au3\libraries\au3-vst3\VST3Instance.h:78:    size_t m_audioThreadBufferSize{ 0 };
+E:\SDA\Audacity-Source\audacity\au3\src\effects\EffectPreview.cpp:188:        int token = gAudioIO->StartStream(tracks, mT0, t1, t1, options);
+E:\SDA\Audacity-Source\audacity\au3\src\MixerBoard.cpp:538:        // Vaughan, 2011-02-04: Now that we're updating all meters from audacityAudioCallback,
+E:\SDA\Audacity-Source\audacity\au3\src\MixerBoard.cpp:1350:    //v Vaughan, 2011-02-25: Moved this update back here from audacityAudioCallback.
+E:\SDA\Audacity-Source\audacity\au3\src\MixerBoard.cpp:1354:    //    audacityAudioCallback where it calls gAudioIO->mOutputMeter->UpdateDisplay().
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:301:                                        const AudioIOStartStreamOptions& options,
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:423:            AudioIOStartStreamOptions myOptions = options;
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:428:            token = gAudioIO->StartStream(
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:439:            token = gAudioIO->StartStream(
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:762:                                   const AudioIOStartStreamOptions& options)
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:994:            =gAudioIO->StartStream(transportSequences, t0, t1, t1, options);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:1210:    [](AudacityProject& project, bool newDefault) -> AudioIOStartStreamOptions {
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:1224:                const AudioIOStartStreamOptions& options)
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.cpp:1239:AudioIOStartStreamOptions
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.h:27:struct AudioIOStartStreamOptions;
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.h:106:                  const AudioIOStartStreamOptions& options);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.h:108:    int PlayPlayRegion(const SelectedRegion& selectedRegion, const AudioIOStartStreamOptions& options, PlayMode playMode,
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectAudioManager.h:175:AudioIOStartStreamOptions DefaultSpeedPlayOptions(AudacityProject& project);
+E:\SDA\Audacity-Source\audacity\au3\src\ProjectManager.h:25:struct AudioIOStartStreamOptions;
+E:\SDA\Audacity-Source\audacity\au3\src\tracks\ui\Scrubbing.cpp:345:static AudioIOStartStreamOptions::PolicyFactory
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.cpp:73:    const AudioIOStartStreamOptions& options,
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.h:15:struct AudioIOStartStreamOptions;
+E:\SDA\Audacity-Source\audacity\au3\src\TransportUtilities.h:27:        const CommandContext& context, const SelectedRegion& selectedRegion, const AudioIOStartStreamOptions& options, PlayMode mode);
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.cpp:21:  MeterToolBar meters, e.g., MeterPanel::StartMonitoring,
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.cpp:1666:void MeterPanel::StartMonitoring()
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.cpp:1678:            gAudioIO->StartMonitoring(ProjectAudioIO::GetDefaultOptions(*p));
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.cpp:1796:    StartMonitoring();
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.cpp:1955:        m->StartMonitoring();
+E:\SDA\Audacity-Source\audacity\au3\src\widgets\MeterPanel.h:168:    void StartMonitoring();
