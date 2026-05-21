@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SDA-Project.iml" filepath="$PROJECT_DIR$/.idea/SDA-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/audacity-project-analysis.iml" filepath="$PROJECT_DIR$/.idea/audacity-project-analysis.iml" />
     </modules>
   </component>
 </project>
