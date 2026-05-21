@@ -11,3 +11,11 @@ Actually the issue here is that I'm working without a clear plan, so I'm going t
 ## May 11-12th, 2026
 
 Started working on the system context diagram + report.
+
+## May 13th, 2026
+
+Finished writing the system context report.
+
+## May 19th, 2026
+
+Finished a first draft of the container diagram.
