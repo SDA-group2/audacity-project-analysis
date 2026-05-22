@@ -30,7 +30,7 @@ transitively includes the modified header.
 
 ### 2.1 Track Inheritance Chain
 
-The primary inheritance chain spans **4 levels** across three library boundaries:
+The primary inheritance chain spans **4 inheritance edges** across three library boundaries:
 
 ```
 Track [lib-track] → PlayableTrack → SampleTrack [lib-sample-track]
@@ -42,7 +42,7 @@ making it simultaneously a domain entity and an event publisher. `SampleTrack`
 also inherits from `PlayableSequence` and `WritableSampleTrack` from
 `RecordableSequence`, introducing multiple-inheritance coupling at intermediate
 levels. Any modification to `Track`'s virtual method table forces every subclass
-across four inheritance levels to provide an implementation before the project
+across four inheritance edges to provide an implementation before the project
 recompiles — the Fragile Base Class problem [Gamma et al., Design Patterns],
 directly instantiated in Audacity's audio model.
 
@@ -134,8 +134,8 @@ consumers simultaneously.
 Behavioral dependencies are invisible to static analysis: they emerge at runtime
 through execution order, thread coordination, and timing constraints.
 Audacity operates across four concurrent contexts: Main UI Thread,
-`AudioThread` (buffer-fill), PortAudio Callback (hardware IRQ, real-time
-mandatory), and Background Save Thread.
+`AudioThread` (buffer-fill), PortAudio Callback (real-time audio callback
+context), and Background Save Thread.
 
 ### 4.1 Timing Assumption — Real-Time Audio Engine
 
