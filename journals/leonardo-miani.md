@@ -19,3 +19,7 @@ Finished writing the system context report.
 ## May 19th, 2026
 
 Finished a first draft of the container diagram.
+
+## May 22-23rd, 2026
+
+Started working on the "Cloud Sync" component diagram.
