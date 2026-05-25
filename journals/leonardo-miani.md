@@ -23,3 +23,7 @@ Finished a first draft of the container diagram.
 ## May 22-23rd, 2026
 
 Started working on the "Cloud Sync" component diagram.
+
+## May 25th, 2026
+
+Finished the Cloud Sync component diagram. I have also jotted down a draft for the audio one, but I'm debating whether to actually keep it or not. While browsing the code, I've also spotted some design patterns, mainly Builder (`appfactory.cpp`) and Facade (used basically in every submodule in `src/`).
