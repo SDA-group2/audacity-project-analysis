@@ -1,0 +1,151 @@
+# Architecture
+
+## Tooling Declaration
+
+The C4 diagrams were produced using **Structurizr DSL**. The DSL file defines the model, the relationships between elements and the different views used in the report: System Context, Container and Component diagrams. The diagrams were then rendered through the Structurizr tooling/playground and exported as images for inclusion in the document.
+
+---
+
+## Context Level
+
+### Diagram
+
+![Context Diagram](diagram-pic/system_context_view.png)
+
+### Explanation
+
+At context level, Audacity is modeled as a single software system used by two main user groups: **Audio Editors** and **Academic Users**.
+
+Audio Editors represent users who mainly use the application for ordinary audio editing tasks, such as recording, cutting, mixing, converting formats and applying basic effects. Academic Users represent a more advanced group, interested in audio analysis and in the possibility of extending Audacity through custom plugins, especially Nyquist plugins.
+
+Although Audacity is a complete desktop application, it also interacts with external systems. **FFmpeg** is used to support additional multimedia formats that are not handled directly by the application. **audio.com** is used for cloud project synchronization and allows projects to be stored and recovered online. **OpenVINO** is represented as an optional external AI-related technology: it is not modeled as a core internal component, but as a possible plugin/runtime integration for advanced local AI-based features.
+
+The context diagram is intentionally simplified. It does not show every plugin runtime, every library or every internal module, because the goal at this level is only to show the main actors and the most relevant external systems around Audacity.
+
+---
+
+## Container Level
+
+### Diagram
+
+![Container Diagram](diagram-pic/container_view.png)
+
+### Explanation
+
+At container level, Audacity is modeled as a **modular monolith**. This means that the application is deployed as a single desktop application, but internally it is divided into logical modules with separate responsibilities.
+
+The main containers are:
+
+- **Desktop Application**, implemented mainly in C++, Qt and QML. It contains the user interface, the audio editing logic, the plugin/effect system, the cloud integration module and the legacy bridge toward older Audacity code.
+- **Project File Database**, based on SQLite. It stores local Audacity projects in `.aup3` / `.aup4` format.
+
+External systems remain outside the Audacity software system boundary:
+
+- **FFmpeg**, used for additional import/export formats;
+- **audio.com**, used for cloud synchronization;
+- **OpenVINO**, treated as an optional external AI/plugin integration.
+
+A possible doubt is whether internal modules such as Cloud Sync, Effects and Plugins, Audio Engine or Project Core should be modeled as separate containers. They are not represented as containers because they are not independently deployable applications. They are internal parts of the Desktop Application. In C4 terms, a container is an application or a data store, so the correct container-level decomposition for Audacity remains the Desktop Application plus the local Project File Database.
+
+For this reason, at container level it is acceptable to show a relationship such as:
+
+```text
+Desktop Application -> Project File Database
+```
+
+This does not mean that every UI class directly accesses SQLite. It only means that the Desktop Application, as a deployable unit, uses the project database. The more precise internal access path is shown later at component level.
+
+### Relationship with Clean Architecture
+
+Audacity does not strictly implement Clean Architecture. It is a historical desktop application with a large legacy codebase, so it should not be described as a textbook example of layered architecture.
+
+However, some Clean Architecture ideas are visible in the newer modular organization. The Desktop Application contains presentation-related modules, application-level controllers, domain-specific modules and infrastructure adapters. In simplified terms:
+
+```text
+UI / Presentation
+    -> application actions and controllers
+        -> domain-specific modules
+            -> infrastructure, external systems and legacy code
+```
+
+The **Desktop Application** corresponds mainly to the presentation and application layers. The **Audio Engine**, **Project Core** and **Effects and Plugins Engine** represent application/domain logic. External technologies such as **FFmpeg**, **audio.com**, **OpenVINO** and the **Project File Database** belong to the infrastructure side.
+
+The most important point is the direction of dependencies. The UI should not directly manipulate low-level technologies or external systems. Instead, user interactions should be collected by UI/action components and delegated to internal modules such as Project Core, Audio Engine, Import/Export, Effects and Plugins or Cloud Sync.
+
+The `au3wrap` / Legacy Bridge component is especially important because it shows how the new modular frontend still interacts with the old AU3 core. It acts as an adapter that isolates legacy implementation details and allows Audacity to migrate gradually instead of rewriting the entire old system at once.
+
+---
+
+## Component Level
+
+### Diagram
+
+![Component Diagram](diagram-pic/ComponentView.svg)
+
+### Explanation
+
+At component level, the Desktop Application is decomposed into the main internal modules that collaborate to provide Audacity's functionality.
+
+The most relevant components are:
+
+- **Application Entry**, which contains the startup logic, run mode selection and application initialization.
+- **UI Elements**, which groups reusable UI widgets, panels, toolbars and integrated notifications.
+- **Timeline Visualization and Editing**, which manages the main project timeline, track visualization, selections and editing interactions.
+- **Project Core**, which manages project state, preferences, shared context and access to project persistence.
+- **Audio Engine**, which coordinates playback, recording, audio devices and low-level audio operations.
+- **Effects and Plugins Engine**, which manages built-in effects and external plugin formats, including Nyquist integration.
+- **Import/Export Module**, which handles audio file import/export and delegates additional formats to FFmpeg.
+- **Cloud Sync**, which communicates with audio.com for cloud project synchronization and authentication.
+- **Legacy Bridge**, which wraps legacy AU3 functionality and makes it usable from the newer modular code.
+
+Some relationships in the component diagram are architectural relationships, not necessarily direct function calls. The diagram is not intended to be a call graph. For example, `Timeline Visualization and Editing -> Audio Engine` means that the timeline needs playback/audio visualization support, not necessarily that every operation is implemented through a direct call between those exact classes.
+
+The relation to FFmpeg is shown through **Import/Export Module**, because FFmpeg is specifically related to file decoding/encoding. OpenVINO is connected to **Effects and Plugins Engine**, because AI tools are closer to optional plugin/effect integration than to the generic UI.
+
+### SOLID Principles
+
+The component decomposition partially supports SOLID principles.
+
+The **Single Responsibility Principle** is visible because components have focused responsibilities. UI Elements manages reusable UI and feedback, Timeline Visualization and Editing manages the project view and editing interactions, Project Core manages project state and persistence, and Effects and Plugins Engine manages effects/plugin execution.
+
+The **Dependency Inversion Principle** is supported by the separation between high-level modules and technical details. The UI does not directly depend on SQLite, FFmpeg, OpenVINO or legacy AU3 internals. Instead, those details are reached through Project Core, Import/Export, Effects and Plugins, Cloud Sync or Legacy Bridge.
+
+The **Interface Segregation Principle** is visible in the fact that different parts of the UI and plugin system are not forced into one large generic interface. For example, UI Elements, Timeline and Cloud Sync expose different responsibilities, while plugin formats such as Nyquist, VST, LV2, Audio Unit and Vamp can be handled by specific providers.
+
+The **Open/Closed Principle** is especially relevant in the Effects and Plugins Engine. The system has a common effects base and several specific effect/plugin providers. This makes the architecture open to new plugin families while keeping the common effect infrastructure relatively stable.
+
+The **Liskov Substitution Principle** can be discussed at a higher level: if different effect providers are exposed through a common effect abstraction, then the rest of the system should be able to discover, display, configure and execute them consistently.
+
+---
+
+## Architectural Characteristics
+
+The main architectural characteristics of Audacity are the following.
+
+### Modularity
+
+Audacity is organized as a modular monolith. Modules such as UI, project, audio, effects/plugins, cloud and legacy bridge are compiled into the same desktop application but maintain separate responsibilities. This makes the codebase easier to understand and evolve than a fully entangled monolith.
+
+### Maintainability
+
+The modular structure improves maintainability because changes can remain localized. UI changes should mainly affect UI-related modules, effect changes should mainly affect the effects subsystem, and cloud changes should remain inside the cloud integration module. The Legacy Bridge also helps contain older AU3 code instead of spreading legacy dependencies everywhere.
+
+### Extensibility
+
+Audacity is highly extensible through its plugin system. The Effects and Plugins Engine supports built-in effects and multiple plugin families such as Nyquist, VST, LV2, Audio Unit and Vamp. Optional integrations such as OpenVINO can be modeled as external extensions rather than core components.
+
+### Portability
+
+Audacity is a cross-platform desktop application. The use of Qt/QML supports a more consistent UI across operating systems, while the plugin/audio layers must still handle platform-specific differences, such as Audio Unit on macOS or different audio backends.
+
+### Interoperability
+
+The system interacts with several external technologies: FFmpeg for multimedia formats, audio.com for cloud synchronization, plugin runtimes for extensibility, and legacy AU3 code through adapters. Clear module boundaries help prevent these external details from contaminating the entire architecture.
+
+### Performance and Reliability
+
+Audacity must keep the UI responsive while processing audio, running effects and managing large projects. For this reason, heavy operations are delegated to dedicated modules rather than being performed directly by the UI. Reliability is also critical because project files and recordings must not be corrupted by plugin failures, import/export errors or cloud synchronization issues.
+
+### Evolvability
+
+Evolvability is one of the most important qualities of the new architecture. Audacity has a long history and significant legacy code. The current modular structure, together with the Legacy Bridge, supports a gradual migration from the old AU3 core toward a cleaner and more maintainable architecture.

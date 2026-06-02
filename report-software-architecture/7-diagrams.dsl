@@ -8,36 +8,36 @@ workspace "Audacity" "Audacity System Analysis" {
         ####################
 
         # Users
-        audioEditor = person "Audio Editor" "Performs quick recordings, convert file formats, and apply basic edits."
+        audioEditor = person "Audio Editor" "Performs quick recordings, converts file formats, and applies basic edits."
         academicUser = person "Academic User" "Uses the software for academic purposes, such as audio and data analysis or developing Nyquist plugins."
 
-        # Main System (Context)
+        # Main System
         audacity = softwareSystem "Audacity Software System" "Allows users to record live audio, edit multi-track compositions, and apply digital signal processing effects." "MainSystem" {
 
-          # Containers
-          desktopApp = container "Desktop Application" "Front-end that allows the user to interact with Audacity's features." "C++, Qt, QML" {
+            # Containers
+            desktopApp = container "Desktop Application" "Front-end that allows the user to interact with Audacity's features." "C++, Qt, QML" {
 
-            # Components
-            cloudSync = component "Cloud Sync" "Interacts with audio.com to save Audacity projects in the cloud and handle authentication."
+                # Components
+                appEntry = component "Application Entry" "Bootstrapping layer containing Audacity's main entry point, run mode selection and application initialization." "C++"
 
-            # *MISSING* src/ modules: context, project, preferences, shared
+                uiElements = component "UI Elements" "Provides reusable UI components, visual controls, toolbars and integrated user notifications." "Qt / QML"
 
-            appEntry = component "Application Entry" "Bootstrapping layer, containing Audacity's main entry point and QML UI configuration."
+                timeline = component "Timeline Visualization and Editing" "Handles project timeline visualization, track editing interactions, selections and audio visualization." "C++ / Qt / QML"
 
-            effectsPlugins = component "Effects and Plugins Engine" "Defines built-in effects and handles libnyquist integration for writing custom plugins."
+                projectCore = component "Project Core" "Manages project state, preferences, shared context and access to project persistence." "C++"
 
-            uiElements = component "UI Elements" "Provides custom reusable widgets, visual control panels (e.g. toolbars) and popup alert notifications (toasts)."
+                audioEngine = component "Audio Engine" "Coordinates playback, recording, audio devices and low-level audio operations." "C++"
 
-            # importExport = component "Import Export Module" "TODO" # can possibly be integrated in an existing component (?)
+                effectsPlugins = component "Effects and Plugins Engine" "Manages built-in effects and external plugin formats, including Nyquist integration." "C++ / libnyquist"
 
-            legacyBridge = component "Legacy Bridge" "Translation layer that bridges the modern components to Audacity's legacy C++ codebase."
+                importExport = component "Import/Export Module" "Handles audio file import/export and delegates additional formats to external libraries such as FFmpeg." "C++"
 
-            timeline = component "Timeline Visualization and Editing" "Handles sample clip operations and selections and calculates/renders spectral audio data."
+                cloudSync = component "Cloud Sync" "Interacts with audio.com to save Audacity projects in the cloud and handle authentication." "C++ / HTTPS"
 
-            audioEngine = component "Audio Engine" "Manages everything related to audio, from audio recording to handling audio devices."
-          }
+                legacyBridge = component "Legacy Bridge" "Adapter layer that bridges the modern components to Audacity's legacy AU3 C++ codebase." "C++"
+            }
 
-          database = container "Project File Database" "Provides local persistent storage for audacity projects in the form of aup3/aup4 files." "SQLite" "Database"
+            database = container "Project File Database" "Provides local persistent storage for Audacity projects in the form of .aup3/.aup4 files." "SQLite" "Database"
         }
 
         # External Systems
@@ -45,19 +45,54 @@ workspace "Audacity" "Audacity System Analysis" {
         openvino = softwareSystem "OpenVINO" "An open-source software toolkit developed by Intel for optimizing and deploying deep learning models." "ExternalSystem"
         audiocom = softwareSystem "audio.com" "Free audio hosting platform, used for storing '.aup3' project files in the cloud." "ExternalSystem"
 
+
         #################
         # RELATIONSHIPS #
         #################
 
+        # User interactions
         audioEditor -> audacity.desktopApp "Performs audio editing"
-        academicUser -> audacity.desktopApp "Performs audio analysis and develops Nyquist plugins" ""
+        academicUser -> audacity.desktopApp "Performs audio analysis and develops Nyquist plugins"
+        academicUser -> audacity.desktopApp.effectsPlugins "Develops and uses custom Nyquist plugins"
 
-        audacity.desktopApp -> audacity.database "Reads from and write to" "Direct function calls (e.g. such as open(), load())"
-        audacity.desktopApp -> ffmpeg "Supports additional audio file formats using" "TODO_TECH"
-        audacity.desktopApp.cloudSync -> audiocom "Syncs project files, handles user authentication" "HTTPS/JSON"
-        audacity.desktopApp -> openvino "Loads plugins from" "TODO_TECH"
+        # Application startup and module initialization
+        audacity.desktopApp.appEntry -> audacity.desktopApp.uiElements "Initializes UI shell and QML views" "C++ / Qt / QML"
+        audacity.desktopApp.appEntry -> audacity.desktopApp.projectCore "Initializes project context and preferences" "C++ module API"
+        audacity.desktopApp.appEntry -> audacity.desktopApp.audioEngine "Initializes audio services" "C++ module API"
+        audacity.desktopApp.appEntry -> audacity.desktopApp.effectsPlugins "Registers effects and plugin providers" "C++ module API"
+        audacity.desktopApp.appEntry -> audacity.desktopApp.cloudSync "Initializes cloud services" "C++ module API"
 
-        academicUser -> audacity.desktopApp.effectsPlugins
+        # UI-level interactions
+        audacity.desktopApp.uiElements -> audacity.desktopApp.timeline "Displays and controls the project timeline" "Qt/QML bindings"
+        audacity.desktopApp.uiElements -> audacity.desktopApp.effectsPlugins "Shows effect/plugin actions and requests execution" "Qt/QML actions"
+        audacity.desktopApp.uiElements -> audacity.desktopApp.importExport "Requests import/export operations" "Qt/QML actions"
+        audacity.desktopApp.uiElements -> audacity.desktopApp.cloudSync "Shows login, sync actions and cloud notifications" "Qt/QML actions"
+
+        # Timeline and project/audio interactions
+        audacity.desktopApp.timeline -> audacity.desktopApp.projectCore "Reads and updates project state" "C++ calls"
+        audacity.desktopApp.timeline -> audacity.desktopApp.audioEngine "Requests playback, recording and audio visualization data" "C++ calls"
+        audacity.desktopApp.timeline -> audacity.desktopApp.legacyBridge "Uses legacy project/track functionality through adapters" "C++ wrapper calls"
+
+        # Effects and plugins
+        audacity.desktopApp.effectsPlugins -> audacity.desktopApp.projectCore "Reads selected tracks and applies effect results" "C++ calls"
+        audacity.desktopApp.effectsPlugins -> audacity.desktopApp.audioEngine "Processes audio through effect pipelines" "C++ calls"
+        audacity.desktopApp.effectsPlugins -> audacity.desktopApp.legacyBridge "Bridges to legacy AU3 effect/plugin APIs" "C++ wrapper calls"
+        audacity.desktopApp.effectsPlugins -> openvino "Can invoke optional AI plugin bundle" "Local plugin/runtime integration"
+
+        # Audio engine
+        audacity.desktopApp.audioEngine -> audacity.desktopApp.legacyBridge "Uses existing AU3 audio functionality where needed" "C++ wrapper calls"
+
+        # Import/export
+        audacity.desktopApp.importExport -> audacity.desktopApp.projectCore "Imports/exports audio data associated with the current project" "C++ calls"
+        audacity.desktopApp.importExport -> ffmpeg "Decodes/encodes additional audio formats using" "FFmpeg libraries / dynamic loading"
+
+        # Cloud sync
+        audacity.desktopApp.cloudSync -> audacity.desktopApp.projectCore "Reads project metadata and sync state" "C++ calls"
+        audacity.desktopApp.cloudSync -> audacity.database "Uploads/downloads local project files" "File I/O"
+        audacity.desktopApp.cloudSync -> audiocom "Syncs project files and handles authentication" "HTTPS/JSON"
+
+        # Persistence
+        audacity.desktopApp.projectCore -> audacity.database "Reads and writes Audacity project files" "SQLite / file I/O"
     }
 
     views {
