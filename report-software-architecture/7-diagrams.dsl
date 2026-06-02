@@ -11,16 +11,33 @@ workspace "Audacity" "Audacity System Analysis" {
         audioEditor = person "Audio Editor" "Performs quick recordings, convert file formats, and apply basic edits."
         academicUser = person "Academic User" "Uses the software for academic purposes, such as audio and data analysis or developing Nyquist plugins."
 
-        # Main System
+        # Main System (Context)
         audacity = softwareSystem "Audacity Software System" "Allows users to record live audio, edit multi-track compositions, and apply digital signal processing effects." "MainSystem" {
+
+          # Containers
           desktopApp = container "Desktop Application" "Front-end that allows the user to interact with Audacity's features." "C++, Qt, QML" {
-            cloudSync = component "Cloud Sync" "Interacts with audio.com to save Audacity projects in the cloud."
-            plugins = component "Plugin Component" "TODO"
+
+            # Components
+            cloudSync = component "Cloud Sync" "Interacts with audio.com to save Audacity projects in the cloud and handle authentication."
+
+            # *MISSING* src/ modules: context, project, preferences, shared
+
+            appEntry = component "Application Entry" "Bootstrapping layer, containing Audacity's main entry point and QML UI configuration."
+
+            effectsPlugins = component "Effects and Plugins Engine" "Defines built-in effects and handles libnyquist integration for writing custom plugins."
+
+            uiElements = component "UI Elements" "Provides custom reusable widgets, visual control panels (e.g. toolbars) and popup alert notifications (toasts)."
+
+            # importExport = component "Import Export Module" "TODO" # can possibly be integrated in an existing component (?)
+
+            legacyBridge = component "Legacy Bridge" "Translation layer that bridges the modern components to Audacity's legacy C++ codebase."
+
+            timeline = component "Timeline Visualization and Editing" "Handles sample clip operations and selections and calculates/renders spectral audio data."
+
+            audioEngine = component "Audio Engine" "Manages everything related to audio, from audio recording to handling audio devices."
           }
 
-          database = container "Project File Database" "Provides local persistent storage for audacity projects in the form of aup3/aup4 files." "SQLite" {
-            tags "Database"
-          }
+          database = container "Project File Database" "Provides local persistent storage for audacity projects in the form of aup3/aup4 files." "SQLite" "Database"
         }
 
         # External Systems
@@ -33,15 +50,14 @@ workspace "Audacity" "Audacity System Analysis" {
         #################
 
         audioEditor -> audacity.desktopApp "Performs audio editing"
-        academicUser -> audacity.desktopApp "Performs audio analysis and develops Nyquist plugins"
+        academicUser -> audacity.desktopApp "Performs audio analysis and develops Nyquist plugins" ""
 
-        audacity.desktopApp -> audacity.database "Reads from and write to"
-        audacity.desktopApp -> ffmpeg "Converts to some file formats using"
-        audacity.desktopApp -> audiocom "Syncs project files"
-        audacity.desktopApp -> openvino "Loads plugins from"
+        audacity.desktopApp -> audacity.database "Reads from and write to" "Direct function calls (e.g. such as open(), load())"
+        audacity.desktopApp -> ffmpeg "Supports additional audio file formats using" "TODO_TECH"
+        audacity.desktopApp.cloudSync -> audiocom "Syncs project files, handles user authentication" "HTTPS/JSON"
+        audacity.desktopApp -> openvino "Loads plugins from" "TODO_TECH"
 
-        academicUser -> audacity.desktopApp.plugins
-
+        academicUser -> audacity.desktopApp.effectsPlugins
     }
 
     views {
@@ -91,7 +107,12 @@ workspace "Audacity" "Audacity System Analysis" {
                 stroke #167CAC
                 shape roundedbox
             }
-
+            element "Component" {
+                color #FFFFFF
+                background #75C4ED
+                stroke #3D8ABE
+                shape roundedbox
+            }
             element "Boundary" {
                 strokeWidth 5
             }
@@ -99,7 +120,6 @@ workspace "Audacity" "Audacity System Analysis" {
                 thickness 4
             }
         }
-
     }
 
     configuration {
