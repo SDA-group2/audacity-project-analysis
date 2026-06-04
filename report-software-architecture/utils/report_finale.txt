@@ -10,7 +10,7 @@ The C4 diagrams were produced using **Structurizr DSL**. The DSL file defines th
 
 ### Diagram
 
-![Context Diagram](diagram-pic/system_context_view.png)
+![Context Diagram](./figures/ContextView.svg)
 
 ### Explanation
 
@@ -28,7 +28,7 @@ The context diagram is intentionally simplified. It does not show every plugin r
 
 ### Diagram
 
-![Container Diagram](diagram-pic/container_view.png)
+![Container Diagram](./figures/ContainerView.svg)
 
 ### Explanation
 
@@ -80,7 +80,7 @@ The `au3wrap` / Legacy Bridge component is especially important because it shows
 
 ### Diagram
 
-![Component Diagram](diagram-pic/ComponentView.svg)
+![Component Diagram](./figures/ComponentView.svg)
 
 ### Explanation
 

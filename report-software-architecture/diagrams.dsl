@@ -55,11 +55,17 @@ workspace "Audacity" "Audacity System Analysis" {
         academicUser -> audacity.desktopApp "Performs audio analysis and develops Nyquist plugins"
         academicUser -> audacity.desktopApp.effectsPlugins "Develops and uses custom Nyquist plugins"
 
+        # Container-level relationships
+        audacity.desktopApp -> audacity.database "Reads from and writes to" "SQLite / file I/O"
+        audacity.desktopApp -> ffmpeg "Supports additional audio file formats using" "FFmpeg libraries / dynamic loading"
+        audacity.desktopApp -> openvino "May support optional AI plugin integration" "Optional local runtime/plugin integration"
+
         # Application startup and module initialization
         audacity.desktopApp.appEntry -> audacity.desktopApp.uiElements "Initializes UI shell and QML views" "C++ / Qt / QML"
         audacity.desktopApp.appEntry -> audacity.desktopApp.projectCore "Initializes project context and preferences" "C++ module API"
         audacity.desktopApp.appEntry -> audacity.desktopApp.audioEngine "Initializes audio services" "C++ module API"
         audacity.desktopApp.appEntry -> audacity.desktopApp.effectsPlugins "Registers effects and plugin providers" "C++ module API"
+        audacity.desktopApp.appEntry -> audacity.desktopApp.importExport "Initializes import/export services" "C++ module API"
         audacity.desktopApp.appEntry -> audacity.desktopApp.cloudSync "Initializes cloud services" "C++ module API"
 
         # UI-level interactions
@@ -68,7 +74,7 @@ workspace "Audacity" "Audacity System Analysis" {
         audacity.desktopApp.uiElements -> audacity.desktopApp.importExport "Requests import/export operations" "Qt/QML actions"
         audacity.desktopApp.uiElements -> audacity.desktopApp.cloudSync "Shows login, sync actions and cloud notifications" "Qt/QML actions"
 
-        # Timeline and project/audio interactions
+        # Timeline, project and audio interactions
         audacity.desktopApp.timeline -> audacity.desktopApp.projectCore "Reads and updates project state" "C++ calls"
         audacity.desktopApp.timeline -> audacity.desktopApp.audioEngine "Requests playback, recording and audio visualization data" "C++ calls"
         audacity.desktopApp.timeline -> audacity.desktopApp.legacyBridge "Uses legacy project/track functionality through adapters" "C++ wrapper calls"
@@ -77,13 +83,14 @@ workspace "Audacity" "Audacity System Analysis" {
         audacity.desktopApp.effectsPlugins -> audacity.desktopApp.projectCore "Reads selected tracks and applies effect results" "C++ calls"
         audacity.desktopApp.effectsPlugins -> audacity.desktopApp.audioEngine "Processes audio through effect pipelines" "C++ calls"
         audacity.desktopApp.effectsPlugins -> audacity.desktopApp.legacyBridge "Bridges to legacy AU3 effect/plugin APIs" "C++ wrapper calls"
-        audacity.desktopApp.effectsPlugins -> openvino "Can invoke optional AI plugin bundle" "Local plugin/runtime integration"
+        audacity.desktopApp.effectsPlugins -> openvino "May support optional AI plugin integration" "Optional local runtime/plugin integration"
 
         # Audio engine
         audacity.desktopApp.audioEngine -> audacity.desktopApp.legacyBridge "Uses existing AU3 audio functionality where needed" "C++ wrapper calls"
 
         # Import/export
         audacity.desktopApp.importExport -> audacity.desktopApp.projectCore "Imports/exports audio data associated with the current project" "C++ calls"
+        audacity.desktopApp.importExport -> audacity.desktopApp.legacyBridge "Uses legacy import/export functionality where needed" "C++ wrapper calls"
         audacity.desktopApp.importExport -> ffmpeg "Decodes/encodes additional audio formats using" "FFmpeg libraries / dynamic loading"
 
         # Cloud sync

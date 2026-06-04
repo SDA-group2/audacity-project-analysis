@@ -2,8 +2,7 @@
 
 The SOLID principles make more sense at the **component diagram** level than at the container level.
 
-Let's see if the different components repect that principles.
----
+## Let's see if the different components repect that principles.
 
 # SOLID in the Desktop App UI
 
