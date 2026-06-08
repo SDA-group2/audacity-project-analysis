@@ -1,5 +1,44 @@
 ## Component Level
 
+![Component Diagram](figures/ComponentView.svg)
+
+At component level, the Desktop Application is decomposed into the main internal modules that collaborate to provide Audacity's functionality.
+
+In theory, each module inside the `src/` directory could be considered as an isolated component, however we have decided to group some of them together based on the functionality they contribute to the application (e.g. `uicomponents` and `toast` were both grouped inside the `UI Elements` component, as they both contribute to the overall UI).
+
+- **Application Entry**, which contains the startup logic, run mode selection and application initialization.
+- **UI Elements**, which groups reusable UI widgets, panels, toolbars and integrated notifications.
+- **Timeline Visualization and Editing**, which manages the main project timeline, track visualization, selections and editing interactions.
+- **Project Core**, which manages project state, preferences, shared context and access to project persistence.
+- **Audio Engine**, which coordinates playback, recording, audio devices and low-level audio operations.
+- **Effects and Plugins Engine**, which manages built-in effects and external plugin formats, including Nyquist integration.
+- **Import/Export Module**, which handles audio file import/export and delegates additional formats to FFmpeg.
+- **Cloud Sync**, which communicates with audio.com for cloud project synchronization and authentication.
+- **Legacy Bridge**, which wraps legacy AU3 functionality and makes it usable from the newer modular code.
+
+The Application Entry component includes a `main.cpp` file, which represents the entry point of the application. Here, a new `AppFactory` object is created and a `setup` method is called, which is responsible for importing all the modules inside the application, as shown below:
+
+```cpp
+std::shared_ptr<muse::IApplication> AppFactory::newGuiApp(const std::shared_ptr<AudacityCmdOptions>& options) const {
+    // Muse modules
+    app->addModule(new muse::diagnostics::DiagnosticsModule());
+    app->addModule(new muse::audioplugins::AudioPluginsModule());
+    app->addModule(new muse::actions::ActionsModule());
+
+    // ...
+
+    // Audacity modules
+    app->addModule(new au::appshell::AppShellModule());
+    app->addModule(new au::preferences::PreferencesModule());
+    app->addModule(new au::uicomponents::UiComponentsModule());
+    app->addModule(new au::effects::AudioUnitEffectsModule());
+
+    // ...
+
+    return app;
+}
+```
+
 ### SOLID Principles
 
 #### Single Responsibility Principle (SRP)
@@ -44,6 +83,10 @@ if (loadersRegister) {
 ```
 
 #### Liskov Substitution Principle (LSP)
+
+The LSP is applied once again in the `effects` module, particularly in the implementation of loaders for the various effect technologies.
+
+Thanks to the fact that each concrete loader fully implements the `EffectLoader` interface, the `EffectsProvider` can work under the assumption that those loaders are behaviorally interchangeable, and is thus free to call the methods implemented by the interface without having to worry about adding special-case logic for any specific family.
 
 #### Interface Segregation Principle (ISP)
 
