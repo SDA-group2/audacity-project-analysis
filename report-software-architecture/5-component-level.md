@@ -28,12 +28,30 @@ If we zoom one level further, we can see that this principle is also applied at 
 
 #### Interface Segregation Principle (ISP)
 
+The `trackedit` component inside the `src/` directory shows both a violation and an in-progress solution of the ISP.
+
+`src/trackedit/itrackeditinteraction.h` is a ~150 line long, "fat" interface that bundles at least four unrelated client roles:
+
+| Responsibility    | Methods                                           |
+| ----------------- | ------------------------------------------------- |
+| Clip manipulation | `changeClipStartTime`, `trimClipsLeft`, ...       |
+| Track management  | `newMonoTrack`, `deleteTracks`, `moveTracks`, ... |
+| Undo/redo history | `undo`, `redo`, ...                               |
+| Clipboard         | `pasteFromClipboard`, `clearClipboard`, ...       |
+
+A comment in the same file denotes that the developers are already aware of this issue
+
+```cpp
+//! NOTE Interface for interacting with the project
+//! When it gets big, maybe we’ll divide it into several
+```
+
+Indeed, this interface is currently being split into multiple segregated replacements, such as `iclipsinteraction.h`, `itracksinteraction.h` and so on.
+
 #### Dependency Inversion Principle (DIP)
 
-The codebase heavily utilizes the DIP throughout the `src/` directory. Taking the `au3audiocomservice.cpp` class inside the `au3cloud` component as an example (although it should be noted that many other choices were possible), we can see that interactions with the filesystem do not depend directly on low-level utilities modules, such as the operating system's filesystem APIs, but rather use a `filesystem` object which is defined in the correspondent header file as follows:
+The codebase heavily utilizes the DIP throughout the `src/` directory. Taking the `au3audiocomservice.cpp` class inside the `au3cloud` component as an example (although it should be noted that many other choices were possible), we can see that interactions with the filesystem do not depend directly on low-level utilities modules, such as the operating system's filesystem APIs, but rather use a `filesystem` object, which is an instance of the higher-level `IFileSystem` interface, as see in the following line taken from the related header file.
 
 ```cpp
 muse::GlobalInject<muse::io::IFileSystem> filesystem;
 ```
-
-So they depend on the higher-level `IFileSystem` interface.
