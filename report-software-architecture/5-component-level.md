@@ -20,9 +20,28 @@ If we zoom one level further, we can see that this principle is also applied at 
 
 #### Open-Closed Principle (OCP)
 
-<!-- The use of the OCP is particularly evident in the effects and plugins engine, particularly in the way the different effect/plugins technologies are handled. -->
-<!---->
-<!-- The core effects engine, `effects_base`, defines abstract interfaces that define how plugins are loaded and managed, without having actual knowledge of the actual formats. -->
+The use of the OCP is particularly evident in the `effects` component, especially in the way Audacity handles different effect technologies.
+
+At high-level, the application provides an effect loader in `effects_base/ieffectloader.h`, which defines what the system needs to know about a plugin family. Then the `EffectsProvider` (defined in `effects_base/internal/effectsprovider.cpp`) can load a new family of effects by simply asking for the correct loader and calling it polymorphically, as show in the following snippet. This represents the "closed" part of the principle, as these two classes never need to change, even when new technologies are added.
+
+```cpp
+bool EffectsProvider::loadEffect(const EffectId& effectId) const
+{
+    const IEffectLoaderPtr loader = this->loader(effectId);
+    if (!loader) { return false; }
+    return loader->ensurePluginIsLoaded(effectId);
+}
+```
+
+The "open" part can be seen in the ways the actual effect technologies are implemented: each plugin family simply needs to define a custom `EffectLoader`, which is then registered into `IEffectLoadersRegister` (below is an example for `libnyquist`).
+
+```cpp
+m_effectLoader = std::make_shared<NyquistEffectsLoader>();
+auto loadersRegister = globalIoc()->resolve<IEffectLoadersRegister>(moduleName());
+if (loadersRegister) {
+    loadersRegister->registerLoader(m_effectLoader);
+}
+```
 
 #### Liskov Substitution Principle (LSP)
 
@@ -30,7 +49,7 @@ If we zoom one level further, we can see that this principle is also applied at 
 
 The `trackedit` component inside the `src/` directory shows both a violation and an in-progress solution of the ISP.
 
-`src/trackedit/itrackeditinteraction.h` is a ~150 line long, "fat" interface that bundles at least four unrelated client roles:
+`src/trackedit/itrackeditinteraction.h` is a ~150 line long, "fat" interface that takes charge of at least four unrelated responsibilities:
 
 | Responsibility    | Methods                                           |
 | ----------------- | ------------------------------------------------- |
