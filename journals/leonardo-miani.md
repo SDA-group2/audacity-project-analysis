@@ -39,3 +39,10 @@ Identified some communications mechanisms in the container diagrams (FFmpeg and 
 ## June 3rd, 2026
 
 Started architecture final report review.
+
+## June 6-9th, 2026
+
+Spent the last few days finalizing the architecture report for delivery. Specifically:
+
+- Rewrote the SOLID principles section, adding concrete examples taken from the codebase
+- Finished the introduction and the context section
