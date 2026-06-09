@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+OUTFILE="${1:-software-archiecture-report.md}"
+
+find . -name "*.md" -print0 |
+  sort -z -V |
+  xargs -0 cat >tmpfile && mv tmpfile "$OUTFILE"
