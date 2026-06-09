@@ -2,7 +2,7 @@
 
 ### Diagram
 
-![System Context Diagram.](./figures/ContextView.svg)
+![System Context Diagram.](figures/ContextView.svg)
 
 ### Actors
 
