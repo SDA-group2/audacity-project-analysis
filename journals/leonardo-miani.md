@@ -46,3 +46,4 @@ Spent the last few days finalizing the architecture report for delivery. Specifi
 
 - Rewrote the SOLID principles section, adding concrete examples taken from the codebase
 - Finished the introduction and the context section
+- Retouched the architectural characteristics section
