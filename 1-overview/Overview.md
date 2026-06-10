@@ -30,11 +30,11 @@ At the top level the codebase is organized into three parts: `au3/`, the legacy 
 
 The new `src/` directory is organized into modules such as `app`/`appshell` (startup and shell), `projectscene`, `trackedit`, and `uicomponents` (the Qt and QML UI), `effects` (plugins and effects), `project`, `playback`, `record`, `au3cloud` (cloud sync), and `toast` (notifications). The legacy core under `au3/` is organized into the `au3-*` internal libraries (`au3/libraries`), the legacy application code (`au3/src`), and the legacy plugin modules (`au3/modules`). The `au3wrap` module adapts the new frontend to the legacy core, which is how the project encapsulates its technical debt rather than rewriting everything at once.
 
-Internally the application uses a dependency injection container from the Muse framework to wire services to consumers, keeping modules substitutable and testable. Externally it integrates with FFmpeg for extra import and export formats, audio.com for optional cloud sync (since 3.5), and, since 3.7.4, OpenVINO and Whisper.cpp for locally run AI features such as noise suppression and transcription. The effect engine supports several plugin families: built in effects, Nyquist, VST, LV2, LADSPA, Audio Unit, and Vamp. The system is written predominantly in C++, with QML for the new user interface.
+Internally the application uses a dependency injection container from the Muse framework to wire services to consumers, keeping modules substitutable and testable. Externally it integrates with FFmpeg for extra import and export formats, audio.com for optional cloud sync (since 3.5), and optional external OpenVINO/Whisper.cpp plugins for locally run AI features such as noise suppression and transcription. The effect engine supports several plugin families: built in effects, Nyquist, VST, LV2, LADSPA, Audio Unit, and Vamp. The system is written predominantly in C++, with QML for the new user interface.
 
 ## 4. Code Statistics
 
-The analysis covers the compiled `master` tree: the new `src/` frontend together with the legacy core under `au3/libraries`, `au3/src`, and `au3/modules`. No files were selected manually; the scope is the set of translation units the build compiles, which the CMake compilation database used in the dependency analysis resolves to **1,232 translation units**. The `muse/` framework is excluded as an underlying dependency. Measured directly across the same source tree, the scope is summarized below (SLOC counts non blank, non comment lines).
+The analysis covers the compiled `master` tree: the new `src/` frontend together with the legacy core under `au3/libraries`, `au3/src`, and `au3/modules`. No files were selected manually. The `muse/` framework is excluded as an underlying dependency. Measured directly across the same source tree, the scope is summarized below (SLOC counts non blank, non comment lines).
 
 | Area | Source files | SLOC | Physical lines |
 |---|---:|---:|---:|
@@ -44,7 +44,7 @@ The analysis covers the compiled `master` tree: the new `src/` frontend together
 | `au3/modules` (legacy plugin modules) | 123 | 19,683 | 27,273 |
 | **Total** | **1,476** | **297,327** | **404,651** |
 
-The 1,232 figure comes from the dependency analysis's compile database, generated on the Audacity 3.7.7 release tag, which also counts bundled lib-src third-party sources; the 1,476 count here is measured on the master tree with third-party code excluded, so the two are not directly comparable.
+These two counts come from different measurement methods and are not expected to match exactly: 1,232 is the translation-unit count reported by the CMake compilation database used in the dependency analysis, while 1,476 is a direct count of source files across the analyzed tree.
 
 In terms of modules and packages, the system contains more than 110 internal modules: around 22 top level modules in the new `src/` frontend, 77 `au3-*` libraries under `au3/libraries`, and 17 legacy plugin modules under `au3/modules`.
 
