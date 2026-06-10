@@ -44,7 +44,7 @@ The analysis covers the compiled `master` tree: the new `src/` frontend together
 | `au3/modules` (legacy plugin modules) | 123 | 19,683 | 27,273 |
 | **Total** | **1,476** | **297,327** | **404,651** |
 
-The measured file count (1,476) exceeds the 1,232 translation units because it includes test sources and files the build excludes per platform. Either figure is defensible if used consistently across the three reports.
+The 1,232 figure comes from the dependency analysis's compile database, generated on the Audacity 3.7.7 release tag, which also counts bundled lib-src third-party sources; the 1,476 count here is measured on the master tree with third-party code excluded, so the two are not directly comparable.
 
 In terms of modules and packages, the system contains more than 110 internal modules: around 22 top level modules in the new `src/` frontend, 77 `au3-*` libraries under `au3/libraries`, and 17 legacy plugin modules under `au3/modules`.
 

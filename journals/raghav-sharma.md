@@ -45,4 +45,4 @@ Outcome:
 
 Delivered the final Overview report (Overview.md).
 
-Aligned the Overview with the Design and Architecture reports on a single, reconciled scope.
+Defined the scope boundaries used in the Overview and checked them against the Design and Architecture reports.
